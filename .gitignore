@@ -11,6 +11,7 @@ public/
 static/admin/*.bundle.*
 .env
 .vscode
+coverage
 
 # OS generated files #
 ######################

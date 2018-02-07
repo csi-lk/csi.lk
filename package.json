@@ -33,7 +33,7 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"🛂  Running Tests with Coverage:\" && jest --coverage",
     "lint": "echo \"🔧  Running Linters:\" && run-p lint:js",
     "lint:js": "eslint --ignore-path .gitignore ./src ./tools --color",
     "lint:js:fix": "eslint --ignore-path .gitignore ./src ./tools --fix"
@@ -46,6 +46,37 @@
     "eslint-plugin-jest": "^21.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "jest": "^22.1.4",
+    "jest-junit": "^3.5.0",
     "prettier": "^1.10.2"
+  },
+  "jest": {
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/**/*.{js}",
+      "!.cache"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testResultsProcessor": "./node_modules/jest-junit"
+  },
+  "jest-junit": {
+    "suiteName": "mmgp-user-feedback tests",
+    "output": "./coverage/junit.xml"
   }
 }
