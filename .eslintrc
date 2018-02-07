@@ -1,0 +1,85 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "semi": [
+      2,
+      "never"
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": true
+      }
+    ],
+    "linebreak-style": [
+      "off"
+    ],
+    "max-len": [
+      2,
+      {
+        "code": 1000
+      }
+    ],
+    "function-paren-newline": [
+      "off"
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "to"
+        ],
+        "aspects": [
+          "noHref",
+          "invalidHref"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "components": [
+          "label"
+        ],
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        }
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "shallow": true,
+    "mount": true,
+    "mockStore": true,
+    "hooks": true
+  },
+  "settings": {},
+  "plugins": [
+    "jest"
+  ]
+}
