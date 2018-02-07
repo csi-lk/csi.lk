@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Callum Silcock",
   "dependencies": {
-    "bulma": "^0.6.2",
     "gatsby": "^1.9.183",
     "gatsby-link": "^1.6.36",
     "gatsby-plugin-netlify-cms": "^1.0.2",
