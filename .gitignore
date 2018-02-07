@@ -1,9 +1,24 @@
-# Project dependencies
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+# Dependencies #
+################
 node_modules
 .cache/
-# Build directory
+npm-debug.log*
+yarn-error.log
+
+# Build #
+################
 public/
 static/admin/*.bundle.*
+.env
+.vscode
+
+# OS generated files #
+######################
 .DS_Store
-yarn-error.log
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+debug.log

@@ -1,29 +1,31 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.0",
-  "author": "Austin Green",
+  "name": "csi.lk",
+  "description": "Callum Silcock's personal website",
+  "version": "1.0.0",
+  "author": "Callum Silcock",
   "dependencies": {
-    "bulma": "^0.6.0",
-    "gatsby": "^1.9.63",
-    "gatsby-link": "^1.6.21",
+    "bulma": "^0.6.2",
+    "gatsby": "^1.9.183",
+    "gatsby-link": "^1.6.36",
     "gatsby-plugin-netlify-cms": "^1.0.2",
     "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-plugin-sass": "^1.0.12",
-    "gatsby-plugin-sharp": "^1.6.18",
-    "gatsby-remark-images": "^1.5.18",
-    "gatsby-source-filesystem": "^1.5.5",
-    "gatsby-transformer-remark": "^1.7.17",
-    "gatsby-transformer-sharp": "^1.6.13",
+    "gatsby-plugin-sass": "^1.0.16",
+    "gatsby-plugin-sharp": "^1.6.27",
+    "gatsby-remark-images": "^1.5.41",
+    "gatsby-source-filesystem": "^1.5.18",
+    "gatsby-transformer-remark": "^1.7.30",
+    "gatsby-transformer-sharp": "^1.6.18",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-load-script": "0.0.6"
   },
   "keywords": [
-    "gatsby"
+    "callum",
+    "silcock",
+    "portfolio"
   ],
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "n/a",
   "scripts": {
     "start": "npm run develop",
@@ -34,6 +36,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.7.4"
+    "prettier": "^1.10.2"
   }
 }
