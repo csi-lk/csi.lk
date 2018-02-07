@@ -1,7 +1,7 @@
 import CMS from 'netlify-cms'
 import 'netlify-cms/dist/cms.css'
 
-import BlogPostPreview from './preview-templates/BlogPostPreview'
+import HomePagePreview from './preview-templates/HomePagePreview'
 
-CMS.registerPreviewStyle('/styles.css')
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+// CMS.registerPreviewStyle('/styles.css')
+CMS.registerPreviewTemplate('home', HomePagePreview)

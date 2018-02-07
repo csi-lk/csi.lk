@@ -6,15 +6,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   return graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
         edges {
           node {
-            excerpt(pruneLength: 400)
             html
             id
             frontmatter {
+              template
               path
               title
             }
@@ -29,15 +28,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const { pagePath } = node.frontmatter
+      const { template: pageTemplate, path: pagePath } = node.frontmatter
       createPage({
-        path: pagePath || '/',
-        component: pagePath ? path.resolve(
-          `src/templates/${String(node.frontmatter.templateKey)}.js`,
-        ) : path.resolve(
-          'src/pages/index.js',
+        path: pagePath,
+        component: path.resolve(
+          `src/templates/${String(pageTemplate)}/${String(pageTemplate)}.js`,
         ),
-        // additional data can be passed via context
         context: {
           path: pagePath,
         },

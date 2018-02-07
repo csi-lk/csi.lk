@@ -3,7 +3,7 @@ import Script from 'react-load-script'
 import PropTypes from 'prop-types'
 import graphql from 'graphql'
 
-import './index.scss'
+import './home.scss'
 
 export default class HomePage extends React.Component {
   handleScriptLoad() {
@@ -20,6 +20,7 @@ export default class HomePage extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     const { data: { markdownRemark: post } } = this.props
     return (
       <section className="home">
