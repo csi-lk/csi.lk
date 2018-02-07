@@ -1,0 +1,5 @@
+---
+path: /
+title: 'Test'
+---
+# Cool

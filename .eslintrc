@@ -76,7 +76,8 @@
     "shallow": true,
     "mount": true,
     "mockStore": true,
-    "hooks": true
+    "hooks": true,
+    "netlify-cms": true
   },
   "settings": {},
   "plugins": [
