@@ -1,6 +1,7 @@
 ---
 path: /
 title: Test
+template: home
 ---
 Hi I’m Callum
 I’m always on [Github](https://github.com/csi-lk/)

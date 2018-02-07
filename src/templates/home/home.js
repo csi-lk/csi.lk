@@ -20,7 +20,6 @@ export default class HomePage extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const { data: { markdownRemark: post } } = this.props
     return (
       <section className="home">
