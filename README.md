@@ -1,4 +1,4 @@
-# Gatsby + Netlify CMS Starter
+# Callum Silcock's website (csi.lk)
 
 Built with:
 
