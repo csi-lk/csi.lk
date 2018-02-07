@@ -1,0 +1,16 @@
+@import '../../node_modules/normalize.scss/normalize';
+@import '../styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  background-color: $white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: $red;
+
+  &:visited {
+    color: $red;
+  }
+}

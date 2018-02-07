@@ -3,6 +3,8 @@ import Script from 'react-load-script'
 import PropTypes from 'prop-types'
 import graphql from 'graphql'
 
+import './index.scss'
+
 export default class HomePage extends React.Component {
   handleScriptLoad() {
     if (typeof window !== 'undefined' && window.netlifyIdentity) {
@@ -20,7 +22,7 @@ export default class HomePage extends React.Component {
   render() {
     const { data: { markdownRemark: post } } = this.props
     return (
-      <section className="section">
+      <section className="home">
         <Script
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={() => this.handleScriptLoad()}
