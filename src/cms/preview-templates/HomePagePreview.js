@@ -1,12 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { HomePageTemplate } from '../../templates/home/home'
 
-const HomePagePreview = ({ entry, widgetFor }) => (
+const HomePagePreview = ({ widgetFor }) => (
   <HomePageTemplate
     content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
-    title={entry.getIn(['data', 'title'])}
   />
 )
+
+
+HomePagePreview.propTypes = {
+  widgetFor: PropTypes.func.isRequired,
+}
 
 export default HomePagePreview

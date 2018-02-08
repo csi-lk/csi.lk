@@ -1,7 +1,7 @@
 import React from 'react'
 import Script from 'react-load-script'
 import PropTypes from 'prop-types'
-import graphql from 'graphql'
+import graphql from 'graphql' // eslint-disable-line
 
 import './home.scss'
 
@@ -17,6 +17,7 @@ export default class HomePage extends React.Component {
       })
     }
     window.netlifyIdentity.init()
+    this.setup = true
   }
 
   render() {
