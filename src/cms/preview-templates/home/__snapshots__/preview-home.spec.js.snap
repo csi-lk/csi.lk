@@ -21,7 +21,11 @@ ShallowWrapper {
     "props": Object {
       "data": Object {
         "markdownRemark": Object {
-          "html": "test",
+          "html": Object {
+            "data": Object {
+              "content": "test",
+            },
+          },
         },
       },
     },
@@ -37,7 +41,11 @@ ShallowWrapper {
       "props": Object {
         "data": Object {
           "markdownRemark": Object {
-            "html": "test",
+            "html": Object {
+              "data": Object {
+                "content": "test",
+              },
+            },
           },
         },
       },

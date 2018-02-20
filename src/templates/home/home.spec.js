@@ -16,7 +16,7 @@ describe('Template: Home', () => {
           {
             node: {
               timeToRead: 1,
-              frontMatter: {
+              frontmatter: {
                 title: 'Test',
                 path: '/test',
               },
