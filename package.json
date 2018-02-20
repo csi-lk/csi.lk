@@ -34,7 +34,6 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "help": "npm-help",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/*.js",
     "test": "echo \"🛂  Running Tests with Coverage:\" && jest --coverage",
     "test:update": "echo \"🛃  Updating Test Snapshots:\" && jest --coverage --updateSnapshot --no-cache",
     "lint": "echo \"🔧  Running Linters:\" && run-p lint:js",
@@ -58,8 +57,7 @@
     "jest-css-modules": "^1.1.0",
     "jest-junit": "^3.5.0",
     "npm-run-all": "^4.1.2",
-    "npm-script-help": "^1.0.0",
-    "prettier": "^1.10.2"
+    "npm-script-help": "^1.0.0"
   },
   "jest": {
     "globals": {
