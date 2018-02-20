@@ -6,10 +6,16 @@ import graphql from 'graphql' // eslint-disable-line
 
 import './home.scss'
 
-const HomePage = ({ data: { markdownRemark: post } }) => (
+const HomePage = ({
+  data: {
+    markdownRemark: {
+      html,
+    },
+  },
+}) => (
   <section className="home">
     <div
-      dangerouslySetInnerHTML={{ __html: post.html }}
+      dangerouslySetInnerHTML={{ __html: html }}
     />
   </section>
 )
@@ -31,9 +37,6 @@ export const pageQuery = graphql`
   query HomePage($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
-      frontmatter {
-        title
-      }
     }
   }
 `
