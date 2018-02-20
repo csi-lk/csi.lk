@@ -1,40 +1,22 @@
 import React from 'react'
 import Script from 'react-load-script'
 import PropTypes from 'prop-types'
+import cmsSetup from '../../cms/cms-setup'
 import graphql from 'graphql' // eslint-disable-line
 
 import './home.scss'
 
-export default class HomePage extends React.Component {
-  handleScriptLoad() {
-    if (typeof window !== 'undefined' && window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', (user) => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/'
-          })
-        }
-      })
-    }
-    window.netlifyIdentity.init()
-    this.setup = true
-  }
-
-  render() {
-    const { data: { markdownRemark: post } } = this.props
-    return (
-      <section className="home">
-        <Script
-          url="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          onLoad={() => this.handleScriptLoad()}
-        />
-        <div
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </section>
-    )
-  }
-}
+const HomePage = ({ data: { markdownRemark: post } }) => (
+  <section className="home">
+    <Script
+      url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+      onLoad={() => cmsSetup()}
+    />
+    <div
+      dangerouslySetInnerHTML={{ __html: post.html }}
+    />
+  </section>
+)
 
 HomePage.propTypes = {
   data: PropTypes.shape({
@@ -55,3 +37,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default HomePage

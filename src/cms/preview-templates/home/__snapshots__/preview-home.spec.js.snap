@@ -19,11 +19,15 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "content": [MockFunction],
+      "data": Object {
+        "markdownRemark": Object {
+          "html": "test",
+        },
+      },
     },
     "ref": null,
     "rendered": null,
-    "type": undefined,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -31,11 +35,15 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "content": [MockFunction],
+        "data": Object {
+          "markdownRemark": Object {
+            "html": "test",
+          },
+        },
       },
       "ref": null,
       "rendered": null,
-      "type": undefined,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

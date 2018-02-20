@@ -3,6 +3,7 @@ module.exports = wallaby => ({
     'src/*/**/*.js',
     { pattern: 'src/*/**/*.spec.js.snap', instrument: false },
     '!src/*/**/*.spec.js',
+    '!src/cms/cms*.js',
     { pattern: 'package.json', instrument: false },
   ],
   tests: [

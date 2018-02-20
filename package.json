@@ -73,7 +73,7 @@
     "collectCoverageFrom": [
       "src/**/**/*.{js}",
       "!.cache",
-      "!src/cms/cms.js"
+      "!src/cms/cms*.js"
     ],
     "testPathIgnorePatterns": [
       ".cache"
