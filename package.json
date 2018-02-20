@@ -17,6 +17,7 @@
     "normalize.scss": "^0.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-load-script": "0.0.6"
   },
@@ -34,19 +35,26 @@
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/*.js",
     "test": "echo \"🛂  Running Tests with Coverage:\" && jest --coverage",
+    "test:update": "echo \"🛃  Updating Test Snapshots:\" && jest --coverage --updateSnapshot --no-cache",
     "lint": "echo \"🔧  Running Linters:\" && run-p lint:js",
     "lint:js": "eslint --ignore-path .gitignore ./src ./tools --color",
     "lint:js:fix": "eslint --ignore-path .gitignore ./src ./tools --fix"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.2.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "jest": "^22.1.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.3.0",
+    "jest-css-modules": "^1.1.0",
     "jest-junit": "^3.5.0",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.10.2"
@@ -66,6 +74,17 @@
       "src/**/**/*.{js}",
       "!.cache"
     ],
+    "testPathIgnorePatterns": [
+      ".cache"
+    ],
+    "setupFiles": [
+      "./tools/jest-setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/mocks/mock-file.js",
+      "\\.svg$": "<rootDir>/tools/mocks/mock-svg.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
     "coverageThreshold": {
       "global": {
         "branches": 100,
