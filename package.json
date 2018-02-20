@@ -33,6 +33,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
+    "help": "npm-help",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write src/**/*.js",
     "test": "echo \"🛂  Running Tests with Coverage:\" && jest --coverage",
     "test:update": "echo \"🛃  Updating Test Snapshots:\" && jest --coverage --updateSnapshot --no-cache",
@@ -57,6 +58,7 @@
     "jest-css-modules": "^1.1.0",
     "jest-junit": "^3.5.0",
     "npm-run-all": "^4.1.2",
+    "npm-script-help": "^1.0.0",
     "prettier": "^1.10.2"
   },
   "jest": {
@@ -99,5 +101,69 @@
   "jest-junit": {
     "suiteName": "mmgp-user-feedback tests",
     "output": "./coverage/junit.xml"
+  },
+  "scriptHelp": {
+    "help": {
+      "desc": "Outputs descriptions for each npm script",
+      "usage": [
+        "npm run help"
+      ]
+    },
+    "start": {
+      "desc": "Starts a local live-reload server running Gatbsy (runs develop)",
+      "usage": [
+        "npm start",
+        "npm run start"
+      ]
+    },
+    "build": {
+      "desc": "Builds files using Gatsby",
+      "usage": [
+        "npm run build"
+      ]
+    },
+    "develop": {
+      "desc": "Starts a local live-reload server running Gatbsy",
+      "usage": [
+        "npm run develop"
+      ]
+    },
+    "serve": {
+      "desc": "Runs Gatsby in serve mode",
+      "usage": [
+        "npm run serve"
+      ]
+    },
+    "test": {
+      "desc": "Jest tests with coverage report",
+      "usage": [
+        "npm test",
+        "npm run test"
+      ]
+    },
+    "test:update": {
+      "desc": "Jest tests but updates snapshots",
+      "usage": [
+        "npm run test:update"
+      ]
+    },
+    "lint": {
+      "desc": "Runs all linters",
+      "usage": [
+        "npm run lint"
+      ]
+    },
+    "lint:js": {
+      "desc": "Javascript linter eslint",
+      "usage": [
+        "npm run lint:js"
+      ]
+    },
+    "lint:js:fix": {
+      "desc": "Javascript linter eslint in fix mode",
+      "usage": [
+        "npm run lint:js:fix"
+      ]
+    }
   }
 }
