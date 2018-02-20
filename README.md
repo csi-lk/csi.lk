@@ -37,7 +37,17 @@ npm start
 
 ### Unit tests
 
-Coming
+Are run using [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme)
+
+```
+npm test
+```
+
+Or to update the snapshots
+
+```
+npm run test:update
+```
 
 ### Functional tests
 
