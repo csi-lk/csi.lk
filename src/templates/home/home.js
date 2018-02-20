@@ -8,16 +8,28 @@ import './home.scss'
 
 const HomePage = ({
   data: {
-    markdownRemark: {
+    content: {
       html,
     },
+    articles,
   },
 }) => (
-  <section className="home">
-    <div
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  </section>
+  [
+    <section className="home">
+      <div
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </section>,
+    <section className="articleList">
+      I (sometimes) write articles:
+      { articles.edges.map(article => (
+        <a href={article.node.frontmatter.path} key={article.node.frontmatter.path}>
+          <h3>{article.node.frontmatter.title}</h3>
+          <h4>Reading time: {article.node.timeToRead} minutes</h4>
+        </a>
+      )) }
+    </section>,
+  ]
 )
 
 // <Script
@@ -27,18 +39,29 @@ const HomePage = ({
 
 HomePage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    content: PropTypes.shape({
       html: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 }
 
 export const pageQuery = graphql`
-  query HomePage($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+query HomePage {
+  content: markdownRemark(frontmatter: { path: { eq: "/" } }) {
+    html
+  }
+  articles: allMarkdownRemark(filter: { frontmatter: { template: { eq: "article" } }}) {
+    edges {
+      node {
+        timeToRead,
+        frontmatter {
+          title,
+          path
+        }
+      }
     }
   }
+}
 `
 
 export default HomePage
