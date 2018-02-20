@@ -12,3 +12,5 @@ configure({ adapter: new EnzymeAdapter() })
 global.shallow = shallow
 global.render = render
 global.mount = mount
+
+jest.mock('graphql', () => jest.fn())
