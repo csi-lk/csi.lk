@@ -66,6 +66,9 @@
           ]
         }
       }
+    ],
+    "react/no-danger": [
+      "off"
     ]
   },
   "env": {
