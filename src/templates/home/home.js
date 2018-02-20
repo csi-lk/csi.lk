@@ -1,22 +1,23 @@
 import React from 'react'
-import Script from 'react-load-script'
+// import Script from 'react-load-script'
 import PropTypes from 'prop-types'
-import cmsSetup from '../../cms/cms-setup'
+// import cmsSetup from '../../cms/cms-setup'
 import graphql from 'graphql' // eslint-disable-line
 
 import './home.scss'
 
 const HomePage = ({ data: { markdownRemark: post } }) => (
   <section className="home">
-    <Script
-      url="https://identity.netlify.com/v1/netlify-identity-widget.js"
-      onLoad={() => cmsSetup()}
-    />
     <div
       dangerouslySetInnerHTML={{ __html: post.html }}
     />
   </section>
 )
+
+// <Script
+//   url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+//   onLoad={() => cmsSetup()}
+// />
 
 HomePage.propTypes = {
   data: PropTypes.shape({
@@ -31,7 +32,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        path
         title
       }
     }
