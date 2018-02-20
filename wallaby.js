@@ -3,12 +3,12 @@ module.exports = wallaby => ({
     'src/*/**/*.js',
     { pattern: 'src/*/**/*.spec.js.snap', instrument: false },
     '!src/*/**/*.spec.js',
-    '!src/cms/cms*.js',
     { pattern: 'package.json', instrument: false },
   ],
   tests: [
     'src/**/*.spec.js',
   ],
+  filesWithNoCoverageCalculated: ['src/cms/cms*.js'],
   testFramework: 'jest',
   compilers: {
     '**/*.js*': wallaby.compilers.babel(),
