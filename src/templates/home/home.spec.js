@@ -10,6 +10,9 @@ describe('Template: Home', () => {
     const wrapper = shallow(<HomePage data={{
       content: {
         html: '<p>Test</p>',
+        frontmatter: {
+          description: 'test',
+        },
       },
       articles: {
         edges: [

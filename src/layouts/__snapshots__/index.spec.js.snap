@@ -23,8 +23,68 @@ ShallowWrapper {
         <HelmetWrapper
           defer={true}
           encodeSpecialCharacters={true}
-          title="Callum Silcock | Home"
-        />,
+        >
+          <meta
+            content="Callum Silcock, contact@csi.lk"
+            name="author"
+          />
+          <meta
+            content="contact@csi.lk"
+            name="reply-to"
+          />
+          <meta
+            content="https://www.csi.lk"
+            name="url"
+          />
+          <meta
+            content="Worldwide"
+            name="coverage"
+          />
+          <meta
+            content="Global"
+            name="distribution"
+          />
+          <meta
+            content="General"
+            name="rating"
+          />
+          <meta
+            content="7 days"
+            name="revisit-after"
+          />
+          <meta
+            content="0"
+            httpEquiv="Expires"
+          />
+          <meta
+            content="no-cache"
+            httpEquiv="Pragma"
+          />
+          <meta
+            content="no-cache"
+            httpEquiv="Cache-Control"
+          />
+          <meta
+            content="en"
+            httpEquiv="Content-Language"
+          />
+          <meta
+            content="text/html"
+            name="og:type"
+          />
+          <meta
+            content="Callum Silcock | Senior UI Developer"
+            name="og:site_name"
+          />
+          <meta
+            content="contact@csi.lk"
+            name="og:email"
+          />
+          <meta
+            content="+61412454084"
+            name="og:phone_number"
+          />
+        </HelmetWrapper>,
         <div>
           [MockFunction]
         </div>,
@@ -37,12 +97,254 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "children": Array [
+            <meta
+              content="Callum Silcock, contact@csi.lk"
+              name="author"
+            />,
+            <meta
+              content="contact@csi.lk"
+              name="reply-to"
+            />,
+            <meta
+              content="https://www.csi.lk"
+              name="url"
+            />,
+            <meta
+              content="Worldwide"
+              name="coverage"
+            />,
+            <meta
+              content="Global"
+              name="distribution"
+            />,
+            <meta
+              content="General"
+              name="rating"
+            />,
+            <meta
+              content="7 days"
+              name="revisit-after"
+            />,
+            <meta
+              content="0"
+              httpEquiv="Expires"
+            />,
+            <meta
+              content="no-cache"
+              httpEquiv="Pragma"
+            />,
+            <meta
+              content="no-cache"
+              httpEquiv="Cache-Control"
+            />,
+            <meta
+              content="en"
+              httpEquiv="Content-Language"
+            />,
+            <meta
+              content="text/html"
+              name="og:type"
+            />,
+            <meta
+              content="Callum Silcock | Senior UI Developer"
+              name="og:site_name"
+            />,
+            <meta
+              content="contact@csi.lk"
+              name="og:email"
+            />,
+            <meta
+              content="+61412454084"
+              name="og:phone_number"
+            />,
+          ],
           "defer": true,
           "encodeSpecialCharacters": true,
-          "title": "Callum Silcock | Home",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "Callum Silcock, contact@csi.lk",
+              "name": "author",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "contact@csi.lk",
+              "name": "reply-to",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "https://www.csi.lk",
+              "name": "url",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "Worldwide",
+              "name": "coverage",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "Global",
+              "name": "distribution",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "General",
+              "name": "rating",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "7 days",
+              "name": "revisit-after",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "0",
+              "httpEquiv": "Expires",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "no-cache",
+              "httpEquiv": "Pragma",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "no-cache",
+              "httpEquiv": "Cache-Control",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "en",
+              "httpEquiv": "Content-Language",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "text/html",
+              "name": "og:type",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "Callum Silcock | Senior UI Developer",
+              "name": "og:site_name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "contact@csi.lk",
+              "name": "og:email",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "+61412454084",
+              "name": "og:phone_number",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+        ],
         "type": [Function],
       },
       Object {
@@ -69,8 +371,68 @@ ShallowWrapper {
           <HelmetWrapper
             defer={true}
             encodeSpecialCharacters={true}
-            title="Callum Silcock | Home"
-          />,
+          >
+            <meta
+              content="Callum Silcock, contact@csi.lk"
+              name="author"
+            />
+            <meta
+              content="contact@csi.lk"
+              name="reply-to"
+            />
+            <meta
+              content="https://www.csi.lk"
+              name="url"
+            />
+            <meta
+              content="Worldwide"
+              name="coverage"
+            />
+            <meta
+              content="Global"
+              name="distribution"
+            />
+            <meta
+              content="General"
+              name="rating"
+            />
+            <meta
+              content="7 days"
+              name="revisit-after"
+            />
+            <meta
+              content="0"
+              httpEquiv="Expires"
+            />
+            <meta
+              content="no-cache"
+              httpEquiv="Pragma"
+            />
+            <meta
+              content="no-cache"
+              httpEquiv="Cache-Control"
+            />
+            <meta
+              content="en"
+              httpEquiv="Content-Language"
+            />
+            <meta
+              content="text/html"
+              name="og:type"
+            />
+            <meta
+              content="Callum Silcock | Senior UI Developer"
+              name="og:site_name"
+            />
+            <meta
+              content="contact@csi.lk"
+              name="og:email"
+            />
+            <meta
+              content="+61412454084"
+              name="og:phone_number"
+            />
+          </HelmetWrapper>,
           <div>
             [MockFunction]
           </div>,
@@ -83,12 +445,254 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "children": Array [
+              <meta
+                content="Callum Silcock, contact@csi.lk"
+                name="author"
+              />,
+              <meta
+                content="contact@csi.lk"
+                name="reply-to"
+              />,
+              <meta
+                content="https://www.csi.lk"
+                name="url"
+              />,
+              <meta
+                content="Worldwide"
+                name="coverage"
+              />,
+              <meta
+                content="Global"
+                name="distribution"
+              />,
+              <meta
+                content="General"
+                name="rating"
+              />,
+              <meta
+                content="7 days"
+                name="revisit-after"
+              />,
+              <meta
+                content="0"
+                httpEquiv="Expires"
+              />,
+              <meta
+                content="no-cache"
+                httpEquiv="Pragma"
+              />,
+              <meta
+                content="no-cache"
+                httpEquiv="Cache-Control"
+              />,
+              <meta
+                content="en"
+                httpEquiv="Content-Language"
+              />,
+              <meta
+                content="text/html"
+                name="og:type"
+              />,
+              <meta
+                content="Callum Silcock | Senior UI Developer"
+                name="og:site_name"
+              />,
+              <meta
+                content="contact@csi.lk"
+                name="og:email"
+              />,
+              <meta
+                content="+61412454084"
+                name="og:phone_number"
+              />,
+            ],
             "defer": true,
             "encodeSpecialCharacters": true,
-            "title": "Callum Silcock | Home",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "Callum Silcock, contact@csi.lk",
+                "name": "author",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "contact@csi.lk",
+                "name": "reply-to",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "https://www.csi.lk",
+                "name": "url",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "Worldwide",
+                "name": "coverage",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "Global",
+                "name": "distribution",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "General",
+                "name": "rating",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "7 days",
+                "name": "revisit-after",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "0",
+                "httpEquiv": "Expires",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "no-cache",
+                "httpEquiv": "Pragma",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "no-cache",
+                "httpEquiv": "Cache-Control",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "en",
+                "httpEquiv": "Content-Language",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "text/html",
+                "name": "og:type",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "Callum Silcock | Senior UI Developer",
+                "name": "og:site_name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "contact@csi.lk",
+                "name": "og:email",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "+61412454084",
+                "name": "og:phone_number",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+          ],
           "type": [Function],
         },
         Object {

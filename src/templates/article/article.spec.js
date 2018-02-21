@@ -4,14 +4,18 @@ import ArticleTemplate from './article'
 
 describe('Template: Article', () => {
   it('renders', () => {
-    const wrapper = shallow(<ArticleTemplate data={{
-      markdownRemark: {
-        html: '<p>Test</p>',
-        frontmatter: {
-          title: 'Test',
+    const wrapper = shallow(<ArticleTemplate
+      data={{
+        markdownRemark: {
+          html: '<p>Test</p>',
+          frontmatter: {
+            title: 'Test',
+          },
         },
-      },
-    }}
+      }}
+      pathContext={{
+        path: '/test',
+      }}
     />)
     expect(wrapper).toMatchSnapshot()
   })
