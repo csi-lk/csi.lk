@@ -1,6 +1,7 @@
 ---
 path: /blocking-page-navigation-in-reactjs
 title: Blocking page navigation in a ReactJS Application (React Router)
+description: How to block page navigation in ReactJS (React Router) using Router and Browser based techniques
 template: article
 tags: reactjs, code
 ---

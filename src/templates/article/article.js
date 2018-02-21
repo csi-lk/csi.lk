@@ -4,19 +4,30 @@ import Helmet from 'react-helmet'
 import graphql from 'graphql' // eslint-disable-line
 import './article.scss'
 
-
 const ArticleTemplate = ({
   data: {
     markdownRemark: {
       html,
       frontmatter: {
         title,
+        description,
       },
     },
   },
+  pathContext: {
+    path,
+  },
 }) => (
   <section className="article">
-    <Helmet title={title} />
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="og:title" content={title} />
+      <meta name="og:url" content={`https://www.csi.lk${path}`} />
+      <meta name="og:image" content="http://www.csi.lk/into-code.png" />
+      <meta name="og:description" content={description} />
+    </Helmet>
     <a href="/">back home</a>
     <article
       dangerouslySetInnerHTML={{ __html: html }}
@@ -30,6 +41,9 @@ ArticleTemplate.propTypes = {
       html: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  pathContext: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export const articleQuery = graphql`
@@ -37,7 +51,8 @@ export const articleQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        title
+        title,
+        description
       }
     }
   }
