@@ -4,3 +4,24 @@
 .article {
   margin: 30px;
 }
+
+blockquote{
+  font-weight: 300;
+  padding: 30px;
+  margin: 0;
+  position: relative;
+  background-color: $clouds;
+
+  p {
+    margin: 0;
+  }
+
+  &::before{
+    font-family: Arial;
+    content: "\201C";
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+  }
+}
