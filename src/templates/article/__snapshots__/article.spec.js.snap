@@ -39,7 +39,7 @@ ShallowWrapper {
         >
           back home
         </a>,
-        <div
+        <article
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Test</p>",
@@ -87,7 +87,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": null,
-        "type": "div",
+        "type": "article",
       },
     ],
     "type": "section",
@@ -109,7 +109,7 @@ ShallowWrapper {
           >
             back home
           </a>,
-          <div
+          <article
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Test</p>",
@@ -157,7 +157,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": "div",
+          "type": "article",
         },
       ],
       "type": "section",

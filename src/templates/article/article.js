@@ -18,7 +18,7 @@ const ArticleTemplate = ({
   <section className="article">
     <Helmet title={title} />
     <a href="/">back home</a>
-    <div
+    <article
       dangerouslySetInnerHTML={{ __html: html }}
     />
   </section>

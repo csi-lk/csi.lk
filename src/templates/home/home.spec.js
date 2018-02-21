@@ -19,6 +19,7 @@ describe('Template: Home', () => {
               frontmatter: {
                 title: 'Test',
                 path: '/test',
+                tags: 'one, two',
               },
             },
           },

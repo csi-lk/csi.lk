@@ -14,22 +14,34 @@ const HomePage = ({
     articles,
   },
 }) => (
-  [
+  <div>
     <section className="home">
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
-    </section>,
+    </section>
     <section className="articleList">
       I (sometimes) write articles:
-      { articles.edges.map(article => (
-        <a href={article.node.frontmatter.path} key={article.node.frontmatter.path}>
-          <h3>{article.node.frontmatter.title}</h3>
-          <h4>Reading time: {article.node.timeToRead} minutes</h4>
+      { articles.edges.map(({
+        node: {
+          timeToRead,
+          frontmatter: {
+            path,
+            title,
+            tags,
+          },
+        },
+      }) => (
+        <a href={path} key={path}>
+          <h3>{title}</h3>
+          <h4>Reading time: {timeToRead} minutes</h4>
+          { tags.split(', ').map(tag => (
+            <span data-tag={tag} key={tag}>#{tag}</span>
+          ))}
         </a>
       )) }
-    </section>,
-  ]
+    </section>
+  </div>
 )
 
 // <Script
@@ -41,6 +53,18 @@ HomePage.propTypes = {
   data: PropTypes.shape({
     content: PropTypes.shape({
       html: PropTypes.string.isRequired,
+    }).isRequired,
+    articles: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({
+        node: PropTypes.shape({
+          timeToRead: PropTypes.number.isRequired,
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            path: PropTypes.string.isRequired,
+            tags: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+      })).isRequired,
     }).isRequired,
   }).isRequired,
 }
@@ -56,7 +80,8 @@ query HomePage {
         timeToRead,
         frontmatter {
           title,
-          path
+          path,
+          tags
         }
       }
     }
