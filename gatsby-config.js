@@ -38,5 +38,11 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        showSpinner: false,
+      },
+    },
   ],
 }
