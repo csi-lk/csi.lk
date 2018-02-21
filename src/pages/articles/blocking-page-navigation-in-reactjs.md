@@ -7,6 +7,8 @@ tags: reactjs, code
 ---
 # Blocking page navigation in a ReactJS Application (React Router)
 
+_This article originally appeared on the [Message Media Developer Blog](https://developers.messagemedia.com/blocking-page-navigation-in-a-reactjs-application-react-router/), be sure to check it out._
+
 Our product owner came to us with an interesting problem the other day, in the latest release of the [MessageMedia Frontend](https://hub.messagemedia.com) we have a new payment portal for customers to pay invoices, when a user is in the process of paying a bill we need to block navigation, or in his words:
 
 > As a billing contact
@@ -46,9 +48,8 @@ NavigationBlocker.propTypes = {
 export default NavigationBlocker
 ```
 
-/ Note: I’m specifically using `react-router-dom` but you can use plain ol’ `react-router` for this /
+_Note: I’m specifically using `react-router-dom` but you can use plain ol’ `react-router` for this_
 
----
 Users should now see a prompt when clicking on links between routes but what about browser actions eg. Back / Forward buttons, Reload or Close?
 
 ## Blocking browser navigation with `onbeforeunload`
