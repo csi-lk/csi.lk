@@ -19,3 +19,15 @@ collections:
           - {label: "Description", name: "description", widget: "string"}
           - {label: "Template", name: "template", widget: "select", options: ["home"], default: "home"}
           - {label: "Body", name: "body", widget: "markdown"}
+  - name: "articles"
+    label: "Articles"
+    folder: "src/pages/articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Template", name: "template", widget: "select", options: ["article"], default: "article"}
+      - {label: "Tags", name: "tags", widget: "string"}   
+      - {label: "Body", name: "body", widget: "markdown"}
