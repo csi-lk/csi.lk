@@ -1,7 +1,9 @@
 ---
 path: /
 title: Callum Silcock | Senior UI Developer
-description: Includes things about me and some articles that i've written about front end development, reactjs etc.
+description: >-
+  Includes things about me and some articles that i've written about front end
+  development, ReactJS etc.
 template: home
 ---
 Hi I’m Callum
