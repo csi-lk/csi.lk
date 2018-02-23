@@ -17,6 +17,7 @@ const ArticleTemplate = ({
   pathContext: {
     path,
   },
+  preview,
 }) => (
   <section className="article">
     <Helmet>
@@ -29,9 +30,13 @@ const ArticleTemplate = ({
       <meta name="og:description" content={description} />
     </Helmet>
     <a href="/">back home</a>
-    <article
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    { preview ? (
+      <div>{html}</div>
+    ) : (
+      <article
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    )}
   </section>
 )
 
@@ -44,6 +49,11 @@ ArticleTemplate.propTypes = {
   pathContext: PropTypes.shape({
     path: PropTypes.string.isRequired,
   }).isRequired,
+  preview: PropTypes.bool,
+}
+
+ArticleTemplate.defaultProps = {
+  preview: false,
 }
 
 export const articleQuery = graphql`
