@@ -72,6 +72,13 @@ ShallowWrapper {
             name="og:description"
           />
         </HelmetWrapper>,
+        <Script
+          attributes={Object {}}
+          onCreate={[Function]}
+          onError={[Function]}
+          onLoad={[Function]}
+          url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        />,
         <section
           className="home"
         >
@@ -235,6 +242,21 @@ ShallowWrapper {
             "type": "meta",
           },
         ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "attributes": Object {},
+          "onCreate": [Function],
+          "onError": [Function],
+          "onLoad": [Function],
+          "url": "https://identity.netlify.com/v1/netlify-identity-widget.js",
+        },
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
       Object {
@@ -450,6 +472,13 @@ ShallowWrapper {
               name="og:description"
             />
           </HelmetWrapper>,
+          <Script
+            attributes={Object {}}
+            onCreate={[Function]}
+            onError={[Function]}
+            onLoad={[Function]}
+            url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          />,
           <section
             className="home"
           >
@@ -613,6 +642,21 @@ ShallowWrapper {
               "type": "meta",
             },
           ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "attributes": Object {},
+            "onCreate": [Function],
+            "onError": [Function],
+            "onLoad": [Function],
+            "url": "https://identity.netlify.com/v1/netlify-identity-widget.js",
+          },
+          "ref": null,
+          "rendered": null,
           "type": [Function],
         },
         Object {

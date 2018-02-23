@@ -6,8 +6,26 @@ import HomePageTemplate from '../../../templates/home/home'
 const HomePagePreview = ({ widgetFor }) => (
   <HomePageTemplate
     data={{
-      markdownRemark: {
+      content: {
         html: widgetFor('body'),
+        frontmatter: {
+          title: widgetFor('title'),
+          description: widgetFor('description'),
+        },
+      },
+      articles: {
+        edges: [
+          {
+            node: {
+              timeToRead: 1,
+              frontmatter: {
+                title: 'Test',
+                path: '/test',
+                tags: 'one, two',
+              },
+            },
+          },
+        ],
       },
     }}
   />

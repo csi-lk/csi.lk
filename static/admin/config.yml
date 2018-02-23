@@ -16,5 +16,6 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Path", name: "path", widget: "hidden", default: "/"}
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
           - {label: "Template", name: "template", widget: "select", options: ["home"], default: "home"}
           - {label: "Body", name: "body", widget: "markdown"}

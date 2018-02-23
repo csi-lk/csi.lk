@@ -20,12 +20,26 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "data": Object {
-        "markdownRemark": Object {
-          "html": Object {
-            "data": Object {
-              "content": "test",
+        "articles": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "frontmatter": Object {
+                  "path": "/test",
+                  "tags": "one, two",
+                  "title": "Test",
+                },
+                "timeToRead": 1,
+              },
             },
+          ],
+        },
+        "content": Object {
+          "frontmatter": Object {
+            "description": "test",
+            "title": "test",
           },
+          "html": "test",
         },
       },
     },
@@ -40,12 +54,26 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "data": Object {
-          "markdownRemark": Object {
-            "html": Object {
-              "data": Object {
-                "content": "test",
+          "articles": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "frontmatter": Object {
+                    "path": "/test",
+                    "tags": "one, two",
+                    "title": "Test",
+                  },
+                  "timeToRead": 1,
+                },
               },
+            ],
+          },
+          "content": Object {
+            "frontmatter": Object {
+              "description": "test",
+              "title": "test",
             },
+            "html": "test",
           },
         },
       },

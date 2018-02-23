@@ -2,11 +2,11 @@ import React from 'react'
 
 import HomePage from './home'
 
-// import * as cmsSetup from '../../cms/cms-setup'
+import * as cmsSetup from '../../cms/cms-setup'
 
 describe('Template: Home', () => {
   it('renders', () => {
-    // cmsSetup.default = jest.fn()
+    cmsSetup.default = jest.fn()
     const wrapper = shallow(<HomePage data={{
       content: {
         html: '<p>Test</p>',
@@ -31,7 +31,7 @@ describe('Template: Home', () => {
     }}
     />)
     expect(wrapper).toMatchSnapshot()
-    // wrapper.find('Script').prop('onLoad')()
-    // expect(cmsSetup.default).toHaveBeenCalled()
+    wrapper.find('Script').prop('onLoad')()
+    expect(cmsSetup.default).toHaveBeenCalled()
   })
 })
