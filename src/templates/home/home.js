@@ -1,8 +1,8 @@
 import React from 'react'
-// import Script from 'react-load-script'
+import Script from 'react-load-script'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-// import cmsSetup from '../../cms/cms-setup'
+import cmsSetup from '../../cms/cms-setup'
 import graphql from 'graphql' // eslint-disable-line
 
 import './home.scss'
@@ -29,6 +29,10 @@ const HomePage = ({
       <meta name="og:image" content="http://www.csi.lk/into-code.png" />
       <meta name="og:description" content={description} />
     </Helmet>
+    <Script
+      url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+      onLoad={() => cmsSetup()}
+    />
     <section className="home">
       <div
         dangerouslySetInnerHTML={{ __html: html }}
@@ -57,11 +61,6 @@ const HomePage = ({
     </section>
   </div>
 )
-
-// <Script
-//   url="https://identity.netlify.com/v1/netlify-identity-widget.js"
-//   onLoad={() => cmsSetup()}
-// />
 
 HomePage.propTypes = {
   data: PropTypes.shape({
