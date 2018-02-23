@@ -3,4 +3,5 @@ import 'netlify-cms/dist/cms.css' // eslint-disable-line
 
 import HomePagePreview from './preview-templates/home/preview-home'
 
+CMS.registerPreviewStyle('/styles.css')
 CMS.registerPreviewTemplate('home', HomePagePreview)

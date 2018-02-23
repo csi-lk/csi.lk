@@ -29,6 +29,7 @@ ShallowWrapper {
         },
       }
     }
+    preview={false}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -685,6 +686,834 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": null,
+            "type": "div",
+          },
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "I (sometimes) write articles:",
+              Array [
+                <a
+                  href="/test"
+                >
+                  <h3>
+                    Test
+                  </h3>
+                  <h4>
+                    Reading time: 
+                    1
+                     minutes
+                  </h4>
+                  <span
+                    data-tag="one"
+                  >
+                    #
+                    one
+                  </span>
+                  <span
+                    data-tag="two"
+                  >
+                    #
+                    two
+                  </span>
+                </a>,
+              ],
+            ],
+            "className": "articleList",
+          },
+          "ref": null,
+          "rendered": Array [
+            "I (sometimes) write articles:",
+            Object {
+              "instance": null,
+              "key": "/test",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3>
+                    Test
+                  </h3>,
+                  <h4>
+                    Reading time: 
+                    1
+                     minutes
+                  </h4>,
+                  Array [
+                    <span
+                      data-tag="one"
+                    >
+                      #
+                      one
+                    </span>,
+                    <span
+                      data-tag="two"
+                    >
+                      #
+                      two
+                    </span>,
+                  ],
+                ],
+                "href": "/test",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Test",
+                  },
+                  "ref": null,
+                  "rendered": "Test",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Reading time: ",
+                      1,
+                      " minutes",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Reading time: ",
+                    1,
+                    " minutes",
+                  ],
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": "one",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "#",
+                      "one",
+                    ],
+                    "data-tag": "one",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "#",
+                    "one",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": "two",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "#",
+                      "two",
+                    ],
+                    "data-tag": "two",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "#",
+                    "two",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "a",
+            },
+          ],
+          "type": "section",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Template: Home renders preview 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HomePage
+    data={
+      Object {
+        "articles": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "frontmatter": Object {
+                  "path": "/test",
+                  "tags": "one, two",
+                  "title": "Test",
+                },
+                "timeToRead": 1,
+              },
+            },
+          ],
+        },
+        "content": Object {
+          "frontmatter": Object {
+            "description": "test",
+          },
+          "html": "<p>Test</p>",
+        },
+      }
+    }
+    preview={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HelmetWrapper
+          defer={true}
+          encodeSpecialCharacters={true}
+        >
+          <meta
+            charSet="utf-8"
+          />
+          <title />
+          <meta
+            content="test"
+            name="description"
+          />
+          <meta
+            content={undefined}
+            name="og:title"
+          />
+          <meta
+            content="https://www.csi.lk/"
+            name="og:url"
+          />
+          <meta
+            content="http://www.csi.lk/into-code.png"
+            name="og:image"
+          />
+          <meta
+            content="test"
+            name="og:description"
+          />
+        </HelmetWrapper>,
+        <Script
+          attributes={Object {}}
+          onCreate={[Function]}
+          onError={[Function]}
+          onLoad={[Function]}
+          url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        />,
+        <section
+          className="home"
+        >
+          <div>
+            &lt;p&gt;Test&lt;/p&gt;
+          </div>
+        </section>,
+        <section
+          className="articleList"
+        >
+          I (sometimes) write articles:
+          <a
+            href="/test"
+          >
+            <h3>
+              Test
+            </h3>
+            <h4>
+              Reading time: 
+              1
+               minutes
+            </h4>
+            <span
+              data-tag="one"
+            >
+              #
+              one
+            </span>
+            <span
+              data-tag="two"
+            >
+              #
+              two
+            </span>
+          </a>
+        </section>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <meta
+              charSet="utf-8"
+            />,
+            <title />,
+            <meta
+              content="test"
+              name="description"
+            />,
+            <meta
+              content={undefined}
+              name="og:title"
+            />,
+            <meta
+              content="https://www.csi.lk/"
+              name="og:url"
+            />,
+            <meta
+              content="http://www.csi.lk/into-code.png"
+              name="og:image"
+            />,
+            <meta
+              content="test"
+              name="og:description"
+            />,
+          ],
+          "defer": true,
+          "encodeSpecialCharacters": true,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "charSet": "utf-8",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "title",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "test",
+              "name": "description",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": undefined,
+              "name": "og:title",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "https://www.csi.lk/",
+              "name": "og:url",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "http://www.csi.lk/into-code.png",
+              "name": "og:image",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "content": "test",
+              "name": "og:description",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "meta",
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "attributes": Object {},
+          "onCreate": [Function],
+          "onError": [Function],
+          "onLoad": [Function],
+          "url": "https://identity.netlify.com/v1/netlify-identity-widget.js",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div>
+            &lt;p&gt;Test&lt;/p&gt;
+          </div>,
+          "className": "home",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "<p>Test</p>",
+          },
+          "ref": null,
+          "rendered": "<p>Test</p>",
+          "type": "div",
+        },
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "I (sometimes) write articles:",
+            Array [
+              <a
+                href="/test"
+              >
+                <h3>
+                  Test
+                </h3>
+                <h4>
+                  Reading time: 
+                  1
+                   minutes
+                </h4>
+                <span
+                  data-tag="one"
+                >
+                  #
+                  one
+                </span>
+                <span
+                  data-tag="two"
+                >
+                  #
+                  two
+                </span>
+              </a>,
+            ],
+          ],
+          "className": "articleList",
+        },
+        "ref": null,
+        "rendered": Array [
+          "I (sometimes) write articles:",
+          Object {
+            "instance": null,
+            "key": "/test",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  Test
+                </h3>,
+                <h4>
+                  Reading time: 
+                  1
+                   minutes
+                </h4>,
+                Array [
+                  <span
+                    data-tag="one"
+                  >
+                    #
+                    one
+                  </span>,
+                  <span
+                    data-tag="two"
+                  >
+                    #
+                    two
+                  </span>,
+                ],
+              ],
+              "href": "/test",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Test",
+                },
+                "ref": null,
+                "rendered": "Test",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Reading time: ",
+                    1,
+                    " minutes",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Reading time: ",
+                  1,
+                  " minutes",
+                ],
+                "type": "h4",
+              },
+              Object {
+                "instance": null,
+                "key": "one",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "#",
+                    "one",
+                  ],
+                  "data-tag": "one",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "#",
+                  "one",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": "two",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "#",
+                    "two",
+                  ],
+                  "data-tag": "two",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "#",
+                  "two",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "a",
+          },
+        ],
+        "type": "section",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+          >
+            <meta
+              charSet="utf-8"
+            />
+            <title />
+            <meta
+              content="test"
+              name="description"
+            />
+            <meta
+              content={undefined}
+              name="og:title"
+            />
+            <meta
+              content="https://www.csi.lk/"
+              name="og:url"
+            />
+            <meta
+              content="http://www.csi.lk/into-code.png"
+              name="og:image"
+            />
+            <meta
+              content="test"
+              name="og:description"
+            />
+          </HelmetWrapper>,
+          <Script
+            attributes={Object {}}
+            onCreate={[Function]}
+            onError={[Function]}
+            onLoad={[Function]}
+            url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          />,
+          <section
+            className="home"
+          >
+            <div>
+              &lt;p&gt;Test&lt;/p&gt;
+            </div>
+          </section>,
+          <section
+            className="articleList"
+          >
+            I (sometimes) write articles:
+            <a
+              href="/test"
+            >
+              <h3>
+                Test
+              </h3>
+              <h4>
+                Reading time: 
+                1
+                 minutes
+              </h4>
+              <span
+                data-tag="one"
+              >
+                #
+                one
+              </span>
+              <span
+                data-tag="two"
+              >
+                #
+                two
+              </span>
+            </a>
+          </section>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <meta
+                charSet="utf-8"
+              />,
+              <title />,
+              <meta
+                content="test"
+                name="description"
+              />,
+              <meta
+                content={undefined}
+                name="og:title"
+              />,
+              <meta
+                content="https://www.csi.lk/"
+                name="og:url"
+              />,
+              <meta
+                content="http://www.csi.lk/into-code.png"
+                name="og:image"
+              />,
+              <meta
+                content="test"
+                name="og:description"
+              />,
+            ],
+            "defer": true,
+            "encodeSpecialCharacters": true,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "charSet": "utf-8",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "title",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "test",
+                "name": "description",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": undefined,
+                "name": "og:title",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "https://www.csi.lk/",
+                "name": "og:url",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "http://www.csi.lk/into-code.png",
+                "name": "og:image",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "content": "test",
+                "name": "og:description",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "meta",
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "attributes": Object {},
+            "onCreate": [Function],
+            "onError": [Function],
+            "onLoad": [Function],
+            "url": "https://identity.netlify.com/v1/netlify-identity-widget.js",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div>
+              &lt;p&gt;Test&lt;/p&gt;
+            </div>,
+            "className": "home",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "<p>Test</p>",
+            },
+            "ref": null,
+            "rendered": "<p>Test</p>",
             "type": "div",
           },
           "type": "section",

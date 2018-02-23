@@ -18,6 +18,7 @@ const HomePage = ({
     },
     articles,
   },
+  preview,
 }) => (
   <div>
     <Helmet>
@@ -34,9 +35,13 @@ const HomePage = ({
       onLoad={() => cmsSetup()}
     />
     <section className="home">
-      <div
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      { preview ? (
+        <div>{html}</div>
+      ) : (
+        <div
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      ) }
     </section>
     <section className="articleList">
       I (sometimes) write articles:
@@ -80,7 +85,13 @@ HomePage.propTypes = {
       })).isRequired,
     }).isRequired,
   }).isRequired,
+  preview: PropTypes.bool,
 }
+
+HomePage.defaultProps = {
+  preview: false,
+}
+
 
 export const pageQuery = graphql`
 query HomePage {

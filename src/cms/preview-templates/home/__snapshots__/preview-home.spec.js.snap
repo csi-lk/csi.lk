@@ -31,9 +31,6 @@ ShallowWrapper {
           Array [
             "body",
           ],
-          Array [
-            "body",
-          ],
         ],
       }
     }
@@ -73,6 +70,7 @@ ShallowWrapper {
           "html": "test",
         },
       },
+      "preview": true,
     },
     "ref": null,
     "rendered": null,
@@ -107,6 +105,7 @@ ShallowWrapper {
             "html": "test",
           },
         },
+        "preview": true,
       },
       "ref": null,
       "rendered": null,
