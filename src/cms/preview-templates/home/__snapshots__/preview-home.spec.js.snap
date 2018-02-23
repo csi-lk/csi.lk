@@ -5,7 +5,38 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <HomePagePreview
-    widgetFor={[Function]}
+    entry={
+      Object {
+        "getIn": [MockFunction] {
+          "calls": Array [
+            Array [
+              Array [
+                "data",
+                "title",
+              ],
+            ],
+            Array [
+              Array [
+                "data",
+                "description",
+              ],
+            ],
+          ],
+        },
+      }
+    }
+    widgetFor={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "body",
+          ],
+          Array [
+            "body",
+          ],
+        ],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -26,8 +57,8 @@ ShallowWrapper {
               "node": Object {
                 "frontmatter": Object {
                   "path": "/test",
-                  "tags": "one, two",
-                  "title": "Test",
+                  "tags": "tag1, tag2",
+                  "title": "Articles will show here",
                 },
                 "timeToRead": 1,
               },
@@ -60,8 +91,8 @@ ShallowWrapper {
                 "node": Object {
                   "frontmatter": Object {
                     "path": "/test",
-                    "tags": "one, two",
-                    "title": "Test",
+                    "tags": "tag1, tag2",
+                    "title": "Articles will show here",
                   },
                   "timeToRead": 1,
                 },

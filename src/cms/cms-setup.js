@@ -9,5 +9,4 @@ export default () => {
     })
   }
   window.netlifyIdentity.init()
-  this.setup = true
 }
