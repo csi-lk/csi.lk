@@ -94,7 +94,9 @@ ShallowWrapper {
         <section
           className="articleList"
         >
-          I (sometimes) write articles:
+          <p>
+            I (sometimes) write articles:
+          </p>
           <a
             href="/test"
           >
@@ -287,7 +289,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "I (sometimes) write articles:",
+            <p>
+              I (sometimes) write articles:
+            </p>,
             Array [
               <a
                 href="/test"
@@ -310,7 +314,17 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "I (sometimes) write articles:",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "I (sometimes) write articles:",
+            },
+            "ref": null,
+            "rendered": "I (sometimes) write articles:",
+            "type": "p",
+          },
           Object {
             "instance": null,
             "key": "/test",
@@ -440,7 +454,9 @@ ShallowWrapper {
           <section
             className="articleList"
           >
-            I (sometimes) write articles:
+            <p>
+              I (sometimes) write articles:
+            </p>
             <a
               href="/test"
             >
@@ -633,7 +649,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "I (sometimes) write articles:",
+              <p>
+                I (sometimes) write articles:
+              </p>,
               Array [
                 <a
                   href="/test"
@@ -656,7 +674,17 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "I (sometimes) write articles:",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "I (sometimes) write articles:",
+              },
+              "ref": null,
+              "rendered": "I (sometimes) write articles:",
+              "type": "p",
+            },
             Object {
               "instance": null,
               "key": "/test",
@@ -830,7 +858,9 @@ ShallowWrapper {
         <section
           className="articleList"
         >
-          I (sometimes) write articles:
+          <p>
+            I (sometimes) write articles:
+          </p>
           <a
             href="/test"
           >
@@ -1017,7 +1047,9 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "I (sometimes) write articles:",
+            <p>
+              I (sometimes) write articles:
+            </p>,
             Array [
               <a
                 href="/test"
@@ -1040,7 +1072,17 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "I (sometimes) write articles:",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "I (sometimes) write articles:",
+            },
+            "ref": null,
+            "rendered": "I (sometimes) write articles:",
+            "type": "p",
+          },
           Object {
             "instance": null,
             "key": "/test",
@@ -1166,7 +1208,9 @@ ShallowWrapper {
           <section
             className="articleList"
           >
-            I (sometimes) write articles:
+            <p>
+              I (sometimes) write articles:
+            </p>
             <a
               href="/test"
             >
@@ -1353,7 +1397,9 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "I (sometimes) write articles:",
+              <p>
+                I (sometimes) write articles:
+              </p>,
               Array [
                 <a
                   href="/test"
@@ -1376,7 +1422,17 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "I (sometimes) write articles:",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "I (sometimes) write articles:",
+              },
+              "ref": null,
+              "rendered": "I (sometimes) write articles:",
+              "type": "p",
+            },
             Object {
               "instance": null,
               "key": "/test",

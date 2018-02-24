@@ -88,6 +88,19 @@ ShallowWrapper {
               }
             }
           />
+          <footer>
+            <p>
+              Find a spelling mistake or issue with this article? 
+              <br />
+              <a
+                href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                rel="nofollow noopener"
+                target="_blank"
+              >
+                Submit a edit on Github
+              </a>
+            </p>
+          </footer>
         </article>,
       ],
       "className": "article",
@@ -250,6 +263,19 @@ ShallowWrapper {
                 }
               }
             />,
+            <footer>
+              <p>
+                Find a spelling mistake or issue with this article? 
+                <br />
+                <a
+                  href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                  rel="nofollow noopener"
+                  target="_blank"
+                >
+                  Submit a edit on Github
+                </a>
+              </p>
+            </footer>,
           ],
         },
         "ref": null,
@@ -307,6 +333,72 @@ ShallowWrapper {
             "ref": null,
             "rendered": null,
             "type": "section",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p>
+                Find a spelling mistake or issue with this article? 
+                <br />
+                <a
+                  href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                  rel="nofollow noopener"
+                  target="_blank"
+                >
+                  Submit a edit on Github
+                </a>
+              </p>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Find a spelling mistake or issue with this article? ",
+                  <br />,
+                  <a
+                    href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                    rel="nofollow noopener"
+                    target="_blank"
+                  >
+                    Submit a edit on Github
+                  </a>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Find a spelling mistake or issue with this article? ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Submit a edit on Github",
+                    "href": "https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md",
+                    "rel": "nofollow noopener",
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": "Submit a edit on Github",
+                  "type": "a",
+                },
+              ],
+              "type": "p",
+            },
+            "type": "footer",
           },
         ],
         "type": "article",
@@ -373,6 +465,19 @@ ShallowWrapper {
                 }
               }
             />
+            <footer>
+              <p>
+                Find a spelling mistake or issue with this article? 
+                <br />
+                <a
+                  href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                  rel="nofollow noopener"
+                  target="_blank"
+                >
+                  Submit a edit on Github
+                </a>
+              </p>
+            </footer>
           </article>,
         ],
         "className": "article",
@@ -535,6 +640,19 @@ ShallowWrapper {
                   }
                 }
               />,
+              <footer>
+                <p>
+                  Find a spelling mistake or issue with this article? 
+                  <br />
+                  <a
+                    href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                    rel="nofollow noopener"
+                    target="_blank"
+                  >
+                    Submit a edit on Github
+                  </a>
+                </p>
+              </footer>,
             ],
           },
           "ref": null,
@@ -592,6 +710,72 @@ ShallowWrapper {
               "ref": null,
               "rendered": null,
               "type": "section",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p>
+                  Find a spelling mistake or issue with this article? 
+                  <br />
+                  <a
+                    href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                    rel="nofollow noopener"
+                    target="_blank"
+                  >
+                    Submit a edit on Github
+                  </a>
+                </p>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Find a spelling mistake or issue with this article? ",
+                    <br />,
+                    <a
+                      href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
+                      rel="nofollow noopener"
+                      target="_blank"
+                    >
+                      Submit a edit on Github
+                    </a>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Find a spelling mistake or issue with this article? ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Submit a edit on Github",
+                      "href": "https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md",
+                      "rel": "nofollow noopener",
+                      "target": "_blank",
+                    },
+                    "ref": null,
+                    "rendered": "Submit a edit on Github",
+                    "type": "a",
+                  },
+                ],
+                "type": "p",
+              },
+              "type": "footer",
             },
           ],
           "type": "article",
