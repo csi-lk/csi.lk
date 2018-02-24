@@ -9,9 +9,22 @@ body {
 
 a {
   color: $carrot;
+  padding-bottom: 2px;
+  text-decoration: none;
+  position: relative;
+  background: linear-gradient(to right, lighten($carrot, 5%) 0%, lighten($carrot, 5%) 98%);
+  background-size: 0px 2px;
+  background-repeat: no-repeat;
+  background-position: left 85%;
+  display: inline;
+  transition: all .3s;
 
   &:visited {
     color: $carrot;
+  }
+
+  &:hover{
+    background-size:100% 2px;
   }
 }
 
