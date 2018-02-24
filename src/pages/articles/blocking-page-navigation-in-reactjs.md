@@ -9,7 +9,7 @@ tags: reactjs, code
 
 _This article originally appeared on the [Message Media Developer Blog](https://developers.messagemedia.com/blocking-page-navigation-in-a-reactjs-application-react-router/), be sure to check it out._
 
-Our product owner came to us with an interesting problem the other day, in the latest release of the [MessageMedia Frontend](https://hub.messagemedia.com) we have a new payment portal for customers to pay invoices, when a user is in the process of paying a bill we need to block navigation, or in his words:
+Our product owner came to us with an interesting problem the other day, in the latest release of the [Message Media Front End](https://hub.messagemedia.com) we have a new payment portal for customers to pay invoices, when a user is in the process of paying a bill we need to block navigation, or in his words:
 
 > As a billing contact
 > I want to confirm my intent to leave the payment portal when my payment is still processing
@@ -27,7 +27,7 @@ React Router have a [great online documentation](https://reacttraining.com/react
 
 Great! Let’s create a simple component to test.
 
-### Simple NavigationBlocker Component
+### Simple Navigation Blocker Component
 
 ```javascript
 import React from 'react'
