@@ -24,6 +24,12 @@ ShallowWrapper {
             Array [
               Array [
                 "data",
+                "tags",
+              ],
+            ],
+            Array [
+              Array [
+                "data",
                 "path",
               ],
             ],
@@ -57,6 +63,7 @@ ShallowWrapper {
         "markdownRemark": Object {
           "frontmatter": Object {
             "description": "test",
+            "tags": "test",
             "title": "test",
           },
           "html": "test",
@@ -81,6 +88,7 @@ ShallowWrapper {
           "markdownRemark": Object {
             "frontmatter": Object {
               "description": "test",
+              "tags": "test",
               "title": "test",
             },
             "html": "test",

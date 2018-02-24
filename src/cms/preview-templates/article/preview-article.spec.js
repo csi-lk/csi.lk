@@ -13,6 +13,6 @@ describe('Preview Template: Home', () => {
     const wrapper = shallow(<ArticleTemplatePreview {...props} />)
     expect(wrapper).toMatchSnapshot()
     expect(props.widgetFor).toHaveBeenCalled()
-    expect(props.entry.getIn).toHaveBeenCalledTimes(3)
+    expect(props.entry.getIn).toHaveBeenCalledTimes(4)
   })
 })

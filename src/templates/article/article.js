@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import graphql from 'graphql' // eslint-disable-line
+
+import { TagList } from '../../components'
+
 import './article.scss'
 
 const ArticleTemplate = ({
@@ -11,6 +14,7 @@ const ArticleTemplate = ({
       frontmatter: {
         title,
         description,
+        tags,
       },
     },
   },
@@ -33,9 +37,13 @@ const ArticleTemplate = ({
     { preview ? (
       <div>{html}</div>
     ) : (
-      <article
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <article>
+        <header>
+          <h1>{title}</h1>
+          <TagList tags={tags} />
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: html }} />
+      </article>
     )}
   </section>
 )
@@ -62,7 +70,8 @@ export const articleQuery = graphql`
       html
       frontmatter {
         title,
-        description
+        description,
+        tags
       }
     }
   }

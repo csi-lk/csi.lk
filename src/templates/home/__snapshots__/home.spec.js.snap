@@ -106,18 +106,9 @@ ShallowWrapper {
               1
                minutes
             </h4>
-            <span
-              data-tag="one"
-            >
-              #
-              one
-            </span>
-            <span
-              data-tag="two"
-            >
-              #
-              two
-            </span>
+            <TagListComponent
+              tags="one, two"
+            />
           </a>
         </section>,
       ],
@@ -309,18 +300,9 @@ ShallowWrapper {
                   1
                    minutes
                 </h4>
-                <span
-                  data-tag="one"
-                >
-                  #
-                  one
-                </span>
-                <span
-                  data-tag="two"
-                >
-                  #
-                  two
-                </span>
+                <TagListComponent
+                  tags="one, two"
+                />
               </a>,
             ],
           ],
@@ -343,20 +325,9 @@ ShallowWrapper {
                   1
                    minutes
                 </h4>,
-                Array [
-                  <span
-                    data-tag="one"
-                  >
-                    #
-                    one
-                  </span>,
-                  <span
-                    data-tag="two"
-                  >
-                    #
-                    two
-                  </span>,
-                ],
+                <TagListComponent
+                  tags="one, two"
+                />,
               ],
               "href": "/test",
             },
@@ -394,39 +365,14 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "one",
-                "nodeType": "host",
+                "key": undefined,
+                "nodeType": "function",
                 "props": Object {
-                  "children": Array [
-                    "#",
-                    "one",
-                  ],
-                  "data-tag": "one",
+                  "tags": "one, two",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "#",
-                  "one",
-                ],
-                "type": "span",
-              },
-              Object {
-                "instance": null,
-                "key": "two",
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    "#",
-                    "two",
-                  ],
-                  "data-tag": "two",
-                },
-                "ref": null,
-                "rendered": Array [
-                  "#",
-                  "two",
-                ],
-                "type": "span",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": "a",
@@ -506,18 +452,9 @@ ShallowWrapper {
                 1
                  minutes
               </h4>
-              <span
-                data-tag="one"
-              >
-                #
-                one
-              </span>
-              <span
-                data-tag="two"
-              >
-                #
-                two
-              </span>
+              <TagListComponent
+                tags="one, two"
+              />
             </a>
           </section>,
         ],
@@ -709,18 +646,9 @@ ShallowWrapper {
                     1
                      minutes
                   </h4>
-                  <span
-                    data-tag="one"
-                  >
-                    #
-                    one
-                  </span>
-                  <span
-                    data-tag="two"
-                  >
-                    #
-                    two
-                  </span>
+                  <TagListComponent
+                    tags="one, two"
+                  />
                 </a>,
               ],
             ],
@@ -743,20 +671,9 @@ ShallowWrapper {
                     1
                      minutes
                   </h4>,
-                  Array [
-                    <span
-                      data-tag="one"
-                    >
-                      #
-                      one
-                    </span>,
-                    <span
-                      data-tag="two"
-                    >
-                      #
-                      two
-                    </span>,
-                  ],
+                  <TagListComponent
+                    tags="one, two"
+                  />,
                 ],
                 "href": "/test",
               },
@@ -794,39 +711,14 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "one",
-                  "nodeType": "host",
+                  "key": undefined,
+                  "nodeType": "function",
                   "props": Object {
-                    "children": Array [
-                      "#",
-                      "one",
-                    ],
-                    "data-tag": "one",
+                    "tags": "one, two",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    "#",
-                    "one",
-                  ],
-                  "type": "span",
-                },
-                Object {
-                  "instance": null,
-                  "key": "two",
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      "#",
-                      "two",
-                    ],
-                    "data-tag": "two",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    "#",
-                    "two",
-                  ],
-                  "type": "span",
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "a",
@@ -950,18 +842,9 @@ ShallowWrapper {
               1
                minutes
             </h4>
-            <span
-              data-tag="one"
-            >
-              #
-              one
-            </span>
-            <span
-              data-tag="two"
-            >
-              #
-              two
-            </span>
+            <TagListComponent
+              tags="one, two"
+            />
           </a>
         </section>,
       ],
@@ -1147,18 +1030,9 @@ ShallowWrapper {
                   1
                    minutes
                 </h4>
-                <span
-                  data-tag="one"
-                >
-                  #
-                  one
-                </span>
-                <span
-                  data-tag="two"
-                >
-                  #
-                  two
-                </span>
+                <TagListComponent
+                  tags="one, two"
+                />
               </a>,
             ],
           ],
@@ -1181,20 +1055,9 @@ ShallowWrapper {
                   1
                    minutes
                 </h4>,
-                Array [
-                  <span
-                    data-tag="one"
-                  >
-                    #
-                    one
-                  </span>,
-                  <span
-                    data-tag="two"
-                  >
-                    #
-                    two
-                  </span>,
-                ],
+                <TagListComponent
+                  tags="one, two"
+                />,
               ],
               "href": "/test",
             },
@@ -1232,39 +1095,14 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "one",
-                "nodeType": "host",
+                "key": undefined,
+                "nodeType": "function",
                 "props": Object {
-                  "children": Array [
-                    "#",
-                    "one",
-                  ],
-                  "data-tag": "one",
+                  "tags": "one, two",
                 },
                 "ref": null,
-                "rendered": Array [
-                  "#",
-                  "one",
-                ],
-                "type": "span",
-              },
-              Object {
-                "instance": null,
-                "key": "two",
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    "#",
-                    "two",
-                  ],
-                  "data-tag": "two",
-                },
-                "ref": null,
-                "rendered": Array [
-                  "#",
-                  "two",
-                ],
-                "type": "span",
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": "a",
@@ -1340,18 +1178,9 @@ ShallowWrapper {
                 1
                  minutes
               </h4>
-              <span
-                data-tag="one"
-              >
-                #
-                one
-              </span>
-              <span
-                data-tag="two"
-              >
-                #
-                two
-              </span>
+              <TagListComponent
+                tags="one, two"
+              />
             </a>
           </section>,
         ],
@@ -1537,18 +1366,9 @@ ShallowWrapper {
                     1
                      minutes
                   </h4>
-                  <span
-                    data-tag="one"
-                  >
-                    #
-                    one
-                  </span>
-                  <span
-                    data-tag="two"
-                  >
-                    #
-                    two
-                  </span>
+                  <TagListComponent
+                    tags="one, two"
+                  />
                 </a>,
               ],
             ],
@@ -1571,20 +1391,9 @@ ShallowWrapper {
                     1
                      minutes
                   </h4>,
-                  Array [
-                    <span
-                      data-tag="one"
-                    >
-                      #
-                      one
-                    </span>,
-                    <span
-                      data-tag="two"
-                    >
-                      #
-                      two
-                    </span>,
-                  ],
+                  <TagListComponent
+                    tags="one, two"
+                  />,
                 ],
                 "href": "/test",
               },
@@ -1622,39 +1431,14 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": "one",
-                  "nodeType": "host",
+                  "key": undefined,
+                  "nodeType": "function",
                   "props": Object {
-                    "children": Array [
-                      "#",
-                      "one",
-                    ],
-                    "data-tag": "one",
+                    "tags": "one, two",
                   },
                   "ref": null,
-                  "rendered": Array [
-                    "#",
-                    "one",
-                  ],
-                  "type": "span",
-                },
-                Object {
-                  "instance": null,
-                  "key": "two",
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      "#",
-                      "two",
-                    ],
-                    "data-tag": "two",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    "#",
-                    "two",
-                  ],
-                  "type": "span",
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": "a",

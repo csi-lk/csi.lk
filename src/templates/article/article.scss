@@ -6,6 +6,17 @@
   max-width: 800px;
 }
 
+article {
+  header {
+    span {
+      font-size: 14px;
+      margin-right: 8px;
+      background-color: $clouds;
+      user-select: none;
+    }
+  }
+}
+
 blockquote{
   font-weight: 300;
   padding: 30px;

@@ -9,6 +9,7 @@ ShallowWrapper {
       Object {
         "markdownRemark": Object {
           "frontmatter": Object {
+            "tags": "t1, t2",
             "title": "Test",
           },
           "html": "<p>Test</p>",
@@ -71,13 +72,23 @@ ShallowWrapper {
         >
           back home
         </a>,
-        <article
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<p>Test</p>",
+        <article>
+          <header>
+            <h1>
+              Test
+            </h1>
+            <TagListComponent
+              tags="t1, t2"
+            />
+          </header>
+          <section
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Test</p>",
+              }
             }
-          }
-        />,
+          />
+        </article>,
       ],
       "className": "article",
     },
@@ -223,12 +234,81 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "dangerouslySetInnerHTML": Object {
-            "__html": "<p>Test</p>",
-          },
+          "children": Array [
+            <header>
+              <h1>
+                Test
+              </h1>
+              <TagListComponent
+                tags="t1, t2"
+              />
+            </header>,
+            <section
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<p>Test</p>",
+                }
+              }
+            />,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1>
+                  Test
+                </h1>,
+                <TagListComponent
+                  tags="t1, t2"
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Test",
+                },
+                "ref": null,
+                "rendered": "Test",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "tags": "t1, t2",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "header",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "dangerouslySetInnerHTML": Object {
+                "__html": "<p>Test</p>",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "section",
+          },
+        ],
         "type": "article",
       },
     ],
@@ -277,13 +357,23 @@ ShallowWrapper {
           >
             back home
           </a>,
-          <article
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>Test</p>",
+          <article>
+            <header>
+              <h1>
+                Test
+              </h1>
+              <TagListComponent
+                tags="t1, t2"
+              />
+            </header>
+            <section
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<p>Test</p>",
+                }
               }
-            }
-          />,
+            />
+          </article>,
         ],
         "className": "article",
       },
@@ -429,12 +519,81 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "dangerouslySetInnerHTML": Object {
-              "__html": "<p>Test</p>",
-            },
+            "children": Array [
+              <header>
+                <h1>
+                  Test
+                </h1>
+                <TagListComponent
+                  tags="t1, t2"
+                />
+              </header>,
+              <section
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<p>Test</p>",
+                  }
+                }
+              />,
+            ],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h1>
+                    Test
+                  </h1>,
+                  <TagListComponent
+                    tags="t1, t2"
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Test",
+                  },
+                  "ref": null,
+                  "rendered": "Test",
+                  "type": "h1",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "tags": "t1, t2",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "header",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "dangerouslySetInnerHTML": Object {
+                  "__html": "<p>Test</p>",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "section",
+            },
+          ],
           "type": "article",
         },
       ],
@@ -460,6 +619,7 @@ ShallowWrapper {
       Object {
         "markdownRemark": Object {
           "frontmatter": Object {
+            "tags": "t1, t2",
             "title": "Test",
           },
           "html": "<p>Test</p>",

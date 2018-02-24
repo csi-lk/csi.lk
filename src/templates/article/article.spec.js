@@ -11,6 +11,7 @@ describe('Template: Article', () => {
           html: '<p>Test</p>',
           frontmatter: {
             title: 'Test',
+            tags: 't1, t2',
           },
         },
       },

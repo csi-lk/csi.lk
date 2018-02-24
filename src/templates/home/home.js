@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import cmsSetup from '../../cms/cms-setup'
 import graphql from 'graphql' // eslint-disable-line
 
+import { TagList } from '../../components'
+
 import './home.scss'
 
 const HomePage = ({
@@ -58,9 +60,7 @@ const HomePage = ({
         <a href={path} key={path}>
           <h3>{articleTitle}</h3>
           <h4>Reading time: {timeToRead} minutes</h4>
-          { tags.split(', ').map(tag => (
-            <span data-tag={tag} key={tag}>#{tag}</span>
-          ))}
+          <TagList tags={tags} />
         </a>
       )) }
     </section>
