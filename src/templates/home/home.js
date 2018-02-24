@@ -46,7 +46,7 @@ const HomePage = ({
       ) }
     </section>
     <section className="articleList">
-      I (sometimes) write articles:
+      <p>I (sometimes) write articles:</p>
       { articles.edges.map(({
         node: {
           timeToRead,
