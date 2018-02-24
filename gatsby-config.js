@@ -45,5 +45,12 @@ module.exports = {
         color: '#F39C12',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-114684520-1',
+        head: false,
+      },
+    },
   ],
 }
