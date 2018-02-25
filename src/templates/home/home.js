@@ -57,7 +57,7 @@ const HomePage = ({
           },
         },
       }) => (
-        <a href={path} key={path}>
+        <a href={`${path}/`} key={path}>
           <h3>{articleTitle}</h3>
           <h4>Reading time: {timeToRead} minutes</h4>
           <TagList tags={tags} />
