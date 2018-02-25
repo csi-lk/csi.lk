@@ -98,7 +98,7 @@ ShallowWrapper {
             I (sometimes) write articles:
           </p>
           <a
-            href="/test"
+            href="/test/"
           >
             <h3>
               Test
@@ -294,7 +294,7 @@ ShallowWrapper {
             </p>,
             Array [
               <a
-                href="/test"
+                href="/test/"
               >
                 <h3>
                   Test
@@ -343,7 +343,7 @@ ShallowWrapper {
                   tags="one, two"
                 />,
               ],
-              "href": "/test",
+              "href": "/test/",
             },
             "ref": null,
             "rendered": Array [
@@ -458,7 +458,7 @@ ShallowWrapper {
               I (sometimes) write articles:
             </p>
             <a
-              href="/test"
+              href="/test/"
             >
               <h3>
                 Test
@@ -654,7 +654,7 @@ ShallowWrapper {
               </p>,
               Array [
                 <a
-                  href="/test"
+                  href="/test/"
                 >
                   <h3>
                     Test
@@ -703,7 +703,7 @@ ShallowWrapper {
                     tags="one, two"
                   />,
                 ],
-                "href": "/test",
+                "href": "/test/",
               },
               "ref": null,
               "rendered": Array [
@@ -862,7 +862,7 @@ ShallowWrapper {
             I (sometimes) write articles:
           </p>
           <a
-            href="/test"
+            href="/test/"
           >
             <h3>
               Test
@@ -1052,7 +1052,7 @@ ShallowWrapper {
             </p>,
             Array [
               <a
-                href="/test"
+                href="/test/"
               >
                 <h3>
                   Test
@@ -1101,7 +1101,7 @@ ShallowWrapper {
                   tags="one, two"
                 />,
               ],
-              "href": "/test",
+              "href": "/test/",
             },
             "ref": null,
             "rendered": Array [
@@ -1212,7 +1212,7 @@ ShallowWrapper {
               I (sometimes) write articles:
             </p>
             <a
-              href="/test"
+              href="/test/"
             >
               <h3>
                 Test
@@ -1402,7 +1402,7 @@ ShallowWrapper {
               </p>,
               Array [
                 <a
-                  href="/test"
+                  href="/test/"
                 >
                   <h3>
                     Test
@@ -1451,7 +1451,7 @@ ShallowWrapper {
                     tags="one, two"
                   />,
                 ],
-                "href": "/test",
+                "href": "/test/",
               },
               "ref": null,
               "rendered": Array [
