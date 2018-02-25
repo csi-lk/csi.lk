@@ -59,7 +59,7 @@ module.exports = {
       options: {
         headers: {
           '/*': [
-            'Strict-Transport-Security: max-age=10886400; includeSubDomains; preload',
+            'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
           ],
         },
       },
