@@ -53,9 +53,16 @@ module.exports = {
         head: false,
       },
     },
+    'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-sitemap',
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': [
+            'Strict-Transport-Security: max-age=10886400; includeSubDomains; preload',
+          ],
+        },
+      },
     },
-    'gatsby-plugin-netlify',
   ],
 }
