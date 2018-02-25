@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Callum Silcock',
+    siteUrl: 'https://csi.lk',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -51,6 +52,9 @@ module.exports = {
         trackingId: 'UA-114684520-1',
         head: false,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
     },
   ],
 }
