@@ -9,6 +9,7 @@ ShallowWrapper {
       Object {
         "markdownRemark": Object {
           "frontmatter": Object {
+            "description": "Test desc",
             "tags": "t1, t2",
             "title": "Test",
           },
@@ -36,37 +37,11 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <HelmetWrapper
-          defer={true}
-          encodeSpecialCharacters={true}
-        >
-          <meta
-            charSet="utf-8"
-          />
-          <title>
-            Test
-          </title>
-          <meta
-            content={undefined}
-            name="description"
-          />
-          <meta
-            content="Test"
-            name="og:title"
-          />
-          <meta
-            content="https://www.csi.lk/test"
-            name="og:url"
-          />
-          <meta
-            content="http://www.csi.lk/into-code.png"
-            name="og:image"
-          />
-          <meta
-            content={undefined}
-            name="og:description"
-          />
-        </HelmetWrapper>,
+        <SEOTagsComponent
+          description="Test desc"
+          path="/test"
+          title="Test"
+        />,
         <a
           href="/"
         >
@@ -110,124 +85,14 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            <meta
-              charSet="utf-8"
-            />,
-            <title>
-              Test
-            </title>,
-            <meta
-              content={undefined}
-              name="description"
-            />,
-            <meta
-              content="Test"
-              name="og:title"
-            />,
-            <meta
-              content="https://www.csi.lk/test"
-              name="og:url"
-            />,
-            <meta
-              content="http://www.csi.lk/into-code.png"
-              name="og:image"
-            />,
-            <meta
-              content={undefined}
-              name="og:description"
-            />,
-          ],
-          "defer": true,
-          "encodeSpecialCharacters": true,
+          "description": "Test desc",
+          "path": "/test",
+          "title": "Test",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "charSet": "utf-8",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Test",
-            },
-            "ref": null,
-            "rendered": "Test",
-            "type": "title",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": undefined,
-              "name": "description",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": "Test",
-              "name": "og:title",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": "https://www.csi.lk/test",
-              "name": "og:url",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": "http://www.csi.lk/into-code.png",
-              "name": "og:image",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": undefined,
-              "name": "og:description",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-        ],
+        "rendered": null,
         "type": [Function],
       },
       Object {
@@ -413,37 +278,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <meta
-              charSet="utf-8"
-            />
-            <title>
-              Test
-            </title>
-            <meta
-              content={undefined}
-              name="description"
-            />
-            <meta
-              content="Test"
-              name="og:title"
-            />
-            <meta
-              content="https://www.csi.lk/test"
-              name="og:url"
-            />
-            <meta
-              content="http://www.csi.lk/into-code.png"
-              name="og:image"
-            />
-            <meta
-              content={undefined}
-              name="og:description"
-            />
-          </HelmetWrapper>,
+          <SEOTagsComponent
+            description="Test desc"
+            path="/test"
+            title="Test"
+          />,
           <a
             href="/"
           >
@@ -487,124 +326,14 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <meta
-                charSet="utf-8"
-              />,
-              <title>
-                Test
-              </title>,
-              <meta
-                content={undefined}
-                name="description"
-              />,
-              <meta
-                content="Test"
-                name="og:title"
-              />,
-              <meta
-                content="https://www.csi.lk/test"
-                name="og:url"
-              />,
-              <meta
-                content="http://www.csi.lk/into-code.png"
-                name="og:image"
-              />,
-              <meta
-                content={undefined}
-                name="og:description"
-              />,
-            ],
-            "defer": true,
-            "encodeSpecialCharacters": true,
+            "description": "Test desc",
+            "path": "/test",
+            "title": "Test",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "charSet": "utf-8",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Test",
-              },
-              "ref": null,
-              "rendered": "Test",
-              "type": "title",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": undefined,
-                "name": "description",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": "Test",
-                "name": "og:title",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": "https://www.csi.lk/test",
-                "name": "og:url",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": "http://www.csi.lk/into-code.png",
-                "name": "og:image",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": undefined,
-                "name": "og:description",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-          ],
+          "rendered": null,
           "type": [Function],
         },
         Object {
@@ -803,6 +532,7 @@ ShallowWrapper {
       Object {
         "markdownRemark": Object {
           "frontmatter": Object {
+            "description": "Test desc",
             "tags": "t1, t2",
             "title": "Test",
           },
@@ -830,37 +560,11 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <HelmetWrapper
-          defer={true}
-          encodeSpecialCharacters={true}
-        >
-          <meta
-            charSet="utf-8"
-          />
-          <title>
-            Test
-          </title>
-          <meta
-            content={undefined}
-            name="description"
-          />
-          <meta
-            content="Test"
-            name="og:title"
-          />
-          <meta
-            content="https://www.csi.lk/test"
-            name="og:url"
-          />
-          <meta
-            content="http://www.csi.lk/into-code.png"
-            name="og:image"
-          />
-          <meta
-            content={undefined}
-            name="og:description"
-          />
-        </HelmetWrapper>,
+        <SEOTagsComponent
+          description="Test desc"
+          path="/test"
+          title="Test"
+        />,
         <a
           href="/"
         >
@@ -877,124 +581,14 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            <meta
-              charSet="utf-8"
-            />,
-            <title>
-              Test
-            </title>,
-            <meta
-              content={undefined}
-              name="description"
-            />,
-            <meta
-              content="Test"
-              name="og:title"
-            />,
-            <meta
-              content="https://www.csi.lk/test"
-              name="og:url"
-            />,
-            <meta
-              content="http://www.csi.lk/into-code.png"
-              name="og:image"
-            />,
-            <meta
-              content={undefined}
-              name="og:description"
-            />,
-          ],
-          "defer": true,
-          "encodeSpecialCharacters": true,
+          "description": "Test desc",
+          "path": "/test",
+          "title": "Test",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "charSet": "utf-8",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Test",
-            },
-            "ref": null,
-            "rendered": "Test",
-            "type": "title",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": undefined,
-              "name": "description",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": "Test",
-              "name": "og:title",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": "https://www.csi.lk/test",
-              "name": "og:url",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": "http://www.csi.lk/into-code.png",
-              "name": "og:image",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "content": undefined,
-              "name": "og:description",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "meta",
-          },
-        ],
+        "rendered": null,
         "type": [Function],
       },
       Object {
@@ -1030,37 +624,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <HelmetWrapper
-            defer={true}
-            encodeSpecialCharacters={true}
-          >
-            <meta
-              charSet="utf-8"
-            />
-            <title>
-              Test
-            </title>
-            <meta
-              content={undefined}
-              name="description"
-            />
-            <meta
-              content="Test"
-              name="og:title"
-            />
-            <meta
-              content="https://www.csi.lk/test"
-              name="og:url"
-            />
-            <meta
-              content="http://www.csi.lk/into-code.png"
-              name="og:image"
-            />
-            <meta
-              content={undefined}
-              name="og:description"
-            />
-          </HelmetWrapper>,
+          <SEOTagsComponent
+            description="Test desc"
+            path="/test"
+            title="Test"
+          />,
           <a
             href="/"
           >
@@ -1077,124 +645,14 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <meta
-                charSet="utf-8"
-              />,
-              <title>
-                Test
-              </title>,
-              <meta
-                content={undefined}
-                name="description"
-              />,
-              <meta
-                content="Test"
-                name="og:title"
-              />,
-              <meta
-                content="https://www.csi.lk/test"
-                name="og:url"
-              />,
-              <meta
-                content="http://www.csi.lk/into-code.png"
-                name="og:image"
-              />,
-              <meta
-                content={undefined}
-                name="og:description"
-              />,
-            ],
-            "defer": true,
-            "encodeSpecialCharacters": true,
+            "description": "Test desc",
+            "path": "/test",
+            "title": "Test",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "charSet": "utf-8",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Test",
-              },
-              "ref": null,
-              "rendered": "Test",
-              "type": "title",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": undefined,
-                "name": "description",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": "Test",
-                "name": "og:title",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": "https://www.csi.lk/test",
-                "name": "og:url",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": "http://www.csi.lk/into-code.png",
-                "name": "og:image",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "content": undefined,
-                "name": "og:description",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "meta",
-            },
-          ],
+          "rendered": null,
           "type": [Function],
         },
         Object {

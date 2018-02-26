@@ -12,6 +12,7 @@ describe('Template: Article', () => {
           frontmatter: {
             title: 'Test',
             tags: 't1, t2',
+            description: 'Test desc',
           },
         },
       },

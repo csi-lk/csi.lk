@@ -12,7 +12,8 @@ describe('Template: Home', () => {
         content: {
           html: '<p>Test</p>',
           frontmatter: {
-            description: 'test',
+            description: 'Test',
+            title: 'Test',
           },
         },
         articles: {
