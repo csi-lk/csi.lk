@@ -56,7 +56,7 @@ TimelinePage.defaultProps = {
 }
 
 
-export const pageQuery = graphql`
+export const timelineQuery = graphql`
 query TimelinePage {
   content: markdownRemark(frontmatter: { path: { eq: "/timeline" } }) {
     html,
