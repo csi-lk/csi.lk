@@ -10,7 +10,9 @@
 }
 
 .articleList {
-  margin: 30px;  
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;  
 
   p {
     margin-bottom: 0;
