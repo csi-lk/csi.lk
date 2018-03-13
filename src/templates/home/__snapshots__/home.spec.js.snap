@@ -74,21 +74,23 @@ ShallowWrapper {
           <p>
             I (sometimes) write articles:
           </p>
-          <a
-            href="/test/"
-          >
-            <h3>
-              Test
-            </h3>
-            <h4>
-              Reading time: 
-              1
-               minutes
-            </h4>
-            <TagListComponent
-              tags="one, two"
-            />
-          </a>
+          <div>
+            <a
+              href="/test/"
+            >
+              <h3>
+                Test
+              </h3>
+              <h4>
+                Reading time: 
+                1
+                 minutes
+              </h4>
+              <TagListComponent
+                tags="one, two"
+              />
+            </a>
+          </div>
         </section>,
       ],
     },
@@ -161,7 +163,7 @@ ShallowWrapper {
             <p>
               I (sometimes) write articles:
             </p>,
-            Array [
+            <div>
               <a
                 href="/test/"
               >
@@ -176,8 +178,8 @@ ShallowWrapper {
                 <TagListComponent
                   tags="one, two"
                 />
-              </a>,
-            ],
+              </a>
+            </div>,
           ],
           "className": "articleList",
         },
@@ -196,69 +198,97 @@ ShallowWrapper {
           },
           Object {
             "instance": null,
-            "key": "/test",
+            "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3>
-                  Test
-                </h3>,
-                <h4>
-                  Reading time: 
-                  1
-                   minutes
-                </h4>,
-                <TagListComponent
-                  tags="one, two"
-                />,
+                <a
+                  href="/test/"
+                >
+                  <h3>
+                    Test
+                  </h3>
+                  <h4>
+                    Reading time: 
+                    1
+                     minutes
+                  </h4>
+                  <TagListComponent
+                    tags="one, two"
+                  />
+                </a>,
               ],
-              "href": "/test/",
             },
             "ref": null,
             "rendered": Array [
               Object {
                 "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Test",
-                },
-                "ref": null,
-                "rendered": "Test",
-                "type": "h3",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
+                "key": "/test",
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Reading time: ",
-                    1,
-                    " minutes",
+                    <h3>
+                      Test
+                    </h3>,
+                    <h4>
+                      Reading time: 
+                      1
+                       minutes
+                    </h4>,
+                    <TagListComponent
+                      tags="one, two"
+                    />,
                   ],
+                  "href": "/test/",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Reading time: ",
-                  1,
-                  " minutes",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Test",
+                    },
+                    "ref": null,
+                    "rendered": "Test",
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Reading time: ",
+                        1,
+                        " minutes",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Reading time: ",
+                      1,
+                      " minutes",
+                    ],
+                    "type": "h4",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "tags": "one, two",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
                 ],
-                "type": "h4",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "tags": "one, two",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
+                "type": "a",
               },
             ],
-            "type": "a",
+            "type": "div",
           },
         ],
         "type": "section",
@@ -302,21 +332,23 @@ ShallowWrapper {
             <p>
               I (sometimes) write articles:
             </p>
-            <a
-              href="/test/"
-            >
-              <h3>
-                Test
-              </h3>
-              <h4>
-                Reading time: 
-                1
-                 minutes
-              </h4>
-              <TagListComponent
-                tags="one, two"
-              />
-            </a>
+            <div>
+              <a
+                href="/test/"
+              >
+                <h3>
+                  Test
+                </h3>
+                <h4>
+                  Reading time: 
+                  1
+                   minutes
+                </h4>
+                <TagListComponent
+                  tags="one, two"
+                />
+              </a>
+            </div>
           </section>,
         ],
       },
@@ -389,7 +421,7 @@ ShallowWrapper {
               <p>
                 I (sometimes) write articles:
               </p>,
-              Array [
+              <div>
                 <a
                   href="/test/"
                 >
@@ -404,8 +436,8 @@ ShallowWrapper {
                   <TagListComponent
                     tags="one, two"
                   />
-                </a>,
-              ],
+                </a>
+              </div>,
             ],
             "className": "articleList",
           },
@@ -424,69 +456,97 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "/test",
+              "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h3>
-                    Test
-                  </h3>,
-                  <h4>
-                    Reading time: 
-                    1
-                     minutes
-                  </h4>,
-                  <TagListComponent
-                    tags="one, two"
-                  />,
+                  <a
+                    href="/test/"
+                  >
+                    <h3>
+                      Test
+                    </h3>
+                    <h4>
+                      Reading time: 
+                      1
+                       minutes
+                    </h4>
+                    <TagListComponent
+                      tags="one, two"
+                    />
+                  </a>,
                 ],
-                "href": "/test/",
               },
               "ref": null,
               "rendered": Array [
                 Object {
                   "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test",
-                  },
-                  "ref": null,
-                  "rendered": "Test",
-                  "type": "h3",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
+                  "key": "/test",
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      "Reading time: ",
-                      1,
-                      " minutes",
+                      <h3>
+                        Test
+                      </h3>,
+                      <h4>
+                        Reading time: 
+                        1
+                         minutes
+                      </h4>,
+                      <TagListComponent
+                        tags="one, two"
+                      />,
                     ],
+                    "href": "/test/",
                   },
                   "ref": null,
                   "rendered": Array [
-                    "Reading time: ",
-                    1,
-                    " minutes",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Test",
+                      },
+                      "ref": null,
+                      "rendered": "Test",
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Reading time: ",
+                          1,
+                          " minutes",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Reading time: ",
+                        1,
+                        " minutes",
+                      ],
+                      "type": "h4",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "tags": "one, two",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
                   ],
-                  "type": "h4",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "tags": "one, two",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+                  "type": "a",
                 },
               ],
-              "type": "a",
+              "type": "div",
             },
           ],
           "type": "section",
@@ -575,21 +635,23 @@ ShallowWrapper {
           <p>
             I (sometimes) write articles:
           </p>
-          <a
-            href="/test/"
-          >
-            <h3>
-              Test
-            </h3>
-            <h4>
-              Reading time: 
-              1
-               minutes
-            </h4>
-            <TagListComponent
-              tags="one, two"
-            />
-          </a>
+          <div>
+            <a
+              href="/test/"
+            >
+              <h3>
+                Test
+              </h3>
+              <h4>
+                Reading time: 
+                1
+                 minutes
+              </h4>
+              <TagListComponent
+                tags="one, two"
+              />
+            </a>
+          </div>
         </section>,
       ],
     },
@@ -656,7 +718,7 @@ ShallowWrapper {
             <p>
               I (sometimes) write articles:
             </p>,
-            Array [
+            <div>
               <a
                 href="/test/"
               >
@@ -671,8 +733,8 @@ ShallowWrapper {
                 <TagListComponent
                   tags="one, two"
                 />
-              </a>,
-            ],
+              </a>
+            </div>,
           ],
           "className": "articleList",
         },
@@ -691,69 +753,97 @@ ShallowWrapper {
           },
           Object {
             "instance": null,
-            "key": "/test",
+            "key": undefined,
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3>
-                  Test
-                </h3>,
-                <h4>
-                  Reading time: 
-                  1
-                   minutes
-                </h4>,
-                <TagListComponent
-                  tags="one, two"
-                />,
+                <a
+                  href="/test/"
+                >
+                  <h3>
+                    Test
+                  </h3>
+                  <h4>
+                    Reading time: 
+                    1
+                     minutes
+                  </h4>
+                  <TagListComponent
+                    tags="one, two"
+                  />
+                </a>,
               ],
-              "href": "/test/",
             },
             "ref": null,
             "rendered": Array [
               Object {
                 "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Test",
-                },
-                "ref": null,
-                "rendered": "Test",
-                "type": "h3",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
+                "key": "/test",
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "Reading time: ",
-                    1,
-                    " minutes",
+                    <h3>
+                      Test
+                    </h3>,
+                    <h4>
+                      Reading time: 
+                      1
+                       minutes
+                    </h4>,
+                    <TagListComponent
+                      tags="one, two"
+                    />,
                   ],
+                  "href": "/test/",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Reading time: ",
-                  1,
-                  " minutes",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Test",
+                    },
+                    "ref": null,
+                    "rendered": "Test",
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Reading time: ",
+                        1,
+                        " minutes",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Reading time: ",
+                      1,
+                      " minutes",
+                    ],
+                    "type": "h4",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "tags": "one, two",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
                 ],
-                "type": "h4",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "tags": "one, two",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
+                "type": "a",
               },
             ],
-            "type": "a",
+            "type": "div",
           },
         ],
         "type": "section",
@@ -793,21 +883,23 @@ ShallowWrapper {
             <p>
               I (sometimes) write articles:
             </p>
-            <a
-              href="/test/"
-            >
-              <h3>
-                Test
-              </h3>
-              <h4>
-                Reading time: 
-                1
-                 minutes
-              </h4>
-              <TagListComponent
-                tags="one, two"
-              />
-            </a>
+            <div>
+              <a
+                href="/test/"
+              >
+                <h3>
+                  Test
+                </h3>
+                <h4>
+                  Reading time: 
+                  1
+                   minutes
+                </h4>
+                <TagListComponent
+                  tags="one, two"
+                />
+              </a>
+            </div>
           </section>,
         ],
       },
@@ -874,7 +966,7 @@ ShallowWrapper {
               <p>
                 I (sometimes) write articles:
               </p>,
-              Array [
+              <div>
                 <a
                   href="/test/"
                 >
@@ -889,8 +981,8 @@ ShallowWrapper {
                   <TagListComponent
                     tags="one, two"
                   />
-                </a>,
-              ],
+                </a>
+              </div>,
             ],
             "className": "articleList",
           },
@@ -909,69 +1001,97 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "/test",
+              "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h3>
-                    Test
-                  </h3>,
-                  <h4>
-                    Reading time: 
-                    1
-                     minutes
-                  </h4>,
-                  <TagListComponent
-                    tags="one, two"
-                  />,
+                  <a
+                    href="/test/"
+                  >
+                    <h3>
+                      Test
+                    </h3>
+                    <h4>
+                      Reading time: 
+                      1
+                       minutes
+                    </h4>
+                    <TagListComponent
+                      tags="one, two"
+                    />
+                  </a>,
                 ],
-                "href": "/test/",
               },
               "ref": null,
               "rendered": Array [
                 Object {
                   "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Test",
-                  },
-                  "ref": null,
-                  "rendered": "Test",
-                  "type": "h3",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
+                  "key": "/test",
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      "Reading time: ",
-                      1,
-                      " minutes",
+                      <h3>
+                        Test
+                      </h3>,
+                      <h4>
+                        Reading time: 
+                        1
+                         minutes
+                      </h4>,
+                      <TagListComponent
+                        tags="one, two"
+                      />,
                     ],
+                    "href": "/test/",
                   },
                   "ref": null,
                   "rendered": Array [
-                    "Reading time: ",
-                    1,
-                    " minutes",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Test",
+                      },
+                      "ref": null,
+                      "rendered": "Test",
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Reading time: ",
+                          1,
+                          " minutes",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Reading time: ",
+                        1,
+                        " minutes",
+                      ],
+                      "type": "h4",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "tags": "one, two",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
                   ],
-                  "type": "h4",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "tags": "one, two",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+                  "type": "a",
                 },
               ],
-              "type": "a",
+              "type": "div",
             },
           ],
           "type": "section",
