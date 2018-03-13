@@ -7,7 +7,7 @@ path: ui-functional-testing-journey
 template: article
 tags: 'message-media, testing, cypress, test-cafe, nightwatch, cucumber, selenium'
 ---
-At [MessageMedia](http://messagemedia.com.au/) I built a Functional Test pipeline within our CI/CD process. The idea was to drastically reduce the amount of regression testing we were doing and enable the QAs to do what they do best; -create work for me- focus on finding bugs.
+At [Message Media](http://messagemedia.com.au/) I built a Functional Test pipeline within our CI/CD process. The idea was to drastically reduce the amount of regression testing we were doing and enable the QAs to do what they do best; -create work for me- focus on finding bugs.
 
 As our tests grew larger we started to run into issues with stability. Writing the tests were time consuming and the format did not match the coding style of the application.
 
@@ -77,6 +77,6 @@ The holy grail with a great [Cucumber Preprocessor](https://github.com/TheBrainF
 * No cross browser support yet
 * You have to be very specific when writing your Cukes (Given / When / Then)
 
-We have since converted our Frontend Functional Testing process to Cypress, which surprisingly only took a few days and in the process made me fall in love with their toolchain.
+We have since converted our Front end Functional Testing process to Cypress, which surprisingly only took a few days and in the process made me fall in love with their toolchain.
 
 I hope this article helps with your decision process on what testing tool to use.
