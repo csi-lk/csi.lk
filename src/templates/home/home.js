@@ -44,24 +44,24 @@ const HomePage = ({
     </section>
     <section className="articleList">
       <p>I (sometimes) write articles:</p>
-      <div>
-        { articles.edges.map(({
-          node: {
-            timeToRead,
-            frontmatter: {
-              path,
-              title: articleTitle,
-              tags,
-            },
+      { articles.edges.map(({
+        node: {
+          timeToRead,
+          frontmatter: {
+            path,
+            title: articleTitle,
+            tags,
           },
-        }) => (
-          <a href={`${path}/`} key={path}>
+        },
+      }) => (
+        <div key={path}>
+          <a href={`${path}/`}>
             <h3>{articleTitle}</h3>
             <h4>Reading time: {timeToRead} minutes</h4>
             <TagList tags={tags} />
           </a>
-        )) }
-      </div>
+        </div>
+      )) }
     </section>
   </div>
 )
