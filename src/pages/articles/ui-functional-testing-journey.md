@@ -19,15 +19,15 @@ As our tests grew larger we started to run into issues with stability. Writing t
 ### So why the change?
 
 Selenium and the W3C WebDriver API plainly sucks, we were constantly running into issues with:
-	* Stability
-	* Random failures
-	* Writing the tests
-	* Mismatched coding styles
+* Stability
+* Random failures
+* Writing the tests
+* Mismatched coding styles
 
 It’s also
-	* Bulky requiring large installs
-	* Has Java as a requirement
-	* A general pain in the ass
+* Bulky requiring large installs
+* Has Java as a requirement
+* A general pain in the ass
 
 > There’s got to be an easier solution out there, right?
 
