@@ -28,6 +28,9 @@ preprocessor
 cukes
 toolchain
 sportsbet
+sparkbox's
+gitmoji
+commitizen
  - README.md
 v8
  - src/pages/articles/blocking-page-navigation-in-reactjs.md
