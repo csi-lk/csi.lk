@@ -10,11 +10,11 @@ TL;DR: Using a rigid commit format with emoji means I limit myself to a commit p
 
 ## What’s in a commit?
 
-Everybody has had that sinking feeling of loosing minutes, hours or days worth of work due to forgetting to save, as a hangover from this I find myself constantly committing changes to effectively ‘save the state’ 
+Everybody has had that sinking feeling of losing minutes, hours or days worth of work due to forgetting to save, as a hangover from this I find myself constantly committing changes to effectively ‘save the state’.
 
 Because of this my projects usually end up with hundreds if not thousands of commit messages, I need a way to quickly parse what the commit messages relate to.
 
-Expanding on Sparkbox's original idea for the case of [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages)  I am forcing myself to a rigid commit format and replacing ‘type’ with a specific ‘emoji’
+Expanding on Sparkbox's original idea for the case of [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages)  I am forcing myself to a rigid commit format and replacing ‘type’ with a specific ‘emoji’.
 
 ## What does this look like?
 
