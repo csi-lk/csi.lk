@@ -1,7 +1,22 @@
 const path = require('path')
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+  const { createPage, createRedirect } = boundActionCreators
+  const homepageAliases = [
+    '/index.php',
+    '/home.php',
+    '/default.php',
+    '/index.html',
+    '/home.html',
+    '/default.html',
+    '/index.aspx',
+    '/home.aspx',
+    '/default.aspx',
+  ]
+  homepageAliases.map((alias) => {
+    createRedirect({ fromPath: alias, toPath: '/', isPermanent: true })
+    return true
+  })
 
   return graphql(`
     {
