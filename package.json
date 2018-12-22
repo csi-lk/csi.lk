@@ -43,7 +43,7 @@
     "help": "npm-help",
     "test": "echo \"🛂  Running Tests with Coverage:\" && jest --coverage",
     "test:update": "echo \"🛃  Updating Test Snapshots:\" && jest --coverage --updateSnapshot --no-cache",
-    "lint": "echo \"🔧  Running Linters:\" && run-p lint:js lint:md",
+    "lint": "echo \"🔧  Running Linters:\" && run-p lint:js",
     "lint:js": "eslint --ignore-path .gitignore ./src ./tools --color",
     "lint:js:fix": "eslint --ignore-path .gitignore ./src ./tools --fix",
     "lint:md": "mdspell '**/*.md' '!**/node_modules/**/*.md' -n -a -r --en-au",
