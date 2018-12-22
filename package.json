@@ -36,7 +36,7 @@
   "license": "UNLICENSED",
   "main": "n/a",
   "scripts": {
-    "start": "npm run develop",
+    "start": "run-p develop",
     "build": "gatsby build",
     "develop": "rm -Rf .cache && gatsby develop",
     "serve": "gatsby serve",
