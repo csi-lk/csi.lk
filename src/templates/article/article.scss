@@ -10,9 +10,13 @@ article {
   header {
     span {
       font-size: 14px;
-      margin-right: 8px;
+      margin: 0 8px 8px 0;
       background-color: $clouds;
       user-select: none;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: $gray;
+      }
     }
   }
   footer {
@@ -27,6 +31,10 @@ blockquote{
   margin: 0;
   position: relative;
   background-color: $clouds;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $gray;
+  }
 
   p {
     margin: 0;

@@ -4,6 +4,10 @@
 body {
   background-color: $white;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @media (prefers-color-scheme: dark) {
+    background-color: $black;
+    color: $white;
+  }
 }
 
 a {
@@ -24,6 +28,14 @@ a {
 
   &:hover{
     background-size:100% 2px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $orange;
+
+    &:visited {
+      color: $orange;
+    }
   }
 }
 
