@@ -5120,13 +5120,6 @@ gatsby-plugin-catch-links@^1.0.16:
     babel-runtime "^6.26.0"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-google-analytics@^1.0.19:
-  version "1.0.31"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.31.tgz#eaf16e1809461b10badf12c05038c429745783c0"
-  integrity sha1-6vFuGAlGGxC63xLAUDjEKXRXg8A=
-  dependencies:
-    babel-runtime "^6.26.0"
-
 gatsby-plugin-netlify-cms@^1.0.7:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-1.0.12.tgz#961144f45cf76aaa351b639777635f70a52001e7"
