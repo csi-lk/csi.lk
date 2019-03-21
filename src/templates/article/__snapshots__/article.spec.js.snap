@@ -2,7 +2,6 @@
 
 exports[`Template: Article renders 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ArticleTemplate
     data={
@@ -28,6 +27,7 @@ ShallowWrapper {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -69,7 +69,7 @@ ShallowWrapper {
               <br />
               <a
                 href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                rel="nofollow noopener"
+                rel="noreferrer noopener"
                 target="_blank"
               >
                 Submit a edit on Github
@@ -134,7 +134,7 @@ ShallowWrapper {
                 <br />
                 <a
                   href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                  rel="nofollow noopener"
+                  rel="noreferrer noopener"
                   target="_blank"
                 >
                   Submit a edit on Github
@@ -209,7 +209,7 @@ ShallowWrapper {
                 <br />
                 <a
                   href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                  rel="nofollow noopener"
+                  rel="noreferrer noopener"
                   target="_blank"
                 >
                   Submit a edit on Github
@@ -227,7 +227,7 @@ ShallowWrapper {
                   <br />,
                   <a
                     href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                    rel="nofollow noopener"
+                    rel="noreferrer noopener"
                     target="_blank"
                   >
                     Submit a edit on Github
@@ -253,7 +253,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Submit a edit on Github",
                     "href": "https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md",
-                    "rel": "nofollow noopener",
+                    "rel": "noreferrer noopener",
                     "target": "_blank",
                   },
                   "ref": null,
@@ -310,7 +310,7 @@ ShallowWrapper {
                 <br />
                 <a
                   href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                  rel="nofollow noopener"
+                  rel="noreferrer noopener"
                   target="_blank"
                 >
                   Submit a edit on Github
@@ -375,7 +375,7 @@ ShallowWrapper {
                   <br />
                   <a
                     href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                    rel="nofollow noopener"
+                    rel="noreferrer noopener"
                     target="_blank"
                   >
                     Submit a edit on Github
@@ -450,7 +450,7 @@ ShallowWrapper {
                   <br />
                   <a
                     href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                    rel="nofollow noopener"
+                    rel="noreferrer noopener"
                     target="_blank"
                   >
                     Submit a edit on Github
@@ -468,7 +468,7 @@ ShallowWrapper {
                     <br />,
                     <a
                       href="https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md"
-                      rel="nofollow noopener"
+                      rel="noreferrer noopener"
                       target="_blank"
                     >
                       Submit a edit on Github
@@ -494,7 +494,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Submit a edit on Github",
                       "href": "https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles/test.md",
-                      "rel": "nofollow noopener",
+                      "rel": "noreferrer noopener",
                       "target": "_blank",
                     },
                     "ref": null,
@@ -517,6 +517,16 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
@@ -525,7 +535,6 @@ ShallowWrapper {
 
 exports[`Template: Article renders preview 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ArticleTemplate
     data={
@@ -551,6 +560,7 @@ ShallowWrapper {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -686,6 +696,16 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },

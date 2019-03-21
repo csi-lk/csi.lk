@@ -2,7 +2,6 @@
 
 exports[`Component: Tag List renders 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <TagListComponent
     tags="test1, test2"
@@ -11,43 +10,80 @@ ShallowWrapper {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
-  Symbol(enzyme.__node__): Array [
-    <span
-      data-tag="test1"
-    >
-      #
-      test1
-    </span>,
-    <span
-      data-tag="test2"
-    >
-      #
-      test2
-    </span>,
-  ],
-  Symbol(enzyme.__nodes__): Array [
-    Array [
-      <span
-        data-tag="test1"
-      >
-        #
-        test1
-      </span>,
-      <span
-        data-tag="test2"
-      >
-        #
-        test2
-      </span>,
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "test1",
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "#",
+        "test1",
+      ],
+      "data-tag": "test1",
+    },
+    "ref": null,
+    "rendered": Array [
+      "#",
+      "test1",
     ],
+    "type": "span",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "test1",
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "#",
+          "test1",
+        ],
+        "data-tag": "test1",
+      },
+      "ref": null,
+      "rendered": Array [
+        "#",
+        "test1",
+      ],
+      "type": "span",
+    },
+    Object {
+      "instance": null,
+      "key": "test2",
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "#",
+          "test2",
+        ],
+        "data-tag": "test2",
+      },
+      "ref": null,
+      "rendered": Array [
+        "#",
+        "test2",
+      ],
+      "type": "span",
+    },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
