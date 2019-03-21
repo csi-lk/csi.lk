@@ -41,7 +41,7 @@ const ArticleTemplate = ({
         <footer>
           <p>
             Find a spelling mistake or issue with this article? <br />
-            <a href={`https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles${path}.md`} target="_blank" rel="nofollow noopener">Submit a edit on Github</a>
+            <a href={`https://github.com/csi-lk/csi.lk/tree/master/src/pages/articles${path}.md`} target="_blank" rel="noreferrer noopener">Submit a edit on Github</a>
           </p>
         </footer>
       </article>
