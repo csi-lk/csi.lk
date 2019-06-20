@@ -120,10 +120,6 @@ dispatch({ type: 'invalidActionType' });
 
 * infer its types based on the context object that is passed in
 
-### useContext
-
-* infer its types based on the context object that is passed in
-
 ```js
 const ThemeContext = React.createContext('light');
 
