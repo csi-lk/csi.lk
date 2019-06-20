@@ -1,13 +1,13 @@
 ---
 path: /
-title: Callum Silcock | Lead UI Developer
+title: Callum Silcock | Lead Front End Developer
 description: >-
   Includes things about me and some articles that I have written about Front End
-  / UI development, ReactJS, Functional Testing etc.
+  development (UI), React, Redux, Functional Testing etc.
 template: home
 ---
 Hi I’m Callum
-My current title is Lead UI Developer
+My current title is Lead Front End Developer
 I am currently working for [ClearScore](https://www.clearscore.com/) in London, UK
 
 I’m always on [Github](https://github.com/csi-lk/)
