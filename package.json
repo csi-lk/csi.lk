@@ -25,7 +25,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-load-script": "0.0.6"
+    "react-load-script": "0.0.6",
+    "snyk": "^1.189.0"
   },
   "keywords": [
     "callum",
@@ -46,7 +47,9 @@
     "lint:js": "eslint --ignore-path .gitignore ./src ./tools --color",
     "lint:js:fix": "eslint --ignore-path .gitignore ./src ./tools --fix",
     "lint:md": "mdspell '**/*.md' '!**/node_modules/**/*.md' -n -a -r --en-au",
-    "lint:md:fix": "mdspell '**/*.md' '!**/node_modules/**/*.md' -n -a --en-au"
+    "lint:md:fix": "mdspell '**/*.md' '!**/node_modules/**/*.md' -n -a --en-au",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -173,5 +176,6 @@
         "npm run lint:js:fix"
       ]
     }
-  }
+  },
+  "snyk": true
 }
