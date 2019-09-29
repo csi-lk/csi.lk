@@ -1,9 +1,14 @@
 ---
+title: "\U0001F914 Why I use emoji in my commit messages"
+description: >-
+  Using a rigid commit format with emoji means I limit myself to a commit per
+  ‘thing’, it also allows me to parse my commits quickly.
 path: /emoji-use-in-commit-messages
-title: Why I use emoji in my commit messages
-description: Using a rigid commit format with emoji means I limit myself to a commit per ‘thing’, it also allows me to parse my commits quickly.
 template: article
 tags: 'code, emoji, git, commit'
+---
+This article is outdated, [I now much prefer Conventional Commits](/conventional-commits)
+
 ---
 
 TL;DR: Using a rigid commit format with emoji means I limit myself to a commit per ‘thing’, it also allows me to parse my commits quickly.
