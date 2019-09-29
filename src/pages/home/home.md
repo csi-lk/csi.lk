@@ -7,8 +7,8 @@ description: >-
 template: home
 ---
 Hi I’m Callum
-My current title is Lead Front End Developer
-I am currently working for [ClearScore](https://www.clearscore.com/) in London, UK
+My current title is: Front End Platform Engineer
+I am currently contracting to [Attest](https://www.askattest.com/) from [Webanytime](https://webanyti.me) in London
 
 I’m always on [Github](https://github.com/csi-lk/)
 Sometimes I’m on [LinkedIn](https://au.linkedin.com/in/callumsilcock)
