@@ -1,5 +1,5 @@
 ---
-title: Understanding Hooks ↩
+title: '↩ Understanding React Hooks '
 description: My process of learning of React Hooks and how to 'type' them using Typescript
 path: /understanding-hooks
 template: article
