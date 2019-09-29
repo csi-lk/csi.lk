@@ -1,5 +1,5 @@
 ---
-title: UI Functional Testing Journey
+title: "\U0001F6C2 UI Functional Testing Journey"
 description: >-
   Which is the best Functional Testing tool? I took a look at Cypress, Test
   Cafe, Nightwatch as a replacement for CucumberJS and Selenium.
