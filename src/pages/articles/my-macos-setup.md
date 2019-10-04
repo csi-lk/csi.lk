@@ -46,7 +46,7 @@ As a contract front end developer I find myself setting up MacOS laptops quite o
 		* It will fail wanting you to accept license terms
 		* `VBoxManage extpack install /Users/csilk/.ievms/Oracle_VM_VirtualBox_Extension_Pack-` (tab to auto complete then enter) then accept licence terms
 		* Run 1 again
-* [Edge Preview (webkit)](https://apps.apple.com/us/app/microsoft-edge/id1288723196)
+* [Edge Preview (Chromium)](https://apps.apple.com/us/app/microsoft-edge/id1288723196)
 
 ## iOS Simulator (test)
 
