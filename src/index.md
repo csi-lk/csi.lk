@@ -1,9 +1,5 @@
 ---
 layout: layouts/home.11ty.js
-title: Callum Silcock | Lead Front End Developer & Conference Speaker
-description: >-
-  Includes things about me and some articles that I have written about Micro Frontends, Front End
-  development, React, Redux, Functional Testing etc.
 ---
 
 Hi I’m Callum
