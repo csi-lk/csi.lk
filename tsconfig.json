@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "outDir": "src/_includes/",
+    "target": "es5",
+    "module": "commonjs"
+  },
+  "include": ["src/components/**/*", "src/layouts/**/*"]
+}
