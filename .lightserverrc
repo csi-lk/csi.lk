@@ -1,0 +1,15 @@
+{
+ "port": 8080,
+ "serve": "dist",
+ "bind": "localhost",
+ "delay": 100,
+ "quiet": true,
+ "watchexps": [
+    "src/components/**/*.ts # yarn scripts",
+    "src/layouts/**/*.ts # yarn scripts",
+    "src/styles/**/*.scss # yarn styles:dev # reloadcss",
+    "dist/**/*.html"
+ ],
+ "http2": false,
+ "open": false
+}

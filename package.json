@@ -1,177 +1,56 @@
 {
   "name": "csi.lk",
   "description": "Callum Silcock's personal website",
-  "version": "1.0.0",
-  "author": "Callum Silcock",
-  "dependencies": {
-    "gatsby": "^1.9.183",
-    "gatsby-link": "^1.6.36",
-    "gatsby-plugin-catch-links": "^1.0.16",
-    "gatsby-plugin-netlify": "^1.0.18",
-    "gatsby-plugin-netlify-cms": "^1.0.7",
-    "gatsby-plugin-nprogress": "^1.0.12",
-    "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-plugin-sass": "^1.0.16",
-    "gatsby-plugin-sharp": "^1.6.27",
-    "gatsby-plugin-sitemap": "^1.2.13",
-    "gatsby-remark-external-links": "^0.0.4",
-    "gatsby-remark-images": "^1.5.41",
-    "gatsby-remark-prismjs": "^1.2.15",
-    "gatsby-source-filesystem": "^1.5.18",
-    "gatsby-transformer-remark": "^1.7.33",
-    "gatsby-transformer-sharp": "^1.6.18",
-    "normalize.scss": "^0.1.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0",
-    "react-load-script": "0.0.6"
-  },
+  "version": "2.0.0",
   "keywords": [
     "callum",
     "silcock",
     "portfolio"
   ],
   "license": "UNLICENSED",
-  "main": "n/a",
   "scripts": {
-    "start": "run-p develop",
-    "build": "gatsby build",
-    "develop": "rm -Rf .cache && gatsby develop",
-    "serve": "gatsby serve",
-    "help": "npm-help",
-    "test": "echo \"🛂  Running Tests with Coverage:\" && jest --coverage",
-    "test:update": "echo \"🛃  Updating Test Snapshots:\" && jest --coverage --updateSnapshot --no-cache",
-    "lint": "echo \"🔧  Running Linters:\" && run-p lint:js",
-    "lint:js": "eslint --ignore-path .gitignore ./src ./tools --color",
-    "lint:js:fix": "eslint --ignore-path .gitignore ./src ./tools --fix",
-    "lint:md": "mdspell '**/*.md' '!**/node_modules/**/*.md' -n -a -r --en-au",
-    "lint:md:fix": "mdspell '**/*.md' '!**/node_modules/**/*.md' -n -a --en-au"
+    "BUILDING": "---------------------------",
+    "eleventy:default": "eleventy",
+    "styles:prod": "node-sass src/styles/ --output dist/styles/ && postcss ./dist/styles/*.css --replace",
+    "styles:dev": "node-sass src/styles/ --output dist/styles/ --source-map true --source-map-contents true && postcss ./dist/styles/*.css --replace",
+    "scripts": "tsc && yarn rename:layouts",
+    "build": "run-s clean styles:prod scripts eleventy:default --print-label",
+    "rename:layouts": "for f in src/_includes/layouts/*.js; do mv -- \"$f\" \"${f%.js}.11ty.js\"; done",
+    "TESTING": "---------------------------",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "RUNNING": "---------------------------",
+    "serve": "light-server -c .lightserverrc",
+    "eleventy:watch": "eleventy --watch",
+    "UTILITY": "---------------------------",
+    "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
+    "clean": "rm -rf dist && rm -rf src/_includes",
+    "dev": "npm-run-all clean styles:dev scripts eleventy:default --parallel eleventy:watch serve --print-label"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://csi-lk@github.com/csi-lk/csi.lk.git"
+  },
+  "author": "Callum Silcock <github@csi.lk> (https://csi.lk)",
+  "bugs": {
+    "url": "https://github.com/csi-lk/csi.lk/issues"
+  },
+  "homepage": "https://github.com/csi-lk/csi.lk#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.2.2",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.17.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.3.0",
-    "jest-css-modules": "^1.1.0",
-    "jest-junit": "^3.5.0",
-    "markdown-spellcheck": "^1.3.1",
-    "npm-run-all": "^4.1.2",
-    "npm-script-help": "^1.0.0"
+    "light-server": "2.6.4",
+    "prettier": "^2.0.4"
   },
-  "jest": {
-    "globals": {
-      "NODE_ENV": "test"
-    },
-    "moduleFileExtensions": [
-      "js"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "src/"
-    ],
-    "collectCoverageFrom": [
-      "src/**/**/*.{js}",
-      "!.cache",
-      "!src/cms/cms*.js"
-    ],
-    "testPathIgnorePatterns": [
-      ".cache"
-    ],
-    "setupFiles": [
-      "./tools/jest-setup.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/mocks/mock-file.js",
-      "\\.svg$": "<rootDir>/tools/mocks/mock-svg.js",
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "testResultsProcessor": "./node_modules/jest-junit",
-    "testURL": "http://localhost/"
+  "dependencies": {
+    "@11ty/eleventy": "^0.9.0",
+    "autoprefixer": "^9.6.5",
+    "babel-loader": "^8.0.6",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3",
+    "typescript": "^3.8.3"
   },
-  "jest-junit": {
-    "suiteName": "mmgp-user-feedback tests",
-    "output": "./coverage/junit.xml"
-  },
-  "scriptHelp": {
-    "help": {
-      "desc": "Outputs descriptions for each npm script",
-      "usage": [
-        "npm run help"
-      ]
-    },
-    "start": {
-      "desc": "Starts a local live-reload server running Gatbsy (runs develop)",
-      "usage": [
-        "npm start",
-        "npm run start"
-      ]
-    },
-    "build": {
-      "desc": "Builds files using Gatsby",
-      "usage": [
-        "npm run build"
-      ]
-    },
-    "develop": {
-      "desc": "Starts a local live-reload server running Gatbsy",
-      "usage": [
-        "npm run develop"
-      ]
-    },
-    "serve": {
-      "desc": "Runs Gatsby in serve mode",
-      "usage": [
-        "npm run serve"
-      ]
-    },
-    "test": {
-      "desc": "Jest tests with coverage report",
-      "usage": [
-        "npm test",
-        "npm run test"
-      ]
-    },
-    "test:update": {
-      "desc": "Jest tests but updates snapshots",
-      "usage": [
-        "npm run test:update"
-      ]
-    },
-    "lint": {
-      "desc": "Runs all linters",
-      "usage": [
-        "npm run lint"
-      ]
-    },
-    "lint:js": {
-      "desc": "Javascript linter eslint",
-      "usage": [
-        "npm run lint:js"
-      ]
-    },
-    "lint:js:fix": {
-      "desc": "Javascript linter eslint in fix mode",
-      "usage": [
-        "npm run lint:js:fix"
-      ]
-    }
+  "engines": {
+    "node": ">=12.13.0"
   }
 }
