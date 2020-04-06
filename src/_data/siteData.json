@@ -1,3 +1,24 @@
 {
-  "name": "Callum Silcock"
+  "name": "Callum Silcock",
+  "title": "Callum Silcock | Lead Front End Developer & Conference Speaker",
+  "description": "Includes things about me and some articles that I have written about Micro Frontends, Front End development, React, Redux, Functional Testing etc.",
+  "meta": [
+    { "charset": "utf-8" },
+    { "name": "viewport", "content": "width=device-width, initial-scale=1." },
+    { "name": "author", "content": "Callum Silcock, contact@csi.lk" },
+    { "name": "reply-to", "content": "contact@csi.lk" },
+    { "name": "url", "content": "https://www.csi.lk" },
+    { "name": "coverage", "content": "Worldwide" },
+    { "name": "distribution", "content": "Global" },
+    { "name": "rating", "content": "General" },
+    { "name": "revisit-after", "content": "7 days" },
+    { "httpEquiv": "Expires", "content": "0" },
+    { "httpEquiv": "Pragma", "content": "no-cache" },
+    { "httpEquiv": "Cache-Control", "content": "no-cache" },
+    { "httpEquiv": "Content-Language", "content": "en" },
+    { "name": "og:type", "content": "text/html" },
+    { "name": "og:site_name", "content": "Callum Silcock | Senior UI Developer" },
+    { "name": "og:email", "content": "contact@csi.lk" },
+    { "name": "og:phone_number", "content": "+61412454084" }
+  ]
 }
