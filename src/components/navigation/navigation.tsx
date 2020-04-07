@@ -1,4 +1,4 @@
-import * as Silk from '../lib/silk'
+import * as Silk from '../../lib/silk'
 
 const Navigation = () => (
   <nav>

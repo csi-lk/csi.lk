@@ -11,21 +11,21 @@
   "scripts": {
     "BUILDING": "---------------------------",
     "eleventy:default": "eleventy",
-    "styles:prod": "node-sass src/styles/ --output dist/styles/ && postcss ./dist/styles/*.css --replace",
-    "styles:dev": "node-sass src/styles/ --output dist/styles/ --source-map true --source-map-contents true && postcss ./dist/styles/*.css --replace",
+    "styles": "shx cat 'src/**/*.css' | postcss -o dist/styles/index.css --map",
     "scripts": "tsc && yarn rename:layouts",
     "watch": "yarn scripts && yarn eleventy:default",
-    "build": "run-s clean styles:prod scripts eleventy:default --print-label",
+    "build": "run-s clean styles scripts eleventy:default --print-label",
     "rename:layouts": "for f in src/_includes/layouts/*.js; do mv -- \"$f\" \"${f%.js}.11ty.js\"; done",
     "TESTING": "---------------------------",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:styles": "yarn stylelint src/**/*.css",
     "RUNNING": "---------------------------",
     "serve": "light-server -c .lightserverrc",
     "eleventy:watch": "eleventy --watch",
     "UTILITY": "---------------------------",
     "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
     "clean": "rm -rf dist && rm -rf src/_includes",
-    "dev": "npm-run-all clean styles:dev scripts eleventy:default --parallel serve --print-label"
+    "dev": "npm-run-all clean styles scripts eleventy:default --parallel serve --print-label"
   },
   "repository": {
     "type": "git",
@@ -39,18 +39,25 @@
   "devDependencies": {
     "@types/common-tags": "^1.8.0",
     "light-server": "2.6.4",
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.4",
+    "stylelint": "^13.3.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.9.0",
-    "autoprefixer": "^9.6.5",
-    "babel-loader": "^8.0.6",
+    "@11ty/eleventy": "^0.10.0",
+    "autoprefixer": "^9.7.6",
     "common-tags": "^1.8.0",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",
-    "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.3",
+    "postcss-calc": "^7.0.2",
+    "postcss-cli": "^7.1.0",
+    "postcss-css-variables": "^0.14.0",
+    "postcss-media-variables": "^2.0.1",
+    "postcss-nested": "^4.2.1",
+    "postcss-nested-ancestors": "^2.0.0",
+    "postcss-scss": "^2.0.0",
+    "shx": "^0.3.2",
     "typescript": "^3.8.3"
   },
   "engines": {

@@ -1,0 +1,7 @@
+footer {
+  display: flex;
+
+  div {
+    flex: 1 auto;
+  }
+}

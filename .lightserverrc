@@ -6,7 +6,8 @@
  "quiet": true,
  "watchexps": [
     "src/**/*.tsx # yarn watch",
-    "src/styles/**/*.scss # yarn styles:dev # reloadcss",
+    "src/styles/**/*.css # yarn styles # reloadcss",
+    "src/styles/variables.js # yarn styles # reloadcss",
     "src/**/*.md # yarn eleventy:default",
     "dist/**/*.html"
  ],
