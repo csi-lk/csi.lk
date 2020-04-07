@@ -1,5 +1,15 @@
 footer {
+  border-top: var(--border-double);
+  margin-top: 1.5em;
+  padding: 1.5em 0;
   display: flex;
+  font-size: var(--font-size-small);
+
+  &.fixed {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 3em);
+  }
 
   div {
     flex: 1 auto;
