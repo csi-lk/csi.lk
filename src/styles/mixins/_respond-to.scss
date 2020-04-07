@@ -1,0 +1,43 @@
+@import '../config/breakpoints';
+
+@mixin respond-to($min: 0, $max: 0, $orientation: 0) {
+  @if type-of($min) == string {
+    $min: breakpoint(#{$min});
+  } @else {
+    $min: $min;
+  }
+
+  @if type-of($max) == string {
+    $max: breakpoint(#{$max}) - 0.001em;
+  } @else {
+    $max: $max;
+  }
+
+  /* Defaults to all media */
+  $query-widths: 'all' !default;
+  /* Set both min and max */
+  @if $min != 0 and $max != 0 {
+    $query-widths: '(min-width: #{$min}) and (max-width: #{$max})';
+  }
+  /* Set just min */
+  @else if $min != 0 and $max == 0 {
+    $query-widths: '(min-width: #{$min})';
+  }
+  /* Set just max */
+  @else if $min == 0 and $max != 0 {
+    $query-widths: '(max-width: #{$max})';
+  }
+
+  /* Set orientation */
+  @if $orientation != 0 {
+    $query-orientation: 'and (orientation: #{$orientation})';
+
+    @media #{$query-widths} #{$query-orientation} {
+      @content;
+    }
+  } @else {
+    @media #{$query-widths} {
+      @content;
+    }
+  }
+}
