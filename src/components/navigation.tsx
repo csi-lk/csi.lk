@@ -1,3 +1,5 @@
+import * as Silk from '../lib/silk'
+
 const Navigation = () => (
   <nav>
     <a className="logo" href="/">
