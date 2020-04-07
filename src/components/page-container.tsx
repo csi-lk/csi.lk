@@ -1,4 +1,5 @@
 import * as Silk from '../lib/silk'
+import Navigation from './navigation'
 
 interface Head {
   meta: Record<string, string>[]
@@ -18,7 +19,13 @@ const Head = ({ meta, title, description }: Head) => (
 const PageContainer = (props: Head, children: any[]) => (
   <html lang="en" class="no-js">
     <Head {...props}></Head>
-    <body>{children}</body>
+    <body>
+      <a href="#content">Skip to content</a>
+      <Navigation />
+      <main>
+        <article id="content">{children}</article>
+      </main>
+    </body>
   </html>
 )
 
