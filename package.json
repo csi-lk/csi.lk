@@ -14,6 +14,7 @@
     "styles:prod": "node-sass src/styles/ --output dist/styles/ && postcss ./dist/styles/*.css --replace",
     "styles:dev": "node-sass src/styles/ --output dist/styles/ --source-map true --source-map-contents true && postcss ./dist/styles/*.css --replace",
     "scripts": "tsc && yarn rename:layouts",
+    "watch": "yarn scripts && yarn eleventy:default",
     "build": "run-s clean styles:prod scripts eleventy:default --print-label",
     "rename:layouts": "for f in src/_includes/layouts/*.js; do mv -- \"$f\" \"${f%.js}.11ty.js\"; done",
     "TESTING": "---------------------------",
@@ -24,7 +25,7 @@
     "UTILITY": "---------------------------",
     "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
     "clean": "rm -rf dist && rm -rf src/_includes",
-    "dev": "npm-run-all clean styles:dev scripts eleventy:default --parallel eleventy:watch serve --print-label"
+    "dev": "npm-run-all clean styles:dev scripts eleventy:default --parallel serve --print-label"
   },
   "repository": {
     "type": "git",
