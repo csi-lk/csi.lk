@@ -4,7 +4,9 @@
     "target": "es5",
     "module": "commonjs",
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsx": "react", // use the React mode, so call the factory
+    "jsxFactory": "Silk.createElement" // The name of the factory function
   },
   "include": ["src/types/global.d.ts", "src/components/**/*", "src/layouts/**/*"]
 }
