@@ -1,0 +1,19 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css);
+
+$font-family: 'Fira Code';
+$font-family-variation: 'Fira Code VF';
+$font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+  'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+$font-size: calc(15px + 0.25vw);
+$font-size-xsmall: 0.7em;
+$font-size-small: 0.8em;
+$font-size-medium: 1em;
+$font-size-large: 1.2em;
+$font-size-xlarge: 1.4em;
+$font-size-xxlarge: 1.8em;
+
+$paragraph-spacing: 0.9em;
+$paragraph-indent: 1.5em;
+$line-height-heading: 1.45;
+$line-height-body: 1.55;
