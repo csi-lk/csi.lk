@@ -3,6 +3,8 @@ const md = require('markdown-it')
 const mdExternalLinks = require('markdown-it-external-links')
 
 const componentsDir = './src/_includes/components'
+const layoutsDir = './src/_includes/layouts'
+
 const toPascalCase = s => s.replace(/(^\w|-\w)/g, t => t.replace(/-/, '').toUpperCase())
 
 module.exports = function (config) {
@@ -17,6 +19,11 @@ module.exports = function (config) {
 
   // Use custom ignore
   config.setUseGitIgnore(false)
+
+  // Add all layouts
+  fs.readdirSync(layoutsDir).forEach(folder => {
+    config.addLayoutAlias(folder, `layouts/${folder}/${folder}.11ty.js`)
+  })
 
   // Add all components as {% shortcodes %}
   fs.readdirSync(componentsDir).forEach(folder => {
