@@ -22,9 +22,13 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: 'Lint'
         run: yarn lint
+      - name: 'Build'
+        run: yarn build
       - name: 'Deploy'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
+          GIT_CONFIG_NAME: Callum Silcock
+          GIT_CONFIG_EMAIL: code@csi.lk
