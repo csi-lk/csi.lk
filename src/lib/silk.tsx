@@ -1,6 +1,8 @@
-const fragment = 'Fragment'
-
-export function createElement(tag: string | Function, attributes: [], ...children: any[]) {
+export function createElement(
+  tag: string | Function,
+  attributes: [],
+  ...children: HTMLElement[]
+): string | HTMLElement[] {
   if (tag === '') return children
   if (typeof tag === 'function') {
     return tag({ ...attributes }, children.join(' '))
@@ -18,6 +20,6 @@ export function createElement(tag: string | Function, attributes: [], ...childre
   return `<${tag} ${htmlAttributes}>${children.join(' ')}</${tag}>`
 }
 
-export function Fragment() {
+export function Fragment(): string {
   return ''
 }

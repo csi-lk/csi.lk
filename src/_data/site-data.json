@@ -17,8 +17,11 @@
     { "httpEquiv": "Cache-Control", "content": "no-cache" },
     { "httpEquiv": "Content-Language", "content": "en" },
     { "name": "og:type", "content": "text/html" },
-    { "name": "og:site_name", "content": "Callum Silcock | Senior UI Developer" },
+    {
+      "name": "og:site_name",
+      "content": "Callum Silcock | Lead Front End Developer & Conference Speaker"
+    },
     { "name": "og:email", "content": "contact@csi.lk" },
-    { "name": "og:phone_number", "content": "+61412454084" }
+    { "name": "og:phone_number", "content": "+447848472822" }
   ]
 }

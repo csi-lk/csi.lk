@@ -1,6 +1,6 @@
 import * as Silk from '../../lib/silk'
 
-const Footer = ({ fixed }: { fixed?: boolean }) => (
+const Footer = ({ fixed }: { fixed?: boolean }): HTMLElement => (
   <footer className={fixed && 'fixed'}>
     <div>
       <p>&copy; 2020</p>

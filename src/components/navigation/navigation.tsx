@@ -1,6 +1,6 @@
 import * as Silk from '../../lib/silk'
 
-const Navigation = () => (
+const Navigation = (): HTMLElement => (
   <nav>
     <a className="logo" href="/">
       <i className="terminal"></i>

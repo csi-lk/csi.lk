@@ -1,9 +1,11 @@
-export namespace Eleventy {
+declare namespace Eleventy {
   interface Page {
-    siteData: typeof import('../_data/siteData.json')
+    'site-data': typeof import('../_data/site-data.json')
     layout: string
     title?: string
     description?: string
     content: string
   }
 }
+
+export default Eleventy
