@@ -11,7 +11,10 @@ export function createElement(
     ? Object.keys(attributes)
         .map(attributeKey => {
           const attributeValue = attributes[attributeKey]
-          if (attributeKey === 'className') return `class="${attributeValue}"` // <button className="bla" />
+          if (attributeKey === 'className') {
+            if (!attributeValue) return '' // <button className="undefined" />
+            return `class="${attributeValue}"` // <button className="bla" />
+          }
           if (typeof attributeValue === 'boolean' && attributeValue) return attributeKey // <button disabled />
           return `${attributeKey}="${attributeValue}"` // <button data-attr="value" />
         })

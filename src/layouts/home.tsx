@@ -7,7 +7,7 @@ export = function Home({
   'site-data': { meta, title, description },
 }: Eleventy.Page): string {
   return (
-    <PageContainer meta={meta} title={title} description={description}>
+    <PageContainer meta={meta} title={title} description={description} style="fixed">
       {content}
     </PageContainer>
   )
