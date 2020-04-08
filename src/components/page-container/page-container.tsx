@@ -7,15 +7,16 @@ interface PageContainer {
   meta: Record<string, string>[]
   title: string
   description: string
+  keywords: string
   style?: 'fluid' | 'fixed'
 }
 
 const PageContainer = (
-  { meta, title, description, style = 'fluid' }: PageContainer,
+  { meta, title, description, style = 'fluid', keywords }: PageContainer,
   children: HTMLElement[],
 ): HTMLElement => (
   <html lang="en" class="no-js">
-    <Header meta={meta} title={title} description={description}></Header>
+    <Header meta={meta} title={title} description={description} keywords={keywords} />
     <body>
       <div className={`page-container ${style}`}>
         <a href="#content" className="skip">
