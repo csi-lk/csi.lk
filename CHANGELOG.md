@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/csi-lk/csi.lk/compare/v2.1.0...v2.2.0) (2020-04-08)
+
+
+### Features
+
+* **navigation:** increased spacing and added articles link ([2628c42](https://github.com/csi-lk/csi.lk/commit/2628c42cd43769c79fd98493ac1d918c1a9e4b0c))
+
+
+### Bug Fixes
+
+* **footer:** small fix to footer to increase specificity and spacing ([74668da](https://github.com/csi-lk/csi.lk/commit/74668dadf21ca798a838f46c06aaed25ab6c97e2))
+
 ## [2.1.0](https://github.com/csi-lk/csi.lk/compare/v2.0.0...v2.1.0) (2020-04-08)
 
 
