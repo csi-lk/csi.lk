@@ -1,0 +1,24 @@
+nav {
+  padding-bottom: var(--spacing-large);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-large);
+  color: var(--color-text);
+  border: none;
+
+  i {
+    color: var(--color-text);
+    margin-top: var(--spacing-small);
+  }
+
+  h2 {
+    font-weight: lighter;
+    text-transform: lowercase;
+    white-space: pre-line;
+    line-height: calc(var(--line-height-body) / 2);
+    margin: 0 0 0 var(--spacing-small);
+  }
+}

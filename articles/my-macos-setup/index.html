@@ -1,0 +1,224 @@
+<p>As a contract front end developer I find myself setting up MacOS laptops quite often, here's my setup of everything on my home and work Macbooks (constantly updated)</p>
+<h1>Browsers</h1>
+<h2>Safari (dev)</h2>
+<pre><code>* Ublock Origin
+* 1password
+* vimari
+* Reddit enhancement suite
+</code></pre>
+<h2>Chrome (dev)</h2>
+<pre><code>* Ublock Origin
+* 1password
+* Disconnect
+* Vimium
+* HTTPS Everywhere
+* Imagus
+* Reddit Enhancement Suite
+* The Great Suspender
+</code></pre>
+<h2>Firefox (main)</h2>
+<pre><code>* 1password
+* CanvasBlocker
+* Cookie AutoDelete
+* Dark Reader
+* hooktubify
+* https everywhere
+* qbserve
+* redux detools
+* uBlock Origin
+* Vimium
+</code></pre>
+<h2>Internet Explorer (test)</h2>
+<ul>
+<li>10, 11, Edge Win VMs
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads" class="external" target="_blank" rel="noopener">Virtualbox</a></li>
+<li><a href="https://github.com/xdissent/ievms" class="external" target="_blank" rel="noopener">IEVms</a>
+<ul>
+<li>Run <code>curl -s https://raw.githubusercontent.com/amichaelparker/ievms/master/ievms.sh | env IEVMS_VERSIONS=&quot;10 11 EDGE&quot; bash</code></li>
+<li>It will fail wanting you to accept license terms</li>
+<li><code>VBoxManage extpack install /Users/csilk/.ievms/Oracle_VM_VirtualBox_Extension_Pack-</code> (tab to auto complete then enter) then accept licence terms</li>
+<li>Run 1 again</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://apps.apple.com/us/app/microsoft-edge/id1288723196" class="external" target="_blank" rel="noopener">Edge Preview (webkit)</a></li>
+</ul>
+<h2>iOS Simulator (test)</h2>
+<p>Comes with Xcode, used for mobile safari testing (usually emulated in Chrome is fine but sometimes is needed)</p>
+<h1>Productivity</h1>
+<h2>Alfred with Powerpack</h2>
+<p>The nerve center for my setup, allows me to automate / get quick access to a ton of stuff</p>
+<p><strong>Settings</strong></p>
+<ul>
+<li>CMD+Space hotkey (needs to be turned off in Keyboard Shortcuts &gt; Spotlight)</li>
+<li>Disable bad web searches</li>
+<li>Add custom searches
+<ul>
+<li>Stackoverflow
+<ul>
+<li>URL - <a href="http://stackoverflow.com/?q=%7Bquery%7D" class="external" target="_blank" rel="noopener">http://stackoverflow.com/?q={query}</a></li>
+<li>Keyword - so</li>
+<li>Icon <a href="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a" class="external" target="_blank" rel="noopener">https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Setup fallback results for search engine to be
+<ul>
+<li>Duck Duck Go</li>
+<li>Stackoverflow</li>
+<li>Amazon UK</li>
+</ul>
+</li>
+</ul>
+<p><strong>Workflows</strong></p>
+<ul>
+<li>Dash workflow for quick documentation lookup (built into dash)</li>
+<li>Lorem - <a href="https://github.com/tillkruss/alfred-lorem-ipsum/releases" class="external" target="_blank" rel="noopener">https://github.com/tillkruss/alfred-lorem-ipsum/releases</a></li>
+<li>UUID - <a href="http://www.packal.org/workflow/uuid-generator-0" class="external" target="_blank" rel="noopener">http://www.packal.org/workflow/uuid-generator-0</a></li>
+<li>Fakerum (generate fake data) - <a href="https://github.com/deanishe/alfred-fakeum/releases" class="external" target="_blank" rel="noopener">https://github.com/deanishe/alfred-fakeum/releases</a></li>
+<li>Downvid (download all videos) - <a href="https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid" class="external" target="_blank" rel="noopener">https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid</a></li>
+<li>Process killer - <a href="https://github.com/ngreenstein/alfred-process-killer" class="external" target="_blank" rel="noopener">https://github.com/ngreenstein/alfred-process-killer</a></li>
+<li>Encode and Decode - <a href="https://github.com/willfarrell/alfred-encode-decode-workflow" class="external" target="_blank" rel="noopener">https://github.com/willfarrell/alfred-encode-decode-workflow</a></li>
+</ul>
+<h2>Marta file manager</h2>
+<p>(to replace finder)</p>
+<p><a href="https://marta.yanex.org/" class="external" target="_blank" rel="noopener">https://marta.yanex.org</a></p>
+<p>My Config - <a href="https://gist.github.com/csi-lk/8505fb12052151ef27a16df4a3e40d3b" class="external" target="_blank" rel="noopener">https://gist.github.com/csi-lk/8505fb12052151ef27a16df4a3e40d3b</a></p>
+<p>Then kill Finder as I rarely need it - <a href="https://apple.stackexchange.com/questions/274745/why-is-the-finder-app-always-open#274748" class="external" target="_blank" rel="noopener">https://apple.stackexchange.com/questions/274745/why-is-the-finder-app-always-open#274748</a></p>
+<p><code>defaults write com.apple.finder QuitMenuItem -bool YES</code></p>
+<p><code>killall Finder</code></p>
+<h2>Things 3 (todo list)</h2>
+<p><a href="https://apps.apple.com/us/app/things-3/id904280696?mt=12" class="external" target="_blank" rel="noopener">Mac App store - Things 3</a></p>
+<p>Love the UI and the way it syncs with my other iDevices</p>
+<h2>Qbserv</h2>
+<p><a href="https://qotoqot.com/qbserve/" class="external" target="_blank" rel="noopener">https://qotoqot.com/qbserve/</a></p>
+<p>Automated time tracker that focuses on Productivity rather than time</p>
+<h2>FS Notes</h2>
+<p><a href="https://fsnot.es/" class="external" target="_blank" rel="noopener">Fsnotes</a></p>
+<p>Currently migrating away from <a href="https://notion.so" class="external" target="_blank" rel="noopener">Notion</a></p>
+<p>My new favourite note taking app that stores in plaintext on iCloud drive</p>
+<p>Syncs with iOS app</p>
+<h2>SnippetsLab</h2>
+<p><a href="https://www.renfei.org/snippets-lab/" class="external" target="_blank" rel="noopener">Renfei SnippetsLab</a></p>
+<p>Where I store code snippets</p>
+<p>Choose SnippetsLab &gt; Install Alfred Workflow from the menubar</p>
+<h2>GifFox</h2>
+<p><a href="https://gifox.io/" class="external" target="_blank" rel="noopener">Giffox</a></p>
+<p>Free software to create gifs easily that are sharable on Slack or imgur</p>
+<h1>Development</h1>
+<p>This is my default coding environment for mainly Front End development</p>
+<h2>Dash</h2>
+<p>Quick dev docs lookup that hooks direclty into Alfred</p>
+<h2>iTerm 2</h2>
+<p><a href="https://iterm2.com/" class="external" target="_blank" rel="noopener">iTerm 2</a></p>
+<p>Setup with <a href="https://github.com/mbadolato/iTerm2-Color-Schemes" class="external" target="_blank" rel="noopener">Monokai Soda Colors</a></p>
+<h2>VSCode</h2>
+<p><a href="https://code.visualstudio.com/download" class="external" target="_blank" rel="noopener">Visual Studio Code</a></p>
+<p>Note: i'm going to try going back to Sublime Text, as VSCode is too slow for me at the moment</p>
+<ul>
+<li>Use <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync" class="external" target="_blank" rel="noopener">sync-settings</a> with <a href="https://gist.github.com/csi-lk/8bf890e8abbaca38c38e9beb247cc52c" class="external" target="_blank" rel="noopener">this gist</a></li>
+</ul>
+<h2>Javascript Env</h2>
+<ul>
+<li>NodeJS
+<ul>
+<li>NPM</li>
+<li>Yarn
+<ul>
+<li>Use <code>npm-merge-driver</code> for auto merging conflicts in <code>yarn.lock</code><pre><code>npx npm-merge-driver install \
+    --driver-name yarn-merge-driver \
+    --driver &quot;npx npm-merge-driver merge %A %O %B %P -c yarn&quot; \
+    --files yarn.lock
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Sublime Text</h2>
+<ul>
+<li>Themes
+<ul>
+<li><a href="https://packagecontrol.io/packages/Monokai%20-%20Spacegray" class="external" target="_blank" rel="noopener">https://packagecontrol.io/packages/Monokai * Spacegray</a></li>
+<li><a href="https://packagecontrol.io/packages/Material%20Theme" class="external" target="_blank" rel="noopener">https://packagecontrol.io/packages/Material Theme</a></li>
+<li>Add <code>subl</code> to path with</li>
+<li><a href="https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos" class="external" target="_blank" rel="noopener">https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos</a></li>
+</ul>
+</li>
+</ul>
+<h2>CLI tools</h2>
+<ul>
+<li><a href="https://brew.sh/" class="external" target="_blank" rel="noopener">brew</a> because of course</li>
+<li><a href="https://github.com/csi-lk/gg" class="external" target="_blank" rel="noopener">Git Goodies</a> forked to add my own commands and speed up git workflow</li>
+<li><a href="https://github.com/nvbn/thefuck" class="external" target="_blank" rel="noopener">thefuck</a> <code>brew install thefuck</code> autocorrects your last failed input</li>
+</ul>
+<h1>Utilities</h1>
+<h2>Spectacle</h2>
+<p><a href="https://www.spectacleapp.com/" class="external" target="_blank" rel="noopener">Spectacle App</a></p>
+<p>Setup hotkeys for window Management</p>
+<h2>MenuMeters</h2>
+<p><a href="https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/" class="external" target="_blank" rel="noopener">https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/</a></p>
+<p>Shows quick CPU, Network and RAM information in the MenuBar</p>
+<h2>Hazel</h2>
+<p><a href="https://www.noodlesoft.com/" class="external" target="_blank" rel="noopener">Noodlesoft - Hazel</a></p>
+<p>Automated file operations, stored in iCloud drive that sync across devices</p>
+<h2>Bartender</h2>
+<p><a href="https://www.macbartender.com/" class="external" target="_blank" rel="noopener">Mac Bartender</a></p>
+<p>To hide all the menubar icons that I don't need quick acess to</p>
+<h2>Dockey</h2>
+<p><a href="http://dockey.publicspace.co/" class="external" target="_blank" rel="noopener">http://dockey.publicspace.co/</a></p>
+<p>Change dock preferences to always hide quick as possible show</p>
+<h2>Amphetamine</h2>
+<p><a href="https://apps.apple.com/us/app/amphetamine/id937984704?mt=12" class="external" target="_blank" rel="noopener">Amphetamine (Mac Store)</a></p>
+<p>Much like the older caffine but way better, keeps your mac from sleeping</p>
+<h2>DaisyDisk</h2>
+<p>Note: I didn't know this at the time but you can use <a href="http://grandperspectiv.sourceforge.net" class="external" target="_blank" rel="noopener">GrandPerspectiv</a> for a free alternative</p>
+<h2>ImageOptim</h2>
+<ul>
+<li><a href="https://imageoptim.com/mac" class="external" target="_blank" rel="noopener">ImageOptim</a></li>
+</ul>
+<h1>Design</h1>
+<h2>Figma</h2>
+<p><a href="https://www.figma.com/downloads" class="external" target="_blank" rel="noopener">Figma</a></p>
+<p>Great sketch replacement</p>
+<h2>Pixelmator</h2>
+<p>For photoshop esque things that need to be done, I have a lifetime version given away in an old 'maclife' magazine that i've been using for years</p>
+<h1>Communication</h1>
+<h2>Slack</h2>
+<p><a href="https://slack.com/downloads/osx" class="external" target="_blank" rel="noopener">Slack</a></p>
+<p>Darkify with <a href="https://github.com/LanikSJ/slack-dark-mode" class="external" target="_blank" rel="noopener">Slack Dark Mode</a> (works after 4.0+ update)</p>
+<h2>WhatsApp</h2>
+<p>Found on mac app store</p>
+<h1>Media</h1>
+<h2>IINA</h2>
+<p><a href="https://iina.io/" class="external" target="_blank" rel="noopener">IINA</a></p>
+<p>Plays everything but looks good, prefer it to VLC on mac then associate it with all movie formats</p>
+<h2>Spotify</h2>
+<p><a href="https://www.spotify.com/us/download/mac/" class="external" target="_blank" rel="noopener">Spotify</a></p>
+<p>Can't dev without music</p>
+<h1>Fonts</h1>
+<h2>Fontbase</h2>
+<p><a href="http://fontba.se/" class="external" target="_blank" rel="noopener">Fontbase</a></p>
+<p>Missing font manager that lets you quick preview etc.</p>
+<h2>Web Font Load</h2>
+<p><a href="https://github.com/qrpike/Web-Font-Load" class="external" target="_blank" rel="noopener">Web-Font-Load</a></p>
+<pre><code>curl https://raw.githubusercontent.com/qrpike/Web-Font-Load/master/install.sh | sh
+</code></pre>
+<p>Installs all google fonts locally for design</p>
+<h1>Entertainment / Fun</h1>
+<h2>Battle.net</h2>
+<p><a href="https://www.battle.net/download/getInstallerForGame?os=mac&amp;locale=enUS&amp;version=LIVE&amp;gameProgram=BATTLENET_APP" class="external" target="_blank" rel="noopener">Battle.net</a></p>
+<p>Because I play a lot of Hearthstone</p>
+<h2>Plex</h2>
+<p><a href="https://www.plex.tv/downloads/" class="external" target="_blank" rel="noopener">Plex</a></p>
+<p>I have a plex server on a mac mini at home that I use often</p>
+<h2>Open Emu</h2>
+<p><a href="http://openemu.org/" class="external" target="_blank" rel="noopener">Open Emu</a></p>
+<p>Because I love playing banjo kazooie over and over again</p>
+<h2>Paprika</h2>
+<p><a href="https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222868" class="external" target="_blank" rel="noopener">Paprika (App Store)</a></p>
+<p>Where I keep all my recipies, have been using this for years, well worth the sticker price</p>

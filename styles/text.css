@@ -1,0 +1,45 @@
+p,
+dl,
+hr,
+ol,
+ul,
+nav,
+footer,
+details,
+fieldset,
+progress,
+article aside {
+  -webkit-margin-before: var(--paragraph-spacing);
+  margin-block-start: var(--paragraph-spacing);
+  -webkit-margin-after: 0;
+  margin-block-end: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0;
+  margin-inline-end: 0;
+
+  &:first-child {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+  }
+}
+
+blockquote,
+figure,
+header,
+form,
+pre {
+  -webkit-margin-before: calc(var(--paragraph-spacing) * 1.25);
+  margin-block-start: calc(var(--paragraph-spacing) * 1.25);
+  -webkit-margin-after: 0;
+  margin-block-end: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0;
+  margin-inline-end: 0;
+
+  &:first-child {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+  }
+}

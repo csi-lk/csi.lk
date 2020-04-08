@@ -1,0 +1,69 @@
+<p>At <a href="http://messagemedia.com.au/" class="external" target="_blank" rel="noopener">Message Media</a> I built a Functional Test pipeline within our CI/CD process. The idea was to drastically reduce the amount of regression testing we were doing and enable the QAs to do what they do best; -create work for me- focus on finding bugs.</p>
+<p>As our tests grew larger we started to run into issues with stability. Writing the tests were time consuming and the format did not match the coding style of the application.</p>
+<h2>So what were you using?</h2>
+<ul>
+<li><a href="https://github.com/cucumber/cucumber-js" class="external" target="_blank" rel="noopener">CucumberJS</a></li>
+<li><a href="https://www.npmjs.com/package/selenium-webdriver" class="external" target="_blank" rel="noopener">Selenium Webdriver</a></li>
+<li><a href="https://github.com/lightbody/browsermob-proxy" class="external" target="_blank" rel="noopener">BrowserMob Proxy</a></li>
+</ul>
+<h3>So why the change?</h3>
+<p>Selenium and the W3C WebDriver API plainly sucks, we were constantly running into issues with:</p>
+<ul>
+<li>Stability</li>
+<li>Random failures</li>
+<li>Writing the tests</li>
+<li>Mismatched coding styles</li>
+</ul>
+<p>It’s also</p>
+<ul>
+<li>Bulky requiring large installs</li>
+<li>Has Java as a requirement</li>
+<li>A general pain in the ass</li>
+</ul>
+<blockquote>
+<p>There’s got to be an easier solution out there, right?</p>
+</blockquote>
+<h2>Our Requirements</h2>
+<ul>
+<li>Uses the <a href="https://cucumber.io/docs/reference" class="external" target="_blank" rel="noopener">Cucumber Gherkin Syntax</a></li>
+<li>Cross platform as we have team members using Mac / Windows / Linux</li>
+<li>Testing must be consistent</li>
+<li>Aim for under ~10 minute full run (developers are bad at waiting)</li>
+</ul>
+<h2>Nightwatch</h2>
+<p>From initial research Nightwatch with <a href="https://github.com/mucsi96/nightwatch-cucumber" class="external" target="_blank" rel="noopener">nightwatch-cucumber</a> looked like a promising candidate. It offered the gherkin syntax with a better Javascript style. It also has the added bonus of <a href="http://mucsi96.github.io/nightwatch-cucumber/#debugging-with-visual-studio-code" class="external" target="_blank" rel="noopener">being able to debug with VS Code</a></p>
+<p>When putting it into practice, the following issues occurred:</p>
+<ul>
+<li>The Nightwatch Cucumber plugin does not support scenarios</li>
+<li>It still uses Selenium (through Selenium Server)</li>
+<li>Upon <a href="https://medium.com/qaworks/nightwatch-js-after-12-000-tests-and-3000-hours-8ae87a714158" class="external" target="_blank" rel="noopener">further reading</a> we would have to spend a lot of time and energy writing fault tolerant tests</li>
+</ul>
+<h2>Test Cafe</h2>
+<p>Looked more promising as <a href="https://testcafe-discuss.devexpress.com/t/why-not-use-selenium/47/2" class="external" target="_blank" rel="noopener">it doesn’t use Selenium</a> and also has a <a href="https://github.com/sitegeist/gherkin-testcafe" class="external" target="_blank" rel="noopener">Gherkin</a> wrapper to achieve the Cucumber requirement.</p>
+<p>Once again we found issues including:</p>
+<ul>
+<li>The Gherkin plugin did not allow us to pass parameters to Test Cafe</li>
+<li>Cookies were reset between the Gherkin steps not allowing complete scenarios to run</li>
+<li>Lacked documentation and was hard to navigate</li>
+<li>Difficult to write tests</li>
+<li>Forces you to <a href="https://medium.com/tech-quizlet/cypress-the-future-of-end-to-end-testing-for-web-applications-8ee108c5b255" class="external" target="_blank" rel="noopener">use a PageModel syntax</a></li>
+</ul>
+<h2>Cypress</h2>
+<p>The holy grail with a great <a href="https://github.com/TheBrainFamily/cypress-cucumber-preprocessor" class="external" target="_blank" rel="noopener">Cucumber Preprocessor</a> plugin, <a href="https://docs.cypress.io/guides/overview/why-cypress.html" class="external" target="_blank" rel="noopener">amazing documentation</a> and built in fault tolerance to help with random failures.</p>
+<h4>Good parts</h4>
+<ul>
+<li><a href="https://docs.cypress.io" class="external" target="_blank" rel="noopener">Amazing documentation</a></li>
+<li><a href="https://docs.cypress.io/guides/core-concepts/test-runner.html#" class="external" target="_blank" rel="noopener">Easy to use live development (watch) mode</a></li>
+<li><a href="https://blog.red-badger.com/blog/2017/6/16/cypress-a-genuine-alternative-to-selenium-at-last" class="external" target="_blank" rel="noopener">Does not use selenium</a></li>
+<li><a href="https://docs.cypress.io/guides/references/assertions.html#BDD-Assertions" class="external" target="_blank" rel="noopener">Uses mocha under the hood for simpler assertion writing</a></li>
+<li><a href="https://github.com/TheBrainFamily/cypress-cucumber-preprocessor" class="external" target="_blank" rel="noopener">Supports TDD Gherkin syntax with a plugin</a></li>
+<li><a href="https://docs.cypress.io/guides/guides/debugging.html" class="external" target="_blank" rel="noopener">Built in error handling</a></li>
+</ul>
+<h4>Bad parts</h4>
+<ul>
+<li><a href="https://github.com/cypress-io/cypress/issues/681" class="external" target="_blank" rel="noopener">No parallel testing yet</a></li>
+<li>No cross browser support yet</li>
+<li>You have to be very specific when writing your Cukes (Given / When / Then)</li>
+</ul>
+<p>We have since converted our Front end Functional Testing process to Cypress, which surprisingly only took a few days and in the process made me fall in love with their toolchain.</p>
+<p>I hope this article helps with your decision process on what testing tool to use.</p>
