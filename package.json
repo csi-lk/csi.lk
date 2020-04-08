@@ -26,7 +26,6 @@
     "RUNNING": "---------------------------",
     "serve": "light-server -c .lightserverrc",
     "watch": "run-s scripts static",
-    "eleventy:watch": "eleventy --watch",
     "UTILITY": "---------------------------",
     "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
     "clean": "rm -rf dist && rm -rf src/_includes",
