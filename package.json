@@ -28,7 +28,7 @@
     "serve": "light-server -c .lightserverrc",
     "watch": "run-s scripts static",
     "UTILITY": "---------------------------",
-    "ci:version": "standard-version",
+    "ci:version": "standard-version && git push --follow-tags origin master",
     "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
     "clean": "rm -rf dist && rm -rf src/_includes",
     "dev": "npm-run-all clean styles scripts static --parallel serve --print-label"
