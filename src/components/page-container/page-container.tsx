@@ -17,9 +17,9 @@ const Head = ({ meta, title, description }: Head) => (
   </head>
 )
 
-const PageContainer = (props: Head, children: any[]) => (
+const PageContainer = (properties: Head, children: any[]) => (
   <html lang="en" class="no-js">
-    <Head {...props}></Head>
+    <Head {...properties}></Head>
     <body>
       <a href="#content" className="skip">
         Skip to content
