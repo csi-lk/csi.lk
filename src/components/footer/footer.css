@@ -1,7 +1,7 @@
-footer {
+footer.footer {
   border-top: var(--border-double);
-  margin-top: var(--spacing-large);
-  padding: var(--spacing-large) 0;
+  margin-top: var(--spacing-xlarge);
+  padding: var(--spacing-xlarge) 0;
   display: flex;
   font-size: var(--font-size-small);
 
