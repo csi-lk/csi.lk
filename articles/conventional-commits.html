@@ -1,0 +1,78 @@
+<p><a href="https://www.conventionalcommits.org/en/v1.0.0-beta.4/" class="external" target="_blank" rel="noopener">Conventional commits</a> seems to be the way forward as it's an easy set of rules to remember that results in a far more structured commit history.</p>
+<h2>Preferred Method</h2>
+<p>All commits require a <code>type</code>, <code>scope</code>, <code>description</code>, long form descriptive <code>body</code> and a ticket reference eg. <code>#1234</code></p>
+<p>They should be structured as follows:</p>
+<pre><code class="language-bash">feat(scope): I made a change
+
+BREAKING CHANGE: This is a description of the change i've made
+
+#1234
+</code></pre>
+<h2>Quick reference</h2>
+<table>
+<thead>
+<tr>
+<th>scope</th>
+<th>semver</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feat</td>
+<td><code>MINOR</code></td>
+<td>a new feature</td>
+</tr>
+<tr>
+<td>fix</td>
+<td><code>PATCH</code></td>
+<td>a bug fix ()</td>
+</tr>
+<tr>
+<td>docs</td>
+<td>none</td>
+<td>documentation only changes</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+<td>changes that do not affect the meaning of the code (formatting etc.)</td>
+</tr>
+<tr>
+<td>refactor</td>
+<td>none</td>
+<td>neither fixes a bug or adds a feature</td>
+</tr>
+<tr>
+<td>perf</td>
+<td>none</td>
+<td>code change that improves performance</td>
+</tr>
+<tr>
+<td>test</td>
+<td>none</td>
+<td>add or update existing tests only</td>
+</tr>
+<tr>
+<td>build</td>
+<td>none</td>
+<td>affecting build system</td>
+</tr>
+<tr>
+<td>chore</td>
+<td>none</td>
+<td>changes that do not modify source or test</td>
+</tr>
+<tr>
+<td>revert</td>
+<td>none</td>
+<td>revert previous commit</td>
+</tr>
+</tbody>
+</table>
+<p>Adding <code>BREAKING CHANGE</code> to the body of the commit message will cause a <code>MAJOR</code> bump</p>
+<h2>Tools</h2>
+<p><a href="https://github.com/commitizen/cz-cli" class="external" target="_blank" rel="noopener">Commitizen</a> gives you a Q&amp;A approach to committing, usually have it setup with:</p>
+<pre><code class="language-bash">yarn commit
+</code></pre>
+<p>Automagic <a href="https://semver.org/" class="external" target="_blank" rel="noopener">SemVer</a> as it works with Lerna to <a href="https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli" class="external" target="_blank" rel="noopener">generate changelogs</a> and <a href="https://github.com/lerna/lerna/tree/master/commands/version#--conventional-commits" class="external" target="_blank" rel="noopener">determine version bumps</a></p>
