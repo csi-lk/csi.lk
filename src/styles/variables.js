@@ -50,6 +50,7 @@ module.exports = {
 
   // Spacing
 
+  'spacing-xsmall': '0.156em',
   'spacing-small': '0.313em',
   'spacing-medium': '0.625em',
   'spacing-large': '1.250em',
