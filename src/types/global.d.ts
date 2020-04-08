@@ -4,8 +4,8 @@ export interface Article {
     description?: string
     path: string
     template: string
-    meta?: string
     permalink: string
+    keywords?: string
   }
   date: Date
 }
@@ -16,6 +16,7 @@ declare namespace Eleventy {
     layout: string
     title?: string
     description?: string
+    keywords?: string
     content: string
     collections: {
       all: Article[]
