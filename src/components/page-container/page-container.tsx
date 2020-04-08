@@ -1,35 +1,31 @@
 import * as Silk from '../../lib/silk'
+import Header from '../header/header'
 import Navigation from '../navigation/navigation'
 import Footer from '../footer/footer'
 
-interface Head {
+interface PageContainer {
   meta: Record<string, string>[]
   title: string
   description: string
+  style?: 'fluid' | 'fixed'
 }
 
-const Head = ({ meta, title, description }: Head): HTMLElement => (
-  <head>
-    <meta name="description" content={description} />
-    {meta.map(tag => <meta {...tag} />).join(' ')}
-    <title>{title}</title>
-    <link rel="stylesheet" href="/styles/index.css" />
-  </head>
-)
-
-const PageContainer = (properties: Head, children: HTMLElement[]): HTMLElement => (
+const PageContainer = (
+  { meta, title, description, style = 'fluid' }: PageContainer,
+  children: HTMLElement[],
+): HTMLElement => (
   <html lang="en" class="no-js">
-    <Head {...properties}></Head>
+    <Header meta={meta} title={title} description={description}></Header>
     <body>
       <a href="#content" className="skip">
         Skip to content
       </a>
       <Navigation />
-      <main>
+      <main className={style}>
         <article id="content">{children}</article>
       </main>
     </body>
-    <Footer fixed />
+    <Footer fixed={style === 'fixed'} />
   </html>
 )
 

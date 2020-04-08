@@ -19,3 +19,9 @@
     overflow: hidden;
   }
 }
+
+main {
+  &.fixed {
+    padding: var(--spacing-large) 0;
+  }
+}
