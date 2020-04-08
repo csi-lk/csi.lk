@@ -13,11 +13,11 @@ body {
     font-family: var(--font-family-variation), var(--font-family-system);
   }
 
-  @media (min-width: var(--breakpoint-medium)) {
+  @media (min-width: 50em) {
     font-size: calc(var(--font-size) * 1.1);
   }
 
-  @media (min-width: var(--breakpoint-large)) {
+  @media (min-width: 62.5em) {
     font-size: calc(var(--font-size) * 1.2);
   }
 }

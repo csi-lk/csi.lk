@@ -4089,13 +4089,6 @@ postcss-media-query-parser@^0.2.3:
   resolved "https://registry.yarnpkg.com/postcss-media-query-parser/-/postcss-media-query-parser-0.2.3.tgz#27b39c6f4d94f81b1a73b8f76351c609e5cef244"
   integrity sha1-J7Ocb02U+Bsac7j3Y1HGCeXO8kQ=
 
-postcss-media-variables@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-media-variables/-/postcss-media-variables-2.0.1.tgz#d91d9040a51063421cfc53b15c6af7e0111c9407"
-  integrity sha512-uY8wxciMEzUkLtJaR3EklC9fZDr/4U7DH7wkcNAvCyH5fd3mXgAkwYLLpotF33BDZxNb1ETyhsOiRxR3Zd0h7g==
-  dependencies:
-    postcss "^6.0.0"
-
 postcss-merge-idents@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/postcss-merge-idents/-/postcss-merge-idents-4.0.1.tgz#b7df282a92f052ea0a66c62d8f8812e6d2cbed23"
