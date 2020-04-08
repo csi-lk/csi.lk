@@ -5,13 +5,25 @@ footer {
   display: flex;
   font-size: var(--font-size-small);
 
+  @media (max-width: 37.5em) {
+    flex-direction: column;
+  }
+
   &.fixed {
     position: fixed;
     bottom: 0;
     width: calc(100% - var(--spacing-xlarge));
+
+    @media (max-width: 37.5em) {
+      position: relative;
+    }
   }
 
   div {
     flex: 1 auto;
+
+    @media (max-width: 37.5em) {
+      margin: var(--spacing-medium);
+    }
   }
 }
