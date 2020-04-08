@@ -15,7 +15,7 @@
     "styles": "shx cat 'src/**/*.css' | postcss -o dist/styles/index.css --map",
     "styles:prod": "shx cat 'src/**/*.css' | postcss -o dist/styles/index.css",
     "scripts": "yarn tsc && yarn scripts:rename",
-    "scripts:rename": "for f in src/_includes/layouts/*.js; do mv -- \"$f\" \"${f%.js}.11ty.js\"; done",
+    "scripts:rename": "for f in src/_includes/layouts/**/*.js; do mv -- \"$f\" \"${f%.js}.11ty.js\"; done",
     "domain": "shx cp CNAME dist/CNAME",
     "build": "run-s clean styles scripts static --print-label",
     "build:prod": "cross-env NODE_ENV=production run-s clean styles:prod scripts static:prod domain",
