@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/csi-lk/csi.lk/compare/v2.0.0...v2.1.0) (2020-04-08)
+
+
+### Features
+
+* **article:** add article layout ([ec9d75b](https://github.com/csi-lk/csi.lk/commit/ec9d75b47d7a9e1ee01c8b92e7e47bb580da8074))
+* **header:** add <meta> keywords tag for articles ([fa622d9](https://github.com/csi-lk/csi.lk/commit/fa622d97732d420c1db29a66e8d3a21727f3541a))
+* **home:** use new keywords meta ([187c85c](https://github.com/csi-lk/csi.lk/commit/187c85c8e08e4d5137929590bb66a00a2fde5a51))
+
 ## 2.0.0 (2020-04-08)
 
 

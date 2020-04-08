@@ -1,7 +1,7 @@
 {
   "name": "csi.lk",
   "description": "Callum Silcock's personal website",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "keywords": [
     "callum",
     "silcock",
@@ -28,7 +28,7 @@
     "serve": "light-server -c .lightserverrc",
     "watch": "run-s scripts static",
     "UTILITY": "---------------------------",
-    "version": "standard-version",
+    "ci:version": "standard-version",
     "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
     "clean": "rm -rf dist && rm -rf src/_includes",
     "dev": "npm-run-all clean styles scripts static --parallel serve --print-label"
