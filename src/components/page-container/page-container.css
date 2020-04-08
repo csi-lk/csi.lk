@@ -1,6 +1,6 @@
 .skip {
   display: block;
-  padding: 0.5em;
+  padding: var(--spacing-medium);
   text-align: center;
   font-weight: bold;
   border: 2px dashed;

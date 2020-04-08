@@ -29,7 +29,7 @@ const PageContainer = (props: Head, children: any[]) => (
         <article id="content">{children}</article>
       </main>
     </body>
-    <Footer />
+    <Footer fixed />
   </html>
 )
 

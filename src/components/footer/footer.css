@@ -1,14 +1,14 @@
 footer {
   border-top: var(--border-double);
-  margin-top: 1.5em;
-  padding: 1.5em 0;
+  margin-top: var(--spacing-large);
+  padding: var(--spacing-large) 0;
   display: flex;
   font-size: var(--font-size-small);
 
   &.fixed {
     position: fixed;
     bottom: 0;
-    width: calc(100% - 3em);
+    width: calc(100% - var(--spacing-xlarge));
   }
 
   div {
