@@ -48,7 +48,7 @@ module.exports = {
   'border-double': '6px double var(--color-border)',
   'border-single': '2px solid var(--color-border)',
 
-  //Spacing
+  // Spacing
 
   'spacing-small': '0.313em',
   'spacing-medium': '0.625em',
