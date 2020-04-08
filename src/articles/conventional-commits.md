@@ -5,7 +5,8 @@ description: >-
   to remember that results in a far more structured commit history.
 permalink: articles/conventional-commits.html
 tags: article
-meta: conventional, commits, commitizen, quick, reference, committing, git
+keywords: conventional, commits, commitizen, quick, reference, committing, git
+layout: article
 ---
 
 [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) seems to be the way forward as it's an easy set of rules to remember that results in a far more structured commit history.

@@ -2,9 +2,9 @@
 title: '↩ Understanding React Hooks '
 description: My process of learning of React Hooks and how to 'type' them using Typescript
 permalink: articles/understanding-hooks.html
-template: article
+layout: article
 tags: article
-meta: reactjs, hooks, typescript, javascript
+keywords: reactjs, hooks, typescript, javascript
 ---
 
 After spending a few weeks working with and learning React Hooks, I wanted to collate it all into a quick cheatsheet for myself, I hope you can find some value in it.

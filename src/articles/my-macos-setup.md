@@ -2,9 +2,9 @@
 title: 💻 My MacOS Setup
 description: My setup of everything on my home and work Macbooks
 permalink: articles/my-macos-setup.html
-template: article
+layout: article
 tags: article
-meta: 'macos, setup, apps, mac, os, front, end, developer'
+keywords: 'macos, setup, apps, mac, os, front, end, developer'
 ---
 
 As a contract front end developer I find myself setting up MacOS laptops quite often, here's my setup of everything on my home and work Macbooks (constantly updated)

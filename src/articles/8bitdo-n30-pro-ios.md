@@ -5,9 +5,10 @@ description: >-
   firmware
 permalink: articles/8bitdo-n30-ios.html
 tags: article
-meta: >-
+keywords: >-
   8bitdo, n30, ios, delta, emulator, f30, iphone, controller, 8bit, ipad, n64,
   gba
+layout: article
 ---
 
 _TL;DR [Download firmware](https://download.8bitdo.com/Firmware/Controller/N30pro+F30pro/N30pro+F30pro_Firmware_Legacy_V2.00.zip), flash (power+pair), connect, map_
