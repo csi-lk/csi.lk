@@ -4,10 +4,12 @@ description: >-
   Tutorial on how to block page navigation in ReactJS (React Router) using
   Router and Browser based techniques, includes code examples and how to extend
   with Redux.
-path: /blocking-page-navigation-in-reactjs
+permalink: articles/blocking-page-navigation-in-reactjs.html
 template: article
-tags: 'message-media, reactjs, javascript'
+tags: article
+meta: message-media, reactjs, javascript
 ---
+
 _This article originally appeared on the [Message Media Developer Blog](https://developers.messagemedia.com/blocking-page-navigation-in-a-reactjs-application-react-router/), be sure to check it out._
 
 Our product owner came to us with an interesting problem the other day, in the latest release of the [Message Media Front End](https://hub.messagemedia.com) we have a new payment portal for customers to pay invoices, when a user is in the process of paying a bill we need to block navigation, or in his words:
@@ -35,11 +37,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Prompt } from 'react-router-dom'
 
-const NavigationBlocker = (props) => (
-  <Prompt
-    when={props.navigationBlocked}
-    message="Are you sure you want to leave?"
-  />
+const NavigationBlocker = props => (
+  <Prompt when={props.navigationBlocked} message="Are you sure you want to leave?" />
 )
 
 NavigationBlocker.propTypes = {
@@ -79,18 +78,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Prompt } from 'react-router-dom'
 
-const NavigationBlocker = (props) => {
+const NavigationBlocker = props => {
   if (props.navigationBlocked) {
     window.onbeforeunload = () => true
   } else {
     window.onbeforeunload = null
   }
-  return (
-    <Prompt
-      when={props.navigationBlocked}
-      message="Are you sure you want to leave?"
-    />
-  )
+  return <Prompt when={props.navigationBlocked} message="Are you sure you want to leave?" />
 }
 
 NavigationBlocker.propTypes = {
@@ -118,18 +112,13 @@ import { Prompt } from 'react-router-dom'
 
 import { getNavigationBlocked } from '../navigation-selectors'
 
-const GlobalNavigationBlocker = (props) => {
+const GlobalNavigationBlocker = props => {
   if (props.navigationBlocked) {
     window.onbeforeunload = () => true
   } else {
     window.onbeforeunload = null
   }
-  return (
-    <Prompt
-      when={props.navigationBlocked}
-      message="Are you sure you want to leave?"
-    />
-  )
+  return <Prompt when={props.navigationBlocked} message="Are you sure you want to leave?" />
 }
 
 GlobalNavigationBlocker.propTypes = {
@@ -151,13 +140,13 @@ Unfortunately because of how `onbeforeunload` can be misused, modern browsers ha
 
 And
 
-> Various browsers ignore the result of the event and do not ask the user for confirmation at all …  Firefox has a switch named `dom.disable_beforeunload` in about:config to enable this behaviour. (For eg.)
+> Various browsers ignore the result of the event and do not ask the user for confirmation at all … Firefox has a switch named `dom.disable_beforeunload` in about:config to enable this behaviour. (For eg.)
 
 Or, TL;DR:
 
-* The user must interact with the page or the `onbeforeunload` event will not fire
-* `onbeforeunload` can be turned off with browser settings
-  * [There are ways around this](https://stackoverflow.com/a/18115932) using heavier handed approaches but I would not recommend them
+- The user must interact with the page or the `onbeforeunload` event will not fire
+- `onbeforeunload` can be turned off with browser settings
+  - [There are ways around this](https://stackoverflow.com/a/18115932) using heavier handed approaches but I would not recommend them
 
 You, also, cannot specify what message is shown to the user during this interaction.
 
