@@ -8,7 +8,7 @@
     "src/**/*.tsx # yarn watch",
     "src/**/*.css # yarn styles # reloadcss",
     "src/styles/variables.js # yarn styles # reloadcss",
-    "src/**/*.md # yarn eleventy:default",
+    "src/**/*.md # yarn static",
     "dist/**/*.html"
  ],
  "http2": false,
