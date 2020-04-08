@@ -2,8 +2,10 @@ module.exports = {
   // Fonts
   'font-family': 'Fira Code',
   'font-family-variation': 'Fira Code VF',
+  'font-family-serif': "'Georgia', 'Garamond', 'Times', serif",
   'font-family-system':
     "-apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+
   'font-size': 'calc(15px + 0.25vw)',
   'font-size-xsmall': '0.7em',
   'font-size-small': '0.8em',
@@ -11,8 +13,11 @@ module.exports = {
   'font-size-large': '1.2em',
   'font-size-xlarge': '1.4em',
   'font-size-xxlarge': '1.8em',
+  'font-size-xxxlarge': '4.5em',
+
   'paragraph-spacing': '0.9em',
   'paragraph-indent': '1.5em',
+
   'line-height-heading': '1.45',
   'line-height-body': '1.55',
 
@@ -41,4 +46,11 @@ module.exports = {
   // Borders
   'border-double': '6px double var(--color-border)',
   'border-single': '2px solid var(--color-border)',
+
+  //Spacing
+
+  'spacing-small': '0.313em',
+  'spacing-medium': '0.625em',
+  'spacing-large': '1.250em',
+  'spacing-xlarge': '2.500em',
 }

@@ -6,7 +6,7 @@ body {
   font-size: var(--font-size);
   line-height: var(--line-height-body);
   letter-spacing: 0.01em;
-  margin: 1.5em;
+  margin: var(--spacing-large);
   font-family: var(--font-family), var(--font-family-system);
 
   @supports (font-variation-settings: normal) {
