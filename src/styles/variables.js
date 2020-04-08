@@ -34,6 +34,7 @@ module.exports = {
   'color-header-border': '#55595c',
 
   // Breakpoints
+  // I couldn't get postcss @media to work so here for reference
   'breakpoint-xxsmall': '20em',
   'breakpoint-xsmall': '25em',
   'breakpoint-small': '37.5em',

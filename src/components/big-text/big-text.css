@@ -1,6 +1,5 @@
 .big-text {
   font-size: var(--font-size-xxxlarge);
-  font-family: var(--font-family-serif);
   font-weight: lighter;
   margin: var(--spacing-small) 0;
 }
