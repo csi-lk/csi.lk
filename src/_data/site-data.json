@@ -2,6 +2,7 @@
   "name": "Callum Silcock",
   "title": "Callum Silcock | Lead Front End Developer & Conference Speaker",
   "description": "Includes things about me and some articles that I have written about Micro Frontends, Front End development, React, Redux, Functional Testing etc.",
+  "keywords": "micro, frontend, react, redux, javascript, cypress, london, callum, silcock",
   "meta": [
     { "charset": "utf-8" },
     { "name": "viewport", "content": "width=device-width, initial-scale=1." },
