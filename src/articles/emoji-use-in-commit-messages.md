@@ -3,10 +3,12 @@ title: "\U0001F914 Why I use emoji in my commit messages"
 description: >-
   Using a rigid commit format with emoji means I limit myself to a commit per
   ‘thing’, it also allows me to parse my commits quickly.
-path: /emoji-use-in-commit-messages
+permalink: articles/emoji-use-in-commit-messages.html
 template: article
-tags: 'code, emoji, git, commit'
+tags: article
+meta: 'code, emoji, git, commit'
 ---
+
 This article is outdated, [I now much prefer Conventional Commits](/conventional-commits)
 
 ---
@@ -19,7 +21,7 @@ Everybody has had that sinking feeling of losing minutes, hours or days worth of
 
 Because of this my projects usually end up with hundreds if not thousands of commit messages, I need a way to quickly parse what the commit messages relate to.
 
-Expanding on Sparkbox's original idea for the case of [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages)  I am forcing myself to a rigid commit format and replacing ‘type’ with a specific ‘emoji’.
+Expanding on Sparkbox's original idea for the case of [semantic commit messages](https://seesparkbox.com/foundry/semantic_commit_messages) I am forcing myself to a rigid commit format and replacing ‘type’ with a specific ‘emoji’.
 
 ## What does this look like?
 
@@ -54,20 +56,20 @@ Personally I like:
 🔨 - Dependency related
 ```
 
-The format that [gitmoji](https://gitmoji.carloscuesta.me) uses as it’s defined well, it also comes with [a CLI](https://github.com/carloscuesta/gitmoji-cli)  to get up and running quickly.
+The format that [gitmoji](https://gitmoji.carloscuesta.me) uses as it’s defined well, it also comes with [a CLI](https://github.com/carloscuesta/gitmoji-cli) to get up and running quickly.
 
 If you’d like to use your own emoji style you can use:
 
-* ‘Emoji keyboards’
-	* Windows `WIN + .`
-	* Mac `CONTROL+OPTION+SPACE`
-* A [Commitizen](https://github.com/commitizen/cz-cli) script
-	* Also gives the added bonus of enabling ‘smart commits’
+- ‘Emoji keyboards’
+  _ Windows `WIN + .`
+  _ Mac `CONTROL+OPTION+SPACE`
+- A [Commitizen](https://github.com/commitizen/cz-cli) script \* Also gives the added bonus of enabling ‘smart commits’
 
 Whatever your format is it doesn’t matter as long as it’s uniform.
 
 ## References
-* [Which Emojis Does Lucy Use in Commit Messages?](http://seankross.com/2017/05/30/Which-Emojis-Does-Lucy-Use-in-Commit-Messages.html)
-* [Semantic Commit Messages with Emojis ](https://medium.com/walmartlabs/semantic-commit-messages-with-emojis-dba2541cea9a)
-* [gitmoji | An emoji guide for your commit messages](https://gitmoji.carloscuesta.me)
-* https://github.com/carloscuesta/gitmoji-cli
+
+- [Which Emojis Does Lucy Use in Commit Messages?](http://seankross.com/2017/05/30/Which-Emojis-Does-Lucy-Use-in-Commit-Messages.html)
+- [Semantic Commit Messages with Emojis ](https://medium.com/walmartlabs/semantic-commit-messages-with-emojis-dba2541cea9a)
+- [gitmoji | An emoji guide for your commit messages](https://gitmoji.carloscuesta.me)
+- https://github.com/carloscuesta/gitmoji-cli

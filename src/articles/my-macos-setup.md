@@ -1,52 +1,57 @@
 ---
 title: 💻 My MacOS Setup
 description: My setup of everything on my home and work Macbooks
-path: /my-macos-setup
+permalink: articles/my-macos-setup.html
 template: article
-tags: 'macos, setup, apps, mac, os, front, end, developer'
+tags: article
+meta: 'macos, setup, apps, mac, os, front, end, developer'
 ---
+
 As a contract front end developer I find myself setting up MacOS laptops quite often, here's my setup of everything on my home and work Macbooks (constantly updated)
 
 # Browsers
 
 ## Safari (dev)
-	* Ublock Origin
-	* 1password
-	* vimari
-	* Reddit enhancement suite
+
+    * Ublock Origin
+    * 1password
+    * vimari
+    * Reddit enhancement suite
 
 ## Chrome (dev)
-	* Ublock Origin
-	* 1password
-	* Disconnect
-	* Vimium
-	* HTTPS Everywhere
-	* Imagus
-	* Reddit Enhancement Suite
-	* The Great Suspender
+
+    * Ublock Origin
+    * 1password
+    * Disconnect
+    * Vimium
+    * HTTPS Everywhere
+    * Imagus
+    * Reddit Enhancement Suite
+    * The Great Suspender
 
 ## Firefox (main)
-	* 1password
-	* CanvasBlocker
-	* Cookie AutoDelete
-	* Dark Reader
-	* hooktubify
-	* https everywhere
-	* qbserve
-	* redux detools
-	* uBlock Origin
-	* Vimium
+
+    * 1password
+    * CanvasBlocker
+    * Cookie AutoDelete
+    * Dark Reader
+    * hooktubify
+    * https everywhere
+    * qbserve
+    * redux detools
+    * uBlock Origin
+    * Vimium
 
 ## Internet Explorer (test)
 
-* 10, 11, Edge Win VMs
-	* [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-	* [IEVms](https://github.com/xdissent/ievms)
-		* Run `curl -s https://raw.githubusercontent.com/amichaelparker/ievms/master/ievms.sh | env IEVMS_VERSIONS="10 11 EDGE" bash`
-		* It will fail wanting you to accept license terms
-		* `VBoxManage extpack install /Users/csilk/.ievms/Oracle_VM_VirtualBox_Extension_Pack-` (tab to auto complete then enter) then accept licence terms
-		* Run 1 again
-* [Edge Preview (webkit)](https://apps.apple.com/us/app/microsoft-edge/id1288723196)
+- 10, 11, Edge Win VMs
+  _ [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+  _ [IEVms](https://github.com/xdissent/ievms)
+  _ Run `curl -s https://raw.githubusercontent.com/amichaelparker/ievms/master/ievms.sh | env IEVMS_VERSIONS="10 11 EDGE" bash`
+  _ It will fail wanting you to accept license terms
+  _ `VBoxManage extpack install /Users/csilk/.ievms/Oracle_VM_VirtualBox_Extension_Pack-` (tab to auto complete then enter) then accept licence terms
+  _ Run 1 again
+- [Edge Preview (webkit)](https://apps.apple.com/us/app/microsoft-edge/id1288723196)
 
 ## iOS Simulator (test)
 
@@ -60,27 +65,26 @@ The nerve center for my setup, allows me to automate / get quick access to a ton
 
 **Settings**
 
-* CMD+Space hotkey (needs to be turned off in Keyboard Shortcuts > Spotlight)
-* Disable bad web searches
-* Add custom searches
-	* Stackoverflow
-		* URL - [http://stackoverflow.com/?q={query}](http://stackoverflow.com/?q=%7Bquery%7D)
-		* Keyword - so
-		* Icon [https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a](https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a)
-* Setup fallback results for search engine to be
-	* Duck Duck Go
-	* Stackoverflow
-	* Amazon UK
+- CMD+Space hotkey (needs to be turned off in Keyboard Shortcuts > Spotlight)
+- Disable bad web searches
+- Add custom searches
+  _ Stackoverflow
+  _ URL - [http://stackoverflow.com/?q={query}](http://stackoverflow.com/?q=%7Bquery%7D)
+  _ Keyword - so
+  _ Icon [https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a](https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a)
+- Setup fallback results for search engine to be
+  _ Duck Duck Go
+  _ Stackoverflow \* Amazon UK
 
 **Workflows**
 
-* Dash workflow for quick documentation lookup (built into dash)
-* Lorem - [https://github.com/tillkruss/alfred-lorem-ipsum/releases](https://github.com/tillkruss/alfred-lorem-ipsum/releases)
-* UUID - [http://www.packal.org/workflow/uuid-generator-0](http://www.packal.org/workflow/uuid-generator-0)
-* Fakerum (generate fake data) - [https://github.com/deanishe/alfred-fakeum/releases](https://github.com/deanishe/alfred-fakeum/releases)
-* Downvid (download all videos) - [https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid](https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid)
-* Process killer - [https://github.com/ngreenstein/alfred-process-killer](https://github.com/ngreenstein/alfred-process-killer)
-* Encode and Decode - [https://github.com/willfarrell/alfred-encode-decode-workflow](https://github.com/willfarrell/alfred-encode-decode-workflow)
+- Dash workflow for quick documentation lookup (built into dash)
+- Lorem - [https://github.com/tillkruss/alfred-lorem-ipsum/releases](https://github.com/tillkruss/alfred-lorem-ipsum/releases)
+- UUID - [http://www.packal.org/workflow/uuid-generator-0](http://www.packal.org/workflow/uuid-generator-0)
+- Fakerum (generate fake data) - [https://github.com/deanishe/alfred-fakeum/releases](https://github.com/deanishe/alfred-fakeum/releases)
+- Downvid (download all videos) - [https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid](https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid)
+- Process killer - [https://github.com/ngreenstein/alfred-process-killer](https://github.com/ngreenstein/alfred-process-killer)
+- Encode and Decode - [https://github.com/willfarrell/alfred-encode-decode-workflow](https://github.com/willfarrell/alfred-encode-decode-workflow)
 
 ## Marta file manager
 
@@ -152,34 +156,27 @@ Setup with [Monokai Soda Colors](https://github.com/mbadolato/iTerm2-Color-Schem
 
 Note: i'm going to try going back to Sublime Text, as VSCode is too slow for me at the moment
 
-* Use [sync-settings](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) with [this gist](https://gist.github.com/csi-lk/8bf890e8abbaca38c38e9beb247cc52c)
+- Use [sync-settings](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) with [this gist](https://gist.github.com/csi-lk/8bf890e8abbaca38c38e9beb247cc52c)
 
 ## Javascript Env
 
-* NodeJS
-	* NPM
-	* Yarn
-		* Use `npm-merge-driver` for auto merging conflicts in `yarn.lock`
-			```
-			npx npm-merge-driver install \
-			    --driver-name yarn-merge-driver \
-			    --driver "npx npm-merge-driver merge %A %O %B %P -c yarn" \
-			    --files yarn.lock
-			```
+- NodeJS
+  _ NPM
+  _ Yarn \* Use `npm-merge-driver` for auto merging conflicts in `yarn.lock`
+  `npx npm-merge-driver install \ --driver-name yarn-merge-driver \ --driver "npx npm-merge-driver merge %A %O %B %P -c yarn" \ --files yarn.lock`
 
 ## Sublime Text
 
-* Themes
-	* [https://packagecontrol.io/packages/Monokai * Spacegray](https://packagecontrol.io/packages/Monokai%20-%20Spacegray)
-	* [https://packagecontrol.io/packages/Material Theme](https://packagecontrol.io/packages/Material%20Theme)
-	* Add `subl` to path with
-	* [https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos](https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos)
+- Themes
+  _ [https://packagecontrol.io/packages/Monokai _ Spacegray](https://packagecontrol.io/packages/Monokai%20-%20Spacegray)
+  _ [https://packagecontrol.io/packages/Material Theme](https://packagecontrol.io/packages/Material%20Theme)
+  _ Add `subl` to path with \* [https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos](https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos)
 
 ## CLI tools
 
-* [brew](https://brew.sh/) because of course
-* [Git Goodies](https://github.com/csi-lk/gg) forked to add my own commands and speed up git workflow
-* [thefuck](https://github.com/nvbn/thefuck) `brew install thefuck` autocorrects your last failed input
+- [brew](https://brew.sh/) because of course
+- [Git Goodies](https://github.com/csi-lk/gg) forked to add my own commands and speed up git workflow
+- [thefuck](https://github.com/nvbn/thefuck) `brew install thefuck` autocorrects your last failed input
 
 # Utilities
 
@@ -220,10 +217,12 @@ Change dock preferences to always hide quick as possible show
 Much like the older caffine but way better, keeps your mac from sleeping
 
 ## DaisyDisk
+
 Note: I didn't know this at the time but you can use [GrandPerspectiv](http://grandperspectiv.sourceforge.net) for a free alternative
 
 ## ImageOptim
-* [ImageOptim](https://imageoptim.com/mac)
+
+- [ImageOptim](https://imageoptim.com/mac)
 
 # Design
 
@@ -295,7 +294,7 @@ Because I play a lot of Hearthstone
 
 I have a plex server on a mac mini at home that I use often
 
-## Open Emu 
+## Open Emu
 
 [Open Emu](http://openemu.org/)
 

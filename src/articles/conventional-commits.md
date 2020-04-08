@@ -3,10 +3,11 @@ title: "\U0001F333 Conventional Commits"
 description: >-
   Conventional commits seems to be the way forward as it's an easy set of rules
   to remember that results in a far more structured commit history.
-path: /conventional-commits
-template: article
-tags: 'conventional, commits, commitizen, quick, reference, committing, git'
+permalink: articles/conventional-commits.html
+tags: article
+meta: conventional, commits, commitizen, quick, reference, committing, git
 ---
+
 [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) seems to be the way forward as it's an easy set of rules to remember that results in a far more structured commit history.
 
 ## Preferred Method
