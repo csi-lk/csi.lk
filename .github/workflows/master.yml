@@ -23,7 +23,7 @@ jobs:
       - name: 'Lint'
         run: yarn lint
       - name: 'Build'
-        run: yarn build
+        run: yarn build:prod
       - name: 'Deploy'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
