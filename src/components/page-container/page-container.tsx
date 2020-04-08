@@ -17,15 +17,17 @@ const PageContainer = (
   <html lang="en" class="no-js">
     <Header meta={meta} title={title} description={description}></Header>
     <body>
-      <a href="#content" className="skip">
-        Skip to content
-      </a>
-      <Navigation />
-      <main className={style}>
-        <article id="content">{children}</article>
-      </main>
+      <div className={`page-container ${style}`}>
+        <a href="#content" className="skip">
+          Skip to content
+        </a>
+        <Navigation />
+        <main>
+          <article id="content">{children}</article>
+        </main>
+        <Footer />
+      </div>
     </body>
-    <Footer fixed={style === 'fixed'} />
   </html>
 )
 

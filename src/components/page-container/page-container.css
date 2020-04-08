@@ -20,12 +20,18 @@
   }
 }
 
-main {
-  &.fixed {
-    padding: var(--spacing-large) 0;
+.page-container {
+  padding: var(--spacing-large);
 
-    @media (max-width: 37.5em) {
-      padding: 0;
+  &.fixed {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    main {
+      flex: 1 auto;
+      display: flex;
+      align-items: center;
     }
   }
 }
