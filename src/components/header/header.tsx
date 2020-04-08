@@ -4,10 +4,12 @@ interface Header {
   meta: Record<string, string>[]
   title: string
   description: string
+  keywords: string
 }
 
-const Header = ({ meta, title, description }: Header): HTMLElement => (
+const Header = ({ meta, title, description, keywords }: Header): HTMLElement => (
   <head>
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta name="description" content={description} />
     {meta.map(tag => <meta {...tag} />).join(' ')}
     <title>{title}</title>
