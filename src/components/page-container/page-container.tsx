@@ -8,7 +8,7 @@ interface Head {
   description: string
 }
 
-const Head = ({ meta, title, description }: Head) => (
+const Head = ({ meta, title, description }: Head): HTMLElement => (
   <head>
     <meta name="description" content={description} />
     {meta.map(tag => <meta {...tag} />).join(' ')}
@@ -17,7 +17,7 @@ const Head = ({ meta, title, description }: Head) => (
   </head>
 )
 
-const PageContainer = (properties: Head, children: any[]) => (
+const PageContainer = (properties: Head, children: HTMLElement[]): HTMLElement => (
   <html lang="en" class="no-js">
     <Head {...properties}></Head>
     <body>
