@@ -2,6 +2,7 @@
   margin-top: var(--spacing-xlarge);
   padding-top: var(--spacing-large);
   border-top: var(--border-single);
+  width: 100%;
 
   h6 {
     color: var(--color-text-alt);
