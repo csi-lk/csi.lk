@@ -22,9 +22,7 @@ const PageContainer = (
           Skip to content
         </a>
         <Navigation />
-        <main>
-          <article id="content">{children}</article>
-        </main>
+        <main>{children}</main>
         <Footer />
       </div>
     </body>
