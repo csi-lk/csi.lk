@@ -1,5 +1,5 @@
 ---
-layout: layouts/article-list/article-list.11ty.js
+layout: article-list
 permalink: articles.html
 ---
 
