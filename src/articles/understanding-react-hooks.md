@@ -1,7 +1,8 @@
 ---
-title: '↩ Understanding React Hooks '
+title: Understanding React Hooks
 description: My process of learning of React Hooks and how to 'type' them using Typescript
 permalink: articles/understanding-hooks.html
+date: 2019-06-20
 layout: article
 tags: article
 keywords: reactjs, hooks, typescript, javascript

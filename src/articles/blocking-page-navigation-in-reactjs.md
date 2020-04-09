@@ -1,10 +1,11 @@
 ---
-title: "\U0001F6D1 Blocking page navigation in ReactJS (React Router)"
+title: 'Blocking page navigation in ReactJS (React Router)'
 description: >-
   Tutorial on how to block page navigation in ReactJS (React Router) using
   Router and Browser based techniques, includes code examples and how to extend
   with Redux.
 permalink: articles/blocking-page-navigation-in-reactjs.html
+date: 2018-03-13
 layout: article
 tags: article
 keywords: message-media, reactjs, javascript

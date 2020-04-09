@@ -1,12 +1,13 @@
 ---
-title: "\U0001F6C2 UI Functional Testing Journey"
+title: 'UI Functional Testing Journey'
 description: >-
   Which is the best Functional Testing tool? I took a look at Cypress, Test
   Cafe, Nightwatch as a replacement for CucumberJS and Selenium.
 permalink: articles/ui-functional-testing-journey.html
+date: 2018-03-13
 layout: article
 tags: article
-keywords: message-media, testing, cypress, test-cafe, nightwatch, cucumber, selenium
+keywords: testing, cypress, test-cafe, nightwatch, cucumber, selenium
 ---
 
 At [Message Media](http://messagemedia.com.au/) I built a Functional Test pipeline within our CI/CD process. The idea was to drastically reduce the amount of regression testing we were doing and enable the QAs to do what they do best; -create work for me- focus on finding bugs.
