@@ -1,4 +1,4 @@
-export interface Article {
+export interface Content {
   data: {
     title: string
     description?: string
@@ -6,6 +6,7 @@ export interface Article {
     template: string
     permalink: string
     keywords?: string
+    tags: string[]
   }
   date: Date
 }
@@ -18,9 +19,14 @@ declare namespace Eleventy {
     description?: string
     keywords?: string
     content: string
+    tags: Record<string, string>
+    page: {
+      date: Date
+      inputPath: string
+    }
     collections: {
-      all: Article[]
-      article: Article[]
+      all: Content[]
+      article: Content[]
     }
   }
 }
