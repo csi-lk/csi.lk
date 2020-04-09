@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/csi-lk/csi.lk/compare/v2.2.0...v2.3.0) (2020-04-09)
+
+
+### Features
+
+* **article:** show post date and link to markdown source for each article ([0ac810b](https://github.com/csi-lk/csi.lk/commit/0ac810b516396fc9547323e85a8908327fb44bc9))
+* **article-list:** show post date for each article and sort them by date ([084b509](https://github.com/csi-lk/csi.lk/commit/084b50976d694b4004bd6c95f7bab069ac64daa4))
+* **time:** added new simple time component ([41114bb](https://github.com/csi-lk/csi.lk/commit/41114bbcb3c1e3e310e8156ecb3f31e184b3a14c))
+
 ## [2.2.0](https://github.com/csi-lk/csi.lk/compare/v2.1.0...v2.2.0) (2020-04-08)
 
 
