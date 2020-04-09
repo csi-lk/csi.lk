@@ -1,6 +1,9 @@
 import * as Silk from '../../lib/silk'
 import PageContainer from '../../components/page-container/page-container'
 import Eleventy from '../../types/global'
+import Time from '../../components/time/time'
+
+const baseClass = 'article'
 
 export = function Article({
   content,
@@ -8,6 +11,7 @@ export = function Article({
   title,
   description,
   keywords,
+  page: { date, inputPath },
 }: Eleventy.Page): string {
   return (
     <PageContainer
@@ -17,8 +21,20 @@ export = function Article({
       keywords={keywords || siteKeywords}
       style="fixed"
     >
-      <article id="content" class="article">
+      <article id="content" className={`${baseClass}`}>
         <h1>{title}</h1>
+        <div className={`${baseClass}-subheader`}>
+          <h2 className={`${baseClass}-date`}>
+            Posted on: <Time date={date} />
+          </h2>
+          <a
+            href={`https://github.com/csi-lk/csi.lk/tree/master/${inputPath.replace('./', '')}`}
+            target="_blank"
+            rel="noopener"
+          >
+            source
+          </a>
+        </div>
         {content}
       </article>
     </PageContainer>
