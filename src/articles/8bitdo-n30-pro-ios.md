@@ -1,14 +1,11 @@
 ---
-title: "\U0001F3AE 8BitDo N30 Pro - iOS"
-description: >-
-  How to use the 8BitDo N30 / F30 Pro controller with iOS by downgrading the
-  firmware
+title: 8BitDo N30 Pro - iOS
+description: How to use the 8BitDo N30 / F30 Pro controller with iOS by downgrading the firmware
 permalink: articles/8bitdo-n30-ios.html
 tags: article
-keywords: >-
-  8bitdo, n30, ios, delta, emulator, f30, iphone, controller, 8bit, ipad, n64,
-  gba
+keywords: 8bitdo, n30, ios, delta, emulator, f30, iphone, controller, 8bit, ipad, n64, gba
 layout: article
+date: 2019-10-22
 ---
 
 _TL;DR [Download firmware](https://download.8bitdo.com/Firmware/Controller/N30pro+F30pro/N30pro+F30pro_Firmware_Legacy_V2.00.zip), flash (power+pair), connect, map_
