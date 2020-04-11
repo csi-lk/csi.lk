@@ -33,6 +33,16 @@ module.exports = {
   'color-secondary': '#3282b8',
   'color-header-border': '#55595c',
 
+  // Code Colors
+  'code-text': '#ffffff',
+  'code-emphasis': '#a8a8a2',
+  'code-literal': '#ae81ff',
+  'code-value': '#a6e22e',
+  'code-keyword': '#f92672',
+  'code-function': '#66d9ef',
+  'code-string': '#e6db74',
+  'code-comment': '#75715e',
+
   // Breakpoints
   // I couldn't get postcss @media to work so here for reference
   'breakpoint-xxsmall': '20em',
