@@ -8,15 +8,22 @@ interface PageContainer {
   title: string
   description: string
   keywords: string
+  version: string
   style?: 'fluid' | 'fixed'
 }
 
 const PageContainer = (
-  { meta, title, description, style = 'fluid', keywords }: PageContainer,
+  { meta, title, description, style = 'fluid', keywords, version }: PageContainer,
   children: HTMLElement[],
 ): HTMLElement => (
   <html lang="en" class="no-js">
-    <Header meta={meta} title={title} description={description} keywords={keywords} />
+    <Header
+      meta={meta}
+      title={title}
+      description={description}
+      keywords={keywords}
+      version={version}
+    />
     <body>
       <div className={`page-container ${style}`}>
         <a href="#content" className="skip">
