@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.1](https://github.com/csi-lk/csi.lk/compare/v2.3.0...v2.3.1) (2020-04-11)
+
+
+### Bug Fixes
+
+* **navigation:** articles link not pointing to root ([3eb0623](https://github.com/csi-lk/csi.lk/commit/3eb06233d0e56fcba7913e446f6ac0ab14249956))
+
 ## [2.3.0](https://github.com/csi-lk/csi.lk/compare/v2.2.0...v2.3.0) (2020-04-09)
 
 
