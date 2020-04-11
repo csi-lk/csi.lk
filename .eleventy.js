@@ -1,6 +1,7 @@
 const fs = require('fs')
 const md = require('markdown-it')
 const mdExternalLinks = require('markdown-it-external-links')
+const mdHighlightJs = require('markdown-it-highlightjs')
 
 const componentsDir = './src/_includes/components'
 const layoutsDir = './src/_includes/layouts'
@@ -9,12 +10,14 @@ const toPascalCase = s => s.replace(/(^\w|-\w)/g, t => t.replace(/-/, '').toUppe
 
 module.exports = function (config) {
   // Markdown plugins
-  const markdownLib = md({ html: true }).use(mdExternalLinks, {
-    externalClassName: 'external',
-    externalTarget: '_blank',
-    externalRel: 'noopener',
-    internalDomains: ['csi.lk', 'callumsilcock.com'],
-  })
+  const markdownLib = md({ html: true })
+    .use(mdExternalLinks, {
+      externalClassName: 'external',
+      externalTarget: '_blank',
+      externalRel: 'noopener',
+      internalDomains: ['csi.lk', 'callumsilcock.com'],
+    })
+    .use(mdHighlightJs)
   config.setLibrary('md', markdownLib)
 
   // Use custom ignore
