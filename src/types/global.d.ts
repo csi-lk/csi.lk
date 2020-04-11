@@ -24,6 +24,9 @@ declare namespace Eleventy {
       date: Date
       inputPath: string
     }
+    pkg: {
+      version: string
+    }
     collections: {
       all: Content[]
       article: Content[]

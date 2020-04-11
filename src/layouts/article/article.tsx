@@ -8,6 +8,7 @@ const baseClass = 'article'
 export = function Article({
   content,
   'site-data': { meta, title: siteTitle, description: siteDescription, keywords: siteKeywords },
+  pkg: { version },
   title,
   description,
   keywords,
@@ -19,6 +20,7 @@ export = function Article({
       title={title || siteTitle}
       description={description || siteDescription}
       keywords={keywords || siteKeywords}
+      version={version}
       style="fixed"
     >
       <article id="content" className={`${baseClass}`}>
