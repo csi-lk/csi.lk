@@ -24,6 +24,7 @@
     "lint": "npm-run-all lint:stylelint lint:eslint",
     "lint:stylelint": "stylelint src/**/*.css",
     "lint:eslint": "eslint --ext tsx,ts,js,ts,json . --ignore-path .gitignore",
+    "lint:commit": "commitlint --from HEAD~$(git rev-list --count HEAD ^master)",
     "RUNNING": "---------------------------",
     "serve": "light-server -c .lightserverrc",
     "watch": "run-s scripts static",
@@ -43,6 +44,8 @@
   },
   "homepage": "https://github.com/csi-lk/csi.lk#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@types/common-tags": "^1.8.0",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
