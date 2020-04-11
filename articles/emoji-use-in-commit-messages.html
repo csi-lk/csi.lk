@@ -1,5 +1,5 @@
-<html lang="en" class="no-js"><head ><meta name="keywords" content="code, emoji, git, commit"></meta> <meta name="description" content="Using a rigid commit format with emoji means I limit myself to a commit per ‘thing’, it also allows me to parse my commits quickly."></meta> <meta charset="utf-8"></meta> <meta name="viewport" content="width=device-width, initial-scale=1."></meta> <meta name="author" content="Callum Silcock, contact@csi.lk"></meta> <meta name="reply-to" content="contact@csi.lk"></meta> <meta name="url" content="https://www.csi.lk"></meta> <meta name="coverage" content="Worldwide"></meta> <meta name="distribution" content="Global"></meta> <meta name="rating" content="General"></meta> <meta name="revisit-after" content="7 days"></meta> <meta httpEquiv="Expires" content="0"></meta> <meta httpEquiv="Pragma" content="no-cache"></meta> <meta httpEquiv="Cache-Control" content="no-cache"></meta> <meta httpEquiv="Content-Language" content="en"></meta> <meta name="og:type" content="text/html"></meta> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker"></meta> <meta name="og:email" content="contact@csi.lk"></meta> <meta name="og:phone_number" content="+447848472822"></meta> <title >Why I use emoji in my commit messages</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.0"></link></head> <body ><div class="page-container fixed"><a href="#content" class="skip">Skip to content</a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal"></i> <h2 class="logo">Callum 
- Silcock</h2></a> <a href="articles.html">articles</a></nav> <main ><article id="content" class="article"><h1 >Why I use emoji in my commit messages</h1> <div class="article-subheader"><h2 class="article-date">Posted on:  <time datetime="2018-03-14">2018-03-14</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/articles/emoji-use-in-commit-messages.md" target="_blank" rel="noopener">source</a></div> <p>This article is outdated, <a href="/conventional-commits">I now much prefer Conventional Commits</a></p>
+<html lang="en" class="no-js"><head ><meta name="keywords" content="code, emoji, git, commit"></meta> <meta name="description" content="Using a rigid commit format with emoji means I limit myself to a commit per ‘thing’, it also allows me to parse my commits quickly."></meta> <meta charset="utf-8"></meta> <meta name="viewport" content="width=device-width, initial-scale=1."></meta> <meta name="author" content="Callum Silcock, contact@csi.lk"></meta> <meta name="reply-to" content="contact@csi.lk"></meta> <meta name="url" content="https://www.csi.lk"></meta> <meta name="coverage" content="Worldwide"></meta> <meta name="distribution" content="Global"></meta> <meta name="rating" content="General"></meta> <meta name="revisit-after" content="7 days"></meta> <meta httpEquiv="Expires" content="0"></meta> <meta httpEquiv="Pragma" content="no-cache"></meta> <meta httpEquiv="Cache-Control" content="no-cache"></meta> <meta httpEquiv="Content-Language" content="en"></meta> <meta name="og:type" content="text/html"></meta> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker"></meta> <meta name="og:email" content="contact@csi.lk"></meta> <meta name="og:phone_number" content="+447848472822"></meta> <title >Why I use emoji in my commit messages</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.1"></link></head> <body ><div class="page-container fixed"><a href="#content" class="skip">Skip to content</a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal"></i> <h2 class="logo">Callum 
+ Silcock</h2></a> <a href="/articles.html">articles</a></nav> <main ><article id="content" class="article"><h1 >Why I use emoji in my commit messages</h1> <div class="article-subheader"><h2 class="article-date">Posted on:  <time datetime="2018-03-14">2018-03-14</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/articles/emoji-use-in-commit-messages.md" target="_blank" rel="noopener">source</a></div> <p>This article is outdated, <a href="/conventional-commits">I now much prefer Conventional Commits</a></p>
 <hr>
 <p>TL;DR: Using a rigid commit format with emoji means I limit myself to a commit per ‘thing’, it also allows me to parse my commits quickly.</p>
 <h2>What’s in a commit?</h2>
@@ -7,24 +7,24 @@
 <p>Because of this my projects usually end up with hundreds if not thousands of commit messages, I need a way to quickly parse what the commit messages relate to.</p>
 <p>Expanding on Sparkbox's original idea for the case of <a href="https://seesparkbox.com/foundry/semantic_commit_messages" class="external" target="_blank" rel="noopener">semantic commit messages</a> I am forcing myself to a rigid commit format and replacing ‘type’ with a specific ‘emoji’.</p>
 <h2>What does this look like?</h2>
-<pre><code class="language-bash">$ git log --pretty=format:&quot;%h - %s&quot;
+<pre><code class="hljs language-bash">$ git <span class="hljs-built_in">log</span> --pretty=format:<span class="hljs-string">"%h - %s"</span>
 
-6b3b372 - ⚙️ Resolves #18 : Added robots.txt file
-eb96af8 - ⚙️ Resolves #21 : Added hsts header for preloading
-54e4159 - ⚙️ #20 : Added gatsby netlify cms plugin for default security headers
-6b4006a - ⚙️ Resolves #17 : Added sitemap plugin
-59098a9 - ✨ Resolves #15 : Added link to edit article in footer
+6b3b372 - ⚙️ Resolves <span class="hljs-comment">#18 : Added robots.txt file</span>
+eb96af8 - ⚙️ Resolves <span class="hljs-comment">#21 : Added hsts header for preloading</span>
+54e4159 - ⚙️ <span class="hljs-comment">#20 : Added gatsby netlify cms plugin for default security headers</span>
+6b4006a - ⚙️ Resolves <span class="hljs-comment">#17 : Added sitemap plugin</span>
+59098a9 - ✨ Resolves <span class="hljs-comment">#15 : Added link to edit article in footer</span>
 8710216 - 🐛 Inline block article list bug on larger screens
-3df3309 - 💅 Resolves #14 : Added link style with some animation
-feafa8f - ✨ Resolves #7 : Added new tag component, articles now have headers showing the tags
+3df3309 - 💅 Resolves <span class="hljs-comment">#14 : Added link style with some animation</span>
+feafa8f - ✨ Resolves <span class="hljs-comment">#7 : Added new tag component, articles now have headers showing the tags</span>
 </code></pre>
 <p>/Commit log for this site at the time of writing/</p>
 <h2>What emojis have you been using?</h2>
 <p>Personally I like:</p>
-<pre><code>⚙️ - Anything build / settings related
+<pre><code class="hljs">⚙️ - Anything build /<span class="hljs-built_in"> settings </span>related
 ✨ - New feature
 🐛 - Bug fix
-💅 - Styling or display change
+💅 - Styling <span class="hljs-keyword">or</span> display change
 🛂 - Testing related
 🌏 - SEO Related
 📝 - Updating content

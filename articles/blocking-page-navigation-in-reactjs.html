@@ -1,5 +1,5 @@
-<html lang="en" class="no-js"><head ><meta name="keywords" content="message-media, reactjs, javascript"></meta> <meta name="description" content="Tutorial on how to block page navigation in ReactJS (React Router) using Router and Browser based techniques, includes code examples and how to extend with Redux."></meta> <meta charset="utf-8"></meta> <meta name="viewport" content="width=device-width, initial-scale=1."></meta> <meta name="author" content="Callum Silcock, contact@csi.lk"></meta> <meta name="reply-to" content="contact@csi.lk"></meta> <meta name="url" content="https://www.csi.lk"></meta> <meta name="coverage" content="Worldwide"></meta> <meta name="distribution" content="Global"></meta> <meta name="rating" content="General"></meta> <meta name="revisit-after" content="7 days"></meta> <meta httpEquiv="Expires" content="0"></meta> <meta httpEquiv="Pragma" content="no-cache"></meta> <meta httpEquiv="Cache-Control" content="no-cache"></meta> <meta httpEquiv="Content-Language" content="en"></meta> <meta name="og:type" content="text/html"></meta> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker"></meta> <meta name="og:email" content="contact@csi.lk"></meta> <meta name="og:phone_number" content="+447848472822"></meta> <title >Blocking page navigation in ReactJS (React Router)</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.0"></link></head> <body ><div class="page-container fixed"><a href="#content" class="skip">Skip to content</a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal"></i> <h2 class="logo">Callum 
- Silcock</h2></a> <a href="articles.html">articles</a></nav> <main ><article id="content" class="article"><h1 >Blocking page navigation in ReactJS (React Router)</h1> <div class="article-subheader"><h2 class="article-date">Posted on:  <time datetime="2018-03-13">2018-03-13</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/articles/blocking-page-navigation-in-reactjs.md" target="_blank" rel="noopener">source</a></div> <p><em>This article originally appeared on the <a href="https://developers.messagemedia.com/blocking-page-navigation-in-a-reactjs-application-react-router/" class="external" target="_blank" rel="noopener">Message Media Developer Blog</a>, be sure to check it out.</em></p>
+<html lang="en" class="no-js"><head ><meta name="keywords" content="message-media, reactjs, javascript"></meta> <meta name="description" content="Tutorial on how to block page navigation in ReactJS (React Router) using Router and Browser based techniques, includes code examples and how to extend with Redux."></meta> <meta charset="utf-8"></meta> <meta name="viewport" content="width=device-width, initial-scale=1."></meta> <meta name="author" content="Callum Silcock, contact@csi.lk"></meta> <meta name="reply-to" content="contact@csi.lk"></meta> <meta name="url" content="https://www.csi.lk"></meta> <meta name="coverage" content="Worldwide"></meta> <meta name="distribution" content="Global"></meta> <meta name="rating" content="General"></meta> <meta name="revisit-after" content="7 days"></meta> <meta httpEquiv="Expires" content="0"></meta> <meta httpEquiv="Pragma" content="no-cache"></meta> <meta httpEquiv="Cache-Control" content="no-cache"></meta> <meta httpEquiv="Content-Language" content="en"></meta> <meta name="og:type" content="text/html"></meta> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker"></meta> <meta name="og:email" content="contact@csi.lk"></meta> <meta name="og:phone_number" content="+447848472822"></meta> <title >Blocking page navigation in ReactJS (React Router)</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.1"></link></head> <body ><div class="page-container fixed"><a href="#content" class="skip">Skip to content</a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal"></i> <h2 class="logo">Callum 
+ Silcock</h2></a> <a href="/articles.html">articles</a></nav> <main ><article id="content" class="article"><h1 >Blocking page navigation in ReactJS (React Router)</h1> <div class="article-subheader"><h2 class="article-date">Posted on:  <time datetime="2018-03-13">2018-03-13</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/articles/blocking-page-navigation-in-reactjs.md" target="_blank" rel="noopener">source</a></div> <p><em>This article originally appeared on the <a href="https://developers.messagemedia.com/blocking-page-navigation-in-a-reactjs-application-react-router/" class="external" target="_blank" rel="noopener">Message Media Developer Blog</a>, be sure to check it out.</em></p>
 <p>Our product owner came to us with an interesting problem the other day, in the latest release of the <a href="https://hub.messagemedia.com" class="external" target="_blank" rel="noopener">Message Media Front End</a> we have a new payment portal for customers to pay invoices, when a user is in the process of paying a bill we need to block navigation, or in his words:</p>
 <blockquote>
 <p>As a billing contact
@@ -15,19 +15,19 @@ So that I am aware that my payment hasn't finished processing</p>
 </blockquote>
 <p>Great! Let’s create a simple component to test.</p>
 <h3>Simple Navigation Blocker Component</h3>
-<pre><code class="language-javascript">import React from 'react'
-import PropTypes from 'prop-types'
-import { Prompt } from 'react-router-dom'
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>
+<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>
 
-const NavigationBlocker = props =&gt; (
-  &lt;Prompt when={props.navigationBlocked} message=&quot;Are you sure you want to leave?&quot; /&gt;
+<span class="hljs-keyword">const</span> NavigationBlocker = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"Are you sure you want to leave?"</span> /&gt;</span></span>
 )
 
 NavigationBlocker.propTypes = {
-  navigationBlocked: PropTypes.bool.isRequired,
+  <span class="hljs-attr">navigationBlocked</span>: PropTypes.bool.isRequired,
 }
 
-export default NavigationBlocker
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> NavigationBlocker
 </code></pre>
 <p><em>Note: I’m specifically using <code>react-router-dom</code> but you can use plain ol’ <code>react-router</code> for this</em></p>
 <p>Users should now see a prompt when clicking on links between routes but what about browser actions eg. Back / Forward buttons, Reload or Close?</p>
@@ -39,61 +39,61 @@ export default NavigationBlocker
 <p>The <code>WindowEventHandlers.onbeforeunload</code> event handler property contains the code executed when the <code>beforeunload</code> is sent.</p>
 </blockquote>
 <p>The problem is there’s many ways to implement this but as of 2017 most browsers block custom messages (for security reasons), as we don’t need to worry about this we can use something as simple as:</p>
-<pre><code class="language-javascript">// Enable navigation prompt
-window.onbeforeunload = () =&gt; true
-// Remove navigation prompt
-window.onbeforeunload = null
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// Enable navigation prompt</span>
+<span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+<span class="hljs-comment">// Remove navigation prompt</span>
+<span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-literal">null</span>
 </code></pre>
 <h3>Let’s add it to our existing component</h3>
-<pre><code class="language-javascript">import React from 'react'
-import PropTypes from 'prop-types'
-import { Prompt } from 'react-router-dom'
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>
+<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>
 
-const NavigationBlocker = props =&gt; {
-  if (props.navigationBlocked) {
-    window.onbeforeunload = () =&gt; true
-  } else {
-    window.onbeforeunload = null
+<span class="hljs-keyword">const</span> NavigationBlocker = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> {
+  <span class="hljs-keyword">if</span> (props.navigationBlocked) {
+    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-literal">null</span>
   }
-  return &lt;Prompt when={props.navigationBlocked} message=&quot;Are you sure you want to leave?&quot; /&gt;
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"Are you sure you want to leave?"</span> /&gt;</span></span>
 }
 
 NavigationBlocker.propTypes = {
-  navigationBlocked: PropTypes.bool.isRequired,
+  <span class="hljs-attr">navigationBlocked</span>: PropTypes.bool.isRequired,
 }
 
-export default NavigationBlocker
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> NavigationBlocker
 </code></pre>
 <p>And just like that we have a navigation blocking component that we can easily turn on and off.</p>
 <h2>Extending it with Redux</h2>
 <p>I would suggest extending it to be a Global Navigation Blocker from here, when a processing redux action is sent send another to block navigation, when it resolves send another to resolve.</p>
 <p>This allows you to include the blocker once at app level rather than including every time you need it.</p>
 <p>This is what my implementation ended up looking like:</p>
-<pre><code class="language-javascript">import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { Prompt } from 'react-router-dom'
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>
+<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>
 
-import { getNavigationBlocked } from '../navigation-selectors'
+<span class="hljs-keyword">import</span> { getNavigationBlocked } <span class="hljs-keyword">from</span> <span class="hljs-string">'../navigation-selectors'</span>
 
-const GlobalNavigationBlocker = props =&gt; {
-  if (props.navigationBlocked) {
-    window.onbeforeunload = () =&gt; true
-  } else {
-    window.onbeforeunload = null
+<span class="hljs-keyword">const</span> GlobalNavigationBlocker = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> {
+  <span class="hljs-keyword">if</span> (props.navigationBlocked) {
+    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-literal">null</span>
   }
-  return &lt;Prompt when={props.navigationBlocked} message=&quot;Are you sure you want to leave?&quot; /&gt;
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"Are you sure you want to leave?"</span> /&gt;</span></span>
 }
 
 GlobalNavigationBlocker.propTypes = {
-  navigationBlocked: PropTypes.bool.isRequired,
+  <span class="hljs-attr">navigationBlocked</span>: PropTypes.bool.isRequired,
 }
 
-export const mapStateToProps = state =&gt; ({
-  navigationBlocked: getNavigationBlocked(state),
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapStateToProps = <span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> ({
+  <span class="hljs-attr">navigationBlocked</span>: getNavigationBlocked(state),
 })
 
-export default connect(mapStateToProps)(GlobalNavigationBlocker)
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps)(GlobalNavigationBlocker)
 </code></pre>
 <h2>Drawbacks</h2>
 <p>Unfortunately because of how <code>onbeforeunload</code> can be misused, modern browsers have implemented some safeguards, as described in the docs:</p>
