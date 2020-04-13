@@ -1,5 +1,7 @@
 import * as Silk from '../../lib/silk'
 
-const BigText = (content: string): HTMLElement => <h1 className="big-text">{content}</h1>
+const BigText = (_, children: string): HTMLElement => {
+  return <h1 className="big-text">{children}</h1>
+}
 
 export default BigText
