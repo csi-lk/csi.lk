@@ -8,6 +8,8 @@ jobs:
         command:
           - lint:eslint
           - lint:stylelint
+          - lint:commit
+          - test
           - build:prod
     name: ${{ matrix.command }}
     runs-on: ubuntu-latest

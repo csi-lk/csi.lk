@@ -22,6 +22,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: 'Lint'
         run: yarn lint
+      - name: 'Test'
+        run: yarn jest
       - name: 'Build'
         run: yarn build:prod
       - name: 'Deploy'
