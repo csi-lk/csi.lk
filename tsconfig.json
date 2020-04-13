@@ -8,5 +8,5 @@
     "jsx": "react", // use the React mode, so call the factory
     "jsxFactory": "Silk.createElement" // The name of the factory function
   },
-  "include": ["src/types/global.d.ts", "src/components/**/*", "src/layouts/**/*"]
+  "include": ["src/types/*.d.ts", "src/components/**/*", "src/layouts/**/*"]
 }
