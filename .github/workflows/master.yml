@@ -4,8 +4,45 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  re-check:
+    strategy:
+      fail-fast: false
+      matrix:
+        command:
+          - lint
+          - test
+    name: ${{ matrix.command }}
     runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v1
+      - name: 'Cache yarn'
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: 'Cache node_modules'
+        uses: actions/cache@v1
+        with:
+          path: ${{ github.workspace }}/node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+      - name: 'Install dependencies'
+        run: yarn install --frozen-lockfile
+      - name: 'Run ${{ matrix.command }}'
+        run: yarn ${{ matrix.command }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [re-check]
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - csi-lk/csi.lk
+          - csi-lk/callumsilcock.com
     steps:
       - name: 'Cache yarn'
         uses: actions/cache@v1
@@ -20,16 +57,13 @@ jobs:
           persist-credentials: false
       - name: 'Install dependencies'
         run: yarn install --frozen-lockfile
-      - name: 'Lint'
-        run: yarn lint
-      - name: 'Test'
-        run: yarn jest
       - name: 'Build'
         run: yarn build:prod
-      - name: 'Deploy'
+      - name: 'Deploy csi.lk'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: ${{ matrix.repo }}
           BRANCH: gh-pages
           FOLDER: dist
           GIT_CONFIG_NAME: Callum Silcock
