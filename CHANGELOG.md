@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.2](https://github.com/csi-lk/csi.lk/compare/v2.3.1...v2.3.2) (2020-04-13)
+
+
+### Bug Fixes
+
+* **big-text:** content should be children not a prop ([aa14f9a](https://github.com/csi-lk/csi.lk/commit/aa14f9a4e55cf63d7383432dace78c0208a1c275))
+* **silk:** createElement should also be default export ([3341ea3](https://github.com/csi-lk/csi.lk/commit/3341ea358980889608ddb3ca2d9c4438115f912a))
+* **small-text:** content should be children not a prop ([fd2872f](https://github.com/csi-lk/csi.lk/commit/fd2872f7c060c00e3a0774221d030c2c904a3e77))
+* shortcodes should have content passed as children ([dc967d5](https://github.com/csi-lk/csi.lk/commit/dc967d55971406e8842e3b4554d90cc3172a1a32))
+
 ### [2.3.1](https://github.com/csi-lk/csi.lk/compare/v2.3.0...v2.3.1) (2020-04-11)
 
 
