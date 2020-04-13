@@ -3,7 +3,7 @@ import Header from '../header/header'
 import Navigation from '../navigation/navigation'
 import Footer from '../footer/footer'
 
-interface PageContainer {
+export interface PageContainer {
   meta: Record<string, string>[]
   title: string
   description: string
@@ -25,7 +25,7 @@ const PageContainer = (
       version={version}
     />
     <body>
-      <div className={`page-container ${style}`}>
+      <div className={`page-container ${style}`} data-testid="page-container">
         <a href="#content" className="skip">
           Skip to content
         </a>
