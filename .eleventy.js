@@ -30,9 +30,8 @@ module.exports = function (config) {
 
   // Add all components as {% shortcodes %}
   fs.readdirSync(componentsDir).forEach(folder => {
-    config.addPairedShortcode(
-      toPascalCase(folder),
-      require(`${componentsDir}/${folder}/${folder}.js`).default,
+    config.addPairedShortcode(toPascalCase(folder), children =>
+      require(`${componentsDir}/${folder}/${folder}.js`).default(null, children),
     )
   })
 
