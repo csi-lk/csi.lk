@@ -1,7 +1,7 @@
 import * as Silk from '../../lib/silk'
 
 const Footer = ({ fixed }: { fixed?: boolean }): HTMLElement => (
-  <footer className={`footer ${fixed && 'fixed'}`}>
+  <footer className={`footer ${fixed && 'fixed'}`} data-testid="footer">
     <div>
       <p>&copy; 2020</p>
       <a href="/">Callum Silcock</a>
