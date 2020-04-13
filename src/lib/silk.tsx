@@ -26,3 +26,5 @@ export function createElement(
 export function Fragment(): string {
   return ''
 }
+
+export default createElement
