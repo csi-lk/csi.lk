@@ -72,7 +72,7 @@
     "jest": "^25.4.0",
     "light-server": "2.6.4",
     "markdown-it-external-links": "^0.0.6",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "standard-version": "^7.1.0",
     "stylelint": "^13.3.1",
     "stylelint-config-standard": "^20.0.0",
