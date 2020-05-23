@@ -8,6 +8,7 @@ const Navigation = (): HTMLElement => (
       </i>
       <h2 className="logo">Callum{`\n`}Silcock</h2>
     </a>
+    <a href="/timeline">timeline</a>
     <a href="/articles">articles</a>
   </nav>
 )
