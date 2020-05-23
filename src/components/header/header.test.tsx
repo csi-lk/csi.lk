@@ -3,8 +3,8 @@ import faker from 'faker'
 import Silk from '../../lib/silk'
 import Header from './header'
 
-const getByName = queryHelpers.queryByAttribute.bind(null, 'name')
-const getAllByName = queryHelpers.queryAllByAttribute.bind(null, 'name')
+const getByName = queryHelpers.queryByAttribute.bind(undefined, 'name')
+const getAllByName = queryHelpers.queryAllByAttribute.bind(undefined, 'name')
 
 describe('header', () => {
   it('renders with default props', () => {
