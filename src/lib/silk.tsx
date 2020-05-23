@@ -1,5 +1,9 @@
+export interface CreateElementCallable {
+  (attributes: [], children: string): string
+}
+
 export function createElement(
-  tag: string | Function,
+  tag: string | CreateElementCallable,
   attributes: [],
   ...children: HTMLElement[]
 ): string | HTMLElement[] {
