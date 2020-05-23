@@ -1,0 +1,20 @@
+.job-list {
+  margin-top: var(--spacing-xlarge);
+  padding-top: var(--spacing-large);
+  border-top: var(--border-single);
+  width: 100%;
+
+  h4 {
+    margin: var(--spacing-small) 0 0 0;
+  }
+
+  h6 {
+    color: var(--color-text-alt);
+    margin: 0;
+  }
+
+  div {
+    padding: var(--spacing-large) 0;
+    display: block;
+  }
+}

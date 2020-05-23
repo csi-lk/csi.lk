@@ -1,14 +1,33 @@
-export interface Content {
+export interface DefaultFrontMatter {
+  title: string
+  description?: string
+  path: string
+  template: string
+  permalink: string
+  keywords?: string
+  tags: string[]
+}
+
+export interface Article {
   data: {
-    title: string
-    description?: string
-    path: string
-    template: string
-    permalink: string
-    keywords?: string
-    tags: string[]
-  }
+    cool: string
+  } & DefaultFrontMatter
   date: Date
+}
+
+export interface Job {
+  data: {
+    companyName: string
+    employmentType: 'contract' | 'full-time'
+    website: string
+    location: string
+    startMonth: number
+    startYear: number
+    endMonth?: number
+    endYear?: number
+    industry: string
+  } & DefaultFrontMatter
+  templateContent: () => HTMLElement
 }
 
 declare namespace Eleventy {
@@ -28,8 +47,9 @@ declare namespace Eleventy {
       version: string
     }
     collections: {
-      all: Content[]
-      article: Content[]
+      all: Article[] | Job[]
+      article: Article[]
+      job: Job[]
     }
   }
 }
