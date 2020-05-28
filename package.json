@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@testing-library/dom": "^7.5.8",
+    "@testing-library/dom": "^7.5.9",
     "@testing-library/jest-dom": "^5.8.0",
     "autoprefixer": "^9.8.0",
     "common-tags": "^1.8.0",
