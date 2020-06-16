@@ -1381,10 +1381,10 @@
     remark "^12.0.0"
     unist-util-find-all-after "^3.0.1"
 
-"@testing-library/dom@^7.10.1":
-  version "7.10.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.10.1.tgz#dc2cac517b5956020d28a027c58b24b393a44320"
-  integrity sha512-shB6yx0eqoKya8V6zqV152MioYe6R4iIorT9LdGhGMZwvqny0GYMBqzKbAcxbTMlBmG0M0xaqO8AnzVEMuUamA==
+"@testing-library/dom@^7.16.1":
+  version "7.16.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.16.1.tgz#a6881d53612f2e8f7bcc0e0bd8825c6788cf57f2"
+  integrity sha512-u0Ck7tjWDyCcGn+f77JbUHa7PqgFu62ohRxegj1/H5P3REKsM+2roCvcnWJjMSHvK354NAS/Pgi92E9z6cB7Sw==
   dependencies:
     "@babel/runtime" "^7.10.2"
     aria-query "^4.0.2"
