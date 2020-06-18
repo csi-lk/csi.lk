@@ -73,7 +73,7 @@
     "markdown-it-external-links": "^0.0.6",
     "prettier": "^2.0.5",
     "standard-version": "^8.0.0",
-    "stylelint": "^13.6.0",
+    "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
     "yarn": "^1.22.4"
   },
