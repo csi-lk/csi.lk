@@ -91,7 +91,7 @@
     "postcss-calc": "^7.0.2",
     "postcss-cli": "^7.1.1",
     "postcss-css-variables": "^0.17.0",
-    "postcss-nested": "^4.2.1",
+    "postcss-nested": "^4.2.3",
     "postcss-nested-ancestors": "^2.0.0",
     "postcss-scss": "^2.1.1",
     "shx": "^0.3.2",
