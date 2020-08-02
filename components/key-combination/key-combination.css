@@ -1,0 +1,9 @@
+.key {
+  background-color: var(--color-text);
+  border: 1px solid var(--color-border);
+  color: var(--color-background);
+  padding: var(--spacing-small) var(--spacing-medium);
+  font-size: var(--font-size-small);
+  border-radius: var(--border-radius);
+  min-width: 15px;
+}
