@@ -57,6 +57,7 @@ module.exports = {
   // Borders
   'border-double': '6px double var(--color-border)',
   'border-single': '2px solid var(--color-border)',
+  'border-radius': '6px',
 
   // Spacing
 

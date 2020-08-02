@@ -1,6 +1,7 @@
 table {
   margin: var(--paragraph-indent) 0;
   width: 100%;
+  table-layout: fixed;
   font-size: var(--font-size-small);
 }
 
