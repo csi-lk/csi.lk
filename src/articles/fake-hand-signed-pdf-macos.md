@@ -5,6 +5,7 @@ permalink: article/fake-hand-signed-pdf-macos.html
 tags: article
 keywords: mac, os, fake, hand, signed, pdf, image, magic, imagemagick
 layout: article
+date: 2020-04-09
 ---
 
 Despite doing all of my signing of PDF's with the preview sign tool sometimes I get asked to provide 'wet' signatures, using `imagemagick` to mess up the PDF a little and make it look like it's been scanned
