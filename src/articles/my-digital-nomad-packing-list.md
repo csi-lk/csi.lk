@@ -8,7 +8,7 @@ tags: article
 keywords: digital, nomad, packing, luggage, southeast, asia, eurpoe
 ---
 
-As some of you know my wife and I spend 6 months travelling across South East Asia while living nomadically through Airbnb's and Hostels in 2018, recently due to COVID-19 we've been forced to live nomadically in the UK due to being abandoned by the Australian Government and having our flights continuously cancelled.
+As some of you know my wife and I spent 6 months travelling across South East Asia while living nomadically through Airbnb's and Hostels in 2018, recently due to COVID-19 we've been forced to live nomadically in the UK due to being abandoned by the Australian Government and having our flights continuously cancelled.
 
 Here's what i'm currently travelling with:
 
