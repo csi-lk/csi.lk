@@ -30,9 +30,9 @@
 <li>combines <code>componentDidMount</code> and <code>componentWillUnmount</code> and<code>componetnDidUpdate</code></li>
 <li>no types needed</li>
 </ul>
-<pre><code class="hljs language-js">useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+<pre><code class="hljs language-js">useEffect(<span class="hljs-function">() =&gt;</span> {
   <span class="hljs-comment">// do something on mount</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
     <span class="hljs-comment">// do something on unmount (cleanup)</span>
   }
 }, []) <span class="hljs-comment">//listen for change to x in [array] then trigger (update), empty for only mount / unmount</span>
@@ -51,7 +51,7 @@
 </ul>
 </li>
 </ul>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> MyInput = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> MyInput = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">const</span> inputRef = useRef &lt; HTMLInputElement &gt; <span class="hljs-literal">null</span>
   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{inputRef}</span> /&gt;</span></span>
 }
@@ -64,7 +64,7 @@ _ make sure to specify the types of the parameters of the callback for useCallba
 </ul>
 <pre><code class="hljs language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-number">10</span>
 <span class="hljs-comment">// inferred as number</span>
-<span class="hljs-keyword">const</span> result = useMemo(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> value * <span class="hljs-number">2</span>, [value])
+<span class="hljs-keyword">const</span> result = useMemo(<span class="hljs-function">() =&gt;</span> value * <span class="hljs-number">2</span>, [value])
 
 <span class="hljs-keyword">const</span> multiplier = <span class="hljs-number">2</span>
 <span class="hljs-comment">// inferred as (value: number) =&gt; number</span>
@@ -83,17 +83,17 @@ _ make sure to specify the types of the parameters of the callback for useCallba
 }
 
 type Action =
-  | { <span class="hljs-attr">type</span>: <span class="hljs-string">'increment'</span> }
-  | { <span class="hljs-attr">type</span>: <span class="hljs-string">'decrement'</span> }
-  | { <span class="hljs-attr">type</span>: <span class="hljs-string">'incrementAmount'</span>, <span class="hljs-attr">amount</span>: number }
+  | { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;increment&#x27;</span> }
+  | { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;decrement&#x27;</span> }
+  | { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;incrementAmount&#x27;</span>, <span class="hljs-attr">amount</span>: number }
 
 <span class="hljs-keyword">const</span> counterReducer = <span class="hljs-function">(<span class="hljs-params">state: State, action: Action</span>) =&gt;</span> {
   <span class="hljs-keyword">switch</span> (action.type) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">'increment'</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;increment&#x27;</span>:
       <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.value + <span class="hljs-number">1</span> }
-    <span class="hljs-keyword">case</span> <span class="hljs-string">'decrement'</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;decrement&#x27;</span>:
       <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.value - <span class="hljs-number">1</span> }
-    <span class="hljs-keyword">case</span> <span class="hljs-string">'incrementAmount'</span>:
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;incrementAmount&#x27;</span>:
       <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.value + action.amount }
     <span class="hljs-attr">default</span>:
       <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>()
@@ -102,26 +102,26 @@ type Action =
 
 <span class="hljs-keyword">const</span> [state, dispatch] = useReducer(counterReducer, { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span> })
 
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">'increment'</span> })
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">'decrement'</span> })
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">'incrementAmount'</span>, <span class="hljs-attr">amount</span>: <span class="hljs-number">10</span> })
+dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;increment&#x27;</span> })
+dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;decrement&#x27;</span> })
+dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;incrementAmount&#x27;</span>, <span class="hljs-attr">amount</span>: <span class="hljs-number">10</span> })
 
 <span class="hljs-comment">// TypeScript compilation error</span>
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">'invalidActionType'</span> })
+dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;invalidActionType&#x27;</span> })
 </code></pre>
 <h3>useContext</h3>
 <ul>
 <li>infer its types based on the context object that is passed in</li>
 </ul>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> ThemeContext = React.createContext(<span class="hljs-string">'light'</span>)
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> ThemeContext = React.createContext(<span class="hljs-string">&#x27;light&#x27;</span>)
 
-<span class="hljs-keyword">const</span> Display = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+<span class="hljs-keyword">const</span> Display = <span class="hljs-function">() =&gt;</span> {
   <span class="hljs-keyword">const</span> theme = useContext(ThemeContext)
   <span class="hljs-keyword">return</span> (
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
       <span class="hljs-attr">style</span>=
     &gt;</span>
-      {'The theme here is ' + theme}
+      {&#x27;The theme here is &#x27; + theme}
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
   )
 }
@@ -132,7 +132,7 @@ dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">'inval
 <li>type is inferred</li>
 </ul>
 <pre><code class="hljs language-js"><span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
-useDebugValue(date, date =&gt; date.toISOString())
+useDebugValue(date, <span class="hljs-function"><span class="hljs-params">date</span> =&gt;</span> date.toISOString())
 </code></pre>
 <h2>Resources</h2>
 <ul>

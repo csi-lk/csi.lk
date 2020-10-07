@@ -4,7 +4,7 @@
 <pre><code class="hljs language-bash">brew install gs imagemagick
 </code></pre>
 <p>Then run for <code>input.pdf</code> (change the name to your file)</p>
-<pre><code class="hljs language-bash">convert -density 150 input.pdf -rotate <span class="hljs-string">"<span class="hljs-variable">$([ $((RANDOM % 2)</span>) -eq 1 ] &amp;&amp; echo -)0.<span class="hljs-variable">$(($RANDOM % 4 + 5)</span>)"</span> -attenuate 0.4 +noise Multiplicative -flatten -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 -colorspace Gray output.pdf
+<pre><code class="hljs language-bash">convert -density 150 input.pdf -rotate <span class="hljs-string">&quot;<span class="hljs-subst">$([ $((RANDOM % 2)</span>) -eq 1 ] &amp;&amp; echo -)0.<span class="hljs-subst">$(($RANDOM % 4 + 5)</span>)&quot;</span> -attenuate 0.4 +noise Multiplicative -flatten -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 -colorspace Gray output.pdf
 </code></pre>
 <p>Also to note, I think signatures are a stupid way of proving identity and intent in total.</p>
 <h2>Further Reading</h2>

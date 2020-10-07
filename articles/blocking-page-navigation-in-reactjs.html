@@ -15,12 +15,12 @@ So that I am aware that my payment hasn't finished processing</p>
 </blockquote>
 <p>Great! Let’s create a simple component to test.</p>
 <h3>Simple Navigation Blocker Component</h3>
-<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>
-<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;prop-types&#x27;</span>
+<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-router-dom&#x27;</span>
 
 <span class="hljs-keyword">const</span> NavigationBlocker = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> (
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"Are you sure you want to leave?"</span> /&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">&quot;Are you sure you want to leave?&quot;</span> /&gt;</span></span>
 )
 
 NavigationBlocker.propTypes = {
@@ -40,22 +40,22 @@ NavigationBlocker.propTypes = {
 </blockquote>
 <p>The problem is there’s many ways to implement this but as of 2017 most browsers block custom messages (for security reasons), as we don’t need to worry about this we can use something as simple as:</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// Enable navigation prompt</span>
-<span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+<span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function">() =&gt;</span> <span class="hljs-literal">true</span>
 <span class="hljs-comment">// Remove navigation prompt</span>
 <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-literal">null</span>
 </code></pre>
 <h3>Let’s add it to our existing component</h3>
-<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>
-<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;prop-types&#x27;</span>
+<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-router-dom&#x27;</span>
 
 <span class="hljs-keyword">const</span> NavigationBlocker = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> {
   <span class="hljs-keyword">if</span> (props.navigationBlocked) {
-    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function">() =&gt;</span> <span class="hljs-literal">true</span>
   } <span class="hljs-keyword">else</span> {
     <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-literal">null</span>
   }
-  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"Are you sure you want to leave?"</span> /&gt;</span></span>
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">&quot;Are you sure you want to leave?&quot;</span> /&gt;</span></span>
 }
 
 NavigationBlocker.propTypes = {
@@ -69,20 +69,20 @@ NavigationBlocker.propTypes = {
 <p>I would suggest extending it to be a Global Navigation Blocker from here, when a processing redux action is sent send another to block navigation, when it resolves send another to resolve.</p>
 <p>This allows you to include the blocker once at app level rather than including every time you need it.</p>
 <p>This is what my implementation ended up looking like:</p>
-<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>
-<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>
-<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>
+<span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;prop-types&#x27;</span>
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-redux&#x27;</span>
+<span class="hljs-keyword">import</span> { Prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-router-dom&#x27;</span>
 
-<span class="hljs-keyword">import</span> { getNavigationBlocked } <span class="hljs-keyword">from</span> <span class="hljs-string">'../navigation-selectors'</span>
+<span class="hljs-keyword">import</span> { getNavigationBlocked } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../navigation-selectors&#x27;</span>
 
 <span class="hljs-keyword">const</span> GlobalNavigationBlocker = <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> {
   <span class="hljs-keyword">if</span> (props.navigationBlocked) {
-    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+    <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-function">() =&gt;</span> <span class="hljs-literal">true</span>
   } <span class="hljs-keyword">else</span> {
     <span class="hljs-built_in">window</span>.onbeforeunload = <span class="hljs-literal">null</span>
   }
-  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"Are you sure you want to leave?"</span> /&gt;</span></span>
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Prompt</span> <span class="hljs-attr">when</span>=<span class="hljs-string">{props.navigationBlocked}</span> <span class="hljs-attr">message</span>=<span class="hljs-string">&quot;Are you sure you want to leave?&quot;</span> /&gt;</span></span>
 }
 
 GlobalNavigationBlocker.propTypes = {
