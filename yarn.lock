@@ -6497,10 +6497,10 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-light-server@2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/light-server/-/light-server-2.9.0.tgz#21905f6fdf29882a44a40a1041c6d5c76fd5f0b9"
-  integrity sha512-bblxW4FY3KYk3XSQ10+f8jECG01Zoc7WJWR42+yqj39XbXxmB3cK702PlNpl8Y0hPgsU3Yp1EVX2HLq+704pqw==
+light-server@2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/light-server/-/light-server-2.9.1.tgz#44f1ddbd284034d9d41b273e3311f2788d71fbdf"
+  integrity sha512-8uerqP4ffFbTJZ2QGR1225TqZUWEFkl/kGnJ+vRGiaqnLr6pFj8XLFGyO1XgO8ib9NQKxd7gsq3pEYN3AB+Q2g==
   dependencies:
     commander "^6.0.0"
     connect "^3.7.0"
