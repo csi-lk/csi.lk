@@ -18,9 +18,11 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 2,
         'local/jsx-uses-silk-pragma': 2,
         'local/jsx-uses-vars': 2,
-        '@typescript-eslint/no-unused-vars': 2,
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['error'],
       },
       extends: [
+        'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'prettier/@typescript-eslint',
