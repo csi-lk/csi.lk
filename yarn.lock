@@ -6705,10 +6705,10 @@ markdown-it-external-links@^0.0.6:
   resolved "https://registry.yarnpkg.com/markdown-it-external-links/-/markdown-it-external-links-0.0.6.tgz#9503258fce4c81010ea15fe71769d63a1346d801"
   integrity sha1-lQMlj85MgQEOoV/nF2nWOhNG2AE=
 
-markdown-it-highlightjs@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.3.1.tgz#38403610487292b8a1ae2d1acc7bb66e4ede6be8"
-  integrity sha512-T9L+37CC+H/aQWHbHCpmo6FvSH2imqXYjZj/Tj064UmPn0aCne/bAtSORo6W5x7BdLIWwbTR20xrdlKDAq0M6w==
+markdown-it-highlightjs@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.4.0.tgz#1a75edd02f9e564f800052eac2b5aefa8230f8d4"
+  integrity sha512-JES5P8ll3Vpf6a4C0FlsaO1opOaH53Rbvphj2IAON29v33cHNUiwXBSaC+bThUiLp6m3UEZ4vv579CHSElWSdw==
   dependencies:
     highlight.js "^10.2.0"
     lodash.flow "^3.5.0"
