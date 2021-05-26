@@ -64,7 +64,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jest-dom": "^3.9.0",
-    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-json": "^3.0.0",
     "eslint-plugin-local": "^1.0.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "eslint-plugin-unicorn": "^23.0.0",
