@@ -78,7 +78,7 @@
     "yarn": "^1.22.10"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "@testing-library/dom": "^7.31.0",
     "@testing-library/jest-dom": "^5.12.0",
     "autoprefixer": "^9.8.6",
