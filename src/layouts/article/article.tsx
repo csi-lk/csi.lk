@@ -33,6 +33,7 @@ export = function Article({
             href={`https://github.com/csi-lk/csi.lk/tree/master/${inputPath.replace('./', '')}`}
             target="_blank"
             rel="noopener"
+            aria-describedby="open-new-window-external"
           >
             source
           </a>

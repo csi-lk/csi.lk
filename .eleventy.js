@@ -14,7 +14,7 @@ module.exports = function (config) {
     .use(mdExternalLinks, {
       externalClassName: 'external',
       externalTarget: '_blank',
-      externalRel: 'noopener',
+      externalRel: 'noopener noreferrer',
       internalDomains: ['csi.lk', 'callumsilcock.com'],
     })
     .use(mdHighlightJs)
