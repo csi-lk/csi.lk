@@ -1,6 +1,6 @@
 module.exports = {
   plugins: ['import', 'json', 'unicorn', 'sort-imports-es6-autofix', 'jest-dom'],
-  extends: ['airbnb-base', 'plugin:unicorn/recommended', 'prettier', 'prettier/unicorn'],
+  extends: ['airbnb-base', 'prettier'],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -25,7 +25,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
-        'prettier/@typescript-eslint',
+        'prettier',
       ],
     },
   ],
