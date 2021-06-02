@@ -24,6 +24,9 @@ export function createElement(
         })
         .join(' ')
     : ''
+
+  if (!children.length) return `<${tag} ${htmlAttributes} />`
+
   return `<${tag} ${htmlAttributes}>${children.join(' ')}</${tag}>`
 }
 
