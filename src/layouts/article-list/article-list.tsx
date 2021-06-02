@@ -5,15 +5,15 @@ import Eleventy from '../../types/global'
 
 export = function ArticleList({
   content,
-  'site-data': { meta, description: siteDescription, keywords: siteKeywords },
+  'site-data': { meta, keywords: siteKeywords },
   pkg: { version },
   collections: { article: articles },
 }: Eleventy.Page): string {
   return (
     <PageContainer
       meta={meta}
-      title={'Callum Silcock | Articles'}
-      description={siteDescription}
+      title="Callum Silcock | Articles"
+      description="A collection of articles I've written over the years about random topics including emoji, react, macos, functional testing and even gaming."
       keywords={siteKeywords}
       version={version}
     >
