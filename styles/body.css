@@ -1,14 +1,19 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background-color: var(--color-background);
   color: var(--color-text);
   font-size: var(--font-size);
   line-height: var(--line-height-body);
   letter-spacing: 0.01em;
   margin: 0;
-  font-family: var(--font-family), var(--font-family-system);
+  font-family: var(--font-family-system);
 
   @supports (font-variation-settings: normal) {
-    font-family: var(--font-family-variation), var(--font-family-system);
+    font-family: var(--font-family-system);
   }
 
   @media (min-width: 50em) {
