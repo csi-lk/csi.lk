@@ -42,4 +42,14 @@
     padding: var(--spacing-large) 0;
     display: block;
   }
+
+  blockquote {
+    background: var(--color-background-transparent);
+    border-left: var(--border-large);
+    padding: var(--paragraph-spacing);
+
+    p {
+      display: inline;
+    }
+  }
 }
