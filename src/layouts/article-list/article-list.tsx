@@ -22,7 +22,7 @@ export = function ArticleList({
         {articles
           .reverse()
           .map(({ data: { permalink, title, keywords, description }, date }) => (
-            <a href={permalink}>
+            <a href={permalink.replace('.html', '')}>
               <h3>{title}</h3>
               <h6>
                 <Time date={date} /> - {keywords && keywords}

@@ -6,7 +6,7 @@ const Navigation = (): HTMLElement => (
       <i className="icon-terminal" role="presentation" />
       <h2 className="logo">Callum{`\n`}Silcock</h2>
     </a>
-    <a href="/articles.html">articles</a>
+    <a href="/articles">articles</a>
   </nav>
 )
 
