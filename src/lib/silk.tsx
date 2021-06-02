@@ -27,8 +27,8 @@ export function createElement(
   return `<${tag} ${htmlAttributes}>${children.join(' ')}</${tag}>`
 }
 
-export function Fragment(): string {
-  return ''
+export function createFragment(_: Record<string, never>, children: HTMLElement[]): HTMLElement[] {
+  return children
 }
 
 export default createElement

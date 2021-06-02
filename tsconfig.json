@@ -6,7 +6,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "react", // use the React mode, so call the factory
-    "jsxFactory": "Silk.createElement" // The name of the factory function
+    "jsxFactory": "Silk.createElement", // The name of the factory function
+    "jsxFragmentFactory": "Silk.createFragment"
   },
   "include": ["src/types/*.d.ts", "src/components/**/*", "src/layouts/**/*"]
 }
