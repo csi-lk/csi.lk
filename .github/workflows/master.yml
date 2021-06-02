@@ -11,29 +11,23 @@ jobs:
         command:
           - lint
           - test
+          - test:visual
     name: ${{ matrix.command }}
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v1
-      - name: 'Cache yarn'
-        uses: actions/cache@v1
+      - name: 'Cache'
+        uses: actions/cache@v2
         with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: 'Cache node_modules'
-        uses: actions/cache@v1
-        with:
-          path: ${{ github.workspace }}/node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: 'Install dependencies'
         run: yarn install --frozen-lockfile
       - name: 'Run ${{ matrix.command }}'
         run: yarn ${{ matrix.command }}
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   deploy:
     runs-on: ubuntu-latest
     needs: [re-check]
@@ -44,13 +38,11 @@ jobs:
           - csi-lk/csi.lk
           - csi-lk/callumsilcock.com
     steps:
-      - name: 'Cache yarn'
-        uses: actions/cache@v1
+      - name: 'Cache'
+        uses: actions/cache@v2
         with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
