@@ -1,7 +1,7 @@
 ---
 title: Make it look like a PDF has been hand signed and scanned in MacOS
 description: Using imagemagick to make it look like a PDF has been printed then hand signed and scanned in MacOS
-permalink: article/fake-hand-signed-pdf-macos.html
+permalink: articles/fake-hand-signed-pdf-macos.html
 tags: article
 keywords: mac, os, fake, hand, signed, pdf, image, magic, imagemagick
 layout: article
