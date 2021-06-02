@@ -5,14 +5,14 @@ import Eleventy from '../../types/global'
 
 export = function ArticleList({
   content,
-  'site-data': { meta, title: siteTitle, description: siteDescription, keywords: siteKeywords },
+  'site-data': { meta, description: siteDescription, keywords: siteKeywords },
   pkg: { version },
   collections: { article: articles },
 }: Eleventy.Page): string {
   return (
     <PageContainer
       meta={meta}
-      title={siteTitle}
+      title={'Callum Silcock | Articles'}
       description={siteDescription}
       keywords={siteKeywords}
       version={version}
