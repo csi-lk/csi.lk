@@ -17,7 +17,7 @@ const Header = ({ meta, title, description, keywords, version }: Header): HTMLEl
     <link rel="stylesheet" href={`/styles/index.css?v=${version}`} />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css"
+      href="https://cdn.jsdelivr.net/npm/firacode@5.2.0/distr/fira_code.min.css"
     />
   </head>
 )
