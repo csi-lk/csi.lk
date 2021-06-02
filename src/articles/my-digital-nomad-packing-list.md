@@ -16,7 +16,7 @@ Here's what i'm currently travelling with:
 
 Most important part is finding a backpack that works for you, it needs to strike a balance between functionality, style and comfort.
 
-I'm rocking the [Riut - X35 (35 litre)](https://www.riut.co.uk/collections/anti-theft-backpack-travel-bag-2020/products/riutbag-x35-black-large-backpack) as it allows me to use it as a normal backpack day to day or as a travel bag when transiting.
+I'm rocking the [Riut - X35 (35 litre)](https://www.riut.co.uk/collections/all-secure-riutbags-best-backpacks-2021/products/riutbag-x35-black-large-laptop-backpack) as it allows me to use it as a normal backpack day to day or as a travel bag when transiting.
 
 ## Clothes
 
