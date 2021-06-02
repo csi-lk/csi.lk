@@ -2,7 +2,7 @@
 title: Senior UI Developer
 companyName: Target Australia
 employmentType: full-time
-website: https://target.com.au/
+website: https://www.target.com.au/
 location: Melbourne, Australia
 startMonth: 9
 startYear: 2014
