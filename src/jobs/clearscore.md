@@ -3,7 +3,7 @@ title: Lead Front End Developer
 companyName: Clearscore
 employmentType: full-time
 website: https://clearscore.com
-location: London
+location: London, United Kingdom
 startMonth: 6
 startYear: 2018
 endMonth: 8
@@ -12,6 +12,8 @@ industry:
 tags: job
 keywords: clear, score, clearscore, javascript, your, money, sorted, credit, loans, finance, fintech, finance
 ---
+
+> A rapidly growing FinTech aiming to change the way people manage their finances - starting with their credit score and report
 
 ### Role:
 
