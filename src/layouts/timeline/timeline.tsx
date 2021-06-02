@@ -24,15 +24,15 @@ const EmploymentTypes = {
 
 export = function ArticleList({
   content,
-  'site-data': { meta, title: siteTitle, description: siteDescription, keywords: siteKeywords },
+  'site-data': { meta, keywords: siteKeywords },
   pkg: { version },
   collections: { job: jobs },
 }: Eleventy.Page): string {
   return (
     <PageContainer
       meta={meta}
-      title={siteTitle}
-      description={siteDescription}
+      title="Callum Silcock | Timeline"
+      description="All of the projects, jobs and contracts I've worked over the last decade listed out chronologically"
       keywords={siteKeywords}
       version={version}
     >
