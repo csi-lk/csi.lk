@@ -15,7 +15,7 @@ Wanted to use the [Delta emulator](https://github.com/rileytestut/Delta) from [A
 This turned into a bit of a journey to get it to work:
 
 - [Figured out I needed to downgrade](https://www.reddit.com/r/8bitdo/comments/6gha7g/please_help_with_osx_and_ios_nes30_pro/) the firmware of the controller to v2.0
-- [Download the legacy firmware](https://download.8bitdo.com/Firmware/Controller/N30pro+F30pro/N30pro+F30pro_Firmware_Legacy_V2.00.zip) from the [8BitDo Support page](https://support.8bitdo.com) | [(my mirror just in case)](https://h.csi.lk/files/f.php?h=0I6hBHfq&d=1)
+- [Download the legacy firmware](https://download.8bitdo.com/Firmware/Controller/N30pro+F30pro/N30pro+F30pro_Firmware_Legacy_V2.00.zip) from the [8BitDo Support page](https://support.8bitdo.com)
 - [Hold the power and pair butons for 3-4 seconds](https://www.reddit.com/r/RetroPie/comments/5d0fkk/8bitdo_nes30_pro_cannot_get_it_to_enter_firmware/) then let go to allow the controler to enter firmware update mode
 - Update the firmware using the downloaded app (should only take 30seconds)
 - Find the [old manual](http://download.8bitdo.com/Manual/FC30_Pro_Manual_ENG_v1.0.pdf) telling you to turn it on using _Power + B_

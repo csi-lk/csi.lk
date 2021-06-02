@@ -81,9 +81,7 @@ The nerve center for my setup, allows me to automate / get quick access to a ton
 
 - Dash workflow for quick documentation lookup (built into dash)
 - Lorem - [https://github.com/tillkruss/alfred-lorem-ipsum/releases](https://github.com/tillkruss/alfred-lorem-ipsum/releases)
-- UUID - [http://www.packal.org/workflow/uuid-generator-0](http://www.packal.org/workflow/uuid-generator-0)
 - Fakerum (generate fake data) - [https://github.com/deanishe/alfred-fakeum/releases](https://github.com/deanishe/alfred-fakeum/releases)
-- Downvid (download all videos) - [https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid](https://github.com/vitorgalvao/alfred-workflows/tree/master/DownVid)
 - Process killer - [https://github.com/ngreenstein/alfred-process-killer](https://github.com/ngreenstein/alfred-process-killer)
 - Encode and Decode - [https://github.com/willfarrell/alfred-encode-decode-workflow](https://github.com/willfarrell/alfred-encode-decode-workflow)
 
