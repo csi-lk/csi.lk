@@ -1,6 +1,6 @@
 import { queryHelpers, getByTestId } from '@testing-library/dom'
 import faker from 'faker'
-import Silk from '../../lib/silk'
+import * as Silk from '../../lib/silk'
 import PageContainer, { PageContainer as PageContainerInterface } from './page-container'
 
 const getByName = queryHelpers.queryByAttribute.bind(undefined, 'name')
