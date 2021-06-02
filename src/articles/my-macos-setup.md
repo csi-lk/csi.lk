@@ -10,16 +10,16 @@ keywords: macos, setup, apps, mac, os, front, end, developer
 
 As a contract front end developer I find myself setting up MacOS laptops quite often, here's my setup of everything on my home and work Macbooks (constantly updated)
 
-# Browsers
+## Browsers
 
-## Safari (dev)
+### Safari (dev)
 
     * Ublock Origin
     * 1password
     * vimari
     * Reddit enhancement suite
 
-## Chrome (dev)
+### Chrome (dev)
 
     * Ublock Origin
     * 1password
@@ -30,7 +30,7 @@ As a contract front end developer I find myself setting up MacOS laptops quite o
     * Reddit Enhancement Suite
     * The Great Suspender
 
-## Firefox (main)
+### Firefox (main)
 
     * 1password
     * CanvasBlocker
@@ -43,7 +43,7 @@ As a contract front end developer I find myself setting up MacOS laptops quite o
     * uBlock Origin
     * Vimium
 
-## Internet Explorer (test)
+### Internet Explorer (test)
 
 - 10, 11, Edge Win VMs
   _ [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
@@ -54,13 +54,13 @@ As a contract front end developer I find myself setting up MacOS laptops quite o
   _ Run 1 again
 - [Edge Preview (chromium)](https://apps.apple.com/us/app/microsoft-edge/id1288723196)
 
-## iOS Simulator (test)
+### iOS Simulator (test)
 
 Comes with Xcode, used for mobile safari testing (usually emulated in Chrome is fine but sometimes is needed)
 
-# Productivity
+## Productivity
 
-## Alfred with Powerpack
+### Alfred with Powerpack
 
 The nerve center for my setup, allows me to automate / get quick access to a ton of stuff
 
@@ -87,7 +87,7 @@ The nerve center for my setup, allows me to automate / get quick access to a ton
 - Process killer - [https://github.com/ngreenstein/alfred-process-killer](https://github.com/ngreenstein/alfred-process-killer)
 - Encode and Decode - [https://github.com/willfarrell/alfred-encode-decode-workflow](https://github.com/willfarrell/alfred-encode-decode-workflow)
 
-## Marta file manager
+### Marta file manager
 
 (to replace finder)
 
@@ -101,19 +101,19 @@ Then kill Finder as I rarely need it - [https://apple.stackexchange.com/question
 
 `killall Finder`
 
-## Things 3 (todo list)
+### Things 3 (todo list)
 
 [Mac App store - Things 3](https://apps.apple.com/us/app/things-3/id904280696?mt=12)
 
 Love the UI and the way it syncs with my other iDevices
 
-## Qbserv
+### Qbserv
 
 [https://qotoqot.com/qbserve/](https://qotoqot.com/qbserve/)
 
 Automated time tracker that focuses on Productivity rather than time
 
-## FS Notes
+### FS Notes
 
 [Fsnotes](https://fsnot.es/)
 
@@ -123,7 +123,7 @@ My new favourite note taking app that stores in plaintext on iCloud drive
 
 Syncs with iOS app
 
-## SnippetsLab
+### SnippetsLab
 
 [Renfei SnippetsLab](https://www.renfei.org/snippets-lab/)
 
@@ -131,27 +131,27 @@ Where I store code snippets
 
 Choose SnippetsLab > Install Alfred Workflow from the menubar
 
-## GifFox
+### GifFox
 
 [Giffox](https://gifox.io/)
 
 Free software to create gifs easily that are sharable on Slack or imgur
 
-# Development
+## Development
 
 This is my default coding environment for mainly Front End development
 
-## Dash
+### Dash
 
 Quick dev docs lookup that hooks direclty into Alfred
 
-## iTerm 2
+### iTerm 2
 
 [iTerm 2](https://iterm2.com/)
 
 Setup with [Monokai Soda Colors](https://github.com/mbadolato/iTerm2-Color-Schemes)
 
-## VSCode
+### VSCode
 
 [Visual Studio Code](https://code.visualstudio.com/download)
 
@@ -159,119 +159,119 @@ Note: i'm going to try going back to Sublime Text, as VSCode is too slow for me 
 
 - Use [sync-settings](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) with [this gist](https://gist.github.com/csi-lk/8bf890e8abbaca38c38e9beb247cc52c)
 
-## Javascript Env
+### Javascript Env
 
 - NodeJS
   _ NPM
   _ Yarn \* Use `npm-merge-driver` for auto merging conflicts in `yarn.lock`
   `npx npm-merge-driver install \ --driver-name yarn-merge-driver \ --driver "npx npm-merge-driver merge %A %O %B %P -c yarn" \ --files yarn.lock`
 
-## Sublime Text
+### Sublime Text
 
 - Themes
   _ [https://packagecontrol.io/packages/Monokai _ Spacegray](https://packagecontrol.io/packages/Monokai%20-%20Spacegray)
   _ [https://packagecontrol.io/packages/Material Theme](https://packagecontrol.io/packages/Material%20Theme)
   _ Add `subl` to path with \* [https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos](https://stackoverflow.com/questions/16199581/open-sublime-text-from-terminal-in-macos)
 
-## CLI tools
+### CLI tools
 
 - [brew](https://brew.sh/) because of course
 - [Git Goodies](https://github.com/csi-lk/gg) forked to add my own commands and speed up git workflow
 - [thefuck](https://github.com/nvbn/thefuck) `brew install thefuck` autocorrects your last failed input
 
-# Utilities
+## Utilities
 
-## Spectacle
+### Spectacle
 
 [Spectacle App](https://www.spectacleapp.com/)
 
 Setup hotkeys for window Management
 
-## MenuMeters
+### MenuMeters
 
 [https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/](https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/)
 
 Shows quick CPU, Network and RAM information in the MenuBar
 
-## Hazel
+### Hazel
 
 [Noodlesoft - Hazel](https://www.noodlesoft.com/)
 
 Automated file operations, stored in iCloud drive that sync across devices
 
-## Bartender
+### Bartender
 
 [Mac Bartender](https://www.macbartender.com/)
 
 To hide all the menubar icons that I don't need quick acess to
 
-## Dockey
+### Dockey
 
 [http://dockey.publicspace.co/](http://dockey.publicspace.co/)
 
 Change dock preferences to always hide quick as possible show
 
-## Amphetamine
+### Amphetamine
 
 [Amphetamine (Mac Store)](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
 
 Much like the older caffine but way better, keeps your mac from sleeping
 
-## DaisyDisk
+### DaisyDisk
 
 Note: I didn't know this at the time but you can use [GrandPerspectiv](http://grandperspectiv.sourceforge.net) for a free alternative
 
-## ImageOptim
+### ImageOptim
 
 - [ImageOptim](https://imageoptim.com/mac)
 
-# Design
+## Design
 
-## Figma
+### Figma
 
 [Figma](https://www.figma.com/downloads)
 
 Great sketch replacement
 
-## Pixelmator
+### Pixelmator
 
 For photoshop esque things that need to be done, I have a lifetime version given away in an old 'maclife' magazine that i've been using for years
 
-# Communication
+## Communication
 
-## Slack
+### Slack
 
 [Slack](https://slack.com/downloads/osx)
 
 Darkify with [Slack Dark Mode](https://github.com/LanikSJ/slack-dark-mode) (works after 4.0+ update)
 
-## WhatsApp
+### WhatsApp
 
 Found on mac app store
 
-# Media
+## Media
 
-## IINA
+### IINA
 
 [IINA](https://iina.io/)
 
 Plays everything but looks good, prefer it to VLC on mac then associate it with all movie formats
 
-## Spotify
+### Spotify
 
 [Spotify](https://www.spotify.com/us/download/mac/)
 
 Can't dev without music
 
-# Fonts
+## Fonts
 
-## Fontbase
+### Fontbase
 
 [Fontbase](http://fontba.se/)
 
 Missing font manager that lets you quick preview etc.
 
-## Web Font Load
+### Web Font Load
 
 [Web-Font-Load](https://github.com/qrpike/Web-Font-Load)
 
@@ -281,27 +281,27 @@ curl https://raw.githubusercontent.com/qrpike/Web-Font-Load/master/install.sh | 
 
 Installs all google fonts locally for design
 
-# Entertainment / Fun
+## Entertainment / Fun
 
-## Battle.net
+### Battle.net
 
 [Battle.net](https://www.battle.net/download/getInstallerForGame?os=mac&locale=enUS&version=LIVE&gameProgram=BATTLENET_APP)
 
 Because I play a lot of Hearthstone
 
-## Plex
+### Plex
 
 [Plex](https://www.plex.tv/downloads/)
 
 I have a plex server on a mac mini at home that I use often
 
-## Open Emu
+### Open Emu
 
 [Open Emu](http://openemu.org/)
 
 Because I love playing banjo kazooie over and over again
 
-## Paprika
+### Paprika
 
 [Paprika (App Store)](https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222868)
 
