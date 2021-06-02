@@ -15,10 +15,6 @@ const Header = ({ meta, title, description, keywords, version }: Header): HTMLEl
     {meta.map(tag => <meta {...tag} />).join(' ')}
     <title>{title}</title>
     <link rel="stylesheet" href={`/styles/index.css?v=${version}`} />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/firacode@5.2.0/distr/fira_code.min.css"
-    />
   </head>
 )
 

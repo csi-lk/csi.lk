@@ -1,7 +1,5 @@
 module.exports = {
   // Fonts
-  'font-family': 'Fira Code',
-  'font-family-variation': 'Fira Code VF',
   'font-family-serif': "'Georgia', 'Garamond', 'Times', serif",
   'font-family-system':
     "-apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
