@@ -1,0 +1,8 @@
+---
+layout: false
+permalink: robots.txt
+---
+Sitemap: https://csi.lk/sitemap.xml
+
+User-agent: *
+Disallow:

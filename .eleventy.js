@@ -39,7 +39,7 @@ module.exports = function (config) {
   return {
     dir: { input: 'src', output: 'dist', data: '_data' },
     passthroughFileCopy: true,
-    templateFormats: ['njk', 'md', 'css', 'html', 'yml'],
+    templateFormats: ['njk', 'md', 'css', 'html', 'yml', 'txt'],
     htmlTemplateEngine: 'njk',
   }
 }
