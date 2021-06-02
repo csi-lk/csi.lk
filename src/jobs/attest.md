@@ -3,7 +3,7 @@ title: Front End Platform Engineer
 companyName: Attest
 employmentType: contract
 website: https://askattest.com
-location: London
+location: London, United Kingdom
 startMonth: 9
 startYear: 2019
 endMonth: 4
@@ -12,6 +12,8 @@ industry:
 tags: job
 keywords: attest, javascript, marketing, consumer, growth, platform, survey
 ---
+
+> A worldwide market and brand intelligence platform
 
 ### Role:
 
