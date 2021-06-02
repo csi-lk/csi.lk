@@ -20,7 +20,7 @@
     "build:prod": "cross-env NODE_ENV=production run-s clean styles:prod scripts static:prod",
     "TESTING": "---------------------------",
     "test": "jest",
-    "test:visual": "start-server-and-test serve http://localhost:8080 percy",
+    "test:visual": "yarn build && start-server-and-test serve http://localhost:8080 percy",
     "lint": "npm-run-all lint:stylelint lint:eslint",
     "lint:stylelint": "stylelint src/**/*.css",
     "lint:eslint": "eslint --ext tsx,ts,js,ts,json . --ignore-path .gitignore",
