@@ -1,7 +1,7 @@
 ---
 title: Bypass HSTS or EPKP error message in Chrome
 description: How bypass HSTS or EPKP error message in Chrome
-permalink: article/bypass-hsts-epkp-chrome.html
+permalink: articles/bypass-hsts-epkp-chrome.html
 tags:
   - article
   - short
