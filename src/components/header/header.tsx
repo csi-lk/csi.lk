@@ -13,6 +13,7 @@ const Header = ({ meta, title, description, keywords, version }: Header): HTMLEl
     {keywords && <meta name="keywords" content={keywords} />}
     <meta name="description" content={description} />
     {meta.map(tag => <meta {...tag} />).join(' ')}
+    <link rel="canonical" href="https://csi.lk" />
     <title>{title}</title>
     <link rel="stylesheet" href={`/styles/index.css?v=${version}`} />
   </head>
