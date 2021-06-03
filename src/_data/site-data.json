@@ -13,16 +13,15 @@
     { "name": "distribution", "content": "Global" },
     { "name": "rating", "content": "General" },
     { "name": "revisit-after", "content": "7 days" },
-    { "http-equiv": "Expires", "content": "0" },
-    { "http-equiv": "Pragma", "content": "no-cache" },
-    { "http-equiv": "Cache-Control", "content": "no-cache" },
-    { "http-equiv": "Content-Language", "content": "en" },
     { "name": "og:type", "content": "text/html" },
     {
       "name": "og:site_name",
       "content": "Callum Silcock | Lead Front End Developer & Conference Speaker"
     },
     { "name": "og:email", "content": "contact@csi.lk" },
-    { "name": "og:phone_number", "content": "+447848472822" }
+    { "name": "og:phone_number", "content": "+447848472822" },
+    { "name": "theme-color", "content": "#26292c" },
+    { "rel": "icon", "href": "/favicon.ico" },
+    { "rel": "icon", "href": "/favicon.svg", "type": "image/svg+xml" }
   ]
 }
