@@ -19,6 +19,11 @@ li {
     -webkit-margin-before: 0;
     margin-block-start: 0;
   }
+
+  ul,
+  ol {
+    margin-left: var(--paragraph-spacing);
+  }
 }
 
 ol[data-comfortable],
