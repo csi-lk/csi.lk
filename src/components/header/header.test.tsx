@@ -19,8 +19,10 @@ describe('header', () => {
       version: faker.system.semver(),
     }
     const wrapper = mount(<Header {...properties} />)
+    const links = wrapper.querySelectorAll('link')
     expect(wrapper.querySelector('title')).toHaveTextContent(properties.title)
-    expect(wrapper.querySelector('link')).toHaveProperty(
+    expect(links[0]).toHaveProperty('href', `https://csi.lk/`)
+    expect(links[1]).toHaveProperty(
       'href',
       `http://localhost/styles/index.css?v=${properties.version}`,
     )

@@ -21,9 +21,11 @@ describe('header', () => {
     const properties = { ...defaultProperties }
     const children = faker.lorem.sentence()
     const wrapper = mount(<PageContainer {...properties}>{children}</PageContainer>)
+    const links = wrapper.querySelectorAll('link')
     // Header
     expect(wrapper.querySelector('title')).toHaveTextContent(properties.title)
-    expect(wrapper.querySelector('link')).toHaveProperty(
+    expect(links[0]).toHaveProperty('href', `https://csi.lk/`)
+    expect(links[1]).toHaveProperty(
       'href',
       `http://localhost/styles/index.css?v=${properties.version}`,
     )
