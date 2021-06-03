@@ -20,21 +20,23 @@ I'm rocking the [Riut - X35 (35 litre)](https://www.riut.co.uk/collections/all-s
 
 ## Clothes
 
-- 6 \* ASColor Scoop Neck (Shadow) T-shirts
-- 1 \* Wooly Merino T-shirt
-- 6 \* Bonds micro-fibre underwear
-- 3 \* Merino socks
-- 1 \* Generic H&M Gym Shorts
-- 1 \* 'nice' shorts
-- 1 \* Nudie Jeans (slim)
-- 1 \* No name belt I bought while travelling
-- 1 \* Timberland boots
-- 1 \* Allbirds sneakers (woollen, that are super light and don't require socks)
-- 1 \* Nice 'going out' shirt
-- Leather Jacket
-- Uniqlo fold up puffer jacket
-
 Packed into two packing cubes and 1 shoe bag
+
+| Type        | Name                         | Amount |
+| ----------- | ---------------------------- | ------ |
+| T-shirt     | ASColour Scoop Neck (Shadow) | 6      |
+| T-shirt     | Wooly Merino                 | 2      |
+| Shirt       | Uniqlo OKBD Shirt            | 1      |
+| Underwear   | Bonds micro-fibre            | 6      |
+| Underwear   | Merino socks                 | 3      |
+| Pants       | H&M Gym Shorts               | 1      |
+| Pants       | Nudie Jeans (slim)           | 1      |
+| Accessories | Leather Belt                 | 1      |
+| Shoes       | Allbirds Sneakers            | 1      |
+| Shoes       | Timberland boots             | 1      |
+| Overwear    | H&M Hoodie                   | 1      |
+| Overwear    | Leahter Jacket               | 1      |
+| Uniqulo     | Packable puffer hacket       | 1      |
 
 ## Tech
 
@@ -76,7 +78,5 @@ Packed into two packing cubes and 1 shoe bag
   - Backup credit card
   - EEA Health Care Card
   - AU Health care card (Medicare)
-
-Packing is hard and also depends on where you're going, my current list above is based on UK summer.
 
 But the best advice I got is, be brutal and go as lean as possible because it's easier to buy things rather than get rid of things.
