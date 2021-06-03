@@ -8,7 +8,6 @@ jobs:
         command:
           - lint:eslint
           - lint:stylelint
-          - lint:commit
           - test
           - test:visual
           - build:prod
