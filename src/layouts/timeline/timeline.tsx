@@ -25,6 +25,7 @@ const EmploymentTypes = {
 export = function ArticleList({
   content,
   'site-data': { meta, keywords: siteKeywords },
+  i18n: { locale },
   pkg: { version },
   collections: { job: jobs },
 }: Eleventy.Page): string {
@@ -35,6 +36,7 @@ export = function ArticleList({
       description="All of the projects, jobs and contracts I've worked over the last decade listed out chronologically"
       keywords={siteKeywords}
       version={version}
+      locale={locale}
     >
       <article id="content">{content}</article>
       <div className="job-list">
