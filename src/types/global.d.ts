@@ -33,6 +33,7 @@ export interface Job {
 declare namespace Eleventy {
   interface Page {
     'site-data': typeof import('../_data/site-data.json')
+    i18n: typeof import('../_data/i18n.js')
     layout: string
     title?: string
     description?: string

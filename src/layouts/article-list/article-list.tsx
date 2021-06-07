@@ -6,6 +6,7 @@ import Eleventy from '../../types/global'
 export = function ArticleList({
   content,
   'site-data': { meta, keywords: siteKeywords },
+  i18n: { locale },
   pkg: { version },
   collections: { article: articles },
 }: Eleventy.Page): string {
@@ -16,6 +17,7 @@ export = function ArticleList({
       description="A collection of articles I've written over the years about random topics including emoji, react, macos, functional testing and even gaming."
       keywords={siteKeywords}
       version={version}
+      locale={locale}
     >
       <article id="content">{content}</article>
       <div className="article-list">

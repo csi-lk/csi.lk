@@ -23,5 +23,11 @@
     { "name": "theme-color", "content": "#26292c" },
     { "rel": "icon", "href": "/favicon.ico" },
     { "rel": "icon", "href": "/favicon.svg", "type": "image/svg+xml" }
+  ],
+  "languages": [
+    {
+      "label": "English",
+      "code": "en"
+    }
   ]
 }

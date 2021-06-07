@@ -16,6 +16,7 @@ describe('header', () => {
     description: faker.lorem.sentence(),
     keywords: `${faker.lorem.word()}, ${faker.lorem.word()}`,
     version: faker.system.semver(),
+    locale: 'en-au',
   }
   it('renders with default props', () => {
     const properties = { ...defaultProperties }
