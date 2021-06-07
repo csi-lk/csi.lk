@@ -1,0 +1,6 @@
+preserve_hierarchy: true
+commit_message: 'feat: translate %language% from crowdin'
+append_commit_message: false
+files:
+  - source: /src/i18n/*.json
+    translation: /src/i18n/%locale%.json
