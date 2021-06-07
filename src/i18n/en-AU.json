@@ -1,0 +1,19 @@
+{
+  "head-links": {
+    "open-new-window": "Opens in a new window",
+    "open-external": "Opens an external site",
+    "open-new-window-external": "Opens an external site in a new window",
+    "open-email": "Opens email application",
+    "skip-content": "Skip to content"
+  },
+  "navigation": {
+    "timeline": "timeline",
+    "articles": "articles"
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "Email",
+    "code": "Code",
+    "social": "Social"
+  }
+}
