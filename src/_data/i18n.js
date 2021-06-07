@@ -1,3 +1,3 @@
 module.exports = {
-  locale: process.env.LOCALE || 'en-au',
+  locale: process.env.LOCALE || 'default',
 }

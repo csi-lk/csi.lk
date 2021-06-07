@@ -4,7 +4,7 @@ import Footer from './footer'
 
 describe('footer', () => {
   it('renders classname if passed as a prop', () => {
-    const wrapper = mount(<Footer fixed locale="en-au" />)
+    const wrapper = mount(<Footer fixed locale="default" />)
     expect(getByTestId(wrapper, 'footer')).toHaveClass('fixed')
   })
 })
