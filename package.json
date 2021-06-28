@@ -71,7 +71,7 @@
     "eslint-plugin-local": "^1.0.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "eslint-plugin-unicorn": "^34.0.0",
-    "jest": "^27.0.5",
+    "jest": "^27.0.6",
     "light-server": "2.9.1",
     "markdown-it-external-links": "^0.0.6",
     "prettier": "^2.3.2",
