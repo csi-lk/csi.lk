@@ -46,13 +46,6 @@ const PageContainer = (
             <main>{children}</main>
             <Footer locale={locale} />
           </div>
-          <script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon="{'token': '6390381bc3b34b92af23d388761aaa8d'}"
-          >
-            {' '}
-          </script>
         </body>
       </html>
     </Silk.createFragment>
