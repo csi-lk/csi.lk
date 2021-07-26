@@ -37,6 +37,7 @@ jobs:
         repo:
           - csi-lk/csi.lk
           - csi-lk/callumsilcock.com
+          - csi-lk/xn--ev9h.ml
     steps:
       - name: 'Cache'
         uses: actions/cache@v2
@@ -66,6 +67,6 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: '#000'
           SLACK_ICON: https://raw.githubusercontent.com/github/explore/master/topics/actions/actions.png
-          SLACK_MESSAGE: 'Deployed https://csi.lk to production :rocket:'
+          SLACK_MESSAGE: 'Deployed ${{ matrix.repo }} to production :rocket:'
           SLACK_TITLE: Production Deployment
           SLACK_USERNAME: deployBot
