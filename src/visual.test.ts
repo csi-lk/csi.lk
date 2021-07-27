@@ -10,6 +10,8 @@ PercyScript.run(
   ) => {
     await page.goto('http://localhost:8080/')
     await percySnapshot('home', percyOptions)
+    await page.goto('http://localhost:8080/talks.html')
+    await percySnapshot('talks', percyOptions)
     await page.goto('http://localhost:8080/articles.html')
     await percySnapshot('articles', percyOptions)
     await page.goto('http://localhost:8080/timeline.html')
