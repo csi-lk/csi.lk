@@ -47,7 +47,6 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Automerge
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: ridedott/merge-me-action@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
