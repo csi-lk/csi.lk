@@ -40,12 +40,14 @@ jobs:
       - name: 'Commitlint'
         uses: wagoid/commitlint-github-action@v1
   dependabot:
+    needs: [pr_check]
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: 'Automerge Dependabot PRs'
-        uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - name: Automerge
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        uses: ridedott/merge-me-action@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
