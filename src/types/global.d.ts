@@ -15,6 +15,17 @@ export interface Article {
   date: Date
 }
 
+export interface Talk {
+  data: {
+    repo: string
+    slidesEmbed: string
+    slidesSD: string
+    slidesPdf: string
+    slidesRaw: string
+  } & DefaultFrontMatter
+  date: Date
+}
+
 export interface Job {
   data: {
     companyName: string
@@ -51,6 +62,7 @@ declare namespace Eleventy {
       all: Article[] | Job[]
       article: Article[]
       job: Job[]
+      talk: Talk[]
     }
   }
 }
