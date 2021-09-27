@@ -86,7 +86,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@testing-library/dom": "^8.6.0",
     "@testing-library/jest-dom": "^5.14.1",
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.6",
     "common-tags": "^1.8.0",
     "cssnano": "^5.0.8",
     "cssnano-preset-advanced": "^5.1.4",
