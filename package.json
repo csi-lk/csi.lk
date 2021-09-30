@@ -80,7 +80,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "ts-node": "^10.2.1",
-    "yarn": "^1.22.13"
+    "yarn": "^1.22.15"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
