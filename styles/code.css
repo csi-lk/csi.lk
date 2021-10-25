@@ -27,7 +27,6 @@ pre code {
   overflow: auto;
   text-align: left;
   white-space: inherit;
-  -ms-writing-mode: lr-tb;
   writing-mode: horizontal-tb;
   text-orientation: mixed;
   border-left: 4px solid var(--color-background-transparent);

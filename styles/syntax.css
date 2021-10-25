@@ -1,10 +1,10 @@
 /* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
 
 .hljs {
   display: block;
   overflow-x: auto;
   background: var(--color-background-transparent);
-  -webkit-text-size-adjust: none;
 }
 
 .hljs,
@@ -146,5 +146,5 @@
 .xml .hljs-cdata,
 .xml .php,
 .php .xml {
-  opacity: 0.5;
+  opacity: 50%;
 }
