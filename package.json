@@ -87,7 +87,7 @@
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.0",
     "autoprefixer": "^10.4.0",
-    "common-tags": "^1.8.1",
+    "common-tags": "^1.8.2",
     "cssnano": "^5.0.10",
     "cssnano-preset-advanced": "^5.1.7",
     "faker": "^5.5.3",
