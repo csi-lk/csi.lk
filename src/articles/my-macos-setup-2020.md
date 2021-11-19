@@ -1,9 +1,9 @@
 ---
 title: My MacOS Setup
 description: My setup of everything on my home and work Macbooks
-permalink: articles/my-macos-setup.html
+permalink: articles/my-macos-setup-2020.html
 layout: article
-date: 2019-06-28
+date: 2020-06-28
 tags: article
 keywords: macos, setup, apps, mac, os, front, end, developer
 ---
