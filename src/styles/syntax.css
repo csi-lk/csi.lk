@@ -146,5 +146,5 @@
 .xml .hljs-cdata,
 .xml .php,
 .php .xml {
-  opacity: 50%;
+  opacity: 0.5;
 }
