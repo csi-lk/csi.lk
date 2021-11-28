@@ -3,7 +3,7 @@ title: Front End Staff Engineer
 companyName: Hopin
 employmentType: full-time
 website: https://hopin.com
-location: London, United Kingdom
+location: Melbourne, Australia
 startMonth: 6
 startYear: 2020
 industry:
