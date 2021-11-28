@@ -1,4 +1,4 @@
-const ignore = ['node_modules', 'src/_includes', 'visual.test.ts']
+const ignore = ['src/_includes', 'visual.test.ts']
 
 module.exports = {
   verbose: true,
