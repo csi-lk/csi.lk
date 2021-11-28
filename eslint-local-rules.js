@@ -1,4 +1,4 @@
-module.exports.rules = {
+module.exports = {
   'jsx-uses-silk-pragma': {
     create(context) {
       const pragma = 'Silk'
