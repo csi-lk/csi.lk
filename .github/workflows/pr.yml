@@ -9,7 +9,6 @@ jobs:
           - lint:eslint
           - lint:stylelint
           - test
-          - test:visual
           - build:prod
     name: ${{ matrix.command }}
     runs-on: ubuntu-latest
