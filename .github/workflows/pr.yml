@@ -24,7 +24,7 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: 'Install dependencies'
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: 'Run ${{ matrix.command }}'
         run: yarn ${{ matrix.command }}
         env:
