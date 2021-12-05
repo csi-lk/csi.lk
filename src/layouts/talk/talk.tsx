@@ -18,6 +18,7 @@ export = function TalkPage({
   slidesSD,
   slidesPdf,
   slidesRaw,
+  content,
   page: { date, inputPath },
 }: Eleventy.Page & Talk['data']): string {
   return (
@@ -94,6 +95,7 @@ export = function TalkPage({
             </a>
           </li>
         </ul>
+        {content}
       </article>
     </PageContainer>
   )
