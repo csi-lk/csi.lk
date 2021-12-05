@@ -1,2 +1,211 @@
 <!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="cucumber, cypress, given, when, then, tdd, bdd, product, owners, functional, testing" /> <meta name="description" content="Leveraging Cucumber with Cypress and the structure needed to allow your product owners to write your functional tests" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk" /> <title >How to get product owners to write your functional tests</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
- Silcock</h2></a> <a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a></nav> <main ><article id="content" class="talk"><h1 >How to get product owners to write your functional tests</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2020-03-17">2020-03-17</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/use-gwt-cypress.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> Leveraging Cucumber with Cypress and the structure needed to allow your product owners to write your functional tests <div class="embed-container"><iframe src="https://speakerdeck.com/player/647887a2d1fc47688df6634ca6e38878" allowfullscreen scrolling="no" allow="encrypted-media;">Loading SpeakerDeck within iFrame</iframe></div> <h2 class="talk-date">Relevant Links</h2> <ul ><li ><a href="https://github.com/csi-lk/cypress-gwt-example" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Companion Repo</a></li> <li ><a href="https://speakerdeck.com/csilk/then-with-cypress" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides Presentation on Speakerdeck</a></li> <li ><a href="https://github.com/csi-lk/cypress-gwt-example/blob/master/talk/using-gwt-with-cypress.pdf" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides in .PDF format</a></li> <li ><a href="https://github.com/csi-lk/cypress-gwt-example/blob/master/talk/using-gwt-with-cypress-raw.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul></article></main> <footer class="footer undefined" data-testid="footer"><div ><p >© 2021</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
+ Silcock</h2></a> <a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a></nav> <main ><article id="content" class="talk"><h1 >How to get product owners to write your functional tests</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2020-03-17">2020-03-17</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/use-gwt-cypress.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> Leveraging Cucumber with Cypress and the structure needed to allow your product owners to write your functional tests <div class="embed-container"><iframe src="https://speakerdeck.com/player/647887a2d1fc47688df6634ca6e38878" allowfullscreen scrolling="no" allow="encrypted-media;">Loading SpeakerDeck within iFrame</iframe></div> <h2 class="talk-date">Relevant Links</h2> <ul ><li ><a href="https://github.com/csi-lk/cypress-gwt-example" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Companion Repo</a></li> <li ><a href="https://speakerdeck.com/csilk/then-with-cypress" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides Presentation on Speakerdeck</a></li> <li ><a href="https://github.com/csi-lk/cypress-gwt-example/blob/master/talk/using-gwt-with-cypress.pdf" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides in .PDF format</a></li> <li ><a href="https://github.com/csi-lk/cypress-gwt-example/blob/master/talk/using-gwt-with-cypress-raw.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h1>How to get your product owners to write your functional tests</h1>
+<p>AKA Using Given / When / Then with Cypress</p>
+<p>^ This presentation was written in Markdown for DeckSet (mac) which is why it looks a little weird, see attached PDF output and notes of every slide</p>
+<p>^ Have been doing frontend development and trying to take the pain out of testing for &gt;10 years now</p>
+<p>^ Not a twitter guy</p>
+<h2>What are we trying to solve?</h2>
+<p>^ I started a contract 4 or so years ago that had major issues with their development and deployment pipeline</p>
+<p>^ Main goals were to decrease risk in production deployments</p>
+<p>^ This is an evolution of that thinking to bring us to this end product</p>
+<p>^ So lets dive in</p>
+<pre><code class="hljs">  .─.                      .─.                                                      .─.
+ <span class="hljs-comment">(   )</span>    ┌────────┬─┐    <span class="hljs-comment">(   )</span>   ┌──────────┐   ┌──────────┐       ┌──────────┐   <span class="hljs-comment">(   )</span>         ┌──────────┐
+ ┌`─<span class="hljs-string">&#x27;┐    │  Ticket└─┤    ┌`─&#x27;</span>┐   │          │   │          │ Merge │    QA    │   ┌`─<span class="hljs-string">&#x27;┐ Promote │          │
+ │Prd│───&gt;│  Story   │───&gt;│Dev│──&gt;│  Branch  │──&gt;│    PR    │──────&gt;│   STG    │──&gt;│QA │────────&gt;│Production│
+ │   │    │   Bug    │    │   │   │          │   │          │       │   UAT    │   │   │         │          │
+ └───┘    └──────────┘    └───┘   └──────────┘   └┬─────────┘       └──────────┘   └───┘         └──────────┘
+                                                  ├&gt;Tests Pass
+                                                  └&gt;Approval
+
+</span></code></pre>
+<p>^ Your current workflow probably consists of ticket &gt; dev &gt; pr &gt; merge &gt; qa / staging / uat regression &gt; production</p>
+<p>^ Shifting your current workflow of putting QA last to putting QA first by chaining a few tools</p>
+<pre><code class="hljs language-javascript">describe(<span class="hljs-string">&#x27;logging in&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+	it(<span class="hljs-string">&#x27;logs in, () =&gt; {
+		cy.visit(&#x27;</span>http:<span class="hljs-comment">//localhost:3000/login&#x27;);</span>
+		cy.get(<span class="hljs-string">&#x27;email&#x27;</span>).type(<span class="hljs-string">&#x27;contact@csi.lk&#x27;</span>);
+		cy.get(<span class="hljs-string">&#x27;password&#x27;</span>).type(<span class="hljs-string">&#x27;hunter2&#x27;</span>);
+		cy.get(<span class="hljs-string">&#x27;input[type=&quot;button&quot;]&#x27;</span>).click();
+		cy.url().should(<span class="hljs-string">&#x27;be&#x27;</span>, <span class="hljs-string">&#x27;http://localhost:3000/dashboard&#x27;</span>);
+	});
+});
+</code></pre>
+<p>^ Let's start with Cypress</p>
+<p>^ Classic login scenario, most peoples current tests look something like this</p>
+<p>^ Visit, type in email / password, click the button, end up on the dashboard</p>
+<p>^ instead of writing within cypress write these in feature</p>
+<pre><code class="hljs language-feature"> <span class="hljs-keyword">Feature</span>: Testing
+
+   Ewww regression
+
+   <span class="hljs-keyword">Scenario</span>: Lack of automation
+      <span class="hljs-keyword">Given</span> I am a Frontend Developer
+      <span class="hljs-keyword">When</span> I am forced to manually test
+      <span class="hljs-keyword">Then</span> kill me
+</code></pre>
+<p>^ We're going to move them to a BDD approach with an old frield, cucumber</p>
+<p>^ I know a lot of people shudder when hearing words like 'gherkins', 'cucumber' and the worst one... 'cukes' but this is quite nice, I promise</p>
+<p>^ So if we translate our cypress scenario from before it looks like this</p>
+<pre><code class="hljs language-feature"><span class="hljs-keyword">Feature</span>: Logging In
+
+  Tests the user can successfully login and log out
+
+  <span class="hljs-keyword">Scenario</span>: Logging In Sucessfully
+    <span class="hljs-keyword">Given</span> I am on the <span class="hljs-string">&quot;login&quot;</span> page
+    <span class="hljs-keyword">When</span> I input my <span class="hljs-string">&quot;email&quot;</span> as <span class="hljs-string">&quot;contact@csi.lk&quot;</span>
+    <span class="hljs-keyword">And</span> I input my <span class="hljs-string">&quot;password&quot;</span> as <span class="hljs-string">&quot;hunter2&quot;</span>
+    <span class="hljs-keyword">And</span> I click the <span class="hljs-string">&quot;login&quot;</span> button
+    <span class="hljs-keyword">Then</span> I should be on the <span class="hljs-string">&quot;dashboard&quot;</span> page
+
+</code></pre>
+<p>^ Feature flow of login page &gt; email &gt; password &gt; login button &gt; dashboard page</p>
+<p>^ What's up with the quotes? This is where it gets interesting, we are defining params that will be picked up in our function later</p>
+<p>^ We are able to start defining these steps globally in a reusable way</p>
+<pre><code class="hljs language-javascript">
+# Given I am on the <span class="hljs-string">&quot;login&quot;</span> page
+
+<span class="hljs-keyword">import</span> { Given } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;cypress-cucumber-preprocessor/steps&quot;</span>
+
+Given(<span class="hljs-string">`I am on the {string} page`</span>, <span class="hljs-function"><span class="hljs-params">target</span> =&gt;</span> {
+  cy.visit(<span class="hljs-string">`https://localhost:3000/<span class="hljs-subst">${target.toLowerCase()}</span>`</span>)
+})
+
+</code></pre>
+<p>^ Allows you to define a param as part of the step string which we can pass into our re-usable function</p>
+<p>^ Let's switch tracks to a different concept now, using data attributes make it easy for chpres to taget them</p>
+<pre><code class="hljs language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span>
+      <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Email&quot;</span>
+      <span class="hljs-attr">data-qa</span>=<span class="hljs-string">&quot;input-email&quot;</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span>
+      <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Password&quot;</span>
+      <span class="hljs-attr">data-qa</span>=<span class="hljs-string">&quot;input-password&quot;</span>
+    /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+      <span class="hljs-attr">data-qa</span>=<span class="hljs-string">&quot;button-login&quot;</span>
+      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> {
+        setAuthentication(true)
+        history.push(&quot;/dashboard&quot;)
+      }}
+    &gt;
+      Log In
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>^ React, vue, jquery, mootools doesn't matter, what we're doing here is adding a specific data attribute to each input above, i'm using 'data-qa' as it's quite declarative but you can set this to whatever you like</p>
+<p>^ You can strip your data-qa's out of your build in prod, some do (twitter) some don't (dropbox)</p>
+<p>^ The most important thing is to make sure you have a specific format, see above I have {type} dash {name}, depending on your project you will need to define this but make sure it's consistent</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// Then the &quot;navigation logout&quot; button should &quot;not&quot; &quot;exist&quot;</span>
+
+Then(
+  <span class="hljs-string">`the {string} button should {string} {string}`</span>,
+  <span class="hljs-function">(<span class="hljs-params">id, assert, assertion</span>) =&gt;</span>
+    cy
+      .get(<span class="hljs-string">`[data-qa=&quot;<span class="hljs-subst">${type}</span>-<span class="hljs-subst">${id.replace(<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;-&quot;</span>).toLowerCase()}</span>&quot;]`</span>)
+      .should(assert, assertion)
+  <span class="hljs-comment">//cy.get([data-qa=&quot;button-navigation-logout&quot;]).should(&quot;not&quot;, &quot;exist&quot;)</span>
+)
+
+<span class="hljs-comment">// Reuse!</span>
+
+<span class="hljs-comment">// Then the &quot;login&quot; button should &quot;be&quot; &quot;disabled&quot;</span>
+</code></pre>
+<p>^ This leads up the coolest part, combining the global step definitions and the data qa attributes we can do some cool shit like this</p>
+<p>^ Allows us to reuse this over and over</p>
+<p>^ going back to our workflow</p>
+<pre><code class="hljs">
+
+  .─.                      .─.                    .─.
+ <span class="hljs-comment">(   )</span>    ┌────────┬─┐    <span class="hljs-comment">(   )</span>   ┌──────────┐   <span class="hljs-comment">(   )</span>   ┌──────────┐             ┌──────────┐
+ ┌`─<span class="hljs-string">&#x27;┐    │  Ticket└─┤    ┌`─&#x27;</span>┐   │          │   ┌`─<span class="hljs-string">&#x27;┐   │          │    Merge    │          │
+ │Prd│───&gt;│  Story   │───&gt;│QA │──&gt;│  Branch  │──&gt;│Dev│──&gt;│    PR    │──────┬─────&gt;│Production│
+ │   │    │          │    │   │   │          │   │   │   │          │      │      │          │
+ └───┘    └──────────┘    └───┘   └──────────┘   └───┘   └┬─────────┘      │      └──────────┘
+                                                          ├&gt;Tests Pass     │      ┌──────────┐
+                                                          ├&gt;Approval       │      │ .feature │
+                                                          └&gt;Canary for UAT └─────&gt;│  static  │
+                                                                                  │   site   │
+                                                                                  └──────────┘
+
+</span></code></pre>
+<p>^ move qa to start of pipeline</p>
+<p>^ Using this approach allows your product owners to write the GWT scenarios in plain english, QA picks up and validates over to dev</p>
+<p>^ Also is powerful for Bug flows</p>
+<pre><code class="hljs">        .─.                             .─.
+       <span class="hljs-comment">(   )</span>    ┌────────┬─┐           <span class="hljs-comment">(   )</span>
+       ┌`─<span class="hljs-string">&#x27;┐    │        └─┤  Validate ┌`─&#x27;</span>┐
+       │QA │─┬─&gt;│   Bug    │──────────&gt;│Prd│&lt;┐
+       │   │ │  │          │           │   │ │
+       └───┘ │  └──────────┘           └───┘ │
+             │                  .─.          │
+             │  ┌──────────┐   <span class="hljs-comment">(   )</span>   ┌──────────┐             ┌──────────┐
+             │  │          │   ┌`─<span class="hljs-string">&#x27;┐   │          │    Merge    │          │
+             └─&gt;│  Branch  │──&gt;│Dev│──&gt;│    PR    │──────┬─────&gt;│Production│
+                │          │   │   │   │          │      │      │          │
+                └──────────┘   └───┘   └┬─────────┘      │      └──────────┘
+                                        ├&gt;Tests Pass     │      ┌──────────┐
+                                        ├&gt;Approval       │      │ .feature │
+                                        └&gt;Canary for UAT └─────&gt;│  static  │
+                                                                │   site   │
+                                                                └──────────┘
+
+</span></code></pre>
+<p>^ Now enabled QA to create branches of these bugs through the branch / ticket</p>
+<p>^ dev proves bug is fixed through the functional tests</p>
+<p>^ you can even have a validation step in there for product</p>
+<p>^ then straight to prod!</p>
+<pre><code class="hljs">
+       ┌──────────┐                     ┌──────────┐        .─.
+       │   <span class="hljs-built_in">new</span>    │  parse .<span class="hljs-built_in">feature</span>(s)  │  Static  │      │(   )│wow!
+       │ .<span class="hljs-built_in">feature</span> │────────────────────&gt;│   Site   │      │┌`─&#x27;┐│
+       │   test   │                     │Generator │      └┤Prd├┘
+       └──────────┘┌──────────┐         └──────────┘       │   │
+             │     │ Cypress  │               │            └───┘
+             ├────&gt;│Dashboard │&lt;────┐         │              │
+             │     │          │     │         ▼              │
+             │     └──────────┘     │     ┌─────┬┐       ┌───────┐
+             │     ┌──────────┐     │<span class="hljs-built_in">read</span> │     └┤ rsync │  s3   │
+             │     │  Visual  │     ├─────│output│──────&gt;│bucket │
+             └────&gt;│Regression│&lt;────┘     │      │       │ serve │
+                   │          │           └──────┘       └───────┘
+                   └──────────┘
+</code></pre>
+<p>^ To complete the loop publish the <code>.feature</code> files to an internal s3 bucket (or something similar) for product to know what is covered</p>
+<p>^ Visual regression can be linked too (screenshots)</p>
+<p>^ Cypress dashboard showing videos of the flows and screenshots, what is passing and failing</p>
+<p>^ Gives product a overall dashboard showing what is covered, even could show build status (if you're feeling confident)</p>
+<p>^ Ok you now understand the approach so what are the pros and cons?</p>
+<h2>Cons</h2>
+<ul>
+<li>Abstracting tests from code</li>
+<li>Lack of IDE tooling</li>
+<li>Lots of tests make for slow builds</li>
+<li>BDD Is hard</li>
+</ul>
+<p>^ Your runner is now in the feature files rather than the code itself</p>
+<p>^ There's no great intelligent IDE tools yet to bridge that gap</p>
+<p>^ Having a ton of tests takes a while to run (although you can counter this by running against only what's changed and running tests across multiple runners)</p>
+<p>^ BDD is a difficult state to get to, requires a lot of buy in from your product owners to dev to qa</p>
+<p>^ But let's focus on the positive with Pros</p>
+<h2>Pros</h2>
+<ul>
+<li>Product owners write the tests and see the whole pipeline</li>
+<li>QA moves to the front of the pipeline</li>
+<li>Devs have less tests to write</li>
+<li>Less risk with deployments</li>
+</ul>
+<p>^ Everyone is happy</p>
+<p>^ Product owners can now see everything happening and the gaps they need to fill, can go to whole business</p>
+<p>^ QA is happy as they're moving to proactive rather than reactive</p>
+<p>^ Dev is happy because they can focus on code rather than tests</p>
+<p>^ Lastly, less risk with production deployments as all major scnearios are covered</p>
+<h2>Live Tech Demo</h2>
+<p>^ Show http://github.com/csi-lk/cypress-gwt-example repo</p>
+<p>^ Show github action workflow: https://github.com/csi-lk/cypress-gwt-example/blob/master/.github/workflows/run-cypress.yml</p>
+<p>^ Show CI working: https://github.com/csi-lk/cypress-gwt-example/actions</p>
+<p>^ Show cypress dashboard: https://dashboard.cypress.io/#/projects/syj7cg/runs</p>
+</article></main> <footer class="footer undefined" data-testid="footer"><div ><p >© 2021</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
