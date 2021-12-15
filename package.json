@@ -91,7 +91,7 @@
     "autoprefixer": "^10.4.0",
     "common-tags": "^1.8.2",
     "cssnano": "^5.0.12",
-    "cssnano-preset-advanced": "^5.1.8",
+    "cssnano-preset-advanced": "^5.1.9",
     "faker": "^5.5.3",
     "markdown-it": "^12.3.0",
     "markdown-it-highlightjs": "^3.5.0",
