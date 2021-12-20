@@ -90,7 +90,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "autoprefixer": "^10.4.0",
     "common-tags": "^1.8.2",
-    "cssnano": "^5.0.13",
+    "cssnano": "^5.0.14",
     "cssnano-preset-advanced": "^5.1.9",
     "faker": "^5.5.3",
     "markdown-it": "^12.3.0",
