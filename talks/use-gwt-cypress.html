@@ -21,13 +21,13 @@
 </span></code></pre>
 <p>^ Your current workflow probably consists of ticket &gt; dev &gt; pr &gt; merge &gt; qa / staging / uat regression &gt; production</p>
 <p>^ Shifting your current workflow of putting QA last to putting QA first by chaining a few tools</p>
-<pre><code class="hljs language-javascript">describe(<span class="hljs-string">&#x27;logging in&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
-	it(<span class="hljs-string">&#x27;logs in, () =&gt; {
-		cy.visit(&#x27;</span>http:<span class="hljs-comment">//localhost:3000/login&#x27;);</span>
-		cy.get(<span class="hljs-string">&#x27;email&#x27;</span>).type(<span class="hljs-string">&#x27;contact@csi.lk&#x27;</span>);
-		cy.get(<span class="hljs-string">&#x27;password&#x27;</span>).type(<span class="hljs-string">&#x27;hunter2&#x27;</span>);
-		cy.get(<span class="hljs-string">&#x27;input[type=&quot;button&quot;]&#x27;</span>).click();
-		cy.url().should(<span class="hljs-string">&#x27;be&#x27;</span>, <span class="hljs-string">&#x27;http://localhost:3000/dashboard&#x27;</span>);
+<pre><code class="hljs language-javascript"><span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;logging in&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+	<span class="hljs-title function_">it</span>(<span class="hljs-string">&#x27;logs in, () =&gt; {
+		cy.visit(&#x27;</span><span class="hljs-attr">http</span>:<span class="hljs-comment">//localhost:3000/login&#x27;);</span>
+		cy.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;email&#x27;</span>).<span class="hljs-title function_">type</span>(<span class="hljs-string">&#x27;contact@csi.lk&#x27;</span>);
+		cy.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;password&#x27;</span>).<span class="hljs-title function_">type</span>(<span class="hljs-string">&#x27;hunter2&#x27;</span>);
+		cy.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;input[type=&quot;button&quot;]&#x27;</span>).<span class="hljs-title function_">click</span>();
+		cy.<span class="hljs-title function_">url</span>().<span class="hljs-title function_">should</span>(<span class="hljs-string">&#x27;be&#x27;</span>, <span class="hljs-string">&#x27;http://localhost:3000/dashboard&#x27;</span>);
 	});
 });
 </code></pre>
@@ -63,12 +63,12 @@
 <p>^ What's up with the quotes? This is where it gets interesting, we are defining params that will be picked up in our function later</p>
 <p>^ We are able to start defining these steps globally in a reusable way</p>
 <pre><code class="hljs language-javascript">
-# Given I am on the <span class="hljs-string">&quot;login&quot;</span> page
+# <span class="hljs-title class_">Given</span> I am on the <span class="hljs-string">&quot;login&quot;</span> page
 
-<span class="hljs-keyword">import</span> { Given } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;cypress-cucumber-preprocessor/steps&quot;</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Given</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;cypress-cucumber-preprocessor/steps&quot;</span>
 
-Given(<span class="hljs-string">`I am on the {string} page`</span>, <span class="hljs-function"><span class="hljs-params">target</span> =&gt;</span> {
-  cy.visit(<span class="hljs-string">`https://localhost:3000/<span class="hljs-subst">${target.toLowerCase()}</span>`</span>)
+<span class="hljs-title class_">Given</span>(<span class="hljs-string">`I am on the {string} page`</span>, <span class="hljs-function"><span class="hljs-params">target</span> =&gt;</span> {
+  cy.<span class="hljs-title function_">visit</span>(<span class="hljs-string">`https://localhost:3000/<span class="hljs-subst">${target.toLowerCase()}</span>`</span>)
 })
 
 </code></pre>
@@ -101,12 +101,12 @@ Given(<span class="hljs-string">`I am on the {string} page`</span>, <span class=
 <p>^ The most important thing is to make sure you have a specific format, see above I have {type} dash {name}, depending on your project you will need to define this but make sure it's consistent</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// Then the &quot;navigation logout&quot; button should &quot;not&quot; &quot;exist&quot;</span>
 
-Then(
+<span class="hljs-title class_">Then</span>(
   <span class="hljs-string">`the {string} button should {string} {string}`</span>,
   <span class="hljs-function">(<span class="hljs-params">id, assert, assertion</span>) =&gt;</span>
     cy
-      .get(<span class="hljs-string">`[data-qa=&quot;<span class="hljs-subst">${type}</span>-<span class="hljs-subst">${id.replace(<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;-&quot;</span>).toLowerCase()}</span>&quot;]`</span>)
-      .should(assert, assertion)
+      .<span class="hljs-title function_">get</span>(<span class="hljs-string">`[data-qa=&quot;<span class="hljs-subst">${type}</span>-<span class="hljs-subst">${id.replace(<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;-&quot;</span>).toLowerCase()}</span>&quot;]`</span>)
+      .<span class="hljs-title function_">should</span>(assert, assertion)
   <span class="hljs-comment">//cy.get([data-qa=&quot;button-navigation-logout&quot;]).should(&quot;not&quot;, &quot;exist&quot;)</span>
 )
 

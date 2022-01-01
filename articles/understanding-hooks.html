@@ -19,7 +19,7 @@
 <pre><code class="hljs language-js"><span class="hljs-keyword">const</span> [age, setAge] = useState &lt; number &gt; <span class="hljs-number">28</span>
 
 <span class="hljs-keyword">return</span> (
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Fragment</span>&gt;</span>
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Fragment</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I am {age} Years of Age<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setAge(age + 1)}&gt;Get older! <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">Fragment</span>&gt;</span></span>
@@ -30,7 +30,7 @@
 <li>combines <code>componentDidMount</code> and <code>componentWillUnmount</code> and<code>componetnDidUpdate</code></li>
 <li>no types needed</li>
 </ul>
-<pre><code class="hljs language-js">useEffect(<span class="hljs-function">() =&gt;</span> {
+<pre><code class="hljs language-js"><span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
   <span class="hljs-comment">// do something on mount</span>
   <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> {
     <span class="hljs-comment">// do something on unmount (cleanup)</span>
@@ -51,9 +51,9 @@
 </ul>
 </li>
 </ul>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> MyInput = <span class="hljs-function">() =&gt;</span> {
-  <span class="hljs-keyword">const</span> inputRef = useRef &lt; HTMLInputElement &gt; <span class="hljs-literal">null</span>
-  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{inputRef}</span> /&gt;</span></span>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">MyInput</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> inputRef = useRef &lt; <span class="hljs-title class_">HTMLInputElement</span> &gt; <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{inputRef}</span> /&gt;</span></span>
 }
 </code></pre>
 <h3>useMemo / useCallback</h3>
@@ -64,11 +64,11 @@ _ make sure to specify the types of the parameters of the callback for useCallba
 </ul>
 <pre><code class="hljs language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-number">10</span>
 <span class="hljs-comment">// inferred as number</span>
-<span class="hljs-keyword">const</span> result = useMemo(<span class="hljs-function">() =&gt;</span> value * <span class="hljs-number">2</span>, [value])
+<span class="hljs-keyword">const</span> result = <span class="hljs-title function_">useMemo</span>(<span class="hljs-function">() =&gt;</span> value * <span class="hljs-number">2</span>, [value])
 
 <span class="hljs-keyword">const</span> multiplier = <span class="hljs-number">2</span>
 <span class="hljs-comment">// inferred as (value: number) =&gt; number</span>
-<span class="hljs-keyword">const</span> multiply = useCallback(<span class="hljs-function">(<span class="hljs-params">value: number</span>) =&gt;</span> value * multiplier, [multiplier])
+<span class="hljs-keyword">const</span> multiply = <span class="hljs-title function_">useCallback</span>(<span class="hljs-function">(<span class="hljs-params">value: number</span>) =&gt;</span> value * multiplier, [multiplier])
 </code></pre>
 <h3>useReducer</h3>
 <ul>
@@ -78,47 +78,47 @@ _ make sure to specify the types of the parameters of the callback for useCallba
 </ul>
 </li>
 </ul>
-<pre><code class="hljs language-js">interface State {
+<pre><code class="hljs language-js">interface <span class="hljs-title class_">State</span> {
   <span class="hljs-attr">value</span>: number;
 }
 
-type Action =
+type <span class="hljs-title class_">Action</span> =
   | { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;increment&#x27;</span> }
   | { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;decrement&#x27;</span> }
   | { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;incrementAmount&#x27;</span>, <span class="hljs-attr">amount</span>: number }
 
-<span class="hljs-keyword">const</span> counterReducer = <span class="hljs-function">(<span class="hljs-params">state: State, action: Action</span>) =&gt;</span> {
-  <span class="hljs-keyword">switch</span> (action.type) {
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">counterReducer</span> = (<span class="hljs-params">state: State, action: Action</span>) =&gt; {
+  <span class="hljs-keyword">switch</span> (action.<span class="hljs-property">type</span>) {
     <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;increment&#x27;</span>:
-      <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.value + <span class="hljs-number">1</span> }
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.<span class="hljs-property">value</span> + <span class="hljs-number">1</span> }
     <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;decrement&#x27;</span>:
-      <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.value - <span class="hljs-number">1</span> }
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.<span class="hljs-property">value</span> - <span class="hljs-number">1</span> }
     <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;incrementAmount&#x27;</span>:
-      <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.value + action.amount }
+      <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: state.<span class="hljs-property">value</span> + action.<span class="hljs-property">amount</span> }
     <span class="hljs-attr">default</span>:
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>()
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>()
   }
 }
 
-<span class="hljs-keyword">const</span> [state, dispatch] = useReducer(counterReducer, { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span> })
+<span class="hljs-keyword">const</span> [state, dispatch] = <span class="hljs-title function_">useReducer</span>(counterReducer, { <span class="hljs-attr">value</span>: <span class="hljs-number">0</span> })
 
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;increment&#x27;</span> })
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;decrement&#x27;</span> })
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;incrementAmount&#x27;</span>, <span class="hljs-attr">amount</span>: <span class="hljs-number">10</span> })
+<span class="hljs-title function_">dispatch</span>({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;increment&#x27;</span> })
+<span class="hljs-title function_">dispatch</span>({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;decrement&#x27;</span> })
+<span class="hljs-title function_">dispatch</span>({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;incrementAmount&#x27;</span>, <span class="hljs-attr">amount</span>: <span class="hljs-number">10</span> })
 
 <span class="hljs-comment">// TypeScript compilation error</span>
-dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;invalidActionType&#x27;</span> })
+<span class="hljs-title function_">dispatch</span>({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;invalidActionType&#x27;</span> })
 </code></pre>
 <h3>useContext</h3>
 <ul>
 <li>infer its types based on the context object that is passed in</li>
 </ul>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> ThemeContext = React.createContext(<span class="hljs-string">&#x27;light&#x27;</span>)
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">ThemeContext</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createContext</span>(<span class="hljs-string">&#x27;light&#x27;</span>)
 
-<span class="hljs-keyword">const</span> Display = <span class="hljs-function">() =&gt;</span> {
-  <span class="hljs-keyword">const</span> theme = useContext(ThemeContext)
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">Display</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> theme = <span class="hljs-title function_">useContext</span>(<span class="hljs-title class_">ThemeContext</span>)
   <span class="hljs-keyword">return</span> (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
       <span class="hljs-attr">style</span>=
     &gt;</span>
       {&#x27;The theme here is &#x27; + theme}
@@ -131,8 +131,8 @@ dispatch({ <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;
 <li>used for displaying values in React Developer Tools</li>
 <li>type is inferred</li>
 </ul>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
-useDebugValue(date, <span class="hljs-function"><span class="hljs-params">date</span> =&gt;</span> date.toISOString())
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>()
+<span class="hljs-title function_">useDebugValue</span>(date, <span class="hljs-function"><span class="hljs-params">date</span> =&gt;</span> date.<span class="hljs-title function_">toISOString</span>())
 </code></pre>
 <h2>Resources</h2>
 <ul>
