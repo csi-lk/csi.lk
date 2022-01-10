@@ -92,7 +92,7 @@
     "common-tags": "^1.8.2",
     "cssnano": "^5.0.15",
     "cssnano-preset-advanced": "^5.1.10",
-    "faker": "^5.5.3",
+    "faker": "^6.6.6",
     "markdown-it": "^12.3.2",
     "markdown-it-highlightjs": "^3.6.0",
     "npm-run-all": "^4.1.5",
