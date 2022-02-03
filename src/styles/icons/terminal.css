@@ -28,7 +28,7 @@
     position: absolute;
     width: 0.25em;
     height: 0.125em;
-    background: currentColor;
+    background: currentcolor;
     top: 0.625em;
     left: 0.688em;
     animation: blinker 0.8s linear 3;
