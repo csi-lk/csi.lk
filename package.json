@@ -74,7 +74,7 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "eslint-plugin-unicorn": "^40.1.0",
     "fast-glob": "^3.2.11",
-    "jest": "^27.4.7",
+    "jest": "^27.5.0",
     "markdown-it-external-links": "^0.0.6",
     "prettier": "^2.5.1",
     "standard-version": "^9.3.2",
