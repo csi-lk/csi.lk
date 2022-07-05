@@ -1,9 +1,9 @@
 ---
-title: Front End Staff Engineer
+title: Senior Staff Engineer (Front End)
 companyName: Hopin
 employmentType: full-time
 website: https://hopin.com
-location: Melbourne, Australia
+location: Remote, Australia
 startMonth: 6
 startYear: 2020
 industry:
@@ -16,12 +16,13 @@ keywords: hopin, typescript, online, events, startup
 ### Role:
 
 - At pace feature delivery in React while maintaining quality through a functional test platform
-- Leading the front end developer experience squad to re-architect the front end application and
-  deliver a common set of tooling and support processes
+- Leading the front end developer experience team to re-architect the front end application and deliver a common set of tooling and support processes
+- Mentoring and training developers of all skill levels in both technical and soft skills
 
 ### Achievements:
 
-- Writing, reviewing and finally delivering a proof of concept for the future of the Hopin Frontend architecture based on Module Federation in Webpack v5
-- Proposing, building out, internally marketing then evolving the first developer experience department to a place in which it now includes two pods with 12 multi-disciplined team members. Creating all tooling and process for a design to delivery storybook based component library
-- Leading the ideation, estimations and then handover of the WCAG AA accessibility project to successfully deliver against a near impossible deadline
-- Building a mono-repo of a common set of tooling and processes including Eslint, Prettier, Jest, Typescript, Rollup, Stylelint, Conventional-changelog and Cypress.
+- Prototyping, writing then delivering a micro frontend framework and set of architecture in use by all Hopin Frontend engineers based on Module Federation in Webpack v5
+- Supporting high profile events like UN Congress, Techcrunch Disrupt and Amazon Exchange
+- Proposing, hiring, internally marketing and evolving the first developer experience department consisting of two teams with 12 multi-disciplined remote team members
+- Leading ideation, estimations and development of a WCAG AA accessibility initiative
+- Building and maintaining monorepo with a common set of build tools, CI workflows and processes including to increase developer throughput

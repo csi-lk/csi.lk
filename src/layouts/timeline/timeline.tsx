@@ -29,6 +29,15 @@ export = function ArticleList({
   pkg: { version },
   collections: { job: jobs },
 }: Eleventy.Page): string {
+  const sortedJobs = jobs.sort(
+    ({ data: { startYear: startYearA } }, { data: { startYear: startYearB } }) =>
+      startYearB - startYearA,
+  )
+  // Move current job to the top of the list
+  sortedJobs.some(
+    ({ data }, idx) =>
+      data.endMonth === undefined && sortedJobs.unshift(sortedJobs.splice(idx, 1)[0]),
+  )
   return (
     <PageContainer
       meta={meta}
@@ -40,11 +49,7 @@ export = function ArticleList({
     >
       <article id="content">{content}</article>
       <div className="job-list">
-        {jobs
-          .sort(
-            ({ data: { startYear: startYearA } }, { data: { startYear: startYearB } }) =>
-              startYearB - startYearA,
-          )
+        {sortedJobs
           .map(
             ({
               data: {
