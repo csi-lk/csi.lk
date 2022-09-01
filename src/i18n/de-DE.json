@@ -9,7 +9,8 @@
   "navigation": {
     "timeline": "zeitleiste",
     "articles": "artikel",
-    "talks": "talks"
+    "talks": "talks",
+    "bookshelf": "bookshelf"
   },
   "footer": {
     "contact": "Kontakt",
