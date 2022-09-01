@@ -1,0 +1,17 @@
+.bookshelf {
+  width: 100%;
+
+  &-subheader {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--spacing-medium);
+  }
+
+  &-content {
+    overflow-y: scroll;
+  }
+
+  table {
+    table-layout: auto;
+  }
+}

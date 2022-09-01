@@ -3,6 +3,7 @@
 
 .env
 src/_includes
+src/bookshelf.md
 
 # Editors #
 ###########

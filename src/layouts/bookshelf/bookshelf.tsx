@@ -1,11 +1,10 @@
 import * as Silk from '../../lib/silk'
 import PageContainer from '../../components/page-container/page-container'
 import Eleventy from '../../types/global'
-import Time from '../../components/time/time'
 
-const baseClass = 'article'
+const baseClass = 'bookshelf'
 
-export = function Article({
+export = function Bookshelf({
   content,
   'site-data': { meta, title: siteTitle, description: siteDescription, keywords: siteKeywords },
   i18n: { locale },
@@ -13,7 +12,6 @@ export = function Article({
   title,
   description,
   keywords,
-  page: { date, inputPath },
 }: Eleventy.Page): string {
   return (
     <PageContainer
@@ -28,19 +26,16 @@ export = function Article({
       <article id="content" className={`${baseClass}`}>
         <h1>{title}</h1>
         <div className={`${baseClass}-subheader`}>
-          <h2 className={`${baseClass}-date`}>
-            Posted on: <Time date={date} />
-          </h2>
           <a
-            href={`https://github.com/csi-lk/csi.lk/tree/master/${inputPath.replace('./', '')}`}
+            href={`https://www.goodreads.com/review/list/107372765?shelf=read`}
             target="_blank"
             rel="noopener"
             aria-describedby="open-new-window-external"
           >
-            source
+            Goodreads Profile
           </a>
         </div>
-        {content}
+        <div className={`${baseClass}-content`}>{content}</div>
       </article>
     </PageContainer>
   )

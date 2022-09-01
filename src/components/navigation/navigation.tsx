@@ -15,6 +15,7 @@ const Navigation = ({ locale }: { locale: string }): HTMLElement => {
       <a href="/talks">{t('navigation.talks')}</a>
       <a href="/timeline">{t('navigation.timeline')}</a>
       <a href="/articles">{t('navigation.articles')}</a>
+      <a href="/bookshelf">{t('navigation.bookshelf')}</a>
     </nav>
   )
 }
