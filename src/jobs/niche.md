@@ -11,6 +11,8 @@ endYear: 2012
 industry:
 tags: job
 keywords: niche, javascript, web, developer, magazines, macworld
+layout: article
+permalink: jobs/niche
 ---
 
 > Print and digital agency of major brands such as Macworld, Marketing Magazine, Architectural Review

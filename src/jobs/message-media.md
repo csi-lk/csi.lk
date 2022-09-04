@@ -11,6 +11,8 @@ endYear: 2018
 industry:
 tags: job
 keywords: message, media, mobile, service, provider, isp
+layout: article
+permalink: jobs/message-media
 ---
 
 > Australia's largest business mobile messaging service provider

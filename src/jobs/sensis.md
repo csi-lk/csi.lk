@@ -11,6 +11,8 @@ endYear: 2016
 industry:
 tags: job
 keywords: sensis, javascript, search, angular, tdd, agile, scrum, architecture
+layout: article
+permalink: jobs/sensis
 ---
 
 > A 'big data' marketing services company consisting of major brands like Yellow Pages, White Pages, TrueLocal, Whereis and Skip

@@ -9,6 +9,8 @@ startYear: 2020
 industry:
 tags: job
 keywords: hopin, typescript, online, events, startup
+layout: article
+permalink: jobs/hopin
 ---
 
 > Live online events platform where attendees can learn, interact, and connect with people from anywhere in the world

@@ -11,6 +11,8 @@ endYear: 2015
 industry:
 tags: job
 keywords: sportsbet, javascript, backbonejs, sports, racing, betting
+layout: article
+permalink: jobs/target
 ---
 
 > An iconic high street retailer

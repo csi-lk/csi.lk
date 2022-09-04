@@ -11,6 +11,8 @@ endYear: 2014
 industry:
 tags: job
 keywords: sportsbet, javascript, backbonejs, sports, racing, betting
+layout: article
+permalink: jobs/sportsbet
 ---
 
 > An online sports and racing betting agency

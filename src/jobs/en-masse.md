@@ -11,6 +11,8 @@ endYear: 2017
 industry:
 tags: job
 keywords: en, masse, mental, health, behaviour, change, serverless, ios
+layout: article
+permalink: jobs/en-masse
 ---
 
 > A behaviour change company delivering positive results in the field of mental health and wellbeing.
