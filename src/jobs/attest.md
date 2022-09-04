@@ -11,6 +11,8 @@ endYear: 2020
 industry:
 tags: job
 keywords: attest, javascript, marketing, consumer, growth, platform, survey
+layout: article
+permalink: jobs/attest
 ---
 
 > A worldwide market and brand intelligence platform

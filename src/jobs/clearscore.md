@@ -11,6 +11,8 @@ endYear: 2019
 industry:
 tags: job
 keywords: clear, score, clearscore, javascript, your, money, sorted, credit, loans, finance, fintech, finance
+layout: article
+permalink: jobs/clearscore
 ---
 
 > A rapidly growing FinTech aiming to change the way people manage their finances - starting with their credit score and report

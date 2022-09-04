@@ -11,6 +11,8 @@ endYear: 2021
 industry:
 tags: job
 keywords: pwc, typescript, throughput, accessibility
+layout: article
+permalink: price-waterhouse-coopers
 ---
 
 > Digital transformation consulting
