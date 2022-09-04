@@ -12,10 +12,20 @@ export interface PageContainer {
   version: string
   style?: 'fluid' | 'fixed'
   locale: string
+  permalink?: string
 }
 
 const PageContainer = (
-  { meta, title, description, style = 'fluid', keywords, version, locale }: PageContainer,
+  {
+    meta,
+    title,
+    description,
+    style = 'fluid',
+    keywords,
+    version,
+    locale,
+    permalink,
+  }: PageContainer,
   children: HTMLElement[],
 ): HTMLElement => {
   const { t } = i18n({ locale })
@@ -30,6 +40,7 @@ const PageContainer = (
           description={description}
           keywords={keywords}
           version={version}
+          canonical={permalink}
         />
         <body>
           <div hidden>

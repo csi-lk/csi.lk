@@ -9,6 +9,7 @@ export = function TalkList({
   i18n: { locale },
   pkg: { version },
   collections: { talk: talks },
+  permalink,
 }: Eleventy.Page): string {
   return (
     <PageContainer
@@ -18,13 +19,14 @@ export = function TalkList({
       keywords={siteKeywords}
       version={version}
       locale={locale}
+      permalink={permalink}
     >
       <article id="content">{content}</article>
       <div className="talk-list">
         {talks
           .reverse()
-          .map(({ data: { permalink, title, keywords, description }, date }) => (
-            <a href={permalink.replace('.html', '')}>
+          .map(({ data: { permalink: link, title, keywords, description }, date }) => (
+            <a href={link.replace('.html', '')}>
               <h3>{title}</h3>
               <h6>
                 <Time date={date} /> - {keywords && keywords}

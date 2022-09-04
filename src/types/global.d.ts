@@ -55,6 +55,7 @@ declare namespace Eleventy {
       date: Date
       inputPath: string
     }
+    permalink?: string
     pkg: {
       version: string
     }
