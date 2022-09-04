@@ -13,6 +13,7 @@ export = function Article({
   title,
   description,
   keywords,
+  permalink,
   page: { date, inputPath },
 }: Eleventy.Page): string {
   return (
@@ -21,6 +22,7 @@ export = function Article({
       title={title || siteTitle}
       description={description || siteDescription}
       keywords={keywords || siteKeywords}
+      permalink={permalink}
       version={version}
       locale={locale}
       style="fixed"

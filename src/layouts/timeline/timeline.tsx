@@ -28,6 +28,7 @@ export = function ArticleList({
   i18n: { locale },
   pkg: { version },
   collections: { job: jobs },
+  permalink,
 }: Eleventy.Page): string {
   const sortedJobs = jobs.sort(
     ({ data: { startYear: startYearA } }, { data: { startYear: startYearB } }) =>
@@ -46,6 +47,7 @@ export = function ArticleList({
       keywords={siteKeywords}
       version={version}
       locale={locale}
+      permalink={permalink}
     >
       <article id="content">{content}</article>
       <div className="job-list">

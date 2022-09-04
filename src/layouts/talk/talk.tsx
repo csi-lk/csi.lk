@@ -19,6 +19,7 @@ export = function TalkPage({
   slidesPdf,
   slidesRaw,
   content,
+  permalink,
   page: { date, inputPath },
 }: Eleventy.Page & Talk['data']): string {
   return (
@@ -30,6 +31,7 @@ export = function TalkPage({
       version={version}
       locale={locale}
       style="fixed"
+      permalink={permalink}
     >
       <article id="content" className={`${baseClass}`}>
         <h1>{title}</h1>

@@ -12,6 +12,7 @@ export = function Bookshelf({
   title,
   description,
   keywords,
+  permalink,
 }: Eleventy.Page): string {
   return (
     <PageContainer
@@ -22,6 +23,7 @@ export = function Bookshelf({
       version={version}
       locale={locale}
       style="fixed"
+      permalink={permalink}
     >
       <article id="content" className={`${baseClass}`}>
         <h1>{title}</h1>

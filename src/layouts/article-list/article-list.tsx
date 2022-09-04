@@ -5,6 +5,7 @@ import Eleventy from '../../types/global'
 
 export = function ArticleList({
   content,
+  permalink,
   'site-data': { meta, keywords: siteKeywords },
   i18n: { locale },
   pkg: { version },
@@ -18,13 +19,14 @@ export = function ArticleList({
       keywords={siteKeywords}
       version={version}
       locale={locale}
+      permalink={permalink}
     >
       <article id="content">{content}</article>
       <div className="article-list">
         {articles
           .reverse()
-          .map(({ data: { permalink, title, keywords, description }, date }) => (
-            <a href={permalink.replace('.html', '')}>
+          .map(({ data: { permalink: link, title, keywords, description }, date }) => (
+            <a href={link.replace('.html', '')}>
               <h3>{title}</h3>
               <h6>
                 <Time date={date} /> - {keywords && keywords}
