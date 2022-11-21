@@ -7,7 +7,7 @@ const Footer = ({ fixed, locale }: { fixed?: boolean; locale: string }): HTMLEle
   return (
     <footer className={`footer ${fixed && 'fixed'}`} data-testid="footer">
       <div>
-        <p>&copy; 2021</p>
+        <p>&copy; 2022</p>
         <a href="/">Callum Silcock</a>
       </div>
       <div>
