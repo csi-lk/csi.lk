@@ -12,6 +12,7 @@ const parser = new Parser()
 let template = `---
 layout: bookshelf
 permalink: bookshelf.html
+description: I've read a bunch of books over the years, on this page I get them from my Goodreads profile and list then in order of my personal rating (1-5)
 keywords: callum, silcock, books, bookshelf, read, books
 ---
 
