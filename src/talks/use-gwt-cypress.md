@@ -13,7 +13,7 @@ slidesPdf: https://github.com/csi-lk/cypress-gwt-example/blob/master/talk/using-
 slidesRaw: https://github.com/csi-lk/cypress-gwt-example/blob/master/talk/using-gwt-with-cypress-raw.md
 ---
 
-# How to get your product owners to write your functional tests
+## How to get your product owners to write your functional tests
 
 AKA Using Given / When / Then with Cypress
 
@@ -122,7 +122,6 @@ Given(`I am on the {string} page`, target => {
 
 ^ Let's switch tracks to a different concept now, using data attributes make it easy for chpres to taget them
 
-
 ```html
     <input
       type="email"
@@ -159,9 +158,7 @@ Given(`I am on the {string} page`, target => {
 Then(
   `the {string} button should {string} {string}`,
   (id, assert, assertion) =>
-    cy
-      .get(`[data-qa="${type}-${id.replace(" ", "-").toLowerCase()}"]`)
-      .should(assert, assertion)
+    cy.get(`[data-qa="${type}-${id.replace(' ', '-').toLowerCase()}"]`).should(assert, assertion),
   //cy.get([data-qa="button-navigation-logout"]).should("not", "exist")
 )
 

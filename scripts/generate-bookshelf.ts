@@ -10,7 +10,6 @@ type Book = {
 
 const parser = new Parser()
 let template = `---
-title: Bookshelf
 layout: bookshelf
 permalink: bookshelf.html
 keywords: callum, silcock, books, bookshelf, read, books

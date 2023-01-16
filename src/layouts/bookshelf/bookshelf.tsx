@@ -6,10 +6,9 @@ const baseClass = 'bookshelf'
 
 export = function Bookshelf({
   content,
-  'site-data': { meta, title: siteTitle, description: siteDescription, keywords: siteKeywords },
+  'site-data': { meta, description: siteDescription, keywords: siteKeywords },
   i18n: { locale },
   pkg: { version },
-  title,
   description,
   keywords,
   permalink,
@@ -17,7 +16,7 @@ export = function Bookshelf({
   return (
     <PageContainer
       meta={meta}
-      title={title || siteTitle}
+      title="Callum Silcock | Bookshelf"
       description={description || siteDescription}
       keywords={keywords || siteKeywords}
       version={version}
@@ -26,7 +25,7 @@ export = function Bookshelf({
       permalink={permalink}
     >
       <article id="content" className={`${baseClass}`}>
-        <h1>{title}</h1>
+        <h1>Bookshelf</h1>
         <div className={`${baseClass}-subheader`}>
           <a
             href={`https://www.goodreads.com/review/list/107372765?shelf=read`}
