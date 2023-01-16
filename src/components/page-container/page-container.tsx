@@ -40,7 +40,7 @@ const PageContainer = (
           description={description}
           keywords={keywords}
           version={version}
-          canonical={permalink}
+          canonical={permalink?.replace('.html', '')}
         />
         <body>
           <div hidden>
