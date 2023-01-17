@@ -66,7 +66,7 @@ My favourite games by far were:
 
 ## Books / Audiobooks
 
-You can find my full list of books either on the [bookshelf](./bookshelf) page or on [goodreads](https://www.goodreads.com/review/list/107372765-callum-silcock?shelf=read)
+You can find my full list of books either on the [bookshelf](https://csi.lk/bookshelf) page or on [goodreads](https://www.goodreads.com/review/list/107372765-callum-silcock?shelf=read)
 
 1. Project Hail Mary - Andy Weir
 2. Yearbook - Seth Rogan
