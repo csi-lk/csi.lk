@@ -1,6 +1,6 @@
 ---
 title: Automating Design Review with Visual Regression
-description: How to utilise visual regression testing to automate design review (UAT) within your organisation
+description: How to utilise visual regression testing to automate design review (UAT) within your organisation, a talk that was given during 2020 at VueJS London
 permalink: talks/visual-regression-how-to.html
 date: 2020-06-10
 tags: talk

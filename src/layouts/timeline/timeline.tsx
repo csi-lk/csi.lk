@@ -43,7 +43,7 @@ export = function ArticleList({
     <PageContainer
       meta={meta}
       title="Callum Silcock | Timeline"
-      description="All of the projects, jobs and contracts I've worked over the last decade listed out chronologically"
+      description="All of the projects, jobs and contracts I've worked over the last decade listed out chronologically going back to my first job as a 'web designer and developer'."
       keywords={siteKeywords}
       version={version}
       locale={locale}
