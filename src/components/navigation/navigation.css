@@ -5,9 +5,32 @@
   justify-content: space-between;
   border-bottom: var(--border-single);
 
-  > a {
-    border: 0;
-    padding: var(--spacing-medium);
+  @media (max-width: 37.5em) {
+    flex-direction: column;
+  }
+
+  .links {
+    flex: 1 1;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      border: 0;
+      padding: var(--spacing-medium);
+
+      @media (max-width: 37.5em) {
+        margin-top: var(--spacing-medium);
+        padding: var(--spacing-medium) var(--spacing-medium) 0 0;
+
+        & + a {
+          padding-left: var(--spacing-medium);
+        }
+
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
   }
 
   .logo {

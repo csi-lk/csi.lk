@@ -12,10 +12,12 @@ const Navigation = ({ locale }: { locale: string }): HTMLElement => {
         </i>
         <h2 className="logo">Callum{`\n`}Silcock</h2>
       </a>
-      <a href="/talks">{t('navigation.talks')}</a>
-      <a href="/timeline">{t('navigation.timeline')}</a>
-      <a href="/articles">{t('navigation.articles')}</a>
-      <a href="/bookshelf">{t('navigation.bookshelf')}</a>
+      <div className="links">
+        <a href="/talks">{t('navigation.talks')}</a>
+        <a href="/timeline">{t('navigation.timeline')}</a>
+        <a href="/articles">{t('navigation.articles')}</a>
+        <a href="/bookshelf">{t('navigation.bookshelf')}</a>
+      </div>
     </nav>
   )
 }
