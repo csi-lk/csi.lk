@@ -1,6 +1,6 @@
 ---
 title: Understanding React Hooks
-description: My process of learning of React Hooks and how to 'type' them using Typescript
+description: My process of learning of React Hooks and how to 'type' them using Typescript including some examples, overall a cheatsheet for myself
 permalink: articles/understanding-hooks.html
 date: 2019-06-20
 layout: article

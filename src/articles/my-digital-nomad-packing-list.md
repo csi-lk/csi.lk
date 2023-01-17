@@ -1,6 +1,6 @@
 ---
 title: My Digital Nomad Packing List
-description: What I learnt to pack after nomadically traveling for 9 months across southeast asia and europe
+description: What I learnt to pack after nomadically traveling for 9 months across southeast asia and europe, including my backpack, clothes, tech and toiletries
 permalink: articles/my-digital-nomad-packing-list.html
 date: 2020-09-24
 layout: article

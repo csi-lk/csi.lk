@@ -1,6 +1,6 @@
 ---
 title: My MacOS Setup
-description: My setup of everything on my home and work Macbooks
+description: My setup of everything on my home and work Macbooks, I keep this list to help me remember what I have installed and to help me set up new Macs
 permalink: articles/my-macos-setup.html
 layout: article
 date: 2019-06-28

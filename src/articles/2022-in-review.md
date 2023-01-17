@@ -1,6 +1,6 @@
 ---
 title: 2022 in review - Moving up
-description: I take a look back upon my 2022, the goals that I hit and favourite pieces of media of the year
+description: I take a look back upon my 2022, the goals that I hit and favourite books, video games and podcasts of the year
 permalink: articles/2022-in-review.html
 tags: article
 keywords: 2022, GOTY, review, goals, media, games, movies, tv, books, music
@@ -73,3 +73,13 @@ You can find my full list of books either on the [bookshelf](./bookshelf) page o
 3. Atomic Habits - James Clear
 4. Outliers - Malcolm Gladwell
 5. Masters of Doom - David Kushner
+
+## Podcasts
+
+I listen to far too many podcasts this year, in order for time spent
+
+1. The Bombcast
+2. This Week In Tech
+3. Today Explained
+4. Pivot
+5. The Prof G Pod

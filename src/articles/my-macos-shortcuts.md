@@ -1,6 +1,6 @@
 ---
 title: My MacOS Shortcuts
-description: A list of common shortcuts I use constantly throughout my day
+description: A list of common MacOS shortcuts I use constantly throughout my day that I originaly wrote up for my wife to help her get used to the MacOS ecosystem
 permalink: articles/my-macos-shortcuts.html
 date: 2020-08-02
 layout: article

@@ -1,6 +1,6 @@
 ---
 title: Bypass HSTS or EPKP error message in Chrome
-description: How bypass HSTS or EPKP error message in Chrome
+description: How bypass HSTS or EPKP error message in Chrome as you may need it for debugging locally by typing thisisunsafe on the error screen
 permalink: articles/bypass-hsts-epkp-chrome.html
 tags:
   - article
