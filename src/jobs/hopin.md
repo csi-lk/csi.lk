@@ -6,6 +6,8 @@ website: https://hopin.com
 location: Remote, Australia
 startMonth: 6
 startYear: 2020
+endMonth: 01
+endYear: 2023
 industry:
 tags: job
 keywords: hopin, typescript, online, events, startup
