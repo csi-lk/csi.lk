@@ -51,7 +51,7 @@ jobs:
       - name: 'Commitlint'
         uses: wagoid/commitlint-github-action@v1
   dependabot:
-    needs: [pr_check, commitlint]
+    needs: [pr_check]
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
@@ -60,6 +60,11 @@ jobs:
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Approve a PR
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Enable auto-merge for Dependabot PRs
         run: gh pr merge --auto --rebase "$PR_URL"
         env:
