@@ -5045,7 +5045,7 @@ __metadata:
     jest-environment-jsdom: ^29.5.0
     markdown-it: ^13.0.1
     markdown-it-external-links: ^0.0.6
-    markdown-it-highlightjs: ^3.6.0
+    markdown-it-highlightjs: ^4.0.1
     npm-run-all: ^4.1.5
     postcss: ^8.4.21
     postcss-calc: ^8.2.4
@@ -7403,10 +7403,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.3.1":
-  version: 11.5.0
-  resolution: "highlight.js@npm:11.5.0"
-  checksum: a4339278d5be464fa29047fd00bc91f3d3966f5acbbb861ec51a09f3eea7c79ca63c2e0a2ba0c7b3d3663ee56b11c6470ab2759c7278e0d11af5cb0efa26e6eb
+"highlight.js@npm:^11.5.1":
+  version: 11.7.0
+  resolution: "highlight.js@npm:11.7.0"
+  checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
   languageName: node
   linkType: hard
 
@@ -9229,13 +9229,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.flow@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "lodash.flow@npm:3.5.0"
-  checksum: a9a62ad344e3c5a1f42bc121da20f64dd855aaafecee24b1db640f29b88bd165d81c37ff7e380a7191de6f70b26f5918abcebbee8396624f78f3618a0b18634c
-  languageName: node
-  linkType: hard
-
 "lodash.isfinite@npm:^3.3.2":
   version: 3.3.2
   resolution: "lodash.isfinite@npm:3.3.2"
@@ -9518,13 +9511,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-highlightjs@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "markdown-it-highlightjs@npm:3.6.0"
+"markdown-it-highlightjs@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "markdown-it-highlightjs@npm:4.0.1"
   dependencies:
-    highlight.js: ^11.3.1
-    lodash.flow: ^3.5.0
-  checksum: 4b9042b60bbe630e33cfa0391844962fac9d4c73898cfc1c815290f9629163534422e35330e19b3f5d1cc971081b1d8e4ab2748776eef7cc427377861e427ee4
+    highlight.js: ^11.5.1
+  checksum: c7337ac0c912c09db381aade5d00068f84f83ed440b9fcd94bfe05b766f0b928100b2b0c50dc53b9f3895a40cd51aad142ed4246c83a4203af320359e10255f9
   languageName: node
   linkType: hard
 
