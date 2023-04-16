@@ -4,6 +4,8 @@
 .env
 src/_includes
 src/bookshelf.md
+cypress/videos
+cypress/screenshots
 
 # Editors #
 ###########
