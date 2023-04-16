@@ -1,0 +1,77 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="scrypted, reolink, homekit, doorbell, camera, setup, onvif, rtmp, rtsp, hksv, poe" /> <meta name="description" content="How to setup a Reolink doorbell with Scrypted and Homekit" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/articles/scypted-reolink-doorbell-setup" /> <title >Reolink doorbell setup with Scrypted and Homekit</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="article"><h1 >Reolink doorbell setup with Scrypted and Homekit</h1> <div class="article-subheader"><h2 class="article-date">Posted on:  <time datetime="2023-04-16">2023-04-16</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/articles/scrypted-reolink-doorbell-setup.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> <p>I recently purchased a <a href="https://reolink.com/us/product/reolink-video-doorbell/" class="external" target="_blank" rel="noopener noreferrer">Reolink Doorbell Camera</a> because it was pretty cheap, powered over PoE and seem to be well featured (I really wanted the unifi g4 pro but it never seems to be in stock).</p>
+<p>I'm running all of my devices through homekit so I wanted to add this camera, based on my research <a href="https://www.scrypted.app/" class="external" target="_blank" rel="noopener noreferrer">Scrypted</a> seemed to be the best way to do this.</p>
+<p>Ok here's the steps I took to get this working:</p>
+<h2>Setup the Doorbell Camera</h2>
+<ol>
+<li>Setup the doorbell camera using Reolink app
+<ol>
+<li>You will need to admin username and password later so remember this</li>
+</ol>
+</li>
+<li>Find the IP address of your camera
+<ol>
+<li>In the reolink app, click on the gear icon beside your camera name</li>
+<li>Tap on the picture of the doorbell at the top of the settings screen</li>
+<li>Tap on network</li>
+<li>Note the IP Address</li>
+</ol>
+</li>
+<li>Open a web browser, type in the IP Address of your camera</li>
+<li>Enter the username admin and the password you used during camera setup</li>
+<li>Click the gear icon (top RHS of the screen)</li>
+<li>Click on Network (LHS) &gt; Advanced (Bottom of the screen) &gt; Port Settings (Scroll down) &gt; Set Up
+<ol>
+<li>Turn on HTTP, RTMP, RTSP, ONVIF</li>
+</ol>
+</li>
+<li>Click Save</li>
+</ol>
+<h2>Install Scrypted</h2>
+<p>Scrypted has some great <a href="https://github.com/koush/scrypted#installation" class="external" target="_blank" rel="noopener noreferrer">installation guides listed in their documentation</a></p>
+<p>I have Proxmox setup and used the script below to create a new Proxmox VE Scrypted LXC</p>
+<p>Run the following command in the Proxmox VE Shell to create a new container:</p>
+<pre><code class="hljs language-bash">bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/ct/scrypted.sh)</span>&quot;</span>
+</code></pre>
+<h2>Setup in Scrypted</h2>
+<ol>
+<li>Launch Scrypted
+<ol>
+<li>Address is likely https://localhost:10443</li>
+</ol>
+</li>
+<li>Click on Plugins (LHS) &gt; Plugin Management &gt; Install</li>
+<li>Install the following plugins:
+<ol>
+<li>ONVIF</li>
+<li>Homekit</li>
+<li>Rebroadcast (may already be installed)</li>
+</ol>
+</li>
+</ol>
+<h2>Add your camera to Scrypted</h2>
+<ol>
+<li>Click on Plugins (LHS) &gt; Plugins &gt; ONVIF Camera Plugin</li>
+<li>Under Providing Things, Click Add New
+<ol>
+<li>Add your username, password and IP address of the reolink camera</li>
+<li>Click create</li>
+</ol>
+</li>
+<li>Under Providing Things you should now see &quot;Reolink Video Doorbell PoE&quot;</li>
+</ol>
+<h2>Add your camera to Homekit</h2>
+<ol>
+<li>In Scrypted, click Devices (LHS) &gt; HomeKit (Scroll down)</li>
+<li>Under Compatible Things (RHS, Scroll Down) &gt; Make sure &quot;Reolink Video Doorbell PoE&quot; is Checked</li>
+</ol>
+<h2>Add Scrypted to Homekit</h2>
+<ol>
+<li>From your iPhone / iPad, open the Home app</li>
+<li>Tap on the +, then Add Accessory</li>
+<li>Scan the Pairing QR code with your phone</li>
+<li>Accept the warning</li>
+<li>You should now see the doorbell under cameras in the Home app (and you can setup notifications whe the doorbell is pressed)</li>
+</ol>
+<p>Done!</p>
+</article></main> <footer class="footer undefined" data-testid="footer"><div ><p >© 2022</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
