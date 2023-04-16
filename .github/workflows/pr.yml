@@ -10,6 +10,7 @@ jobs:
           - lint:stylelint
           - test
           - build:prod
+          - e2e
     name: ${{ matrix.command }}
     runs-on: ubuntu-latest
     steps:
