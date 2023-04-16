@@ -67,9 +67,29 @@ jobs:
           FOLDER: dist
           GIT_CONFIG_NAME: Callum Silcock
           GIT_CONFIG_EMAIL: code@csi.lk
+  smoke-test:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Cache'
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - name: 'Install dependencies'
+        run: yarn install --immutable
+      - name: 'Smoke test'
+        run: yarn e2e:prod
   notify:
     runs-on: ubuntu-latest
-    needs: [deploy]
+    needs: [smoke-test, deploy]
     steps:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@master
