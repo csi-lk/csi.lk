@@ -90,7 +90,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^2.0.1",
     "@testing-library/dom": "^9.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "autoprefixer": "^10.4.14",
