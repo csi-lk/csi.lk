@@ -44,14 +44,3 @@ jobs:
           node-version: '17'
       - name: 'Commitlint'
         uses: wagoid/commitlint-github-action@v1
-  dependabot:
-    needs: [pr_check]
-    runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Automerge
-        uses: ridedott/merge-me-action@v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
