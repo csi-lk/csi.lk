@@ -122,7 +122,8 @@ dispatch({ type: 'invalidActionType' })
 
 - infer its types based on the context object that is passed in
 
-```js
+```jsx
+{%- raw -%}
 const ThemeContext = React.createContext('light')
 
 const Display = () => {
@@ -140,6 +141,7 @@ const Display = () => {
     </div>
   )
 }
+{% endraw -%}
 ```
 
 ### useDebugValue
