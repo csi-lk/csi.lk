@@ -1,6 +1,6 @@
 ---
 title: Reolink doorbell setup with Scrypted and Homekit
-description: How to setup a Reolink doorbell with Scrypted and Homekit
+description: A guide on how to setup a Reolink doorbell with Scrypted and Homekit, also includes information on Proxmox LXC Scrypted container setup
 permalink: articles/scypted-reolink-doorbell-setup.html
 tags: article
 keywords: scrypted, reolink, homekit, doorbell, camera, setup, onvif, rtmp, rtsp, hksv, poe
