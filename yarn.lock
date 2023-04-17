@@ -4414,6 +4414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "commander@npm:6.2.1"
+  checksum: d7090410c0de6bc5c67d3ca41c41760d6d268f3c799e530aafb73b7437d1826bbf0d2a3edac33f8b57cc9887b4a986dce307fa5557e109be40eadb7c43b21742
+  languageName: node
+  linkType: hard
+
 "commander@npm:^7.2.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
@@ -4859,7 +4866,7 @@ __metadata:
     cross-env: ^7.0.3
     cssnano: ^6.0.0
     cssnano-preset-advanced: ^6.0.0
-    cypress: ^12.9.0
+    cypress: ^12.10.0
     enzyme-adapter-react-16: ^1.15.7
     eslint: ^8.38.0
     eslint-config-airbnb-base: ^15.0.0
@@ -5079,9 +5086,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^12.9.0":
-  version: 12.9.0
-  resolution: "cypress@npm:12.9.0"
+"cypress@npm:^12.10.0":
+  version: 12.10.0
+  resolution: "cypress@npm:12.10.0"
   dependencies:
     "@cypress/request": ^2.88.10
     "@cypress/xvfb": ^1.2.4
@@ -5097,7 +5104,7 @@ __metadata:
     check-more-types: ^2.24.0
     cli-cursor: ^3.1.0
     cli-table3: ~0.6.1
-    commander: ^5.1.0
+    commander: ^6.2.1
     common-tags: ^1.8.0
     dayjs: ^1.10.4
     debug: ^4.3.4
@@ -5115,7 +5122,7 @@ __metadata:
     listr2: ^3.8.3
     lodash: ^4.17.21
     log-symbols: ^4.0.0
-    minimist: ^1.2.6
+    minimist: ^1.2.8
     ospath: ^1.2.2
     pretty-bytes: ^5.6.0
     proxy-from-env: 1.0.0
@@ -5127,7 +5134,7 @@ __metadata:
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: aad2278310fe4897b2c4e1f23e22f28992c83bcac945a6c350d077b1b2fb1805e44d5c58e19e2a9d63ca04aa3f9eabdd3c661cab0ce5dddd75c72702262ac89e
+  checksum: 50eaae129df3bd15416113105a6f04d13949859af4cca7f0fc36c8b0e756bf3f6e058f43df574d92abe350c282872dec62ea22da8dc9b6528c827c0976fb14e0
   languageName: node
   linkType: hard
 
