@@ -113,13 +113,18 @@ type <span class="hljs-title class_">Action</span> =
 <ul>
 <li>infer its types based on the context object that is passed in</li>
 </ul>
-<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">ThemeContext</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createContext</span>(<span class="hljs-string">&#x27;light&#x27;</span>)
+<pre><code class="hljs language-jsx"><span class="hljs-keyword">const</span> <span class="hljs-title class_">ThemeContext</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createContext</span>(<span class="hljs-string">&#x27;light&#x27;</span>)
 
 <span class="hljs-keyword">const</span> <span class="hljs-title function_">Display</span> = (<span class="hljs-params"></span>) =&gt; {
   <span class="hljs-keyword">const</span> theme = <span class="hljs-title function_">useContext</span>(<span class="hljs-title class_">ThemeContext</span>)
   <span class="hljs-keyword">return</span> (
     <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
-      <span class="hljs-attr">style</span>=
+      <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+        <span class="hljs-attr">background:</span> <span class="hljs-attr">theme</span> === <span class="hljs-string">&#x27;dark&#x27;</span> ? &#x27;<span class="hljs-attr">black</span>&#x27; <span class="hljs-attr">:</span> &#x27;<span class="hljs-attr">papayawhip</span>&#x27;,
+        <span class="hljs-attr">color:</span> <span class="hljs-attr">theme</span> === <span class="hljs-string">&#x27;dark&#x27;</span> ? &#x27;<span class="hljs-attr">white</span>&#x27; <span class="hljs-attr">:</span> &#x27;<span class="hljs-attr">palevioletred</span>&#x27;,
+        <span class="hljs-attr">width:</span> &#x27;<span class="hljs-attr">100</span>%&#x27;,
+        <span class="hljs-attr">minHeight:</span> &#x27;<span class="hljs-attr">200px</span>&#x27;,
+      }}
     &gt;</span>
       {&#x27;The theme here is &#x27; + theme}
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
