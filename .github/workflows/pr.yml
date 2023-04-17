@@ -20,21 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v1
-      - uses: actions/setup-node@v2
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '17'
-      - name: 'Cache'
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          node-version: '16'
+          cache: 'yarn'
       - name: 'Install dependencies'
         run: yarn install --immutable
       - name: 'Run ${{ matrix.command }}'
         run: yarn ${{ matrix.command }}
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   commitlint:
     runs-on: ubuntu-latest
     if: github.actor != 'dependabot[bot]'
@@ -45,7 +40,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '17'
       - name: 'Commitlint'
