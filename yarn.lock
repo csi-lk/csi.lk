@@ -5064,7 +5064,7 @@ __metadata:
     markdown-it-highlightjs: ^4.0.1
     npm-run-all: ^4.1.5
     postcss: ^8.4.23
-    postcss-calc: ^9.0.0
+    postcss-calc: ^9.0.1
     postcss-cli: ^10.1.0
     postcss-css-variables: ^0.19.0
     postcss-nested: ^6.0.1
@@ -10318,6 +10318,18 @@ __metadata:
   peerDependencies:
     postcss: ^8.2.2
   checksum: 33ff76b10e9e8ded8b0ea0eba5cccf0d4accb2d98c83335b908372ea8789550c943ddee8c26a5ea7c9cad5875f1ea927ebc99c36dbd34dfff40c5ca6e632629f
+  languageName: node
+  linkType: hard
+
+"postcss-calc@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "postcss-calc@npm:9.0.1"
+  dependencies:
+    postcss-selector-parser: ^6.0.11
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.2.2
+  checksum: 7327ed83bfec544ab8b3e38353baa72ff6d04378b856db4ad82dbd68ce0b73668867ef182b5d4025f9dd9aa9c64aacc50cd1bd9db8d8b51ccc4cb97866b9d72b
   languageName: node
   linkType: hard
 
