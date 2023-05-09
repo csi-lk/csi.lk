@@ -17,7 +17,8 @@
     "scripts": "yarn tsc && yarn scripts:rename",
     "scripts:rename": "ts-node ./scripts/rename-layouts.ts",
     "generate:books": "ts-node ./scripts/generate-bookshelf.ts",
-    "build": "run-s clean generate:books styles scripts static --print-label",
+    "images": "ts-node ./scripts/find-and-copy-images.ts",
+    "build": "run-s clean generate:books styles scripts static images --print-label",
     "build:prod": "cross-env NODE_ENV=production run-s clean generate:books styles:prod scripts static:prod",
     "TESTING": "---------------------------",
     "test": "jest",
@@ -36,7 +37,7 @@
     "ci:version": "standard-version && git push --follow-tags origin master",
     "nuke": "rm -rf node_modules && rm yarn.lock && yarn",
     "clean": "rm -rf dist && rm -rf src/_includes",
-    "dev": "npm-run-all clean generate:books styles scripts static --parallel serve --print-label",
+    "dev": "npm-run-all clean generate:books styles scripts static images --parallel serve --print-label",
     "start": "yarn dev"
   },
   "repository": {
