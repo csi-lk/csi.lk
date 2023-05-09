@@ -1,0 +1,374 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="advanced, testing, jest, react testing library, ordering queries, act, warning, async, rendering, sequence, diagram" /> <meta name="description" content="A talk including async rendering in react testing library and how to order your queries for best results" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/advanced-testing-concepts" /> <title >Advanced Testing concepts</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Advanced Testing concepts</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-05-08">2023-05-08</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/advanced-testing-concepts.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A talk including async rendering in react testing library and how to order your queries for best results  <h2 class="talk-date">Relevant Links</h2> <ul >   <li ><a href="https://github.com/csi-lk/csi.lk/blob/master/src/talks/advanced-testing-concepts.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h2>🛂</h2>
+<h1>Advanced Testing concepts</h1>
+<p>Another <em>CodingWithCallum™️</em> Session</p>
+<p>note:</p>
+<p>This presentation was written using obsidian slides which is why the markdown looks a little weird, see attached PDF output and notes of every slide.</p>
+<p>Everything underneath &quot;note&quot; below are speaker notes to remind me what to talk about</p>
+<hr>
+<h1>What are we going to talk about?</h1>
+<ul>
+<li>Async rendering in React Testing Library (RTL)
+<ul>
+<li>wtf is <code>act</code></li>
+</ul>
+</li>
+<li>Ordering queries in RTL (a11y, eg. getByRole &gt; getByDataId)</li>
+</ul>
+<p>note:</p>
+<p>This is going to be a more advanced talk where I expect an understanding of testing at high level</p>
+<p>If you don't understand any of the core concepts please send me a message so I can organise another sessinon around this</p>
+<p>I've only got an hour so will get through as much as I can</p>
+<hr>
+<p>Abbrevs:</p>
+<ul>
+<li>Async = Asynchronous</li>
+<li>RTL = React Testing Library</li>
+<li>MSW = Mock Service Worker</li>
+<li>Abbrev = Abbreviation</li>
+</ul>
+<hr>
+<h1>Async rendering in React Testing Library</h1>
+<p>Wtf is this <code>act</code> warning and why do i see it all the time?</p>
+<pre><code class="hljs language-tsx"><span class="hljs-title class_">When</span> testing, code that causes <span class="hljs-title class_">React</span> state updates should be wrapped into <span class="hljs-title function_">act</span>(...):  
+  
+<span class="hljs-title function_">act</span>(<span class="hljs-function">() =&gt;</span> {  
+  <span class="hljs-comment">/* fire events that update state */</span>  
+});  
+<span class="hljs-comment">/* assert on the output */</span>  
+  
+<span class="hljs-title class_">This</span> ensures that you<span class="hljs-string">&#x27;re testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act
+</span></code></pre>
+<hr>
+<h1>But Why?</h1>
+<blockquote>
+<p>React is trying to warn us something happened when we expected nothing to happen at all</p>
+</blockquote>
+<p>This can happen, before, during or after (most likely) the test</p>
+<p>note:</p>
+<p>There was an async rendering event that occured during or after the test ended</p>
+<hr>
+<h2>Example 1: Async Updates</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">ShowName</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> [person, setPerson] = <span class="hljs-title function_">useState</span>();
+  <span class="hljs-keyword">const</span> handleFetch = <span class="hljs-title function_">useCallback</span>(<span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> { data } = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchData</span>(); <span class="hljs-comment">// Returns { name: &quot;Callum&quot; }</span>
+    <span class="hljs-title function_">setPerson</span>(data.<span class="hljs-property">person</span>); <span class="hljs-comment">// &lt;- Asynchronous update</span>
+  }, []);
+  <span class="hljs-keyword">return</span> (
+	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&quot;handleFetch&quot;</span>&gt;</span>
+	    {person ? person.name : &quot;Fetch&quot;}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+  );
+};
+</code></pre>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should fetch persons name&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ShowName</span> /&gt;</span></span>);
+  fireEvent.<span class="hljs-title function_">click</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Fetch&quot;</span>));
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Callum&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+});
+</code></pre>
+<p>note:</p>
+<p>Running the above test will result in a &quot;not wrapped in act&quot; error</p>
+<p><code>fireEvent.click</code> triggers <code>fetchData</code> to be called, which is an async call
+We are asserting on text &quot;Callum&quot; to exist immediately and not waiting for fetch to return to make the assertion</p>
+<hr>
+<h2>Example 1: Sequence</h2>
+<pre><code class="hljs mermaid language-mermaid">graph TD
+A[fireEvent.click] --&gt;|assert 'Callum' exists| B(fetchData) --&gt;C(setPerson) --&gt; D(rerender) --&gt; E(&quot;'Callum' rendered&quot;)
+</code></pre>
+<hr>
+<h2>Example 1: Solution</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should fetch persons name&quot;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ShowName</span> /&gt;</span></span>);
+  fireEvent.<span class="hljs-title function_">click</span>(<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Fetch&quot;</span>));
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Fetch names&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+  <span class="hljs-title function_">expect</span>(<span class="hljs-keyword">await</span> screen.<span class="hljs-title function_">findByText</span>(<span class="hljs-string">&quot;Callum&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>(); <span class="hljs-comment">// same as waitFor -&gt; getByText</span>
+});
+</code></pre>
+<p>note:</p>
+<p>So on first render we know that the &quot;Fetch names&quot; <code>&lt;h1&gt;</code> exists in the code so we can get that element immediately but we need to assert on the component once it has finishing updating</p>
+<p>Before assertions, wait for component update to fully complete by using <code>waitFor</code>. <code>waitFor</code> is an API provided by React testing library to wait for the wrapped assertions to pass within a certain timeout window.</p>
+<hr>
+<h2>Example 2: Timers</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">Toast</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> [isVisible, setIsVisible] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">true</span>);
+  <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> { <span class="hljs-title function_">setIsVisible</span>(<span class="hljs-literal">false</span>); }, <span class="hljs-number">1000</span>); <span class="hljs-comment">// hide after 1 seconds</span>
+  }, []);
+  <span class="hljs-keyword">return</span> isVisible &amp;&amp; <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Toast!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+	};
+</code></pre>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should display Toast for 1 second&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  jest.<span class="hljs-title function_">useFakeTimers</span>();
+  <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Toast</span> /&gt;</span></span>);
+  jest.<span class="hljs-title function_">advanceTimersByTime</span>(<span class="hljs-number">1000</span>);
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span class="hljs-string">&quot;Toast!&quot;</span>)).<span class="hljs-property">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>();
+});
+</code></pre>
+<p>note:</p>
+<p>Let's say you need a <code>setTimeout</code> or <code>setInterval</code> for some reason</p>
+<p>Our test utalises jest's <code>useFakeTimers</code> functionality to manipulate time (Timelord Callum has a nice ring to it)
+BUT
+Advancing timers in this case takes milliseconds to run the function to tell jest to advance the timers but not to run the advanceTimer function itself
+So the call stack will be <code>jest.advanceTimersByTime</code> for 1ms then immediately query for <code>Toast</code> which will fail, the test will end then the timers will advance by 1 second causing a <code>act</code> error</p>
+<hr>
+<h2>Example 2: Sequence</h2>
+<pre><code class="hljs mermaid language-mermaid">graph TD
+A[jest.advanceTimersByTime] --&gt;|assert 'Toast' not exists| B(advances by 1 second) --&gt; D(rerender) --&gt; E(&quot;'Toast!' removed&quot;)
+</code></pre>
+<hr>
+<h2>Example 2: Solution</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should display Toast for 1 second&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  jest.<span class="hljs-title function_">useFakeTimers</span>();
+  <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Toast</span> /&gt;</span></span>);
+  <span class="hljs-title function_">act</span>(<span class="hljs-function">() =&gt;</span> { <span class="hljs-comment">// Actually wrap it in an act 😅</span>
+    jest.<span class="hljs-title function_">advanceTimersByTime</span>(<span class="hljs-number">1000</span>);
+  });
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span class="hljs-string">&quot;Toast!&quot;</span>)).<span class="hljs-property">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>();
+});
+</code></pre>
+<p>note:</p>
+<p>Wrap Jest’s timer manipulations in an <code>act</code> block, so test will know that advancing time will cause component to update
+This effectively changes the call stack now to <code>jest.advanceTimersByTime</code> &gt; advance by 1 second &gt; query for <code>Toast</code> &gt; finish test</p>
+<hr>
+<h2>Example 3: Premature Exit</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">ShowName</span> = (<span class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">const</span> { loading, data } = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchData</span>(); <span class="hljs-comment">// Returns { name: &quot;Callum&quot; }</span>
+  <span class="hljs-keyword">return</span> loading &amp;&amp; data?.<span class="hljs-property">name</span> ? (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  ) : (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{data.name}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+};
+</code></pre>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should display loading state&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ShowName</span> /&gt;</span></span>);
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Loading ...&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+});
+</code></pre>
+<p>note:</p>
+<p>This test will pass, BUT, the <code>it</code> block exists before the data comes back and the rerender is triggered, this also causes <code>act</code> errors</p>
+<hr>
+<h2>Example 3: Sequence</h2>
+<pre><code class="hljs mermaid language-mermaid">graph TD
+A[render] --&gt; B(show 'Loading...') --&gt;|assert 'Loading...' exists| D(fetch returns) --&gt; E(Show 'data')
+</code></pre>
+<hr>
+<h2>Example 3: Solution</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should display loading state&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ShowName</span> /&gt;</span></span>);
+  <span class="hljs-title function_">expect</span>(<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Loading ...&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">waitFor</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-title function_">expect</span>(<span class="hljs-title function_">queryByText</span>(<span class="hljs-string">&quot;Loading ...&quot;</span>)).<span class="hljs-property">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>();
+  });
+});
+</code></pre>
+<p>even better...</p>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should display loading state&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ShowName</span> /&gt;</span></span>);
+  <span class="hljs-title function_">expect</span>(<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Loading ...&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">waitForElementToBeRemoved</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">queryByText</span>(<span class="hljs-string">&quot;Loading ...&quot;</span>));
+});
+</code></pre>
+<p>note:</p>
+<p>Make sure the test exits after all the rendering and updates are done.
+To do that, we can wait for the loading state to disappear or assert on the content to come back (but that is probably a different test)</p>
+<p>Alternatively, you can use <code>waitForElementToBeRemoved</code> which is a wrapper around <code>waitFor</code>.</p>
+<p>Loading a library that attaches rendering states to inputs (like the Join team realised that <code>react-hook-form</code> does) which spurred this talk</p>
+<hr>
+<h1>Phew 😮‍💨</h1>
+<p>That was fun, questions?</p>
+<p>note:</p>
+<p>before I jump into ordering selectors in React Testing Library, any questions?</p>
+<p>Ill try to add questions and answers to this doc</p>
+<hr>
+<h1>Ordering of Queries in RTL</h1>
+<ul>
+<li>What should I use in what circumstance?</li>
+<li>How do I remember all these queries?</li>
+<li>Whats the difference?</li>
+<li>Water break🚰</li>
+</ul>
+<hr>
+<h2>Types of queries</h2>
+<p>At high level there's 3 types</p>
+<ul>
+<li><code>GET</code> - returns match but fails if none found
+<ul>
+<li><code>getByText(&quot;Callum&quot;)</code></li>
+</ul>
+</li>
+<li><code>QUERY</code> - returns match but <code>null</code> if none found
+<ul>
+<li><code>expect(queryByText(&quot;Callum&quot;).not.toBeInTheDocument())</code></li>
+</ul>
+</li>
+<li><code>FIND</code> - returns promise that resolves with match found or errors on 1000ms timeout
+<ul>
+<li><code>await findByText(&quot;Callum&quot;)</code></li>
+</ul>
+</li>
+</ul>
+<p>note:</p>
+<p>Am trying to build it from ground up so this sticks in your mind as you'll be using it a lot</p>
+<hr>
+<h2>Single vs Multiple</h2>
+<ul>
+<li>Single (<code>by</code>)
+<ul>
+<li><code>getBy</code></li>
+<li><code>queryBy</code></li>
+<li><code>findBy</code></li>
+</ul>
+</li>
+<li>Multiple (<code>allBy</code>)
+<ul>
+<li><code>getAllBy</code></li>
+<li><code>queryAllBy</code></li>
+<li><code>findAllBy</code></li>
+</ul>
+</li>
+</ul>
+<p>note:</p>
+<p>let's evolve the get, query, find</p>
+<hr>
+<h2>The table</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Query Type</th>
+<th style="text-align:center">0 Match</th>
+<th style="text-align:center">1 Match</th>
+<th style="text-align:center">&gt;1 Match</th>
+<th>Async/Await</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Single Element</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">getBy...</td>
+<td style="text-align:center">Throw error</td>
+<td style="text-align:center">Return element</td>
+<td style="text-align:center">Throw error</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="text-align:center">queryBy...</td>
+<td style="text-align:center">Return null</td>
+<td style="text-align:center">Return element</td>
+<td style="text-align:center">Throw error</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="text-align:center">findBy...</td>
+<td style="text-align:center">Throw error</td>
+<td style="text-align:center">Return element</td>
+<td style="text-align:center">Throw error</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">Multiple Elements</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">getAllBy...</td>
+<td style="text-align:center">Throw error</td>
+<td style="text-align:center">Return array</td>
+<td style="text-align:center">Return array</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="text-align:center">queryAllBy...</td>
+<td style="text-align:center">Return []</td>
+<td style="text-align:center">Return array</td>
+<td style="text-align:center">Return array</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="text-align:center">findAllBy...</td>
+<td style="text-align:center">Throw error</td>
+<td style="text-align:center">Return array</td>
+<td style="text-align:center">Return array</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>note:</p>
+<p>Now the high level</p>
+<p>I'd strongly reccomend having this saved as a screenshot or a quick reference somewhere while you're getting used to react testing library as it's super handy</p>
+<hr>
+<h2>Order of querying</h2>
+<ol>
+<li>Focus on accessibility (reflect the experience of visual/assistive users)</li>
+<li>Semantic Queries (HTML5 and ARIA compliant selectors)</li>
+<li>Test IDs (last resort, user cannot see or hear these)</li>
+</ol>
+<p>note:</p>
+<p>Now to the meaty section</p>
+<p>First we want to focus on querying elements that are exposed in the accessibility tree</p>
+<p>This should be your top preference for just about everything. If you can't, it's possible your UI is inaccessible and need sto be re-written</p>
+<p>Second we want to target HTML5 and ARIA compliant selectors</p>
+<hr>
+<h2>1. Focus on Accessibility</h2>
+<ul>
+<li><code>getByRole</code> - can be used to query every element that is exposed in the <a href="https://developer.mozilla.org/en-US/docs/Glossary/AOM" class="external" target="_blank" rel="noopener noreferrer">accessibility tree</a>
+<ul>
+<li><code>name</code> option can filter the returned elements by their <a href="https://www.w3.org/TR/accname-1.1/" class="external" target="_blank" rel="noopener noreferrer">accessible name</a></li>
+<li>Check the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#Roles" class="external" target="_blank" rel="noopener noreferrer">list of accessible roles</a></li>
+<li>eg. <code>getByRole('button', {name: /submit/i})</code></li>
+</ul>
+</li>
+<li><code>getByLabelText</code>
+<ul>
+<li>Navigating form fields</li>
+</ul>
+</li>
+<li><code>getByText</code>
+<ul>
+<li>Outside of forms, text content is the main way users find elements</li>
+</ul>
+</li>
+<li><code>getByDisplayValue</code>
+<ul>
+<li>Navigate a page with filled in values</li>
+</ul>
+</li>
+</ul>
+<p>note:</p>
+<hr>
+<h2>2. Semantic Queries</h2>
+<ul>
+<li><code>getByAltText</code> - If your element is one which supports alt text (img, area, input, and any custom element), then you can use this to find that element.</li>
+<li><code>getByTitle</code> - The title attribute is not consistently read by screenreaders, and is not visible by default for sighted users</li>
+</ul>
+<hr>
+<h2>3. Test IDs</h2>
+<ul>
+<li><code>getByTestId</code>: The user cannot see (or hear) these, so this is only recommended for cases where you can't match by role or text or it doesn't make sense (e.g. the text is dynamic).</li>
+</ul>
+<hr>
+<h2>Finally</h2>
+<ul>
+<li>use <code>await findByRole()</code> to avoid rendering problems and be as accessible as possible</li>
+<li>check our console, <code>act</code> errors are painful and cause</li>
+</ul>
+<hr>
+<h1>Further Reading</h1>
+<ul>
+<li><a href="https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning" class="external" target="_blank" rel="noopener noreferrer">Fix the &quot;not wrapped in act(...)&quot; warning</a></li>
+<li><a href="https://testing-library.com/docs/queries/about" class="external" target="_blank" rel="noopener noreferrer">React testing library - queries</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree" class="external" target="_blank" rel="noopener noreferrer">The accessibility tree</a></li>
+<li><a href="https://www.w3.org/TR/accname-1.1/" class="external" target="_blank" rel="noopener noreferrer">Accessible names</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques#roles" class="external" target="_blank" rel="noopener noreferrer">List of accessible roles</a></li>
+</ul>
+</article> <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'; mermaid.initialize();</script></main> <footer class="footer undefined" data-testid="footer"><div ><p >©  2023</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="testing, frontend, applications, functional, unit, jest, cypress, testing, trophy, talk, eslint, prettier, react testing library, hooks, react,Blackduck, twistlock, sonarqube" /> <meta name="description" content="Basics of tooling, best practices and how to get started testing frontend applications" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/testing-frontend-applications" /> <title >Testing Frontend Applications</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Testing Frontend Applications</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-03-06">2023-03-06</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/testing-frontend-applications.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> Basics of tooling, best practices and how to get started testing frontend applications  <h2 class="talk-date">Relevant Links</h2> <ul >   <li ><a href="https://github.com/csi-lk/csi.lk/blob/master/src/talks/testing-frontend-applications.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h2>🛂</h2>
+<h1>Testing Frontend Applications</h1>
+<p>Another <em>CodingWithCallum™️</em> Session</p>
+<p>note:</p>
+<p>This presentation was written using obsidian slides which is why the markdown looks a little weird, see attached PDF output and notes of every slide.</p>
+<p>Everything underneath &quot;note&quot; below are speaker notes[[Server Components Slides]] to remind me what to talk about</p>
+<hr>
+<h1>Who are you?</h1>
+<h2>Callum Silcock</h2>
+<p>Experience Engineering &gt; Bluestone Platform (Web)</p>
+<p><code>https://csi.lk || github.com/csi-lk</code></p>
+<p>note:</p>
+<p>Have been doing Front end development for over a decade</p>
+<p>Love hate relationship with testing</p>
+<hr>
+<h1>What is this talk?</h1>
+<ul>
+<li>Testing (right?... right)</li>
+<li>Tooling, best practices</li>
+<li>Very few images (no gifs, sorry)</li>
+<li>Interactive!</li>
+<li>Opinionated</li>
+</ul>
+<p>note:</p>
+<p>There are many kinds of tooling, these are the ones I suggest (+ some we already decided on)</p>
+<p>Ask questions! Inturrupt! Call out when things don't make sense, if you're remote throw things in the chat</p>
+<p>All of this is my opinion based on how i've seen testing work at 100+ frontend departments</p>
+<p>Ok lets'a'go!</p>
+<hr>
+<blockquote>
+<p>Write tests. Not too many. Mostly integration.</p>
+</blockquote>
+<p>~ Guillermo Rauch (CEO of Vercel)</p>
+<p>note:</p>
+<p>Ok what does this mean?</p>
+<hr>
+<h1>The Testing Trophy</h1>
+<p><img src="https://res.cloudinary.com/kentcdodds-com/image/upload/f_auto,q_auto,dpr_2.0,w_1600/v1622744540/kentcdodds.com/blog/the-testing-trophy-and-testing-classifications/trophy_wx9aen.png" alt=""></p>
+<p>Higher up the trophy = more $$$ / better confidence</p>
+<p>note:</p>
+<p>You'll see a bunch of stuff I've stolen from Kent C Dodds in this talk
+Ok the basic idea is, the higher up the trophy you go, the more expensive it is in terms of Development effort and Runtime
+But the higher up the trophy we go, the better outcomes we get from our testing
+So the best ROI we can get on our testing is in the middle of the trophy at the integration layer
+But lets walk the trophy from bottom to top</p>
+<hr>
+<h1>Static</h1>
+<blockquote>
+<p>Catch typos and type errors as you write the code</p>
+</blockquote>
+<p>Pretty straightforward....</p>
+<p>note:</p>
+<p>everyone loves static</p>
+<hr>
+<h2>Tooling</h2>
+<ul>
+<li>ESlint</li>
+<li>Typescript</li>
+<li>Prettier</li>
+</ul>
+<hr>
+<h2>Static Example</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-comment">// can you spot the bug?</span>
+<span class="hljs-comment">// ELint&#x27;s for-direction rule can 😉</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i--) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i)
+}
+ 
+<span class="hljs-keyword">const</span> two = <span class="hljs-string">&#x27;2&#x27;</span>
+<span class="hljs-comment">// ok, this one&#x27;s a bit contrived,</span>
+<span class="hljs-comment">// but TypeScript will tell you this is bad:</span>
+<span class="hljs-keyword">const</span> result = <span class="hljs-title function_">add</span>(<span class="hljs-number">1</span>, two)
+</code></pre>
+<p>note:</p>
+<p>ref: <a href="https://eslint.org/docs/latest/rules/for-direction" class="external" target="_blank" rel="noopener noreferrer">for-direction</a></p>
+<hr>
+<h1>Unit</h1>
+<blockquote>
+<p>Verify that individual, isolated parts work as expected.</p>
+</blockquote>
+<ul>
+<li>Our quickest tests that require some writing</li>
+</ul>
+<p>note:</p>
+<p>unit tests should be simplistic, <code>a+b=c</code>
+unit tests are great for backend but not great for frontend development that requires user interaction in a browser</p>
+<hr>
+<h2>Tooling</h2>
+<ul>
+<li>Jest
+<ul>
+<li>Mocks</li>
+<li>Snapshots</li>
+</ul>
+</li>
+<li>React Testing Library</li>
+<li>React Hooks Testing Library</li>
+</ul>
+<hr>
+<h2>Unit example</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;renders &quot;no items&quot; when the item list is empty&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ItemList</span> <span class="hljs-attr">items</span>=<span class="hljs-string">{[]}</span> /&gt;</span></span>);
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-regexp">/no items/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+});
+ 
+<span class="hljs-title function_">test</span>(<span class="hljs-string">&#x27;renders the items in a list&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ItemList</span> <span class="hljs-attr">items</span>=<span class="hljs-string">{[</span>&#x27;<span class="hljs-attr">apple</span>&#x27;, &#x27;<span class="hljs-attr">orange</span>&#x27;, &#x27;<span class="hljs-attr">pear</span>&#x27;]} /&gt;</span></span>);
+  <span class="hljs-comment">// could use a snapshot test but use toMatchInlineSnapshot();</span>
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-regexp">/apple/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-regexp">/orange/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-regexp">/pear/i</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">queryByText</span>(<span class="hljs-regexp">/no items/i</span>)).<span class="hljs-property">not</span>.<span class="hljs-title function_">toBeInTheDocument</span>();
+});
+</code></pre>
+<hr>
+<h1>Integration</h1>
+<ul>
+<li>Where the most tests will be written</li>
+<li>Should not mock dependencies
+<ul>
+<li>allows for automated updating of dependencies from Rennovate</li>
+</ul>
+</li>
+<li>Should only mock browser based pieces (eg. server APIs)</li>
+</ul>
+<hr>
+<h2>Tooling</h2>
+<ul>
+<li>Jest</li>
+<li>React Testing Library</li>
+<li>React Hooks Testing Library</li>
+<li>User Event</li>
+<li>Mock Service Worker</li>
+<li>ShellJS</li>
+<li>@jackfranklin/test-data-bot</li>
+</ul>
+<hr>
+<h2>Integration Example</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>
+<span class="hljs-keyword">import</span> {render, screen, waitForElementToBeRemoved} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;test/app-test-utils&#x27;</span>
+<span class="hljs-keyword">import</span> userEvent <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@testing-library/user-event&#x27;</span>
+<span class="hljs-keyword">import</span> {build, fake} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@jackfranklin/test-data-bot&#x27;</span>
+<span class="hljs-keyword">import</span> {rest} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;msw&#x27;</span>
+<span class="hljs-keyword">import</span> {setupServer} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;msw/node&#x27;</span>
+<span class="hljs-keyword">import</span> {handlers} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;test/server-handlers&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../app&#x27;</span>
+</code></pre>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">const</span> buildLoginForm = <span class="hljs-title function_">build</span>({
+  <span class="hljs-attr">fields</span>: {
+    <span class="hljs-attr">username</span>: <span class="hljs-title function_">fake</span>(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f.<span class="hljs-property">internet</span>.<span class="hljs-title function_">userName</span>()),
+    <span class="hljs-attr">password</span>: <span class="hljs-title function_">fake</span>(<span class="hljs-function"><span class="hljs-params">f</span> =&gt;</span> f.<span class="hljs-property">internet</span>.<span class="hljs-title function_">password</span>()),
+  },
+})
+
+<span class="hljs-keyword">const</span> server = <span class="hljs-title function_">setupServer</span>(...handlers)
+ 
+<span class="hljs-title function_">beforeAll</span>(<span class="hljs-function">() =&gt;</span> server.<span class="hljs-title function_">listen</span>())
+<span class="hljs-title function_">afterAll</span>(<span class="hljs-function">() =&gt;</span> server.<span class="hljs-title function_">close</span>())
+<span class="hljs-title function_">afterEach</span>(<span class="hljs-function">() =&gt;</span> server.<span class="hljs-title function_">resetHandlers</span>())
+</code></pre>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">`logging in displays the user&#x27;s username`</span>, <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span></span>, {<span class="hljs-attr">route</span>: <span class="hljs-string">&#x27;/login&#x27;</span>})
+  <span class="hljs-keyword">const</span> {username, password} = <span class="hljs-title function_">buildLoginForm</span>()
+ 
+  userEvent.<span class="hljs-title function_">type</span>(screen.<span class="hljs-title function_">getByLabelText</span>(<span class="hljs-regexp">/username/i</span>), username)
+  userEvent.<span class="hljs-title function_">type</span>(screen.<span class="hljs-title function_">getByLabelText</span>(<span class="hljs-regexp">/password/i</span>), password)
+  userEvent.<span class="hljs-title function_">click</span>(screen.<span class="hljs-title function_">getByRole</span>(<span class="hljs-string">&#x27;button&#x27;</span>, {<span class="hljs-attr">name</span>: <span class="hljs-regexp">/submit/i</span>}))
+ 
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">waitForElementToBeRemoved</span>(<span class="hljs-function">() =&gt;</span> screen.<span class="hljs-title function_">getByLabelText</span>(<span class="hljs-regexp">/loading/i</span>))
+ 
+  <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(username)).<span class="hljs-title function_">toBeInTheDocument</span>()
+})
+</code></pre>
+<p>note:</p>
+<p>I split this into three sections because it makes it easier to read and I couldn't get it to format correctly in one big one</p>
+<hr>
+<h1>End to End</h1>
+<blockquote>
+<p>A helper robot that behaves like a user to click around the app and verify that it functions correctly. Sometimes called &quot;functional testing&quot; or e2e.</p>
+</blockquote>
+<ul>
+<li>Should only cover p0/p1 flows</li>
+<li>Does not mock backend, runs against real data usually in an environment</li>
+</ul>
+<hr>
+<h2>Tools</h2>
+<ul>
+<li>playwright
+<ul>
+<li>what bluestone is using, (documented in <code>bluestone-hello</code>)</li>
+</ul>
+</li>
+<li>cypress</li>
+</ul>
+<hr>
+<h2>E2E Code Example</h2>
+<pre><code class="hljs language-tsx"><span class="hljs-keyword">import</span> { test, expect } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@playwright/test&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">AxeBuilder</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@axe-core/playwright&quot;</span>;
+ 
+<span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">BASE_URL</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../config&quot;</span>;
+ 
+<span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;homepage has title and a button&quot;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+  <span class="hljs-keyword">await</span> page.<span class="hljs-title function_">goto</span>(<span class="hljs-variable constant_">BASE_URL</span>);
+ 
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">expect</span>(page).<span class="hljs-title function_">toHaveTitle</span>(<span class="hljs-string">&quot;ANZx – Join app!&quot;</span>);
+ 
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">expect</span>(page).<span class="hljs-title function_">toHaveURL</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">`^<span class="hljs-subst">${BASE_URL}</span>`</span>));
+ 
+  <span class="hljs-title function_">expect</span>(page.<span class="hljs-title function_">locator</span>(<span class="hljs-string">`button:has-text(&#x27;click click&#x27;)`</span>)).<span class="hljs-property">toBeDefined</span>;
+});
+</code></pre>
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;homepage handles accessibility&quot;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+  <span class="hljs-keyword">await</span> page.<span class="hljs-title function_">goto</span>(<span class="hljs-variable constant_">BASE_URL</span>);
+ 
+  <span class="hljs-keyword">const</span> accessibilityScanResults = <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AxeBuilder</span>({ page }).<span class="hljs-title function_">analyze</span>();
+ 
+  <span class="hljs-title function_">expect</span>(accessibilityScanResults.<span class="hljs-property">violations</span>).<span class="hljs-title function_">toEqual</span>([]);
+});
+</code></pre>
+<hr>
+<h1>What are we missing?</h1>
+<p>note:</p>
+<p>ok we've made it through the testing trophy what's next</p>
+<hr>
+<h1>Accessibility (a11y)</h1>
+<p>Automation tools can only get us 30% of the way toward being WCAG compliant (ref; UK Gov)</p>
+<p>note:</p>
+<p>but better than nothing</p>
+<hr>
+<h2>Tools</h2>
+<ul>
+<li>jest-axe</li>
+<li>deque tooling</li>
+<li>axe-core/playwright</li>
+</ul>
+<hr>
+<h1>Security</h1>
+<ul>
+<li>Blackduck (dependency scanning)</li>
+<li>Twistlock (container scanning)</li>
+<li>Sonarqube (high level issues like xss etc.)</li>
+</ul>
+<hr>
+<h1>Live Demo 😱</h1>
+<hr>
+<h1>Suggested Reading</h1>
+<p>Kent C Dodds' blog (where I <s>stole</s> found this content)</p>
+<ul>
+<li><a href="https://kentcdodds.com/blog/write-tests" class="external" target="_blank" rel="noopener noreferrer">Write tests. Not too many. Mostly integration</a></li>
+<li><a href="https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications" class="external" target="_blank" rel="noopener noreferrer">The Testing Trophy and Testing Classifications</a></li>
+<li><a href="https://kentcdodds.com/blog/common-mistakes-with-react-testing-library" class="external" target="_blank" rel="noopener noreferrer">Common mistakes with React Testing Library</a></li>
+<li><a href="https://kentcdodds.com/blog/why-i-never-use-shallow-rendering" class="external" target="_blank" rel="noopener noreferrer">Why I never use shallow rendering</a></li>
+</ul>
+</article> </main> <footer class="footer undefined" data-testid="footer"><div ><p >©  2023</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
