@@ -18,6 +18,7 @@ export = function TalkPage({
   slidesSD,
   slidesPdf,
   slidesRaw,
+  useMermaid,
   content,
   permalink,
   page: { date, inputPath },
@@ -99,6 +100,12 @@ export = function TalkPage({
         </ul>
         {content}
       </article>
+    {useMermaid && (
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize();
+      </script>
+    )}
     </PageContainer>
   )
 }

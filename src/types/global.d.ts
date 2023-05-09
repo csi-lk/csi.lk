@@ -22,6 +22,7 @@ export interface Talk {
     slidesSD: string
     slidesPdf: string
     slidesRaw: string
+    useMermaid: boolean
   } & DefaultFrontMatter
   date: Date
 }
