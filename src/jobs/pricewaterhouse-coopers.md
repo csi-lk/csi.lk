@@ -12,7 +12,7 @@ industry:
 tags: job
 keywords: pwc, typescript, throughput, accessibility
 layout: article
-permalink: price-waterhouse-coopers
+permalink: jobs/price-waterhouse-coopers
 ---
 
 > Digital transformation consulting
