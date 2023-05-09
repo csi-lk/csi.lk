@@ -49,14 +49,14 @@ export = function TalkPage({
           </a>
         </div>
         {description}
-        <div className="embed-container">
+        {slidesEmbed && (<div className="embed-container">
           <iframe src={slidesEmbed} allowfullscreen scrolling="no" allow="encrypted-media;">
             Loading SpeakerDeck within iFrame
           </iframe>
-        </div>
+        </div>)}
         <h2 className={`${baseClass}-date`}>Relevant Links</h2>
         <ul>
-          <li>
+          {repo && (<li>
             <a
               href={repo}
               target="_blank"
@@ -65,8 +65,8 @@ export = function TalkPage({
             >
               Companion Repo
             </a>
-          </li>
-          <li>
+          </li>)}
+          {slidesSD && (<li>
             <a
               href={slidesSD}
               target="_blank"
@@ -75,8 +75,8 @@ export = function TalkPage({
             >
               Slides Presentation on Speakerdeck
             </a>
-          </li>
-          <li>
+          </li>)}
+          {(slidesPdf && <li>
             <a
               href={slidesPdf}
               target="_blank"
@@ -85,8 +85,8 @@ export = function TalkPage({
             >
               Slides in .PDF format
             </a>
-          </li>
-          <li>
+          </li>)}
+          {slidesRaw && (<li>
             <a
               href={slidesRaw}
               target="_blank"
@@ -95,7 +95,7 @@ export = function TalkPage({
             >
               Raw markdown of the slides (incl. notes)
             </a>
-          </li>
+          </li> )}
         </ul>
         {content}
       </article>
