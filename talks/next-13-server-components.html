@@ -1,0 +1,146 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="next, server, components, coding, with, callum, talk, lightning, session, client" /> <meta name="description" content="A talk on the new Next 13 BETA Server Components feature and how to use them" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/next-13-server-components" /> <title >Next 13 Server Components</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Next 13 Server Components</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-03-09">2023-03-09</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/next-13-server-components.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A talk on the new Next 13 BETA Server Components feature and how to use them <div class="embed-container"><iframe src="undefined" allowfullscreen scrolling="no" allow="encrypted-media;">Loading SpeakerDeck within iFrame</iframe></div> <h2 class="talk-date">Relevant Links</h2> <ul ><li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Companion Repo</a></li> <li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides Presentation on Speakerdeck</a></li> <li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides in .PDF format</a></li> <li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h2>🛄 vs 📳</h2>
+<h1>Next 13 Server Components</h1>
+<p>Another <em>CodingWithCallum™️</em> Session</p>
+<p><em>⚡️ lightning talk ⚡️</em></p>
+<p>note:</p>
+<p>This presentation was written using obsidian slides which is why the markdown looks a little weird, see attached PDF output and notes of every slide.</p>
+<p>Everything underneath &quot;note&quot; below are speaker notes to remind me what to talk about</p>
+<p>I've picked the emojis to represent server vs client components so it gives some visual clarity as we go through</p>
+<p>Ok let's start with definitions</p>
+<hr>
+<h1>🛄 Server Component</h1>
+<p>A component that is <code>fetched</code> and <code>rendered</code> <em>ON THE SERVER</em></p>
+<p>note:</p>
+<p>blue briefcase felt right</p>
+<hr>
+<h2>📳 Client Component</h2>
+<p>A component that is <code>fetched</code> and <code>rendered</code> <em>ON THE CLIENT</em></p>
+<p>note:</p>
+<p>phone is client... right?</p>
+<hr>
+<h1>Examples</h1>
+<p><img src="./images/nextjs-app.png" alt="nextjs application showing client vs server components"></p>
+<p>note:</p>
+<p>I pulled this direct from the next docs which is a great example of using different pieces / where should they go, Ill reference this a few times within this presentation</p>
+<hr>
+<h2>Using server components 🛄</h2>
+<ul>
+<li>Only download HTML built by the server
+<ul>
+<li>Instant render</li>
+<li>Speed 🏃‍♀️💨</li>
+</ul>
+</li>
+<li>+ the JS required for the client components
+<ul>
+<li>(if any)</li>
+<li>react cached</li>
+</ul>
+</li>
+<li>Make direct API calls (server to server)</li>
+</ul>
+<p>note:</p>
+<p>so the more server components you use, the faster your application will be</p>
+<hr>
+<h2>Not using server components 📳</h2>
+<ul>
+<li>Install all JS Dependencies to run the site
+<ul>
+<li>React etc.</li>
+</ul>
+</li>
+<li>Then grab all our Client JS
+<ul>
+<li>Components</li>
+</ul>
+</li>
+<li>Then render</li>
+</ul>
+<p>note:</p>
+<p>so we're missing a few steps</p>
+<hr>
+<h1>When to use Server 🛄 vs Client 📳 Components</h1>
+<p>Need to access browser related stuff = Client Component</p>
+<p>Anything Else? = Server Component</p>
+<p>note:</p>
+<p><a href="https://beta.nextjs.org/docs/rendering/server-and-client-components#when-to-use-server-vs-client-components" class="external" target="_blank" rel="noopener noreferrer">NextJS has a big table in their docs</a> that goes into more detail but we're going to simplify it</p>
+<p>If you need to access any react hooks these will go into client components</p>
+<hr>
+<p><img src="./images/nextjs-app.png" alt="nextjs application showing client vs server components"></p>
+<p>note:</p>
+<p>Ok lets have a look at this again</p>
+<p>User hits the page all of the blue boxes instantly render, the client (purple) is loading</p>
+<p>The search bar in the top RHS may contain handlers on client side for the text input therefore client component</p>
+<p>Buttons use an onClick event which needs the client so... client components</p>
+<p>Everything else can be built on the server easily</p>
+<hr>
+<h1>Interleaving</h1>
+<p><img src="./images/interleaving.png" alt="a tree of leaves to visualise interleaving with some boxes showing server within client components"></p>
+<p>note:</p>
+<p>You can have server within client and verse-vica</p>
+<p>Client components should be leaves in the tree, trying to avoid having children under it.</p>
+<p>There is a gotcha here though you cannot import a server component directly into a client component
+Instead you pass a server component as a child or a prop of a client component</p>
+<hr>
+<h1>How do I define a Client 📳 Component</h1>
+<pre><code class="hljs language-tsx"><span class="hljs-string">&#x27;use client&#x27;</span>;
+
+<span class="hljs-keyword">import</span> { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Counter</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> [count, setCount] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You clicked {count} times<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setCount(count + 1)}&gt;
+        Click me
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre>
+<p>note:</p>
+<p>You only need to make components as use client when they use client hooks</p>
+<p>It's best to leave components that do not depend on hooks without the directive</p>
+<hr>
+<h1>Shared Component 🛄📳</h1>
+<p>What if something is Server And Client</p>
+<p>Wait what?</p>
+<p>note:</p>
+<p>Ok now a real mindbender</p>
+<p>What if you have a component that is sharable between client and server</p>
+<p>List box with a search box that filters the list</p>
+<hr>
+<h1>Sharing Data from 🛄 Server to 📳 Client</h1>
+<ul>
+<li>Make your API requests on the server</li>
+<li>Keep as many dependencies on the server as possible
+<ul>
+<li>Eg. pass i18n translations from server &gt; client to avoid client code</li>
+<li>(prop drilling in this case is OK)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>Mutating Data on the 📳 Client</h1>
+<ul>
+<li>RPC from the client</li>
+<li>This will change
+<ul>
+<li>Next is working on a RFC on this at the moment</li>
+<li>We will go with what their suggestion is</li>
+</ul>
+</li>
+<li>Watch this space</li>
+</ul>
+<p>note:</p>
+<p>But I hear you saying, what about something that requires calling the server from the client</p>
+<p>Great question</p>
+<p>In future we'll codemod this out if we need to</p>
+<p>Will be providing docs on how to make queries from the client as part of the API stuff</p>
+<hr>
+<h1>Read the docs!</h1>
+<p><a href="https://beta.nextjs.org/docs/rendering/server-and-client-components" class="external" target="_blank" rel="noopener noreferrer">Next 13 Server And Client Components</a></p>
+</article></main> <footer class="footer undefined" data-testid="footer"><div ><p >©  2023</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
