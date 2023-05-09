@@ -6,6 +6,7 @@ date: 2023-03-09
 tags: talk
 layout: talk
 keywords: next, server, components, coding, with, callum, talk, lightning, session, client
+slidesRaw: https://github.com/csi-lk/csi.lk/blob/master/src/talks/next-13-server-components.md
 ---
 
 ## 🛄 vs 📳
@@ -49,7 +50,7 @@ phone is client... right?
 
 # Examples
 
-![nextjs application showing client vs server components](./images/nextjs-app.png)
+![nextjs application showing client vs server components](/images/nextjs-app.png)
 
 note:
 
@@ -101,7 +102,7 @@ If you need to access any react hooks these will go into client components
 
 ---
 
-![nextjs application showing client vs server components](./images/nextjs-app.png)
+![nextjs application showing client vs server components](/images/nextjs-app.png)
 
 note:
 
@@ -119,7 +120,7 @@ Everything else can be built on the server easily
 
 #  Interleaving
 
-![a tree of leaves to visualise interleaving with some boxes showing server within client components](./images/interleaving.png)
+![a tree of leaves to visualise interleaving with some boxes showing server within client components](/images/interleaving.png)
 
 note:
 
