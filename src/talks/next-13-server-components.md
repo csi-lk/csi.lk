@@ -1,7 +1,7 @@
 ---
 title: Next 13 Server Components
 description: A talk on the new Next 13 BETA Server Components feature and how to use them
-permalink: talks/use-gwt-cypress.html
+permalink: talks/next-13-server-components.html
 date: 2023-03-09
 tags: talk
 layout: talk
