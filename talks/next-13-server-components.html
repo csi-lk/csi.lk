@@ -1,5 +1,5 @@
 <!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="next, server, components, coding, with, callum, talk, lightning, session, client" /> <meta name="description" content="A talk on the new Next 13 BETA Server Components feature and how to use them" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/next-13-server-components" /> <title >Next 13 Server Components</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
- Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Next 13 Server Components</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-03-09">2023-03-09</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/next-13-server-components.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A talk on the new Next 13 BETA Server Components feature and how to use them <div class="embed-container"><iframe src="undefined" allowfullscreen scrolling="no" allow="encrypted-media;">Loading SpeakerDeck within iFrame</iframe></div> <h2 class="talk-date">Relevant Links</h2> <ul ><li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Companion Repo</a></li> <li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides Presentation on Speakerdeck</a></li> <li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides in .PDF format</a></li> <li ><a href="undefined" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h2>🛄 vs 📳</h2>
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Next 13 Server Components</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-03-09">2023-03-09</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/next-13-server-components.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A talk on the new Next 13 BETA Server Components feature and how to use them  <h2 class="talk-date">Relevant Links</h2> <ul >   <li ><a href="https://github.com/csi-lk/csi.lk/blob/master/src/talks/next-13-server-components.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h2>🛄 vs 📳</h2>
 <h1>Next 13 Server Components</h1>
 <p>Another <em>CodingWithCallum™️</em> Session</p>
 <p><em>⚡️ lightning talk ⚡️</em></p>
@@ -20,7 +20,7 @@
 <p>phone is client... right?</p>
 <hr>
 <h1>Examples</h1>
-<p><img src="./images/nextjs-app.png" alt="nextjs application showing client vs server components"></p>
+<p><img src="/images/nextjs-app.png" alt="nextjs application showing client vs server components"></p>
 <p>note:</p>
 <p>I pulled this direct from the next docs which is a great example of using different pieces / where should they go, Ill reference this a few times within this presentation</p>
 <hr>
@@ -67,7 +67,7 @@
 <p><a href="https://beta.nextjs.org/docs/rendering/server-and-client-components#when-to-use-server-vs-client-components" class="external" target="_blank" rel="noopener noreferrer">NextJS has a big table in their docs</a> that goes into more detail but we're going to simplify it</p>
 <p>If you need to access any react hooks these will go into client components</p>
 <hr>
-<p><img src="./images/nextjs-app.png" alt="nextjs application showing client vs server components"></p>
+<p><img src="/images/nextjs-app.png" alt="nextjs application showing client vs server components"></p>
 <p>note:</p>
 <p>Ok lets have a look at this again</p>
 <p>User hits the page all of the blue boxes instantly render, the client (purple) is loading</p>
@@ -76,7 +76,7 @@
 <p>Everything else can be built on the server easily</p>
 <hr>
 <h1>Interleaving</h1>
-<p><img src="./images/interleaving.png" alt="a tree of leaves to visualise interleaving with some boxes showing server within client components"></p>
+<p><img src="/images/interleaving.png" alt="a tree of leaves to visualise interleaving with some boxes showing server within client components"></p>
 <p>note:</p>
 <p>You can have server within client and verse-vica</p>
 <p>Client components should be leaves in the tree, trying to avoid having children under it.</p>
