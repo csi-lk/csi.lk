@@ -390,7 +390,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.22.0":
+"@babel/helper-create-class-features-plugin@npm:^7.22.0, @babel/helper-create-class-features-plugin@npm:^7.22.1":
   version: 7.22.1
   resolution: "@babel/helper-create-class-features-plugin@npm:7.22.1"
   dependencies:
@@ -1826,17 +1826,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.22.0":
-  version: 7.22.0
-  resolution: "@babel/plugin-transform-typescript@npm:7.22.0"
+"@babel/plugin-transform-typescript@npm:^7.22.3":
+  version: 7.22.3
+  resolution: "@babel/plugin-transform-typescript@npm:7.22.3"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.18.6
-    "@babel/helper-create-class-features-plugin": ^7.22.0
+    "@babel/helper-create-class-features-plugin": ^7.22.1
     "@babel/helper-plugin-utils": ^7.21.5
     "@babel/plugin-syntax-typescript": ^7.21.4
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 5e74425aa79e9bfbc812de25b2056338b0b435222bbb08558a63a7d2e7e180f0fc8878e838e15dc334bb709a9982035c84a6116384accea0d71ab23b4224ee8a
+  checksum: b32fdb7ba0902b0c271bec3e0ee678d745a5c33037f0ed62b00db212d94c24b4ca5d523578f2cf557697c959aeb6354d2615a141379fb3bd0a58e4b6a3bd4b3c
   languageName: node
   linkType: hard
 
@@ -5242,7 +5242,7 @@ __metadata:
     "@11ty/eleventy": ^2.0.1
     "@babel/core": ^7.22.1
     "@babel/plugin-transform-react-jsx": ^7.22.0
-    "@babel/plugin-transform-typescript": ^7.22.0
+    "@babel/plugin-transform-typescript": ^7.22.3
     "@babel/preset-env": ^7.22.2
     "@babel/preset-react": ^7.22.0
     "@babel/preset-typescript": ^7.21.5
