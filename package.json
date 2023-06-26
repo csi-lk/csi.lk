@@ -62,7 +62,7 @@
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.1",
     "add": "^2.0.6",
     "babel-jest": "^29.5.0",
     "cross-env": "^7.0.3",
