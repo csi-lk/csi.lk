@@ -1,0 +1,102 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="common, security, issues, xss, react, escape, hatches, encoding, urls, resource, dangerous" /> <meta name="description" content="A lightning talk about common security issues in frontend applications going through XSS, React escape hatches, resource and encoding urls" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/attacking-the-frontend" /> <title >Attacking the Frontend</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Attacking the Frontend</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-07-06">2023-07-06</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/attacking-the-frontend.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A lightning talk about common security issues in frontend applications going through XSS, React escape hatches, resource and encoding urls <div class="embed-container"><iframe src="https://speakerdeck.com/player/78d916656bb3451e97ea778dc714ae8f" allowfullscreen scrolling="no" allow="encrypted-media;">Loading SpeakerDeck within iFrame</iframe></div> <h2 class="talk-date">Relevant Links</h2> <ul > <li ><a href="https://speakerdeck.com/csilk/attacking-the-frontend" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides Presentation on Speakerdeck</a></li> <li ><a href="https://github.com/csi-lk/csi.lk/blob/master/src/talks/attacking-the-frontend.pdf" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Slides in .PDF format</a></li> <li ><a href="https://github.com/csi-lk/csi.lk/blob/master/src/talks/attacking-the-frontend.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">Raw markdown of the slides (incl. notes)</a></li></ul> <h2>🔐</h2>
+<h1>Attacking the Frontend</h1>
+<p><em>CodingWithCallum™️</em> Lightning Talk</p>
+<p>note:</p>
+<p>This presentation was written using obsidian slides which is why the markdown looks a little weird, see attached PDF output and notes of every slide.</p>
+<p>Everything underneath &quot;note&quot; below are speaker notes to remind me what to talk about</p>
+<hr>
+<h1>Common issues</h1>
+<ul>
+<li>Code injection
+<ul>
+<li>How does the web app handle unexpected data</li>
+</ul>
+</li>
+<li>XSS
+<ul>
+<li>&quot;Cross Site Scripting&quot;</li>
+<li>Attacker submitted code run in browser</li>
+<li>CSP by itself cannot prevent XSS</li>
+</ul>
+</li>
+<li>HTML elements can run code!</li>
+</ul>
+<hr>
+<h1>React</h1>
+<ul>
+<li>Context sensitive output encoding
+<ul>
+<li>out of the box</li>
+<li>until you use something with the word <code>dangerous</code> in front of it</li>
+</ul>
+</li>
+<li>React will protect you from yourself</li>
+</ul>
+<hr>
+<h2>dangerouslySetInnerHTML</h2>
+<ul>
+<li>Don't use this + the linter will yell at you if you do</li>
+<li>Needs DOMPurify if you need to use it
+<ul>
+<li><code>{dangerouslySetInnerHTML: DOMPurify.sanitize({html})}</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>escape hatches</h2>
+<ul>
+<li>Bypass react and access native DOM APIs</li>
+<li>Direct DOM Manipulation</li>
+<li>Good news: React is deprecating this
+<ul>
+<li>should be disallowed
+<ul>
+<li><code>findDOMNode</code></li>
+<li><code>innerHTML</code></li>
+</ul>
+</li>
+<li><code>createRef</code> is not</li>
+</ul>
+</li>
+</ul>
+<p>note:</p>
+<p>Allows us to get outside of react and go straight to the browser</p>
+<hr>
+<h1>Encoding urls</h1>
+<ul>
+<li>Avoid taking full URL as an input</li>
+<li>Do URL sanitisation
+<ul>
+<li>Nextjs does this for us</li>
+</ul>
+</li>
+<li>Should allowlist certain urls</li>
+</ul>
+<hr>
+<h1>Resource urls</h1>
+<ul>
+<li>Javascript &amp; Resource URLs can be a potential sink
+<ul>
+<li>are being disallowed from React 17+</li>
+<li><code>data.</code> still runs</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1>Best practices</h1>
+<ul>
+<li>&quot;If you are going to the DOM directly, talk to security&quot;</li>
+<li>CSRF</li>
+<li>Cookies should have <code>samesite</code> set (or better be secure)</li>
+</ul>
+<hr>
+<h1>Resources</h1>
+<ul>
+<li><a href="https://github.com/edu-secmachine/reactvulna" class="external" target="_blank" rel="noopener noreferrer">ReactVulna</a> is a deliberately vulnerable app you can play around with</li>
+<li>React has a guide on <a href="https://react.dev/learn/escape-hatches" class="external" target="_blank" rel="noopener noreferrer">escape hatches</a></li>
+<li><a href="https://github.com/pmndrs/its-fine" class="external" target="_blank" rel="noopener noreferrer">Its-fine</a> A collection of escape hatches exploring</li>
+<li><code>React.__SECRET_INTERNALS_DO_NOT</code></li>
+<li><code>_USE_OR_YOU_WILL_BE_FIRED</code></li>
+</ul>
+</article> </main> <footer class="footer undefined" data-testid="footer"><div ><p >©  2023</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
