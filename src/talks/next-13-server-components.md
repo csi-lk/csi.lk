@@ -7,7 +7,11 @@ tags: talk
 layout: talk
 keywords: next, server, components, coding, with, callum, talk, lightning, session, client
 slidesRaw: https://github.com/csi-lk/csi.lk/blob/master/src/talks/next-13-server-components.md
+slidesPdf: https://github.com/csi-lk/csi.lk/blob/master/src/talks/next-13-server-components.pdf
+slidesEmbed: https://speakerdeck.com/player/721cfa81db634b6aa8cacb0ab682bd04
+slidesSD: https://speakerdeck.com/csilk/intro-to-next-13-server-components
 ---
+
 
 ## 🛄 vs 📳
 # Next 13 Server Components
