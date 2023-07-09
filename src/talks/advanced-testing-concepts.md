@@ -7,8 +7,12 @@ tags: talk
 layout: talk
 keywords: advanced, testing, jest, react testing library, ordering queries, act, warning, async, rendering, sequence, diagram
 slidesRaw: https://github.com/csi-lk/csi.lk/blob/master/src/talks/advanced-testing-concepts.md
+slidesPdf: https://github.com/csi-lk/csi.lk/blob/master/src/talks/advanced-testing-concepts.pdf
+slidesSD: https://speakerdeck.com/csilk/advanced-testing-concepts
+slidesEmbed: https://speakerdeck.com/player/61b3ec8eb69345c09c944c3ce2a90819
 useMermaid: true
 ---
+
 
 ## 🛂
 # Advanced Testing concepts
