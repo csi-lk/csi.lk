@@ -1,0 +1,128 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="react, server, components, back, to, the, future, bttf, new, old, rsc, ssr, server side rendering, server components, react server components, react server side rendering, react server components vs server side rendering, react server components vs server component" /> <meta name="description" content="A talk about what's new and old with react server components, we do a deep dive into how it works" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/whats-new-and-old-server-components" /> <title >Back to the Future: What's New and Old About Server Components</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Back to the Future: What's New and Old About Server Components</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2023-08-09">2023-08-09</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/whats-new-and-old-server-components.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A talk about what's new and old with react server components, we do a deep dive into how it works  <h2 class="talk-date">Relevant Links</h2> <ul >   </ul> <h1>Back to the Future: What's New and Old About Server Components</h1>
+<p>A talk about React Server components by Callum Silcock, Principal Engineer at ANZx for MelbJS Aug / 2023 available on: https://rsc.csi.lk</p>
+<p>This talk has been put together as a NextJS backed site so I can show how the 'slides' are being rendered while talking about them I would suggest looking at the talk on the above site</p>
+<hr>
+<h2>Setup: What are &quot;React Server Components&quot; (RSC) anyway?</h2>
+<ul>
+<li>The components and the environment</li>
+<li>Framework-independent</li>
+<li>I will be refering to them as RSCs for the rest of the talk</li>
+</ul>
+<hr>
+<h2>Setup: So many TLAs</h2>
+<ul>
+<li>SSG (Static Site Generation)
+<ul>
+<li>run when you build your application, and the generated output is static</li>
+</ul>
+</li>
+<li>SSR (Server-Side Rendering)
+<ul>
+<li>runs at the time it is requested, result may be cached for future requests</li>
+</ul>
+</li>
+<li>CSR (Client-Side Rendering)
+<ul>
+<li>delivered to the browser, which generates content that is inserted into the DOM</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Setup: Why are you using RSC?</h2>
+<p>Well.. it's the cool new thing right?... true but not the whole story</p>
+<ul>
+<li>Defining the next generation of Web for ANZ</li>
+<li>Banks need a shitton of security</li>
+<li>State is less of a concern</li>
+<li>Speed 🏃💨</li>
+</ul>
+<hr>
+<h2>Setup: Go Back In Time</h2>
+<p>What's old is new again</p>
+<p>I'll try to call out the new and the old</p>
+<p>RSC fits nicely into the existing way you write react</p>
+<p><em>Claim:</em> “React Server Components (RSC) are just PHP”.
+<em>Reality:</em> RSC are special because it finally means we can use the same tech to render components on both the client or the server. One line of code converts a server component into a client component: 'use client'</p>
+<hr>
+<h2>Diving into RSCs: Static Content</h2>
+<ul>
+<li>This page is generated server-side using RSC new</li>
+<li>React components run on server</li>
+<li>HTML output sent over the wire</li>
+<li>Let's have a look at the source...</li>
+</ul>
+<hr>
+<h2>Diving into RSCs: Virtual DOM</h2>
+<ul>
+<li>Script tags that contain an encoded form of this content</li>
+<li>React's new line-based internal data streaming format</li>
+<li>Compact string representation of the virtual DOM new</li>
+<li>Lets have a look in the <a href="https://rsc-parser.vercel.app/" class="external" target="_blank" rel="noopener noreferrer">RSC parser tool</a></li>
+</ul>
+<hr>
+<h2>Diving into RSCs: Client Components</h2>
+<p>Lets create a client component here that logs &quot;Running the client component&quot; named <code>MyClientComponent</code></p>
+<ul>
+<li>If components require interactivity or hooks they should run on the client</li>
+<li>Default is to treat components as server components new</li>
+<li>Opt in with <code>'use client';</code></li>
+<li>Client-components by default are pre-rendered on the server (SSR) old</li>
+<li>Lets go to the code again and find <code>MyClientComponent</code> `$La``</li>
+</ul>
+<hr>
+<h2>Diving into RSCs: Virtual DOM Reconciliation</h2>
+<p>Lets create a client component here that confuses React with timestamp</p>
+<ul>
+<li>On page load reconcile Virtual DOM / returned static DOM old</li>
+<li>If they don't match throw error
+<ul>
+<li><code>Warning: Text content did not match</code></li>
+</ul>
+</li>
+<li>Wait, how?</li>
+<li>And now our page is entirely client rendered 😭
+<ul>
+<li><code>[...] the entire root will switch to client rendering</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Diving into RSCs: Server Component in Client</h2>
+<p>This client component has children `{children}``: I am rendered on the server</p>
+<ol>
+<li>Server runs ServerComponent</li>
+<li>ClientComponent is inserted into the Virtual DOM aka `$La``</li>
+<li>ClientComponent `{children}`` set to ServerComponent output</li>
+</ol>
+<ul>
+<li>ClientComponent doesn't care!</li>
+<li>Back to the code!</li>
+</ul>
+<hr>
+<h2>Finishing Up: Further Topics</h2>
+<p>There's so much more I'd like to have talked about but felt this is a good stopping point for a 30min talk</p>
+<ul>
+<li>Disabling SSR for Client Components</li>
+<li>Client Components in Server Components</li>
+<li>Server actions</li>
+<li><code>async</code>!?</li>
+</ul>
+<hr>
+<h2>Finishing Up: Questions?</h2>
+<p>Example questions:</p>
+<ul>
+<li>Why is this so confusing?</li>
+<li>Where do I find out more?</li>
+<li>Should I just give up and go back to PHP?</li>
+</ul>
+<p>👋</p>
+<hr>
+<h2>Finishing Up: Resources</h2>
+<h3>RSC From Scratch</h3>
+<p>https://github.com/reactwg/server-components/discussions/5</p>
+<p>In this technical deep dive, we'll implement a very simplified version of React Server Components (RSC) from scratch.</p>
+<h3>Demystifying RSC</h3>
+<p>https://demystifying-rsc.vercel.app/</p>
+<p>Experienced React developers who are perhaps new to RSC. Or people using RSC who want to understand more about how it works.</p>
+</article> false</main> <footer class="footer undefined" data-testid="footer"><div ><p >©  2023</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
