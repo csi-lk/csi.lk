@@ -71,7 +71,7 @@
     "eslint": "^8.46.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-node": "^0.3.7",
+    "eslint-import-resolver-node": "^0.3.8",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest-dom": "^5.0.2",
     "eslint-plugin-json": "^3.1.0",
