@@ -5581,7 +5581,7 @@ __metadata:
     eslint-plugin-import: ^2.28.1
     eslint-plugin-jest-dom: ^5.0.2
     eslint-plugin-json: ^3.1.0
-    eslint-plugin-local-rules: 1.1.2
+    eslint-plugin-local-rules: 2.0.0
     eslint-plugin-sort-imports-es6-autofix: ^0.6.0
     eslint-plugin-unicorn: ^48.0.1
     faker: 5.5.3
@@ -6792,10 +6792,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-local-rules@npm:1.1.2":
-  version: 1.1.2
-  resolution: "eslint-plugin-local-rules@npm:1.1.2"
-  checksum: e97771b537754136e9cc0048ca8e8d40785a800fc0291a69fdfb7942a3df5ce7f0feca1b845c8f05315e8839d471e0a6d77bcf3a3194c69d1e1f98e340eaf32c
+"eslint-plugin-local-rules@npm:2.0.0":
+  version: 2.0.0
+  resolution: "eslint-plugin-local-rules@npm:2.0.0"
+  checksum: 597a052a93de1fe9e9bfc7187db43f8ed66ceaf0e12bb759a931fe02607da42a70d1e1029bef2ee6ac221ad205ab63c18827e375ae5e88061bf7f24325479c11
   languageName: node
   linkType: hard
 
