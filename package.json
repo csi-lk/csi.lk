@@ -110,7 +110,7 @@
     "postcss-nested": "^6.0.1",
     "postcss-nested-ancestors": "^3.0.0",
     "postcss-scss": "^4.0.7",
-    "serve": "^14.2.0",
+    "serve": "^14.2.1",
     "shx": "^0.3.4",
     "typescript": "^5.0.4"
   },
