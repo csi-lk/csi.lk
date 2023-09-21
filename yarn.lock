@@ -5729,7 +5729,7 @@ __metadata:
     serve: ^14.2.1
     shx: ^0.3.4
     standard-version: ^9.5.0
-    start-server-and-test: ^2.0.0
+    start-server-and-test: ^2.0.1
     stylelint: ^15.10.3
     stylelint-config-standard: ^34.0.0
     ts-node: ^10.9.1
@@ -13305,9 +13305,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-server-and-test@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "start-server-and-test@npm:2.0.0"
+"start-server-and-test@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "start-server-and-test@npm:2.0.1"
   dependencies:
     arg: ^5.0.2
     bluebird: 3.7.2
@@ -13321,7 +13321,7 @@ __metadata:
     server-test: src/bin/start.js
     start-server-and-test: src/bin/start.js
     start-test: src/bin/start.js
-  checksum: 8788e59ad78275332c78325a804504ac558f06a112d47cb5bc3d012d2bda46add72c863cae2357836fe245ee4e22e2fec0b6d47dbdf5e0f0f5cfd1a57544d100
+  checksum: d423e0950815d29180177c6c53d6fddcb13b64ca69ea9735b82db264ad57229f9bc9ceb5fd5623f23331dad2d5fa5a895988e84b77e1a0e37797803bcca8f7d2
   languageName: node
   linkType: hard
 
