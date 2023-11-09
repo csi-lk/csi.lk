@@ -5668,7 +5668,7 @@ __metadata:
     "@11ty/eleventy": ^2.0.1
     "@babel/core": ^7.23.2
     "@babel/plugin-transform-react-jsx": ^7.22.15
-    "@babel/plugin-transform-typescript": ^7.22.15
+    "@babel/plugin-transform-typescript": ^7.23.3
     "@babel/preset-env": ^7.23.2
     "@babel/preset-react": ^7.22.15
     "@babel/preset-typescript": ^7.23.3
