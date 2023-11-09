@@ -54,7 +54,7 @@
     "@babel/plugin-transform-react-jsx": "^7.22.15",
     "@babel/plugin-transform-typescript": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
-    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
