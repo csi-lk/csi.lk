@@ -55,49 +55,54 @@ export = function TalkPage({
             Loading SpeakerDeck within iFrame
           </iframe>
         </div>)}
-        <h2 className={`${baseClass}-date`}>Relevant Links</h2>
-        <ul>
-          {repo && (<li>
-            <a
-              href={repo}
-              target="_blank"
-              rel="noopener"
-              aria-describedby="open-new-window-external"
-            >
-              Companion Repo
-            </a>
-          </li>)}
-          {slidesSD && (<li>
-            <a
-              href={slidesSD}
-              target="_blank"
-              rel="noopener"
-              aria-describedby="open-new-window-external"
-            >
-              Slides Presentation on Speakerdeck
-            </a>
-          </li>)}
-          {(slidesPdf && <li>
-            <a
-              href={slidesPdf}
-              target="_blank"
-              rel="noopener"
-              aria-describedby="open-new-window-external"
-            >
-              Slides in .PDF format
-            </a>
-          </li>)}
-          {slidesRaw && (<li>
-            <a
-              href={slidesRaw}
-              target="_blank"
-              rel="noopener"
-              aria-describedby="open-new-window-external"
-            >
-              Raw markdown of the slides (incl. notes)
-            </a>
-          </li> )}
-        </ul>
+        {repo || slidesSD || slidesPdf || slidesRaw || (
+          <>
+            <h2 className={`${baseClass}-date`}>Relevant Links</h2>
+            <ul>
+              {repo && (<li>
+                <a
+                  href={repo}
+                  target="_blank"
+                  rel="noopener"
+                  aria-describedby="open-new-window-external"
+                >
+                  Companion Repo
+                </a>
+              </li>)}
+              {slidesSD && (<li>
+                <a
+                  href={slidesSD}
+                  target="_blank"
+                  rel="noopener"
+                  aria-describedby="open-new-window-external"
+                >
+                  Slides Presentation on Speakerdeck
+                </a>
+              </li>)}
+              {(slidesPdf && <li>
+                <a
+                  href={slidesPdf}
+                  target="_blank"
+                  rel="noopener"
+                  aria-describedby="open-new-window-external"
+                >
+                  Slides in .PDF format
+                </a>
+              </li>)}
+              {slidesRaw && (<li>
+                <a
+                  href={slidesRaw}
+                  target="_blank"
+                  rel="noopener"
+                  aria-describedby="open-new-window-external"
+                >
+                  Raw markdown of the slides (incl. notes)
+                </a>
+              </li> )}
+            </ul>
+          </>
+        )}
+
         {content}
       </article>
     {useMermaid && (
