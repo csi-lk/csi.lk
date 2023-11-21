@@ -57,3 +57,7 @@ Keep in mind I only dedicated about an hour a week on this for 3 weeks, but I ha
 If you follow this mantra, one day, you too will be charging $300 for 20 minutes of easy work
 
 Thank you
+
+---
+
+Bonus! My git aliases are available as a [downloadable package named "git goodies" or `gg`](https://github.com/csi-lk/gg)
