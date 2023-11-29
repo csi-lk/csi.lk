@@ -421,6 +421,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/helper-create-class-features-plugin@npm:^7.23.5":
+  version: 7.23.5
+  resolution: "@babel/helper-create-class-features-plugin@npm:7.23.5"
+  dependencies:
+    "@babel/helper-annotate-as-pure": ^7.22.5
+    "@babel/helper-environment-visitor": ^7.22.20
+    "@babel/helper-function-name": ^7.23.0
+    "@babel/helper-member-expression-to-functions": ^7.23.0
+    "@babel/helper-optimise-call-expression": ^7.22.5
+    "@babel/helper-replace-supers": ^7.22.20
+    "@babel/helper-skip-transparent-expression-wrappers": ^7.22.5
+    "@babel/helper-split-export-declaration": ^7.22.6
+    semver: ^6.3.1
+  peerDependencies:
+    "@babel/core": ^7.0.0
+  checksum: fe7c6c0baca1838bba76ac1330df47b661d932354115ea9e2ea65b179f80b717987d3c3da7e1525fd648e5f2d86c620efc959cabda4d7562b125a27c3ac780d0
+  languageName: node
+  linkType: hard
+
 "@babel/helper-create-regexp-features-plugin@npm:^7.18.6":
   version: 7.21.4
   resolution: "@babel/helper-create-regexp-features-plugin@npm:7.21.4"
@@ -548,6 +567,15 @@ __metadata:
   dependencies:
     "@babel/types": ^7.22.5
   checksum: 4bd5791529c280c00743e8bdc669ef0d4cd1620d6e3d35e0d42b862f8262bc2364973e5968007f960780344c539a4b9cf92ab41f5b4f94560a9620f536de2a39
+  languageName: node
+  linkType: hard
+
+"@babel/helper-member-expression-to-functions@npm:^7.23.0":
+  version: 7.23.0
+  resolution: "@babel/helper-member-expression-to-functions@npm:7.23.0"
+  dependencies:
+    "@babel/types": ^7.23.0
+  checksum: 494659361370c979ada711ca685e2efe9460683c36db1b283b446122596602c901e291e09f2f980ecedfe6e0f2bd5386cb59768285446530df10c14df1024e75
   languageName: node
   linkType: hard
 
@@ -1928,17 +1956,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.23.4":
-  version: 7.23.4
-  resolution: "@babel/plugin-transform-typescript@npm:7.23.4"
+"@babel/plugin-transform-typescript@npm:^7.23.5":
+  version: 7.23.5
+  resolution: "@babel/plugin-transform-typescript@npm:7.23.5"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.22.5
-    "@babel/helper-create-class-features-plugin": ^7.22.15
+    "@babel/helper-create-class-features-plugin": ^7.23.5
     "@babel/helper-plugin-utils": ^7.22.5
     "@babel/plugin-syntax-typescript": ^7.23.3
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 1cd8426763296d27547924022d6aa35ae9c6b93e4f3110af6123d03eec7b7fa319a6965165e13215ba30ac37ef2cca67dadbe15d1f1508b3d1a06423a0592d3a
+  checksum: d77b5cc22cf48fe461de07e4f058dc9c0d8c4e3ca49de0e3a336a94ab39bfa4f4732598e36c479bec0dd1bf4aff9154bc2dcbfbe3145a751e4771ccae5afaaf8
   languageName: node
   linkType: hard
 
@@ -5663,7 +5691,7 @@ __metadata:
     "@11ty/eleventy": ^2.0.1
     "@babel/core": ^7.23.3
     "@babel/plugin-transform-react-jsx": ^7.23.4
-    "@babel/plugin-transform-typescript": ^7.23.4
+    "@babel/plugin-transform-typescript": ^7.23.5
     "@babel/preset-env": ^7.23.3
     "@babel/preset-react": ^7.23.3
     "@babel/preset-typescript": ^7.23.3
