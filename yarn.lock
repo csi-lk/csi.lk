@@ -3327,9 +3327,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^6.4.0":
-  version: 6.4.0
-  resolution: "@testing-library/jest-dom@npm:6.4.0"
+"@testing-library/jest-dom@npm:^6.4.1":
+  version: 6.4.1
+  resolution: "@testing-library/jest-dom@npm:6.4.1"
   dependencies:
     "@adobe/css-tools": ^4.3.2
     "@babel/runtime": ^7.9.2
@@ -3356,7 +3356,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: e1c314cf1c74f26b1dea632fd1e2168afb62ef8b0320e294fa0dbfa58356021dcefe453d6165c102c5105dfca7502b18109cbcb061cbcb91b97826f59a1bbf9d
+  checksum: 66cd945fc81181289835f24791ae4de4913ac4e4fd8bc2e2ee7393ad7298bc3c2fc5acd6951c5b2212a03ebe914c6924c3da6e46225126387cb2200554004b67
   languageName: node
   linkType: hard
 
@@ -5738,7 +5738,7 @@ __metadata:
     "@commitlint/cli": ^18.6.0
     "@commitlint/config-conventional": ^18.6.0
     "@testing-library/dom": ^9.3.4
-    "@testing-library/jest-dom": ^6.4.0
+    "@testing-library/jest-dom": ^6.4.1
     "@types/common-tags": ^1.8.4
     "@types/jest": ^29.5.11
     "@types/node": ^20.11.14
