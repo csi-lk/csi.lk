@@ -5750,7 +5750,7 @@ __metadata:
     babel-jest: ^29.7.0
     common-tags: ^1.8.2
     cross-env: ^7.0.3
-    cssnano: ^6.0.3
+    cssnano: ^6.0.4
     cssnano-preset-advanced: ^6.0.3
     cypress: ^13.6.5
     enzyme-adapter-react-16: ^1.15.8
@@ -5920,6 +5920,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cssnano-preset-default@npm:^6.0.4":
+  version: 6.0.4
+  resolution: "cssnano-preset-default@npm:6.0.4"
+  dependencies:
+    css-declaration-sorter: ^7.1.1
+    cssnano-utils: ^4.0.1
+    postcss-calc: ^9.0.1
+    postcss-colormin: ^6.0.2
+    postcss-convert-values: ^6.0.3
+    postcss-discard-comments: ^6.0.1
+    postcss-discard-duplicates: ^6.0.2
+    postcss-discard-empty: ^6.0.2
+    postcss-discard-overridden: ^6.0.1
+    postcss-merge-longhand: ^6.0.2
+    postcss-merge-rules: ^6.0.3
+    postcss-minify-font-values: ^6.0.1
+    postcss-minify-gradients: ^6.0.1
+    postcss-minify-params: ^6.0.2
+    postcss-minify-selectors: ^6.0.2
+    postcss-normalize-charset: ^6.0.1
+    postcss-normalize-display-values: ^6.0.1
+    postcss-normalize-positions: ^6.0.1
+    postcss-normalize-repeat-style: ^6.0.1
+    postcss-normalize-string: ^6.0.1
+    postcss-normalize-timing-functions: ^6.0.1
+    postcss-normalize-unicode: ^6.0.2
+    postcss-normalize-url: ^6.0.1
+    postcss-normalize-whitespace: ^6.0.1
+    postcss-ordered-values: ^6.0.1
+    postcss-reduce-initial: ^6.0.2
+    postcss-reduce-transforms: ^6.0.1
+    postcss-svgo: ^6.0.2
+    postcss-unique-selectors: ^6.0.2
+  peerDependencies:
+    postcss: ^8.4.31
+  checksum: a6b8b0fbba0626adeedb9bbd41e2b9b424eb08ac34f7014ba2ded1fcc73513a73a7f1fb56b328c8b168e04a19a297ff6a5f37c4b8621260e2752a2b99dff51ac
+  languageName: node
+  linkType: hard
+
 "cssnano-utils@npm:^4.0.1":
   version: 4.0.1
   resolution: "cssnano-utils@npm:4.0.1"
@@ -5929,15 +5968,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "cssnano@npm:6.0.3"
+"cssnano@npm:^6.0.4":
+  version: 6.0.4
+  resolution: "cssnano@npm:6.0.4"
   dependencies:
-    cssnano-preset-default: ^6.0.3
-    lilconfig: ^3.0.0
+    cssnano-preset-default: ^6.0.4
+    lilconfig: ^3.1.1
   peerDependencies:
     postcss: ^8.4.31
-  checksum: 2b30ce0d9ba337737f4c6af4b6731dd5031cc4e1414a43b87ddb20fd9903a4f5b41182cc6a4b98cc82ca7975ecaa4b8ac487bd34f698998404c5ed0944914a6b
+  checksum: b6a94cfa93115d01c290773a818d7247e63e7021e3d14749510daf7858f4d40a6bf20bdee852a64d4cec6554c3f3b9d5164a3bdf3db5cf15059c2b533c63026a
   languageName: node
   linkType: hard
 
@@ -9881,6 +9920,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lilconfig@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "lilconfig@npm:3.1.1"
+  checksum: dc8a4f4afde3f0fac6bd36163cc4777a577a90759b8ef1d0d766b19ccf121f723aa79924f32af5b954f3965268215e046d0f237c41c76e5ef01d4e6d1208a15e
+  languageName: node
+  linkType: hard
+
 "lines-and-columns@npm:^1.1.6":
   version: 1.2.4
   resolution: "lines-and-columns@npm:1.2.4"
@@ -11501,6 +11547,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-convert-values@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "postcss-convert-values@npm:6.0.3"
+  dependencies:
+    browserslist: ^4.22.2
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.4.31
+  checksum: 8f85d66e66f2898799fa49737f3929d0c4ee54270c76c29d260cbe31599ebab3805d1583807c512e487287164d939c367947bc586fb01090a7ccdf942bd4cb2e
+  languageName: node
+  linkType: hard
+
 "postcss-css-variables@npm:^0.19.0":
   version: 0.19.0
   resolution: "postcss-css-variables@npm:0.19.0"
@@ -11532,12 +11590,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-discard-duplicates@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "postcss-discard-duplicates@npm:6.0.2"
+  peerDependencies:
+    postcss: ^8.4.31
+  checksum: 918ed7eeb537a955172c73a3dfbcde57fd6515a4c993dfe65a4fe5c4f1d7eda07a3811f73b7d6c6b29d9ba1e6a15e77366866335cb56841777387d482a55e6a8
+  languageName: node
+  linkType: hard
+
 "postcss-discard-empty@npm:^6.0.1":
   version: 6.0.1
   resolution: "postcss-discard-empty@npm:6.0.1"
   peerDependencies:
     postcss: ^8.4.31
   checksum: d60fdecd84af6254d87e8947522c8a82e72c28084e4e3bc7d5e1157926e31abee16af08d61716545370dc34e034dfd226468e96579b8aab51b6911f4cc21288e
+  languageName: node
+  linkType: hard
+
+"postcss-discard-empty@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "postcss-discard-empty@npm:6.0.2"
+  peerDependencies:
+    postcss: ^8.4.31
+  checksum: 3eed50fb937a68a01a051ea8824b89879b31f31e3061322e74f747240141f2447c760bd029493d942be5ec2d383cf393c2d281556e3de0f93c9ceec2a0cbb760
   languageName: node
   linkType: hard
 
