@@ -5779,7 +5779,7 @@ __metadata:
     eslint-config-prettier: ^9.1.0
     eslint-import-resolver-node: ^0.3.9
     eslint-plugin-import: ^2.29.1
-    eslint-plugin-jest-dom: ^5.3.0
+    eslint-plugin-jest-dom: ^5.4.0
     eslint-plugin-json: ^3.1.0
     eslint-plugin-local-rules: 2.0.1
     eslint-plugin-sort-imports-es6-autofix: ^0.6.0
@@ -6925,19 +6925,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest-dom@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "eslint-plugin-jest-dom@npm:5.3.0"
+"eslint-plugin-jest-dom@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "eslint-plugin-jest-dom@npm:5.4.0"
   dependencies:
     "@babel/runtime": ^7.16.3
     requireindex: ^1.2.0
   peerDependencies:
     "@testing-library/dom": ^8.0.0 || ^9.0.0 || ^10.0.0
-    eslint: ^6.8.0 || ^7.0.0 || ^8.0.0
+    eslint: ^6.8.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
   peerDependenciesMeta:
     "@testing-library/dom":
       optional: true
-  checksum: 85a35738c85783192cd9d92ad8b8fd0345e38c8fbd3ab9777d2b61a9672a99b74718dd9cd0ce17a0365303562b480f995356f2e76955f8d6d599fb2c4db53e75
+  checksum: 0e1d27ca040a7d7e698b7f1d4a480be4821ccad03f322360fb75723e558b4d00d86fdbf4aaf5f07f4bc259fd35a91fd14ea0f8ca788cc3e28db399c8ff653a6f
   languageName: node
   linkType: hard
 
