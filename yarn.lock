@@ -3790,10 +3790,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zeit/schemas@npm:2.29.0":
-  version: 2.29.0
-  resolution: "@zeit/schemas@npm:2.29.0"
-  checksum: 3cea06bb67d790336aca0cc17580fd492ff3fc66ef4d180dce7053ff7ff54ab81b56bf718ba6f537148c581161d06306a481ec218d540bff922e0e009844ffd1
+"@zeit/schemas@npm:2.36.0":
+  version: 2.36.0
+  resolution: "@zeit/schemas@npm:2.36.0"
+  checksum: 9a5939a14ffa1e3a2c73ccb7c06b7bbc932baf1012d9191d3df641f26a2c3f7a6f25ea0213aad02a2011602ded3410cbcdc47633ec9ed28400485625b432945f
   languageName: node
   linkType: hard
 
@@ -5802,7 +5802,7 @@ __metadata:
     postcss-scss: ^4.0.9
     prettier: ^3.2.5
     rss-parser: ^3.13.0
-    serve: ^14.2.2
+    serve: ^14.2.3
     shx: ^0.3.4
     standard-version: ^9.5.0
     start-server-and-test: ^2.0.3
@@ -13529,11 +13529,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serve@npm:^14.2.2":
-  version: 14.2.2
-  resolution: "serve@npm:14.2.2"
+"serve@npm:^14.2.3":
+  version: 14.2.3
+  resolution: "serve@npm:14.2.3"
   dependencies:
-    "@zeit/schemas": 2.29.0
+    "@zeit/schemas": 2.36.0
     ajv: 8.12.0
     arg: 5.0.2
     boxen: 7.0.0
@@ -13546,7 +13546,7 @@ __metadata:
     update-check: 1.5.4
   bin:
     serve: build/main.js
-  checksum: 9c2d599af98c27b766f7933390aa238791b20ddc83236e30767325756d5a3d082b4f75e60975fe2d0fc2bd5cf5d51e36307dcb8c933d682962b125a244caab2e
+  checksum: 92aaa0de45b67f920c6171ef70c9e2e6e7f32868f265bd7e2e8855a77867318ea4ebe87b61ce3eef6aed07f77e6d7f52b2bea86e346c4d5a54451a7c4f350997
   languageName: node
   linkType: hard
 
