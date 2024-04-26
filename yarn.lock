@@ -5771,7 +5771,7 @@ __metadata:
     common-tags: ^1.8.2
     cross-env: ^7.0.3
     cssnano: ^7.0.1
-    cssnano-preset-advanced: ^7.0.0
+    cssnano-preset-advanced: ^7.0.1
     cypress: ^13.8.1
     enzyme-adapter-react-16: ^1.15.8
     eslint: ^8.57.0
@@ -5885,60 +5885,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano-preset-advanced@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "cssnano-preset-advanced@npm:7.0.0"
+"cssnano-preset-advanced@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "cssnano-preset-advanced@npm:7.0.1"
   dependencies:
     autoprefixer: ^10.4.19
     browserslist: ^4.23.0
-    cssnano-preset-default: ^7.0.0
+    cssnano-preset-default: ^7.0.1
     postcss-discard-unused: ^7.0.0
     postcss-merge-idents: ^7.0.0
     postcss-reduce-idents: ^7.0.0
     postcss-zindex: ^7.0.0
   peerDependencies:
     postcss: ^8.4.31
-  checksum: 54079e6b7675c2de8a81d2cb61a36155dad1733b9010e7dabeb40ad46877def71eee33b8c304b2f9a6c6cfbc9c86097e0a8169a5e0cddab1ff90394007add992
-  languageName: node
-  linkType: hard
-
-"cssnano-preset-default@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "cssnano-preset-default@npm:7.0.0"
-  dependencies:
-    browserslist: ^4.23.0
-    css-declaration-sorter: ^7.2.0
-    cssnano-utils: ^5.0.0
-    postcss-calc: ^9.0.1
-    postcss-colormin: ^7.0.0
-    postcss-convert-values: ^7.0.0
-    postcss-discard-comments: ^7.0.0
-    postcss-discard-duplicates: ^7.0.0
-    postcss-discard-empty: ^7.0.0
-    postcss-discard-overridden: ^7.0.0
-    postcss-merge-longhand: ^7.0.0
-    postcss-merge-rules: ^7.0.0
-    postcss-minify-font-values: ^7.0.0
-    postcss-minify-gradients: ^7.0.0
-    postcss-minify-params: ^7.0.0
-    postcss-minify-selectors: ^7.0.0
-    postcss-normalize-charset: ^7.0.0
-    postcss-normalize-display-values: ^7.0.0
-    postcss-normalize-positions: ^7.0.0
-    postcss-normalize-repeat-style: ^7.0.0
-    postcss-normalize-string: ^7.0.0
-    postcss-normalize-timing-functions: ^7.0.0
-    postcss-normalize-unicode: ^7.0.0
-    postcss-normalize-url: ^7.0.0
-    postcss-normalize-whitespace: ^7.0.0
-    postcss-ordered-values: ^7.0.0
-    postcss-reduce-initial: ^7.0.0
-    postcss-reduce-transforms: ^7.0.0
-    postcss-svgo: ^7.0.0
-    postcss-unique-selectors: ^7.0.0
-  peerDependencies:
-    postcss: ^8.4.31
-  checksum: d480e57d20a7bb1e1b5ff7e6ea91b60de91f8a340593441522e52a9e51f83f335cc76cbe436c43643f3ebfdc667ec59d3944019f108fb2b14afc1eb750c83762
+  checksum: 9e6a1769ccc98b02e063c4c120e458a7476b1b8caf16c44c6adf457224741465ac05eb86d8f3952cf4466be0fdccfa8296f07b6f6c6bb71c788da743a322b12a
   languageName: node
   linkType: hard
 
@@ -11582,18 +11542,6 @@ __metadata:
   peerDependencies:
     postcss: ^8.4.38
   checksum: f42562bf134ef0a2038a709e3698f0d16a5ef9e20f97c0afc05dbdadf167a9a49d25b8d2f70e9fa1ecc867a2db2a04f8b3fb32db6e12d146356aae599908e5ce
-  languageName: node
-  linkType: hard
-
-"postcss-calc@npm:^9.0.1":
-  version: 9.0.1
-  resolution: "postcss-calc@npm:9.0.1"
-  dependencies:
-    postcss-selector-parser: ^6.0.11
-    postcss-value-parser: ^4.2.0
-  peerDependencies:
-    postcss: ^8.2.2
-  checksum: 7327ed83bfec544ab8b3e38353baa72ff6d04378b856db4ad82dbd68ce0b73668867ef182b5d4025f9dd9aa9c64aacc50cd1bd9db8d8b51ccc4cb97866b9d72b
   languageName: node
   linkType: hard
 
