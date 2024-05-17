@@ -5892,7 +5892,7 @@ __metadata:
     markdown-it: ^14.1.0
     markdown-it-attrs: ^4.1.6
     markdown-it-external-links: ^0.0.6
-    markdown-it-highlightjs: ^4.0.1
+    markdown-it-highlightjs: ^4.1.0
     npm-run-all: ^4.1.5
     postcss: ^8.4.38
     postcss-calc: ^10.0.0
@@ -8339,10 +8339,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.5.1":
-  version: 11.7.0
-  resolution: "highlight.js@npm:11.7.0"
-  checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
+"highlight.js@npm:^11.9.0":
+  version: 11.9.0
+  resolution: "highlight.js@npm:11.9.0"
+  checksum: 4043d31c5de9d27d13387d9a9e5e1939557254b7b85f0fab85d9cae0e420e131a3456ebf6148552020a1d8a216d671d583f2433d6c4de6179b8a66487a8325cb
   languageName: node
   linkType: hard
 
@@ -10438,12 +10438,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-highlightjs@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "markdown-it-highlightjs@npm:4.0.1"
+"markdown-it-highlightjs@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "markdown-it-highlightjs@npm:4.1.0"
   dependencies:
-    highlight.js: ^11.5.1
-  checksum: c7337ac0c912c09db381aade5d00068f84f83ed440b9fcd94bfe05b766f0b928100b2b0c50dc53b9f3895a40cd51aad142ed4246c83a4203af320359e10255f9
+    highlight.js: ^11.9.0
+  checksum: c7f9b28310b0df731c7f76286b986257a0f99af2e9ac462fa24d1732bdd1074edfc440f3bdfd35b3a98846c56a7538978ce0f5f0aed2b44d019a0805d3018755
   languageName: node
   linkType: hard
 
