@@ -3419,12 +3419,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.14.3":
-  version: 20.14.3
-  resolution: "@types/node@npm:20.14.3"
+"@types/node@npm:^20.14.5":
+  version: 20.14.5
+  resolution: "@types/node@npm:20.14.5"
   dependencies:
     undici-types: ~5.26.4
-  checksum: c00cedce9f469415a50c0a0562860ef50e896fdc598f2cd56316a15d863410b155f3004bebd90b1fa04af4b3a5584ae9803a6dbe22604dab3889692eb84aa85d
+  checksum: b337784407edbdd374b25149e9dfce80368846a9b0dc5b7d88a2591572ec87a5d87c11c9ddc1906294aef26a1ad889d56be8b08de6be3ce1256b8d9a836bc7d8
   languageName: node
   linkType: hard
 
@@ -5594,7 +5594,7 @@ __metadata:
     "@testing-library/jest-dom": ^6.4.6
     "@types/common-tags": ^1.8.4
     "@types/jest": ^29.5.12
-    "@types/node": ^20.14.3
+    "@types/node": ^20.14.5
     "@typescript-eslint/eslint-plugin": ^7.13.1
     "@typescript-eslint/parser": ^7.13.1
     add: ^2.0.6
