@@ -75,7 +75,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest-dom": "^5.4.0",
     "eslint-plugin-json": "^4.0.0",
-    "eslint-plugin-local-rules": "2.0.1",
+    "eslint-plugin-local-rules": "3.0.2",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "eslint-plugin-unicorn": "^54.0.0",
     "fast-glob": "^3.3.2",
