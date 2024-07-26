@@ -479,22 +479,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.24.8":
-  version: 7.24.8
-  resolution: "@babel/helper-create-class-features-plugin@npm:7.24.8"
+"@babel/helper-create-class-features-plugin@npm:^7.25.0":
+  version: 7.25.0
+  resolution: "@babel/helper-create-class-features-plugin@npm:7.25.0"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.24.7
-    "@babel/helper-environment-visitor": ^7.24.7
-    "@babel/helper-function-name": ^7.24.7
     "@babel/helper-member-expression-to-functions": ^7.24.8
     "@babel/helper-optimise-call-expression": ^7.24.7
-    "@babel/helper-replace-supers": ^7.24.7
+    "@babel/helper-replace-supers": ^7.25.0
     "@babel/helper-skip-transparent-expression-wrappers": ^7.24.7
-    "@babel/helper-split-export-declaration": ^7.24.7
+    "@babel/traverse": ^7.25.0
     semver: ^6.3.1
   peerDependencies:
     "@babel/core": ^7.0.0
-  checksum: b4707e2c4a2cb504d7656168d887bf653db6fbe8ece4502e28e5798f2ec624dc606f2d6bc4820d31b4dc1b80f7d83d98db83516dda321a76c075e5f531abed0b
+  checksum: e986c1187e16837b71f12920bd77e672b4bc19ac6dfe30b9d9d515a311c5cc5a085a8e337ac8597b1cb7bd0efdbfcc66f69bf652786c9a022070f9b782deec0d
   languageName: node
   linkType: hard
 
@@ -2158,17 +2156,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.24.8":
-  version: 7.24.8
-  resolution: "@babel/plugin-transform-typescript@npm:7.24.8"
+"@babel/plugin-transform-typescript@npm:^7.25.0":
+  version: 7.25.0
+  resolution: "@babel/plugin-transform-typescript@npm:7.25.0"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.24.7
-    "@babel/helper-create-class-features-plugin": ^7.24.8
+    "@babel/helper-create-class-features-plugin": ^7.25.0
     "@babel/helper-plugin-utils": ^7.24.8
+    "@babel/helper-skip-transparent-expression-wrappers": ^7.24.7
     "@babel/plugin-syntax-typescript": ^7.24.7
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 4dcdc0ca2b523ccfb216ad7e68d2954576e42d83956e0e65626ad1ece17da85cb1122b6c350c4746db927996060466c879945d40cde156a94019f30587fef41a
+  checksum: 68f755be1c561740cd4e74f07ccc4777672fa1c0b9aa2699efe73bc881aed4249add117d5492632adc7d80c9dea3a9d153fcce7ba29ff12b0e2ba6bb2d148fdd
   languageName: node
   linkType: hard
 
@@ -5927,7 +5926,7 @@ __metadata:
     "@11ty/eleventy": ^2.0.1
     "@babel/core": ^7.24.9
     "@babel/plugin-transform-react-jsx": ^7.24.7
-    "@babel/plugin-transform-typescript": ^7.24.8
+    "@babel/plugin-transform-typescript": ^7.25.0
     "@babel/preset-env": ^7.25.0
     "@babel/preset-react": ^7.24.7
     "@babel/preset-typescript": ^7.24.7
