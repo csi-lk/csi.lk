@@ -2064,6 +2064,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-transform-react-jsx@npm:^7.25.2":
+  version: 7.25.2
+  resolution: "@babel/plugin-transform-react-jsx@npm:7.25.2"
+  dependencies:
+    "@babel/helper-annotate-as-pure": ^7.24.7
+    "@babel/helper-module-imports": ^7.24.7
+    "@babel/helper-plugin-utils": ^7.24.8
+    "@babel/plugin-syntax-jsx": ^7.24.7
+    "@babel/types": ^7.25.2
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 44fbde046385916de19a88d77fed9121c6cc6e25b9cdc38a43d8e514a9b18cf391ed3de25e7d6a8996d3fe4c298e395edf856ee20efffaab3b70f8ce225fffa4
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-transform-react-pure-annotations@npm:^7.24.7":
   version: 7.24.7
   resolution: "@babel/plugin-transform-react-pure-annotations@npm:7.24.7"
@@ -5964,7 +5979,7 @@ __metadata:
   dependencies:
     "@11ty/eleventy": ^2.0.1
     "@babel/core": ^7.24.9
-    "@babel/plugin-transform-react-jsx": ^7.24.7
+    "@babel/plugin-transform-react-jsx": ^7.25.2
     "@babel/plugin-transform-typescript": ^7.25.2
     "@babel/preset-env": ^7.25.2
     "@babel/preset-react": ^7.24.7
