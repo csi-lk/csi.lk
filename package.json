@@ -50,7 +50,7 @@
   },
   "homepage": "https://github.com/csi-lk/csi.lk#readme",
   "devDependencies": {
-    "@babel/core": "^7.24.9",
+    "@babel/core": "^7.25.2",
     "@babel/plugin-transform-react-jsx": "^7.25.2",
     "@babel/plugin-transform-typescript": "^7.25.2",
     "@babel/preset-env": "^7.25.2",
