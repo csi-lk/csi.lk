@@ -2156,9 +2156,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-typescript@npm:^7.25.0":
-  version: 7.25.0
-  resolution: "@babel/plugin-transform-typescript@npm:7.25.0"
+"@babel/plugin-transform-typescript@npm:^7.25.2":
+  version: 7.25.2
+  resolution: "@babel/plugin-transform-typescript@npm:7.25.2"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.24.7
     "@babel/helper-create-class-features-plugin": ^7.25.0
@@ -2167,7 +2167,7 @@ __metadata:
     "@babel/plugin-syntax-typescript": ^7.24.7
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 68f755be1c561740cd4e74f07ccc4777672fa1c0b9aa2699efe73bc881aed4249add117d5492632adc7d80c9dea3a9d153fcce7ba29ff12b0e2ba6bb2d148fdd
+  checksum: b0267128d93560a4350919f7230a3b497e20fb8611d9f04bb3560d6b38877305ccad4c40903160263361c6930a84dbcb5b21b8ea923531bda51f67bffdc2dd0b
   languageName: node
   linkType: hard
 
@@ -5972,7 +5972,7 @@ __metadata:
     "@11ty/eleventy": ^2.0.1
     "@babel/core": ^7.24.9
     "@babel/plugin-transform-react-jsx": ^7.24.7
-    "@babel/plugin-transform-typescript": ^7.25.0
+    "@babel/plugin-transform-typescript": ^7.25.2
     "@babel/preset-env": ^7.25.0
     "@babel/preset-react": ^7.24.7
     "@babel/preset-typescript": ^7.24.7
