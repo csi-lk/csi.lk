@@ -1,0 +1,513 @@
+<!DOCTYPE html> <html lang="en" class="no-js"><head ><meta name="keywords" content="pnpm, yarn, npm, package management, lockfiles, semver, renovate, package.json, javascript, nodejs" /> <meta name="description" content="A deep dive into package management, lockfiles and how to manage them" /> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1." /> <meta name="author" content="Callum Silcock, contact@csi.lk" /> <meta name="reply-to" content="contact@csi.lk" /> <meta name="url" content="https://www.csi.lk" /> <meta name="coverage" content="Worldwide" /> <meta name="distribution" content="Global" /> <meta name="rating" content="General" /> <meta name="revisit-after" content="7 days" /> <meta name="og:type" content="text/html" /> <meta name="og:site_name" content="Callum Silcock | Lead Front End Developer & Conference Speaker" /> <meta name="og:email" content="contact@csi.lk" /> <meta name="og:phone_number" content="+447848472822" /> <meta name="theme-color" content="#26292c" /> <meta rel="icon" href="/favicon.ico" /> <meta rel="icon" href="/favicon.svg" type="image/svg+xml" /> <link rel="canonical" href="https://csi.lk/talks/unlocking-lockfiles" /> <title >Unlocking Lockfiles - A developers Guide to Package Management</title> <link rel="stylesheet" href="/styles/index.css?v=2.3.3" /></head> <body ><div hidden><span id="open-new-window">Opens in a new window</span> <span id="open-external">Opens an external site</span> <span id="open-new-window-external">Opens an external site in a new window</span> <span id="open-email">Opens email application</span></div> <div class="page-container fixed" data-testid="page-container"><a href="#content" class="skip"></a> <nav class="navigation"><a class="logo" href="/"><i class="icon-terminal" role="presentation"> </i> <h2 class="logo">Callum 
+ Silcock</h2></a> <div class="links"><a href="/talks">talks</a> <a href="/timeline">timeline</a> <a href="/articles">articles</a> <a href="/bookshelf">bookshelf</a></div></nav> <main ><article id="content" class="talk"><h1 >Unlocking Lockfiles - A developers Guide to Package Management</h1> <div class="talk-subheader"><h2 class="talk-date">Posted on:  <time datetime="2025-03-19">2025-03-19</time></h2> <a href="https://github.com/csi-lk/csi.lk/tree/master/src/talks/unlocking-lockfiles.md" target="_blank" rel="noopener" aria-describedby="open-new-window-external">source</a></div> A deep dive into package management, lockfiles and how to manage them <div class="embed-container"><iframe src="https://speakerdeck.com/player/a54de6879b50498f9c28732e2a14a3d9" allowfullscreen scrolling="no" allow="encrypted-media;">Loading SpeakerDeck within iFrame</iframe></div> https://speakerdeck.com/csilk/unlocking-lockfiles-a-developers-guide-to-package-management <h1>Unlocking Lockfiles</h1>
+<h2>A Developers Guide to Package Management</h2>
+<p>Another <em>CodingWithCallum</em> session</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h1>What are we covering?</h1>
+<ul>
+<li>History</li>
+<li><em>Fun</em>damentals</li>
+</ul>
+<p>notes:
+I could spend hours talking about package managers and how they work so I'm going to try to filter the content to the most relevant information. If you want me to go into more depth on any topic please ask at the end</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<p>notes:</p>
+<p>The easiest way for me to explain package management is to go through how we got here and explain some concepts and the needs along the way</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Need (&gt;2010)</h1>
+<ul>
+<li>include libraries via <code>&lt;script&gt;</code> tags</li>
+<li>copypasta code from stackoverflow etc.</li>
+</ul>
+<p>notes:
+Back in the day there was no package management system
+We just cowboy'd script tags (if you'd like an example of this check out the analytics package 😉)
+Source control (if you were using it) would contain a bunch of vendor files</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Need (&gt;2010)</h1>
+<p><em>an extremely embarrassing example</em></p>
+<p>notes:
+Open url: https://github.com/csi-lk/silk-ajax-comments/blob/master/ajaxcomments.js (written for wordpress v3, we're currently at v7)
+The reason for no indentation is that ie7 would sometimes stop executing when it would hit tabs in the code
+super secure approach</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Birth (2010)</h1>
+<ul>
+<li><code>npm</code> is created</li>
+<li>Originally designed for Nodejs</li>
+<li>Created standardised registry</li>
+<li><code>package.json</code> created</li>
+</ul>
+<p>notes:
+npm - node package manager was created
+first centralised registry for JavaScript packages... also confusingly named <code>npm</code>
+standardised versioning and dependency management</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Birth (2010)</h1>
+<p><em>another... extremely embarrassing example</em></p>
+<p>notes:</p>
+<p>https://www.npmjs.com/package/aws-ses-local
+defined <code>package.json</code> with version fields etc.
+overall, a very manual <code>npm publish</code> workflow
+show dependency list</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Birth (2010)</h1>
+<ul>
+<li>Recursive dependency resolution</li>
+<li>🐢🐢🐢🐢</li>
+<li>Nested <code>node_modules</code></li>
+</ul>
+<p>notes:</p>
+<p>Ok so the main point here is that module resolution was created and happened recursively
+So when you install a package, <code>npm</code> would read that package.json's file and install their packages and so forth
+(turtles all the way down)
+Originally <code>npm</code> decided to create a <code>node_modules</code> folder in each dependencies dependency</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Birth (2010)</h1>
+<pre><code class="hljs">callums-bad-code/
+├── node_modules/
+│   └── A/
+│       ├── <span class="hljs-keyword">package</span>.json
+│       └── node_modules/
+│           └── B/
+│               ├── <span class="hljs-keyword">package</span>.json
+│               └── node_modules/
+│                   └── C/
+│                       └── <span class="hljs-keyword">package</span>.json
+</code></pre>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Birth (2010)</h1>
+<ul>
+<li>This was pretty revolutionary</li>
+<li><code>node_modules-black-hole.png</code></li>
+<li>Poor windows</li>
+</ul>
+<p>notes:</p>
+<p>No more manual management, projects became portable and conflicts could happen automatically
+Crazy amount of duplication and caused path length issues on Windows (affecting dozens of front end developers!)
+Great base to start from
+Ok we can move on to the next era, <em>the rise</em></p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Rise (2012-2015)</h1>
+<ul>
+<li>Bower / RequireJS / Browserfy / Grunt / Gulp</li>
+<li><code>npm</code> gets used for frontend things <em>alot</em></li>
+<li><code>node_modules</code> folder becomes truely unusable</li>
+</ul>
+<p>notes:</p>
+<p>A bunch of new tooling starts to come on the scene
+Bower specifically came out for front end dependencies and started to tackle fonts, static files etc. as well
+RequireJS and Browserify started to bridge the gap between Node and JS dependencies
+Then we had build systems of Grunt / Gulp start to integrate into the package management fray
+But, overall... <code>npm</code> starts to get adopted for the front end
+The amount of dependencies increases, <code>node_modules</code> becomes crazy complicated. We need a better solution</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Flat (2016)</h1>
+<ul>
+<li><code>yarn</code> released (from Facebook -&gt; meta)
+<ul>
+<li>lockfiles are born</li>
+<li>offline mode</li>
+<li>security (spoliers!)</li>
+</ul>
+</li>
+<li><code>npm</code> creates <code>package-lock.json</code></li>
+<li>flat dependency to avoid duplications</li>
+</ul>
+<p>notes:</p>
+<p><code>yarn</code> was my favourite package manager until very recently
+Introduced lockfiles for <em>deterministic</em> installation
+Parallelize dependency installation</p>
+<p>So npm went, hey we can do that too and created the package lock</p>
+<p>Ok, lets explain flat dependency resolution first</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Flat (2016)</h1>
+<pre><code class="hljs">node_modules/
+├── <span class="hljs-keyword">package</span>-a/
+│   └── node_modules/
+│       └── <span class="hljs-keyword">package</span>-c/ (<span class="hljs-keyword">version</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>)
+└── <span class="hljs-keyword">package</span>-b/
+    └── node_modules/
+        └── <span class="hljs-keyword">package</span>-c/ (<span class="hljs-keyword">version</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>)
+</code></pre>
+<p>notes:</p>
+<p>Ok remember our nested dependency structure from before that <code>npm</code> introduced</p>
+<p><code>package-c</code> appears twice, creating duplication even when both <code>package-a</code> and <code>package-b</code> use the same version</p>
+<p>Well, lets start &quot;hoisting&quot; things</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Flat (2016)</h1>
+<pre><code class="hljs">node<span class="hljs-number">_m</span>odules/
+├── <span class="hljs-keyword">package</span>-a/
+├── <span class="hljs-keyword">package</span>-b/
+└── <span class="hljs-keyword">package</span>-c/ (version <span class="hljs-number">1.0</span>.<span class="hljs-number">0</span>, <span class="hljs-keyword">shared</span> <span class="hljs-meta">by</span> both <span class="hljs-keyword">package</span>-a and <span class="hljs-keyword">package</span>-b)
+</code></pre>
+<p>notes:</p>
+<p>What's <code>hoisting</code>?
+Dependencies are &quot;lifted&quot; to the highest possible level in the <code>node_modules</code> tree.
+By doing this we can de-duplicate our dependencies</p>
+<p>But what happens when different versions are required? For example, if <code>package-b</code> needs <code>package-c@2.0.0</code>:</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Flat (2016)</h1>
+<pre><code class="hljs">node_modules/
+├── <span class="hljs-keyword">package</span>-a/
+├── <span class="hljs-keyword">package</span>-b/
+│   └── node_modules/
+│       └── <span class="hljs-keyword">package</span>-c/ (<span class="hljs-keyword">version</span> <span class="hljs-number">2.0</span><span class="hljs-number">.0</span>)
+└── <span class="hljs-keyword">package</span>-c/ (<span class="hljs-keyword">version</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>, used by <span class="hljs-keyword">package</span>-a)
+</code></pre>
+<p>notes:</p>
+<p>The most commonly used version is hoisted to the top level, and other versions remain nested where needed.</p>
+<p>This solved a ton of the issues we saw introduced by <code>npm</code> but created some more like the &quot;Phantom dependency&quot; problem 👻</p>
+<p>But before we get to that... security!</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Flat (2016)</h1>
+<p><code>yarn</code>'s new security model</p>
+<ul>
+<li>checksums</li>
+<li>offline mode</li>
+<li>resolution</li>
+<li>license checks</li>
+<li>script execution</li>
+<li>auditing</li>
+</ul>
+<p>notes:</p>
+<p>Security!</p>
+<ul>
+<li>cryptographic checksums so that package content was verified against checksum
+<ul>
+<li>avoids tampering and malicious substitutions</li>
+</ul>
+</li>
+<li>offline meant it would protect against network attacks during install
+<ul>
+<li>great for government 😉</li>
+</ul>
+</li>
+<li>resolution security
+<ul>
+<li>Deterministic installation algorithm that reduced the risk of inconsistent packages</li>
+<li>Stricter handling of package.json files</li>
+</ul>
+</li>
+<li>license checking
+<ul>
+<li>identify and report license types for all installed packages (MIT ISC etc.)</li>
+</ul>
+</li>
+<li>script execution
+<ul>
+<li>controlled environment for running lifecycle scripts</li>
+<li>isolation of script execution</li>
+<li>options to disable running package scripts</li>
+</ul>
+</li>
+<li>auditing
+<ul>
+<li>that thing that comes up saying your package has a vuln</li>
+</ul>
+</li>
+</ul>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Flat (2016)</h1>
+<p>Phantom dependencies (I ain't afraid of no ghost 👻)</p>
+<p>(Using things not listed in <code>package.json</code>)</p>
+<pre><code class="hljs">Your <span class="hljs-keyword">package</span>.json: { <span class="hljs-string">&quot;dependencies&quot;</span>: { <span class="hljs-string">&quot;package-a&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span> } }
+<span class="hljs-keyword">Package</span> <span class="hljs-title">A&#x27;s <span class="hljs-keyword">package</span>.json: { &quot;dependencies&quot;: { &quot;<span class="hljs-keyword">package</span>-b&quot;: &quot;2.0.0&quot; } }</span>
+</code></pre>
+<pre><code class="hljs">node_modules/
+├── package-<span class="hljs-selector-tag">a</span>/
+└── package-<span class="hljs-selector-tag">b</span>/  (hoisted <span class="hljs-selector-tag">from</span> package-<span class="hljs-selector-tag">a</span>/node_modules/)
+</code></pre>
+<p>notes:</p>
+<p>Because Node.js searches for modules in the node_modules directory, your code can access any package in the top-level node_modules, whether or not you declared it as a dependency</p>
+<p>Because the packages are hoisted they exist in the <code>node_modules</code> dir</p>
+<p>This causes <em>massive</em> headaches around dependency hell (it's unclear which package is the problem)</p>
+<p>Example of issue I had at Clearscore where we had an undeclared css dep that had a breaking version update that caused the site to go green</p>
+<p>Phew, that was a lot... lets get into the modern era</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Modern (2017+)</h1>
+<ul>
+<li><code>pnpm</code> created
+<ul>
+<li>content-addressable store</li>
+<li>symlink all the things</li>
+</ul>
+</li>
+<li>solved &quot;phantom&quot; dependencies</li>
+<li><code>yarn</code> (v2 berry) releases Plug'n'Play</li>
+<li>Deno switches to URL imports</li>
+</ul>
+<p>notes:</p>
+<p>ok there's a lot here and that I'm going to go into individually</p>
+<p>let's start with the content-addressable store</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Modern (2017+)</h1>
+<p><code>pnpm</code> Content-Addressable Storage</p>
+<ul>
+<li>Global store in <code>~/.pnpm-store</code>
+<ul>
+<li>All packages x versions are stored here</li>
+</ul>
+</li>
+<li>Hash-based addressing
+<ul>
+<li>Unique + Free Integrity check</li>
+</ul>
+</li>
+<li>Immutable</li>
+</ul>
+<p>notes:</p>
+<p>Data is stored and retrieved based on it's content NOT it's location</p>
+<p>Each package version stored under a directory named based on a hash of it's content</p>
+<p>Once a package is in the store, it's never modified so builds are reproducible and reliable</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Modern (2017+)</h1>
+<p><code>pnpm</code> Symlinks</p>
+<ul>
+<li>Symlink local to the Global store</li>
+<li>Strict node module structure</li>
+<li>Multi-level linking
+<ul>
+<li>symlinks on top of symlinks</li>
+</ul>
+</li>
+</ul>
+<p>notes:</p>
+<p>Instead of copying packages into your project's <code>node_modules</code>, pnpm creates symbolic links to the global store</p>
+<p>pnpm creates a structure that strictly reflects the actual dependencies declared in your package.json.</p>
+<ul>
+<li>Direct dependencies are linked at the top level of <code>node_modules</code></li>
+<li>Nested dependencies are properly linked within their parent packages</li>
+<li>A <code>.pnpm</code> directory contains flattened links to all packages</li>
+</ul>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Modern (2017+)</h1>
+<pre><code class="hljs">node_modules/
+├── express -&gt; ./.pnpm/express<span class="hljs-title">@4</span>.<span class="hljs-number">17.1</span>/node_modules/express
+└── .pnpm/
+    ├── express<span class="hljs-title">@4</span>.<span class="hljs-number">17.1</span>/
+    │   └── node_modules/
+    │       ├── express/  (actual link <span class="hljs-keyword">to</span> <span class="hljs-keyword">global</span> <span class="hljs-keyword">store</span>)
+    │       ├── body-parser -&gt; ../../body-parser<span class="hljs-title">@1</span>.<span class="hljs-number">19.0</span>/node_modules/body-parser
+    │       └── ... (other express dependencies)
+    ├── body-parser<span class="hljs-title">@1</span>.<span class="hljs-number">19.0</span>/
+    │   └── node_modules/
+    │       ├── body-parser/  (actual link <span class="hljs-keyword">to</span> <span class="hljs-keyword">global</span> <span class="hljs-keyword">store</span>)
+    │       └── ... (body-parser dependencies)
+    └── ... (other packages)
+</code></pre>
+<p>notes:</p>
+<p>Solves the biggest dependency management issues we currently have</p>
+<p>Disk space / Install speed / Strick boundaries / Smaller <code>node_modules</code> / High Security</p>
+<p>And, lastly solves the &quot;Phantom Dependency&quot; problem we talked about before</p>
+<p>Ok, quickly; what's Plug'n'Play?</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Modern (2017+)</h1>
+<p><code>yarn</code> (v2 berry) Plug'n'play</p>
+<ul>
+<li>Solves the same problems I just covered</li>
+<li>Peer dependency issues</li>
+<li>Zero install</li>
+</ul>
+<p>notes:</p>
+<p>Yarn will specifically call out peer dependency mismatches
+Example from more of my code when I did a coding exercise when going for the ANZ role (I wanted to show I'm fancy)
+https://github.com/csi-lk/seek-coding-exercise/blob/main/.pnp.cjs</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2>History Lesson</h2>
+<h1>Today (2024+)</h1>
+<ul>
+<li>Package management is everywhere yo</li>
+<li>Security concerns are now just supply chain attacks</li>
+<li>Monorepo management</li>
+<li>The rise of <code>bun</code></li>
+</ul>
+<p>notes:</p>
+<p>Phew, ok we're up to current state</p>
+<p>Bun seems to be rapidly gaining market share (and I'm now using it for my own projects) as it's faster than <code>pnpm</code> but includes build tools and runtime integration (best of pnpm, gulp, requirejs etc. mashed together)</p>
+<p>Ok that's enough history lesson, now the main reason I wanted to give this talk...</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<p>notes:</p>
+<p>They're fun!</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<h1>SemVer</h1>
+<ul>
+<li>Basic format: <code>MAJOR.MINOR.PATCH</code> (e.g., <code>2.3.1</code>)</li>
+<li><strong>MAJOR:</strong> Breaking changes</li>
+<li><strong>MINOR:</strong> New features, no breaking changes</li>
+<li><strong>PATCH:</strong> Bug fixes, no new features or breaking changes</li>
+</ul>
+<p>notes:</p>
+<p>Pretty sure everyone knows SemVer by now but just for a refresher</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<h1>Common Version Ranges</h1>
+<ul>
+<li><strong>Exact version</strong>: <code>&quot;react&quot;: &quot;17.0.2&quot;</code>
+<ul>
+<li>Only use exactly version 17.0.2</li>
+</ul>
+</li>
+<li><strong>Caret (^)</strong>: <code>&quot;react&quot;: &quot;^17.0.2&quot;</code>
+<ul>
+<li>Allow updates to any 17.x.x version but not 18.0.0 (MINOR / PATCH)</li>
+</ul>
+</li>
+<li><strong>Tilde (~)</strong>: <code>&quot;react&quot;: &quot;~17.0.2&quot;</code>
+<ul>
+<li>Allow updates to 17.0.x but not 17.1.0 (PATCH only)</li>
+</ul>
+</li>
+<li><strong>Wildcard (*)</strong>: <code>&quot;react&quot;: &quot;17.*.*&quot;</code> or <code>&quot;react&quot;: &quot;17.*&quot;</code>
+<ul>
+<li>Any version starting with 17</li>
+</ul>
+</li>
+</ul>
+<p>notes:</p>
+<p>Version range specifiers is the <code>npm</code> defined spec for how to reference dependency versioning</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<h1>Un-common Version Ranges</h1>
+<ul>
+<li><strong>Greater than (&gt;)</strong>: <code>&quot;react&quot;: &quot;&gt;17.0.0&quot;</code>
+<ul>
+<li>Any version higher than 17.0.0</li>
+</ul>
+</li>
+<li><strong>Greater than or equal (&gt;=)</strong>: <code>&quot;react&quot;: &quot;&gt;=17.0.0&quot;</code>
+<ul>
+<li>Version 17.0.0 or higher</li>
+</ul>
+</li>
+<li><strong>Less than (&lt;)</strong>: <code>&quot;react&quot;: &quot;&lt;18.0.0&quot;</code>
+<ul>
+<li>Any version lower than 18.0.0</li>
+</ul>
+</li>
+<li><strong>Range</strong>: <code>&quot;react&quot;: &quot;&gt;=16.0.0 &lt;18.0.0&quot;</code>
+<ul>
+<li>Between 16.0.0 and 18.0.0 (excluding 18.0.0)</li>
+</ul>
+</li>
+<li><strong>OR</strong>: <code>&quot;react&quot;: &quot;15.0.0 || 16.0.0&quot;</code>
+<ul>
+<li>Either exactly 15.0.0 or 16.0.0</li>
+</ul>
+</li>
+</ul>
+<p>notes:</p>
+<p>Please don't use any of these unless you have a <em>very</em> good reason to</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<h1>Lockfile</h1>
+<ul>
+<li>Locking / Freezing your dependencies</li>
+<li>Same immutable state of dependencies</li>
+<li>Stop drift of dependencies between deployments</li>
+</ul>
+<p>notes:</p>
+<p>Before lockfiles package installations could vary from one day to the next or from one machine to another, even with the same package.json file WHICH WAS GREAT FUN</p>
+<p>The name has become standard terminology across package managers:
+(<code>npm</code> called it shrinkwrap for a while but lets forget about that)
+package-lock.json (npm), yarn.lock (Yarn), pnpm-lock.yaml (pnpm), Gemfile.lock (Ruby), Cargo.lock (Rust)</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<h1>Updating the Lockfile</h1>
+<ul>
+<li>Install dependencies within defined ranges
+<ul>
+<li><code>&quot;react&quot;: &quot;^18.3.1&quot;</code>
+<ul>
+<li>registry has <code>react@18.4.2</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Update lockfile to point to <code>react@18.4.2</code></li>
+<li><code>package.json</code> stays the same</li>
+</ul>
+<p>notes:</p>
+<p>What happens when we update the lockfile</p>
+<p>We currently have react defined at 18.3.1 with a caret meaning take minor or patch updates</p>
+<p>So when you update the lockfile you are taking on a tiny bit of risk that you're moving the dependencies for the whole project <em>but</em> it's within the risk profile we've accepted</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h2><em>Fun</em>damentals</h2>
+<h1>Renovate</h1>
+<ul>
+<li>Update the <code>package.json</code>
+<ul>
+<li>Within defined ranges</li>
+</ul>
+</li>
+<li>Update lockfile</li>
+</ul>
+<p>notes:</p>
+<p>Ok what is renovate doing?</p>
+<p>https://github.com/anzx/bluestone/pull/8220</p>
+<p>Effectively the <code>package.json</code> updating part but within the same defined ranges</p>
+<p>We currently have react defined at 18.3.1 with a caret meaning take minor or patch updates</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h1>Phew</h1>
+<p>we made it</p>
+<hr>
+<!-- .slide: data-auto-animate -->
+<h1>Questions?</h1>
+<ul>
+<li>How does <code>pnpm</code> handle <code>workspace:*</code> resolution?</li>
+<li>You didn't go into peer dependencies, do you hate them?</li>
+<li>How is your beard not grey by now?</li>
+</ul>
+</article> </main> <footer class="footer undefined" data-testid="footer"><div ><p >©  2025</p> <a href="/">Callum Silcock</a></div> <div ><p >Contact</p> <a href="mailto:contact@csi.lk" target="_blank" rel="noopener noreferrer" aria-describedby="open-email">Email</a></div> <div ><p >Code</p> <a href="https://github.com/csi-lk/" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Github</a></div> <div ><p >Social</p> <a href="https://au.linkedin.com/in/callumsilcock" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">LinkedIn</a> / <a href="https://stackoverflow.com/users/766958/csilk" target="_blank" rel="noopener noreferrer" aria-describedby="open-new-window-external">Stackoverflow</a></div></footer></div></body></html>
