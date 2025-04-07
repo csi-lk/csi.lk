@@ -5979,7 +5979,7 @@ __metadata:
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     markdown-it: ^14.1.0
-    markdown-it-attrs: ^4.2.0
+    markdown-it-attrs: ^4.3.1
     markdown-it-external-links: ^0.0.6
     markdown-it-highlightjs: ^4.2.0
     npm-run-all: ^4.1.5
@@ -10735,12 +10735,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-attrs@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "markdown-it-attrs@npm:4.2.0"
+"markdown-it-attrs@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "markdown-it-attrs@npm:4.3.1"
   peerDependencies:
     markdown-it: ">= 9.0.0"
-  checksum: 62fba0ad641ad0a3bb58f43017e5643312437b3fef034faafb1c6d3ada01bf9db162f667f4f005934428685317dbf09e9e9d17b6d76c13bc5dacf418c727eb26
+  checksum: 907458ef50372c3a557f883e961ba05a126c6d08878d7e6551a80e4ea19eb2589f486d7d702a771ad4746599ff00ec3cab5416b99ebc93a07e4e4c64237420ec
   languageName: node
   linkType: hard
 
