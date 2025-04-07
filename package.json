@@ -85,7 +85,7 @@
     "prettier": "^3.3.3",
     "rss-parser": "^3.13.0",
     "standard-version": "^9.5.0",
-    "start-server-and-test": "^2.0.7",
+    "start-server-and-test": "^2.0.11",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^35.0.0",
     "ts-node": "^10.9.2"
