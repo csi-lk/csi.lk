@@ -5776,7 +5776,7 @@ __metadata:
     cross-env: ^7.0.3
     cssnano: ^7.0.6
     cssnano-preset-advanced: ^7.0.6
-    cypress: ^14.2.1
+    cypress: ^14.3.0
     enzyme-adapter-react-16: ^1.15.8
     eslint: ^8.57.0
     eslint-config-airbnb-base: ^15.0.0
@@ -5999,9 +5999,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^14.2.1":
-  version: 14.2.1
-  resolution: "cypress@npm:14.2.1"
+"cypress@npm:^14.3.0":
+  version: 14.3.0
+  resolution: "cypress@npm:14.3.0"
   dependencies:
     "@cypress/request": ^3.0.8
     "@cypress/xvfb": ^1.2.4
@@ -6048,7 +6048,7 @@ __metadata:
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 744f5658710c4c1dbda6012a38b3a0b1f5061a5634e05d7408effa689792844a959d1e65e24aa6168e422998d1a254efc17a1458baab0cb1ad348d194541cf10
+  checksum: 3c21a9864bb6fd2614e7e551fec2c520b673a48af0071a3a29b4df9b309c5e586c6dfd55eb28cbc1a3cc4f9d5400dc6c63d91a3bebe7c2b71dce494b88c0d99e
   languageName: node
   linkType: hard
 
