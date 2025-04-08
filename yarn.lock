@@ -3199,13 +3199,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sindresorhus/merge-streams@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@sindresorhus/merge-streams@npm:1.0.0"
-  checksum: 453c2a28164113a5ec4fd23ba636e291a4112f6ee9e91cd5476b9a96e0fc9ee5ff40d405fe81bbf284c9773b7ed718a3a0f31df7895a0efd413b1f9775d154fe
-  languageName: node
-  linkType: hard
-
 "@sindresorhus/slugify@npm:^1.1.2":
   version: 1.1.2
   resolution: "@sindresorhus/slugify@npm:1.1.2"
@@ -5809,7 +5802,7 @@ __metadata:
     npm-run-all: ^4.1.5
     postcss: ^8.5.3
     postcss-calc: ^10.1.1
-    postcss-cli: ^11.0.0
+    postcss-cli: ^11.0.1
     postcss-css-variables: ^0.19.0
     postcss-nested: ^7.0.2
     postcss-nested-ancestors: ^3.0.0
@@ -6326,6 +6319,13 @@ __metadata:
   version: 0.11.0
   resolution: "dependency-graph@npm:0.11.0"
   checksum: 477204beaa9be69e642bc31ffe7a8c383d0cf48fa27acbc91c5df01431ab913e65c154213d2ef83d034c98d77280743ec85e5da018a97a18dd43d3c0b78b28cd
+  languageName: node
+  linkType: hard
+
+"dependency-graph@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "dependency-graph@npm:1.0.0"
+  checksum: c2e37c599877e5006020715686aa4f2c04746644124a0037f074873f5f9ccb3f2e8402393a280d52c26b9949deea0fbfeab3eb9e9839332dc7f37eede6c6f743
   languageName: node
   linkType: hard
 
@@ -7652,6 +7652,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fdir@npm:^6.4.3":
+  version: 6.4.3
+  resolution: "fdir@npm:6.4.3"
+  peerDependencies:
+    picomatch: ^3 || ^4
+  peerDependenciesMeta:
+    picomatch:
+      optional: true
+  checksum: fa53e13c63e8c14add5b70fd47e28267dd5481ebbba4b47720ec25aae7d10a800ef0f2e33de350faaf63c10b3d7b64138925718832220d593f75e724846c736d
+  languageName: node
+  linkType: hard
+
 "figures@npm:^3.1.0, figures@npm:^3.2.0":
   version: 3.2.0
   resolution: "figures@npm:3.2.0"
@@ -8068,13 +8080,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-stdin@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "get-stdin@npm:9.0.0"
-  checksum: 5972bc34d05932b45512c8e2d67b040f1c1ca8afb95c56cbc480985f2d761b7e37fe90dc8abd22527f062cc5639a6930ff346e9952ae4c11a2d4275869459594
-  languageName: node
-  linkType: hard
-
 "get-stream@npm:^4.0.0":
   version: 4.1.0
   resolution: "get-stream@npm:4.1.0"
@@ -8311,20 +8316,6 @@ __metadata:
     merge2: ^1.4.1
     slash: ^3.0.0
   checksum: b4be8885e0cfa018fc783792942d53926c35c50b3aefd3fdcfb9d22c627639dc26bd2327a40a0b74b074100ce95bb7187bfeae2f236856aa3de183af7a02aea6
-  languageName: node
-  linkType: hard
-
-"globby@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "globby@npm:14.0.0"
-  dependencies:
-    "@sindresorhus/merge-streams": ^1.0.0
-    fast-glob: ^3.3.2
-    ignore: ^5.2.4
-    path-type: ^5.0.0
-    slash: ^5.1.0
-    unicorn-magic: ^0.1.0
-  checksum: f331b42993e420c8f2b61a6ca062276977ea6d95f181640ff018f00200f4fe5b50f1fae7540903483e6570ca626fe16234ab88e848d43381a2529220548a9d39
   languageName: node
   linkType: hard
 
@@ -11818,13 +11809,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-type@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "path-type@npm:5.0.0"
-  checksum: 15ec24050e8932c2c98d085b72cfa0d6b4eeb4cbde151a0a05726d8afae85784fc5544f733d8dfc68536587d5143d29c0bd793623fad03d7e61cc00067291cd5
-  languageName: node
-  linkType: hard
-
 "pause-stream@npm:0.0.11":
   version: 0.0.11
   resolution: "pause-stream@npm:0.0.11"
@@ -11873,6 +11857,13 @@ __metadata:
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
+  languageName: node
+  linkType: hard
+
+"picomatch@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "picomatch@npm:4.0.2"
+  checksum: a7a5188c954f82c6585720e9143297ccd0e35ad8072231608086ca950bee672d51b0ef676254af0788205e59bd4e4deb4e7708769226bed725bf13370a7d1464
   languageName: node
   linkType: hard
 
@@ -11962,27 +11953,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-cli@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "postcss-cli@npm:11.0.0"
+"postcss-cli@npm:^11.0.1":
+  version: 11.0.1
+  resolution: "postcss-cli@npm:11.0.1"
   dependencies:
     chokidar: ^3.3.0
-    dependency-graph: ^0.11.0
+    dependency-graph: ^1.0.0
     fs-extra: ^11.0.0
-    get-stdin: ^9.0.0
-    globby: ^14.0.0
     picocolors: ^1.0.0
     postcss-load-config: ^5.0.0
     postcss-reporter: ^7.0.0
     pretty-hrtime: ^1.0.3
     read-cache: ^1.0.0
     slash: ^5.0.0
+    tinyglobby: ^0.2.12
     yargs: ^17.0.0
   peerDependencies:
     postcss: ^8.0.0
   bin:
     postcss: index.js
-  checksum: 93f49c45988d02375a7eec593e99576bfc3cea9180ba5b3a42efe850954112d91afa0c2bc65b3102b99b5b871650250040c88ada6d97e2708b160fced2efb369
+  checksum: 5cda7642b6bc7454aef9c33b292d5cc44ae44c0a746b19cf4c3c23e2fee190764551085efdafa065c5fca4d8a0bf40d64a034334032a2519798d1394afda2a53
   languageName: node
   linkType: hard
 
@@ -13944,13 +13934,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"slash@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "slash@npm:5.1.0"
-  checksum: 70434b34c50eb21b741d37d455110258c42d2cf18c01e6518aeb7299f3c6e626330c889c0c552b5ca2ef54a8f5a74213ab48895f0640717cacefeef6830a1ba4
-  languageName: node
-  linkType: hard
-
 "slice-ansi@npm:^3.0.0":
   version: 3.0.0
   resolution: "slice-ansi@npm:3.0.0"
@@ -14736,6 +14719,16 @@ __metadata:
   version: 0.3.0
   resolution: "tinyexec@npm:0.3.0"
   checksum: e55473d249b8fc94bc5b1461d8e368dfe0ba23dcfca4f9069fe25418b17772e50110a1d33cd7ac8ff26456e5b609e0528cce7660e35246fad9b00bd094f3f444
+  languageName: node
+  linkType: hard
+
+"tinyglobby@npm:^0.2.12":
+  version: 0.2.12
+  resolution: "tinyglobby@npm:0.2.12"
+  dependencies:
+    fdir: ^6.4.3
+    picomatch: ^4.0.2
+  checksum: ef9357fa1b2b661afdccd315cb4995f5f36bce948faaace68aae85fe57bdd8f837883045c88efc50d3186bac6586e4ae2f31026b9a3aac061b884217e6092e23
   languageName: node
   linkType: hard
 
