@@ -96,7 +96,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "autoprefixer": "^10.4.21",
     "common-tags": "^1.8.2",
-    "cssnano": "^7.0.6",
+    "cssnano": "^7.0.7",
     "cssnano-preset-advanced": "^7.0.6",
     "faker": "5.5.3",
     "markdown-it": "^14.1.0",
