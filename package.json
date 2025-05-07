@@ -112,7 +112,7 @@
     "postcss-scss": "^4.0.9",
     "serve": "^14.2.4",
     "shx": "^0.4.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": ">=17.0.1"
