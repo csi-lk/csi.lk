@@ -64,7 +64,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^8.34.0",
     "add": "^2.0.6",
-    "babel-jest": "^29.7.0",
+    "babel-jest": "^30.0.0",
     "cross-env": "^7.0.3",
     "cypress": "^14.4.1",
     "enzyme-adapter-react-16": "^1.15.8",
