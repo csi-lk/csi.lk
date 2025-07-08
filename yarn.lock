@@ -3137,9 +3137,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/transform@npm:30.0.2":
-  version: 30.0.2
-  resolution: "@jest/transform@npm:30.0.2"
+"@jest/transform@npm:30.0.4":
+  version: 30.0.4
+  resolution: "@jest/transform@npm:30.0.4"
   dependencies:
     "@babel/core": ^7.27.4
     "@jest/types": 30.0.1
@@ -3156,7 +3156,7 @@ __metadata:
     pirates: ^4.0.7
     slash: ^3.0.0
     write-file-atomic: ^5.0.1
-  checksum: bcc05e020a3aca3192b5bb03597f4aeb564d7e4df17d86d8dfaebfc15b2ef1f39abbf987f15997b850aadf630a722da04b2b17b25dbf3686bd3c2b6096dac99e
+  checksum: 949542f46ef5d5578004a205fd529d51f3d036f9bad1b79d25740b71ba7bdd7b10dcdf81c79eb0149ee96f1153a1bc844599a9041d9072f75f92237e1e4df553
   languageName: node
   linkType: hard
 
@@ -4768,11 +4768,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:^30.0.2":
-  version: 30.0.2
-  resolution: "babel-jest@npm:30.0.2"
+"babel-jest@npm:^30.0.4":
+  version: 30.0.4
+  resolution: "babel-jest@npm:30.0.4"
   dependencies:
-    "@jest/transform": 30.0.2
+    "@jest/transform": 30.0.4
     "@types/babel__core": ^7.20.5
     babel-plugin-istanbul: ^7.0.0
     babel-preset-jest: 30.0.1
@@ -4781,7 +4781,7 @@ __metadata:
     slash: ^3.0.0
   peerDependencies:
     "@babel/core": ^7.11.0
-  checksum: 9927b057c6142969990de5d3eb4a1eff1c82326d2dae21b8ec1f2749d3caae19df00f29322ce08ab8e7b4ed9af32e9f8fdb00865323751e0ccc78333fed6a013
+  checksum: 9d0048416b4499789fa0babd1dabcae03613acdc30c6269b3173cc53a22ee01a042dc119414196e3ac264743184a89fc27e64278770b8a942f9b22565df3e424
   languageName: node
   linkType: hard
 
@@ -6270,7 +6270,7 @@ __metadata:
     "@typescript-eslint/parser": ^8.35.1
     add: ^2.0.6
     autoprefixer: ^10.4.21
-    babel-jest: ^30.0.2
+    babel-jest: ^30.0.4
     common-tags: ^1.8.2
     cross-env: ^7.0.3
     cssnano: ^7.0.7
