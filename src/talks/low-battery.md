@@ -377,8 +377,6 @@ note:
 
 note:
 
-Holding slide for strategy summary
-
 But how am I going to remember these?
 
 ---

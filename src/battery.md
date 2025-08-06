@@ -6,7 +6,7 @@ layout: article
 keywords: cognitive capacity, mental drain, productivity, focus, energy management
 ---
 
-# Low Battery - Quick Reference Guide
+![Low Battery: Why You're Always Mentally Drained (And How to Fix It)](/images/low-battery/title.png)
 
 Your cognitive battery is your most valuable resource. Here are immediate actions and long-term strategies to help preserve and manage your mental energy throughout the day.
 
@@ -15,6 +15,8 @@ Your cognitive battery is your most valuable resource. Here are immediate action
 Most professionals spend only 20-40% of their time on meaningful work. The rest is lost to task switching, managing interruptions, and cognitive overhead. Every time you switch between tasks, your brain pays a cognitive tax - like closing one app and opening another, it creates processing overhead and errors.
 
 ---
+
+![](/images/low-battery/fixes-summary.png)
 
 ## 4 Quick Fixes (Start Today)
 
@@ -53,6 +55,8 @@ Most professionals spend only 20-40% of their time on meaningful work. The rest 
 - Match task difficulty to your current energy level
 
 ---
+
+![](/images/low-battery/strategies.png)
 
 ## 3 Long-Term Strategies
 
@@ -103,6 +107,8 @@ Most professionals spend only 20-40% of their time on meaningful work. The rest 
 - [ ] Create a sustainable energy management system
 
 ---
+
+![](/images/low-battery/tools.png)
 
 ## Remember
 
