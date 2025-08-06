@@ -19,7 +19,7 @@
     "generate:books": "ts-node ./scripts/generate-bookshelf.ts",
     "images": "ts-node ./scripts/find-and-copy-images.ts",
     "build": "run-s clean generate:books styles scripts static images --print-label",
-    "build:prod": "cross-env NODE_ENV=production run-s clean generate:books styles:prod scripts static:prod",
+    "build:prod": "cross-env NODE_ENV=production run-s clean generate:books styles:prod scripts static:prod images",
     "TESTING": "---------------------------",
     "test": "jest",
     "lint": "npm-run-all lint:stylelint lint:eslint",
