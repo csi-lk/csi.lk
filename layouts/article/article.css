@@ -1,6 +1,16 @@
 .article {
   width: 100%;
 
+  img {
+    width: 50%;
+    margin: 10px auto;
+    display: block;
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+  }
+
   &-subheader {
     display: flex;
     justify-content: space-between;
