@@ -9,6 +9,7 @@ keywords: cognitive capacity, mental drain, productivity, focus
 slidesPdf: https://github.com/csi-lk/csi.lk/blob/master/talk/low-battery.pdf
 slidesRaw: https://github.com/csi-lk/csi.lk/blob/master/talk/low-battery.md
 ---
+
 ![Low Battery: Why You're Always Mentally Drained (And How to Fix It)](/images/low-battery/title.png)
 
 notes:
