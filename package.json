@@ -17,9 +17,10 @@
     "scripts": "yarn tsc && yarn scripts:rename",
     "scripts:rename": "ts-node ./scripts/rename-layouts.ts",
     "generate:books": "ts-node ./scripts/generate-bookshelf.ts",
+    "generate:social": "ts-node ./scripts/generate-social-images-puppeteer.ts",
     "images": "ts-node ./scripts/find-and-copy-images.ts",
-    "build": "run-s clean generate:books styles scripts static images --print-label",
-    "build:prod": "cross-env NODE_ENV=production run-s clean generate:books styles:prod scripts static:prod images",
+    "build": "run-s clean generate:books generate:social styles scripts static images --print-label",
+    "build:prod": "cross-env NODE_ENV=production run-s clean generate:books generate:social styles:prod scripts static:prod images",
     "TESTING": "---------------------------",
     "test": "jest",
     "lint": "npm-run-all lint:stylelint lint:eslint",
@@ -89,6 +90,9 @@
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^35.0.0",
     "ts-node": "^10.9.2"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^24.16.0"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
