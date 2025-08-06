@@ -3,6 +3,13 @@ module.exports = {
   extends: ['airbnb-base', 'prettier'],
   overrides: [
     {
+      files: ['scripts/**/*.ts'],
+      rules: {
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'no-console': 'off',
+      },
+    },
+    {
       files: ['**/*.ts', '**/*.tsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
