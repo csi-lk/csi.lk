@@ -159,7 +159,7 @@ unit tests are great for backend but not great for frontend development that req
 <span class="hljs-title function_">afterAll</span>(<span class="hljs-function">() =&gt;</span> server.<span class="hljs-title function_">close</span>())
 <span class="hljs-title function_">afterEach</span>(<span class="hljs-function">() =&gt;</span> server.<span class="hljs-title function_">resetHandlers</span>())
 </code></pre>
-<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">`logging in displays the user&#x27;s username`</span>, <span class="hljs-keyword">async</span> () =&gt; {
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">`logging in displays the user&#x27;s username`</span>, <span class="hljs-title function_">async</span> () =&gt; {
   <span class="hljs-keyword">await</span> <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span></span>, {<span class="hljs-attr">route</span>: <span class="hljs-string">&#x27;/login&#x27;</span>})
   <span class="hljs-keyword">const</span> {username, password} = <span class="hljs-title function_">buildLoginForm</span>()
  
@@ -200,7 +200,7 @@ unit tests are great for backend but not great for frontend development that req
  
 <span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">BASE_URL</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../config&quot;</span>;
  
-<span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;homepage has title and a button&quot;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+<span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;homepage has title and a button&quot;</span>, <span class="hljs-title function_">async</span> ({ page }) =&gt; {
   <span class="hljs-keyword">await</span> page.<span class="hljs-title function_">goto</span>(<span class="hljs-variable constant_">BASE_URL</span>);
  
   <span class="hljs-keyword">await</span> <span class="hljs-title function_">expect</span>(page).<span class="hljs-title function_">toHaveTitle</span>(<span class="hljs-string">&quot;ANZx – Join app!&quot;</span>);
@@ -210,7 +210,7 @@ unit tests are great for backend but not great for frontend development that req
   <span class="hljs-title function_">expect</span>(page.<span class="hljs-title function_">locator</span>(<span class="hljs-string">`button:has-text(&#x27;click click&#x27;)`</span>)).<span class="hljs-property">toBeDefined</span>;
 });
 </code></pre>
-<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;homepage handles accessibility&quot;</span>, <span class="hljs-keyword">async</span> ({ page }) =&gt; {
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">test</span>(<span class="hljs-string">&quot;homepage handles accessibility&quot;</span>, <span class="hljs-title function_">async</span> ({ page }) =&gt; {
   <span class="hljs-keyword">await</span> page.<span class="hljs-title function_">goto</span>(<span class="hljs-variable constant_">BASE_URL</span>);
  
   <span class="hljs-keyword">const</span> accessibilityScanResults = <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AxeBuilder</span>({ page }).<span class="hljs-title function_">analyze</span>();

@@ -79,16 +79,16 @@ Originally <code>npm</code> decided to create a <code>node_modules</code> folder
 <!-- .slide: data-auto-animate -->
 <h2>History Lesson</h2>
 <h1>Birth (2010)</h1>
-<pre><code class="hljs">callums-bad-code/
-├── node_modules/
-│   └── A/
-│       ├── <span class="hljs-keyword">package</span>.json
-│       └── node_modules/
-│           └── B/
-│               ├── <span class="hljs-keyword">package</span>.json
-│               └── node_modules/
-│                   └── C/
-│                       └── <span class="hljs-keyword">package</span>.json
+<pre><code class="hljs">callums-bad-code<span class="hljs-symbol">/</span>
+├── node_modules<span class="hljs-symbol">/</span>
+│   └── A<span class="hljs-symbol">/</span>
+│       ├── package.json
+│       └── node_modules<span class="hljs-symbol">/</span>
+│           └── B<span class="hljs-symbol">/</span>
+│               ├── package.json
+│               └── node_modules<span class="hljs-symbol">/</span>
+│                   └── C<span class="hljs-symbol">/</span>
+│                       └── package.json
 </code></pre>
 <hr>
 <!-- .slide: data-auto-animate -->
@@ -145,13 +145,13 @@ Parallelize dependency installation</p>
 <!-- .slide: data-auto-animate -->
 <h2>History Lesson</h2>
 <h1>Flat (2016)</h1>
-<pre><code class="hljs">node_modules/
-├── <span class="hljs-keyword">package</span>-a/
-│   └── node_modules/
-│       └── <span class="hljs-keyword">package</span>-c/ (<span class="hljs-keyword">version</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>)
-└── <span class="hljs-keyword">package</span>-b/
-    └── node_modules/
-        └── <span class="hljs-keyword">package</span>-c/ (<span class="hljs-keyword">version</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>)
+<pre><code class="hljs">node_modules<span class="hljs-symbol">/</span>
+├── package-a<span class="hljs-symbol">/</span>
+│   └── node_modules<span class="hljs-symbol">/</span>
+│       └── package-c<span class="hljs-symbol">/</span> (version <span class="hljs-number">1.0</span>.<span class="hljs-number">0</span>)
+└── package-b<span class="hljs-symbol">/</span>
+    └── node_modules<span class="hljs-symbol">/</span>
+        └── package-c<span class="hljs-symbol">/</span> (version <span class="hljs-number">1.0</span>.<span class="hljs-number">0</span>)
 </code></pre>
 <p>notes:</p>
 <p>Ok remember our nested dependency structure from before that <code>npm</code> introduced</p>

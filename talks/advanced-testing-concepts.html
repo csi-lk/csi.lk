@@ -51,7 +51,7 @@
 <h2>Example 1: Async Updates</h2>
 <pre><code class="hljs language-tsx"><span class="hljs-keyword">const</span> <span class="hljs-title function_">ShowName</span> = (<span class="hljs-params"></span>) =&gt; {
   <span class="hljs-keyword">const</span> [person, setPerson] = <span class="hljs-title function_">useState</span>();
-  <span class="hljs-keyword">const</span> handleFetch = <span class="hljs-title function_">useCallback</span>(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> handleFetch = <span class="hljs-title function_">useCallback</span>(<span class="hljs-title function_">async</span> () =&gt; {
     <span class="hljs-keyword">const</span> { data } = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchData</span>(); <span class="hljs-comment">// Returns { name: &quot;Callum&quot; }</span>
     <span class="hljs-title function_">setPerson</span>(data.<span class="hljs-property">person</span>); <span class="hljs-comment">// &lt;- Asynchronous update</span>
   }, []);
@@ -79,7 +79,7 @@ A[fireEvent.click] --&gt;|assert 'Callum' exists| B(fetchData) --&gt;C(setPerson
 </code></pre>
 <hr>
 <h2>Example 1: Solution</h2>
-<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should fetch persons name&quot;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+<pre><code class="hljs language-tsx"><span class="hljs-title function_">it</span>(<span class="hljs-string">&quot;should fetch persons name&quot;</span>, <span class="hljs-title function_">async</span> () =&gt; {
   <span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ShowName</span> /&gt;</span></span>);
   fireEvent.<span class="hljs-title function_">click</span>(<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Fetch&quot;</span>));
   <span class="hljs-title function_">expect</span>(screen.<span class="hljs-title function_">getByText</span>(<span class="hljs-string">&quot;Fetch names&quot;</span>)).<span class="hljs-title function_">toBeInTheDocument</span>();

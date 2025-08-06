@@ -10,15 +10,15 @@
 <p>^ This is an evolution of that thinking to bring us to this end product</p>
 <p>^ So lets dive in</p>
 <pre><code class="hljs">  .─.                      .─.                                                      .─.
- <span class="hljs-comment">(   )</span>    ┌────────┬─┐    <span class="hljs-comment">(   )</span>   ┌──────────┐   ┌──────────┐       ┌──────────┐   <span class="hljs-comment">(   )</span>         ┌──────────┐
- ┌`─<span class="hljs-string">&#x27;┐    │  Ticket└─┤    ┌`─&#x27;</span>┐   │          │   │          │ Merge │    QA    │   ┌`─<span class="hljs-string">&#x27;┐ Promote │          │
+ (   )    ┌────────┬─┐    (   )   ┌──────────┐   ┌──────────┐       ┌──────────┐   (   )         ┌──────────┐
+ ┌`─&#x27;┐    │  Ticket└─┤    ┌`─&#x27;┐   │          │   │          │ Merge │    QA    │   ┌`─&#x27;┐ Promote │          │
  │Prd│───&gt;│  Story   │───&gt;│Dev│──&gt;│  Branch  │──&gt;│    PR    │──────&gt;│   STG    │──&gt;│QA │────────&gt;│Production│
  │   │    │   Bug    │    │   │   │          │   │          │       │   UAT    │   │   │         │          │
  └───┘    └──────────┘    └───┘   └──────────┘   └┬─────────┘       └──────────┘   └───┘         └──────────┘
                                                   ├&gt;Tests Pass
                                                   └&gt;Approval
 
-</span></code></pre>
+</code></pre>
 <p>^ Your current workflow probably consists of ticket &gt; dev &gt; pr &gt; merge &gt; qa / staging / uat regression &gt; production</p>
 <p>^ Shifting your current workflow of putting QA last to putting QA first by chaining a few tools</p>
 <pre><code class="hljs language-javascript"><span class="hljs-title function_">describe</span>(<span class="hljs-string">&#x27;logging in&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
@@ -118,30 +118,30 @@
 <pre><code class="hljs">
 
   .─.                      .─.                    .─.
- <span class="hljs-comment">(   )</span>    ┌────────┬─┐    <span class="hljs-comment">(   )</span>   ┌──────────┐   <span class="hljs-comment">(   )</span>   ┌──────────┐             ┌──────────┐
- ┌`─<span class="hljs-string">&#x27;┐    │  Ticket└─┤    ┌`─&#x27;</span>┐   │          │   ┌`─<span class="hljs-string">&#x27;┐   │          │    Merge    │          │
+ (   )    ┌────────┬─┐    (   )   ┌──────────┐   (   )   ┌──────────┐             ┌──────────┐
+ ┌<span class="hljs-string">`─&#x27;┐    │  Ticket└─┤    ┌`</span>─<span class="hljs-string">&#x27;┐   │          │   ┌`─&#x27;</span>┐   │          │    Merge    │          │
  │Prd│───&gt;│  Story   │───&gt;│QA │──&gt;│  Branch  │──&gt;│Dev│──&gt;│    PR    │──────┬─────&gt;│Production│
  │   │    │          │    │   │   │          │   │   │   │          │      │      │          │
  └───┘    └──────────┘    └───┘   └──────────┘   └───┘   └┬─────────┘      │      └──────────┘
                                                           ├&gt;Tests Pass     │      ┌──────────┐
-                                                          ├&gt;Approval       │      │ .feature │
-                                                          └&gt;Canary for UAT └─────&gt;│  static  │
+                                                          ├&gt;Approval       │      │ .<span class="hljs-built_in">feature</span> │
+                                                          └&gt;Canary <span class="hljs-keyword">for</span> UAT └─────&gt;│  static  │
                                                                                   │   site   │
                                                                                   └──────────┘
 
-</span></code></pre>
+</code></pre>
 <p>^ move qa to start of pipeline</p>
 <p>^ Using this approach allows your product owners to write the GWT scenarios in plain english, QA picks up and validates over to dev</p>
 <p>^ Also is powerful for Bug flows</p>
 <pre><code class="hljs">        .─.                             .─.
-       <span class="hljs-comment">(   )</span>    ┌────────┬─┐           <span class="hljs-comment">(   )</span>
-       ┌`─<span class="hljs-string">&#x27;┐    │        └─┤  Validate ┌`─&#x27;</span>┐
+       (   )    ┌────────┬─┐           (   )
+       ┌`─&#x27;┐    │        └─┤  Validate ┌`─&#x27;┐
        │QA │─┬─&gt;│   Bug    │──────────&gt;│Prd│&lt;┐
        │   │ │  │          │           │   │ │
        └───┘ │  └──────────┘           └───┘ │
              │                  .─.          │
-             │  ┌──────────┐   <span class="hljs-comment">(   )</span>   ┌──────────┐             ┌──────────┐
-             │  │          │   ┌`─<span class="hljs-string">&#x27;┐   │          │    Merge    │          │
+             │  ┌──────────┐   (   )   ┌──────────┐             ┌──────────┐
+             │  │          │   ┌`─&#x27;┐   │          │    Merge    │          │
              └─&gt;│  Branch  │──&gt;│Dev│──&gt;│    PR    │──────┬─────&gt;│Production│
                 │          │   │   │   │          │      │      │          │
                 └──────────┘   └───┘   └┬─────────┘      │      └──────────┘
@@ -151,7 +151,7 @@
                                                                 │   site   │
                                                                 └──────────┘
 
-</span></code></pre>
+</code></pre>
 <p>^ Now enabled QA to create branches of these bugs through the branch / ticket</p>
 <p>^ dev proves bug is fixed through the functional tests</p>
 <p>^ you can even have a validation step in there for product</p>
