@@ -6,8 +6,6 @@ date: 2025-02-02
 tags: talk
 layout: talk
 keywords: yearly themes, goal setting, personal development, self improvement
-slidesEmbed: https://speakerdeck.com/player/a54de6879b50498f9c28732e2a14a3d9
-slidesSD: https://speakerdeck.com/csilk/unlocking-lockfiles-a-developers-guide-to-package-management
 slidesPdf: https://github.com/csi-lk/csi.lk/blob/master/talk/yearly-theme-alt-goal-setting.pdf
 slidesRaw: https://github.com/csi-lk/csi.lk/blob/master/talk/yearly-theme-alt-goal-setting.md
 ---
@@ -25,7 +23,7 @@ Everything underneath "note" below are speaker notes to remind me what to talk a
 
 ---
 
-![the word resolution lit up with fireworks in the background](./images/resolution.png)
+![the word resolution lit up with fireworks in the background](/images/yearly-theme/resolution.png)
 
 note:
 
@@ -39,7 +37,7 @@ Then had friends from Scotland arrive and I asked them what was the main thing t
 
 ---
 
-![a man with an incredible beard in front of a sign that reads 4 pines welcome to brunswick](./images/callum-4pines-brunswick.jpg)
+![a man with an incredible beard in front of a sign that reads 4 pines welcome to brunswick](/images/yearly-theme/callum-4pines-brunswick.jpg)
 
 note:
 
@@ -71,7 +69,7 @@ Or.. as the old joke goes...
 
 ---
 
-![a bar that has gym equipment on the left hand side with people working out and some people drinking beer on the right](./images/gym-to-bar.png)
+![a bar that has gym equipment on the left hand side with people working out and some people drinking beer on the right](/images/yearly-theme/gym-to-bar.png)
 
 note:
 
@@ -79,7 +77,7 @@ I'm going to open a place that's a gym for two months and becomes a bar for 10 m
 
 ---
 
-![a graph showing the share of americans who keep their new years resolution, starting at 100 percent in january and ending at 40 percent in december](./images/aud-lang-line.png)
+![a graph showing the share of americans who keep their new years resolution, starting at 100 percent in january and ending at 40 percent in december](/images/yearly-theme/aud-lang-line.png)
 
 note:
 
@@ -89,7 +87,7 @@ Because new years resolutions suck
 
 ---
 
-![image](./images/resolutions-suck.png)
+![image](/images/yearly-theme/resolutions-suck.png)
 
 notes:
 
@@ -99,7 +97,7 @@ So what does work?
 
 ---
 
-![image](./images/theme.png)
+![image](/images/yearly-theme/theme.png)
 
 notes:
 
@@ -111,7 +109,7 @@ Hey Callum, what are you talking about?
 
 ---
 
-![image](./images/pouring-beer.png)
+![image](/images/yearly-theme/pouring-beer.png)
 
 notes: 
 
@@ -125,7 +123,7 @@ or
 
 ---
 
-![image](./images/read-books.png)
+![image](/images/yearly-theme/read-books.png)
 
 notes: 
 
@@ -137,7 +135,7 @@ Now if that sounds a bit broad, that's kind of the point.
 
 ---
 
-![image](./images/trend-line.png)
+![image](/images/yearly-theme/trend-line.png)
 
 notes:
 
@@ -175,7 +173,7 @@ Our Theme gives us a decision framework to fall back on for every one of these
 
 ---
 
-![packed lunch](./images/packed-lunch.png)
+![packed lunch](/images/yearly-theme/packed-lunch.png)
 
 notes:
 
@@ -189,7 +187,7 @@ Or if I do go to the pub maybe I can just get a salad...... or maybe a pot over 
 
 ---
 
-![salad-vs-pub](./images/salad-vs-pub.png)
+![salad-vs-pub](/images/yearly-theme/salad-vs-pub.png)
 
 notes:
 
@@ -201,7 +199,7 @@ Ok an example
 
 ---
 
-![house buying](./images/bought-a-house.png)
+![house buying](/images/yearly-theme/bought-a-house.png)
 
 notes:
 
@@ -223,7 +221,7 @@ So instead of setting up my goals of "I'm going to do `n` things per `t` time" l
 
 ---
 
-![A big rock with a pint of beer resting on it](./images/stability.png)
+![A big rock with a pint of beer resting on it](/images/yearly-theme/stability.png)
 
 notes:
 
@@ -231,7 +229,7 @@ I set my theme as the "Year of Stability"
 
 ---
 
-![nursery](./images/nursery.png)
+![nursery](/images/yearly-theme/nursery.png)
 
 notes:
 
@@ -241,7 +239,7 @@ But what was really interesting is that stability started to take on more meanin
 
 ---
 
-![A ship navigating a sea of beers instead of waves](./images/navigating-beer.png)
+![A ship navigating a sea of beers instead of waves](/images/yearly-theme/navigating-beer.png)
 
 notes:
 
@@ -253,7 +251,7 @@ Sidebar; yes that is a ship sailing a sea of beer, just wanted to make that clea
 
 ---
 
-![A drunk person writing a diary](./images/drunk-writing.png)
+![A drunk person writing a diary](/images/yearly-theme/drunk-writing.png)
 
 notes:
 
@@ -384,7 +382,7 @@ You get it
 
 ---
 
-![A boardroom setting with many people in suits drinking beer](./images/boardroom-beer.png)
+![A boardroom setting with many people in suits drinking beer](/images/yearly-theme/boardroom-beer.png)
 
 
 notes:
@@ -395,7 +393,7 @@ because I guarantee your theme will also be applicable to your work
 
 ---
 
-![A developer drowning in a sea of notifications while holding a beer](./images/drown-notifications.png)
+![A developer drowning in a sea of notifications while holding a beer](/images/yearly-theme/drown-notifications.png)
 
 notes:
 
@@ -405,7 +403,7 @@ My "year of reading" could consist of learning new technical concept, spending m
 
 ---
 
-![The word theme with a bunch of pint glasses full of beer around it](./images/beer-theme.png)
+![The word theme with a bunch of pint glasses full of beer around it](/images/yearly-theme/beer-theme.png)
 
 notes:
 
@@ -440,7 +438,7 @@ We may refer to it as "in the zone", head in the game etc.
 
 ---
 
-![A man cheating at the game of poker hiding cards in his sleve sitting at a poker table with beer](./images/rig-poker.png)
+![A man cheating at the game of poker hiding cards in his sleve sitting at a poker table with beer](/images/yearly-theme/rig-poker.png)
 
 notes:
 
@@ -452,7 +450,7 @@ the most motivating thing is to give yourself a tangible sense of progress towar
 
 ---
 
-![A todo list with hundereds of items that have been completed, with a beer on the side ](./images/todo.png)
+![A todo list with hundereds of items that have been completed, with a beer on the side ](/images/yearly-theme/todo.png)
 
 notes:
 
@@ -483,7 +481,7 @@ So maybe my todo list every day is... read 1 page of a book. man it feels good t
 
 ---
 
-![Break it down in big letters with a man drinking beer celebrating on the right hand side](./images/break-it-down.png)
+![Break it down in big letters with a man drinking beer celebrating on the right hand side](/images/yearly-theme/break-it-down.png)
 
 notes:
 
@@ -493,7 +491,7 @@ And tip 2 is pretty straightforward
 
 ---
 
-![Written on fridge](./images/written-on-fridge.png)
+![Written on fridge](/images/yearly-theme/written-on-fridge.png)
 
 notes:
 
