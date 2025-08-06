@@ -1,9 +1,7 @@
 code,
 kbd {
-  padding-block-start: 0.2em;
-  padding-block-end: 0.2em;
-  padding-inline-start: 0.4em;
-  padding-inline-end: 0.4em;
+  padding-block: 0.2em;
+  padding-inline: 0.4em;
   font-size: var(--font-size-small);
 }
 
@@ -20,10 +18,8 @@ pre code {
   display: block;
   max-height: 80vh;
   margin: 0;
-  padding-block-start: var(--paragraph-spacing);
-  padding-block-end: var(--paragraph-spacing);
-  padding-inline-start: var(--paragraph-indent);
-  padding-inline-end: var(--paragraph-indent);
+  padding-block: var(--paragraph-spacing);
+  padding-inline: var(--paragraph-indent);
   overflow: auto;
   text-align: left;
   white-space: inherit;

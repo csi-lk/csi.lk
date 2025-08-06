@@ -18,10 +18,8 @@ th {
 
 th,
 td {
-  padding-block-start: var(--paragraph-spacing);
-  padding-block-end: var(--paragraph-spacing);
-  padding-inline-start: var(--paragraph-indent);
-  padding-inline-end: var(--paragraph-indent);
+  padding-block: var(--paragraph-spacing);
+  padding-inline: var(--paragraph-indent);
   text-align: start;
   vertical-align: baseline;
   border-bottom: var(--border-single);
