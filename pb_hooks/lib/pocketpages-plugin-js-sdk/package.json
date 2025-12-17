@@ -1,0 +1,26 @@
+{
+  "name": "pocketpages-plugin-js-sdk",
+  "version": "0.2.0",
+  "description": "PocketBase JS SDK for JSVM",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "chokidar-cli": "^3.0.0",
+    "pocketbase-jsvm": "^0.25.10001",
+    "tsdown": "^0.12.7",
+    "typescript": "^5.7.3",
+    "pocketpages": ">=0.16.0"
+  },
+  "dependencies": {
+    "pocketbase-js-sdk-jsvm": "^0.25.10004"
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ]
+}

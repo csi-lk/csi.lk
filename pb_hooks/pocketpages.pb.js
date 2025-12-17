@@ -1,3 +1,3 @@
 /// <reference path="../pb_data/types.d.ts" />
 
-require('pocketpages');
+require(`${__hooks}/lib/pocketpages`);
