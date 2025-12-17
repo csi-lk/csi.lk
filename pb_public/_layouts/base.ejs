@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'SilkOS' %></title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <%# Conditional HTMX inclusion for app pages %>
+  <% if (htmx) { %>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <% } %>
+
+  <%# Page-specific styles can be injected here %>
+  <% if (typeof styles !== 'undefined') { %>
+    <%- styles %>
+  <% } %>
+</head>
+<body>
+  <%# Main content %>
+  <%- content %>
+
+  <%# Page-specific scripts can be injected here %>
+  <% if (typeof scripts !== 'undefined') { %>
+    <%- scripts %>
+  <% } %>
+</body>
+</html>

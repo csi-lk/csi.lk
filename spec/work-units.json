@@ -2,7 +2,7 @@
   "version": "0.7.1",
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-17T02:18:08.318Z"
+    "lastUpdated": "2025-12-17T02:27:15.332Z"
   },
   "workUnits": {
     "FOUND-001": {
@@ -368,6 +368,158 @@
       "nextQuestionId": 0,
       "nextNoteId": 0,
       "updated": "2025-12-17T02:16:48.387Z"
+    },
+    "UI-006": {
+      "id": "UI-006",
+      "title": "Document tech stack decisions",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T02:24:10.573Z",
+      "updatedAt": "2025-12-17T02:25:19.600Z",
+      "description": "Add Tech Stack section to README.md documenting PocketBase, PocketPages, HTMX choices and rationale",
+      "epic": "ui-runtime-foundations",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:24:50.066Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:24:50.862Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:25:18.801Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:25:19.600Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:25:19.600Z"
+    },
+    "UI-007": {
+      "id": "UI-007",
+      "title": "Create shared layout template",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T02:24:21.016Z",
+      "updatedAt": "2025-12-17T02:26:16.676Z",
+      "description": "Implement base.ejs layout template with HTML skeleton, metadata, minimal CSS, and conditional HTMX script inclusion",
+      "epic": "ui-runtime-foundations",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:25:37.884Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:25:38.673Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:26:15.849Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:26:16.676Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:26:16.676Z"
+    },
+    "UI-008": {
+      "id": "UI-008",
+      "title": "Document HTMX conventions",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T02:24:27.502Z",
+      "updatedAt": "2025-12-17T02:27:07.166Z",
+      "description": "Add HTMX via CDN, document usage patterns in README.md: SSR default, HTMX for inline actions/list refresh/forms, partial HTML responses",
+      "epic": "ui-runtime-foundations",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:26:30.829Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:26:31.630Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:27:06.339Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:27:07.166Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:27:07.166Z"
+    },
+    "UI-009": {
+      "id": "UI-009",
+      "title": "Document route and file naming conventions",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T02:24:34.149Z",
+      "updatedAt": "2025-12-17T02:27:15.337Z",
+      "description": "Document routing structure: / and /public/* for public, /app/* for private, /app/notes/:id for notes. Document file patterns for hooks and templates",
+      "epic": "ui-runtime-foundations",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:27:12.953Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:27:13.737Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:27:14.532Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:27:15.337Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:27:15.337Z"
     }
   },
   "states": {
@@ -379,6 +531,10 @@
     "implementing": [],
     "validating": [],
     "done": [
+      "UI-009",
+      "UI-008",
+      "UI-007",
+      "UI-006",
       "UI-003",
       "UI-004",
       "UI-005",
@@ -392,6 +548,6 @@
   },
   "prefixCounters": {
     "INFRA": 3,
-    "UI": 5
+    "UI": 9
   }
 }
