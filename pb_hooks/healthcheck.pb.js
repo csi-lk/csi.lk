@@ -6,9 +6,8 @@
  */
 routerAdd("GET", "/healthz", (c) => {
   return c.json(200, {
-    status: "healthy",
-    timestamp: new Date().toISOString(),
-    version: "v3",
-    service: "csi.lk"
+    ok: true,
+    service: "csi.lk",
+    version: "v3"
   });
 });

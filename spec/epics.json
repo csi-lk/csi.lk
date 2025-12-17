@@ -10,6 +10,19 @@
         "INFRA-002",
         "INFRA-003"
       ]
+    },
+    "boot-and-routing": {
+      "id": "boot-and-routing",
+      "title": "Boot Page and Routing",
+      "createdAt": "2025-12-17T01:45:58.436Z",
+      "description": "Public landing page, health endpoint, private app shell, authentication, and route guards",
+      "workUnits": [
+        "UI-001",
+        "UI-002",
+        "UI-003",
+        "UI-004",
+        "UI-005"
+      ]
     }
   }
 }
