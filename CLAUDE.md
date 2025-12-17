@@ -26,3 +26,20 @@ The previous version (tagged `csilk-v2`) was built with:
 - No frontend JavaScript (pure static HTML output)
 
 The v2 architecture can be referenced from the `csilk-v2` tag if needed, but v3 is a complete rebuild with no constraints from the previous implementation.
+
+## Commit Conventions
+
+This repository follows **Conventional Commits** specification:
+
+- Use conventional commit format: `type(scope): description`
+- Common types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `style`, `perf`
+- **Do NOT use emojis in commit messages**
+- **Do NOT add Co-Authored-By attribution for Claude**
+
+Example commit messages:
+```
+feat(auth): add user login endpoint
+fix(api): resolve CORS issue on production
+chore: update dependencies
+docs: add API documentation
+```
