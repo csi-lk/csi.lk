@@ -5,5 +5,8 @@
  * Renders the index.ejs template
  */
 routerAdd("GET", "/", (c) => {
-  return c.render("index.ejs");
+  return c.render("index.ejs", {
+    pageTitle: 'Callum Silcock',
+    htmx: false
+  });
 });

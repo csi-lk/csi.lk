@@ -18,6 +18,8 @@ routerAdd("GET", "/app", (c) => {
 
   // Render app template with user data
   return c.render("pages/app.ejs", {
+    pageTitle: 'SilkOS',
+    htmx: true,
     userEmail: authRecord.email()
   });
 });
