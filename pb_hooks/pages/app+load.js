@@ -5,11 +5,12 @@
  * Handles authentication and provides user data
  */
 module.exports = function(api) {
+  const { redirect } = api;
   const authRecord = api.ctx.get("authRecord");
 
   if (!authRecord) {
     const loginUrl = `/login?next=${encodeURIComponent("/app")}`;
-    return api.ctx.redirect(302, loginUrl);
+    return redirect(loginUrl);
   }
 
   return {
