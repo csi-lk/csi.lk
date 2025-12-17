@@ -1,0 +1,8 @@
+{
+  "agent": "claude",
+  "tools": {
+    "test": {
+      "command": "echo 'No tests configured yet'"
+    }
+  }
+}
