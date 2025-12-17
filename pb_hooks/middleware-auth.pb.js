@@ -1,27 +1,29 @@
 /// <reference path="../pb_data/types.d.ts" />
 
 /**
- * Authentication middleware for /app/* routes
+ * Authentication guard for /app routes
  *
- * Protects all application routes by checking for authenticated user.
- * Redirects to /login with next parameter if not authenticated.
+ * This hook runs before serving any request, checking authentication
+ * for all /app/* routes and redirecting to login if not authenticated.
  */
-routerUse((next) => {
-  return (c) => {
-    const path = c.path();
+onBeforeServe((e) => {
+  e.router.use((next) => {
+    return (c) => {
+      const path = c.path();
 
-    // Only apply to /app/* routes
-    if (path.startsWith('/app')) {
-      const authRecord = c.get("authRecord");
+      // Only apply to /app/* routes
+      if (path.startsWith('/app')) {
+        const authRecord = c.get("authRecord");
 
-      if (!authRecord) {
-        // Not authenticated - redirect to login with next parameter
-        const loginUrl = `/login?next=${encodeURIComponent(path)}`;
-        return c.redirect(302, loginUrl);
+        if (!authRecord) {
+          // Not authenticated - redirect to login with next parameter
+          const loginUrl = `/login?next=${encodeURIComponent(path)}`;
+          return c.redirect(302, loginUrl);
+        }
       }
-    }
 
-    // Continue to next handler
-    return next(c);
-  };
+      // Continue to next handler (including PocketPages)
+      return next(c);
+    };
+  });
 });
