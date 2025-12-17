@@ -9,6 +9,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "postinstall": "node scripts/prepare-auth.js",
     "lint": "echo \"(no lint yet)\"",
     "test": "echo \"(no tests yet)\"",
     "check": "bun run lint && bun run test"
