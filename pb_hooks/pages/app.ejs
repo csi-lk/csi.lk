@@ -1,3 +1,11 @@
+<%
+// Redirect to login if not authenticated
+if (!request.auth) {
+  const loginUrl = `/login?next=${encodeURIComponent(request.url.pathname)}`;
+  response.redirect(loginUrl);
+  return;
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +88,8 @@
     <article class="silk-status">
       <h2>Status</h2>
       <p>
-        <strong>User:</strong> <%= data.userEmail %><br>
+        <strong>User:</strong> <%= request.auth.email() %><br>
+        <strong>ID:</strong> <%= request.auth.id %><br>
         <strong>Version:</strong> v3
       </p>
     </article>
