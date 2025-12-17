@@ -55,4 +55,23 @@ jobs:
           local-dir: pb_public/
           server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/pb_public/
 
-      # Note: pocketpages modules are copied to pb_hooks/lib/ and deployed with pb_hooks
+      # Deploy package.json and lockfile for server-side dependency installation
+      - name: Deploy package.json
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.pockethost.io
+          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
+          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./
+          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/pb_*/**
+            **/*.md
+            **/.editorconfig
+            **/CNAME
+          # Only include package.json and bun.lock
+          dry-run: false

@@ -2,13 +2,13 @@
 
 /**
  * PocketPages configuration
- * Uses official auth plugin loaded from pb_hooks/lib
+ * Plugins are loaded from node_modules (installed server-side by PocketHost)
  */
 
 module.exports = {
   plugins: [
-    `${__hooks}/lib/pocketpages-plugin-js-sdk`,
-    `${__hooks}/lib/pocketpages-plugin-auth`,
+    'pocketpages-plugin-js-sdk',
+    'pocketpages-plugin-auth',
   ],
   debug: false
 };
