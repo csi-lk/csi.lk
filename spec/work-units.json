@@ -520,6 +520,27 @@
       "nextQuestionId": 0,
       "nextNoteId": 0,
       "updated": "2025-12-17T02:27:15.337Z"
+    },
+    "UI-010": {
+      "id": "UI-010",
+      "title": "Migrate to PocketPages templates with HTMX",
+      "type": "task",
+      "status": "implementing",
+      "createdAt": "2025-12-17T02:29:41.708Z",
+      "updatedAt": "2025-12-17T02:30:02.144Z",
+      "description": "Convert existing routes to use PocketPages EJS templates with base.ejs layout, include HTMX where appropriate, replace inline HTML generation",
+      "epic": "ui-runtime-foundations",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:30:01.364Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:30:02.144Z"
+        }
+      ]
     }
   },
   "states": {
@@ -528,7 +549,9 @@
     ],
     "specifying": [],
     "testing": [],
-    "implementing": [],
+    "implementing": [
+      "UI-010"
+    ],
     "validating": [],
     "done": [
       "UI-009",
@@ -548,6 +571,6 @@
   },
   "prefixCounters": {
     "INFRA": 3,
-    "UI": 9
+    "UI": 10
   }
 }
