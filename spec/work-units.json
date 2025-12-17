@@ -2,7 +2,7 @@
   "version": "0.7.1",
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-17T01:59:08.468Z"
+    "lastUpdated": "2025-12-17T02:18:08.318Z"
   },
   "workUnits": {
     "FOUND-001": {
@@ -138,20 +138,47 @@
       "id": "UI-001",
       "title": "Create public boot page",
       "type": "task",
-      "status": "backlog",
+      "status": "done",
       "createdAt": "2025-12-17T01:46:13.343Z",
-      "updatedAt": "2025-12-17T01:46:13.343Z",
+      "updatedAt": "2025-12-17T02:16:09.182Z",
       "description": "Implement public landing page at / with identity, context/writing, and SilkOS sections. Minimal styling, no auth prompts, readable without JavaScript.",
       "epic": "boot-and-routing",
-      "children": []
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:14:12.842Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:14:13.616Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:16:08.397Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:16:09.182Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:16:09.182Z"
     },
     "UI-002": {
       "id": "UI-002",
       "title": "Healthcheck endpoint verification",
       "type": "story",
-      "status": "implementing",
+      "status": "done",
       "createdAt": "2025-12-17T01:46:45.277Z",
-      "updatedAt": "2025-12-17T02:11:05.685Z",
+      "updatedAt": "2025-12-17T02:13:52.441Z",
       "description": "Verify /healthz endpoint returns 200 OK with JSON containing ok, service, and version fields. Does not require auth.",
       "epic": "boot-and-routing",
       "children": [],
@@ -167,6 +194,14 @@
         {
           "state": "implementing",
           "timestamp": "2025-12-17T02:11:05.685Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:13:51.647Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:13:52.441Z"
         }
       ],
       "userStory": {
@@ -215,57 +250,140 @@
       "nextNoteId": 1,
       "attachments": [
         "spec/attachments/UI-002/ast-research-healthcheck-functions.md"
-      ]
+      ],
+      "questions": [],
+      "nextQuestionId": 0,
+      "updated": "2025-12-17T02:13:52.441Z"
     },
     "UI-003": {
       "id": "UI-003",
       "title": "Implement private app entry",
       "type": "task",
-      "status": "backlog",
+      "status": "done",
       "createdAt": "2025-12-17T01:46:51.894Z",
-      "updatedAt": "2025-12-17T01:46:51.894Z",
+      "updatedAt": "2025-12-17T02:18:08.323Z",
       "description": "Create /app route that redirects to /login if not authenticated, or renders OS shell with user identity, version, and logout link if authenticated.",
       "epic": "boot-and-routing",
-      "children": []
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:17:39.938Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:17:40.726Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:18:07.496Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:18:08.323Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:18:08.323Z"
     },
     "UI-004": {
       "id": "UI-004",
       "title": "Implement authentication flow",
       "type": "task",
-      "status": "backlog",
+      "status": "done",
       "createdAt": "2025-12-17T01:46:58.438Z",
-      "updatedAt": "2025-12-17T01:46:58.438Z",
+      "updatedAt": "2025-12-17T02:17:33.765Z",
       "description": "Create /login page with email/password inputs, POST /login handler, and POST /logout handler. Successful login redirects to next param or /app, logout redirects to /.",
       "epic": "boot-and-routing",
-      "children": []
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:16:55.247Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:16:56.014Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:17:32.959Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:17:33.765Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:17:33.765Z"
     },
     "UI-005": {
       "id": "UI-005",
       "title": "Create reusable route guard",
       "type": "task",
-      "status": "backlog",
+      "status": "done",
       "createdAt": "2025-12-17T01:47:05.541Z",
-      "updatedAt": "2025-12-17T01:47:05.541Z",
+      "updatedAt": "2025-12-17T02:16:48.387Z",
       "description": "Implement auth guard helper in pb_hooks/lib/auth.pb.js that checks authentication and redirects to /login?next=<path> if not authenticated. Used by all /app/* routes.",
       "epic": "boot-and-routing",
-      "children": []
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T02:16:25.536Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T02:16:26.309Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T02:16:47.609Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T02:16:48.387Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T02:16:48.387Z"
     }
   },
   "states": {
     "backlog": [
-      "FOUND-001",
-      "UI-001",
-      "UI-003",
-      "UI-004",
-      "UI-005"
+      "FOUND-001"
     ],
     "specifying": [],
     "testing": [],
-    "implementing": [
-      "UI-002"
-    ],
+    "implementing": [],
     "validating": [],
     "done": [
+      "UI-003",
+      "UI-004",
+      "UI-005",
+      "UI-001",
+      "UI-002",
       "INFRA-003",
       "INFRA-002",
       "INFRA-001"
