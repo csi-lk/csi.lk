@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "csi.lk",
+      "dependencies": {
+        "pocketpages": "^0.11.0",
+      },
+    },
+  },
+  "packages": {
+    "pocketpages": ["pocketpages@0.11.9", "", {}, "sha512-RMcTV1yZa65pV9VuuNFtkf/nRQbZDt/jNHywf3Ni7z3U0a5iRFNfQBzOO4e50gyvyFKEzEQ9RSGDOfRarv4X5Q=="],
+  }
+}
