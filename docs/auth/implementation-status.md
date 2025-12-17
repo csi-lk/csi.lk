@@ -43,23 +43,28 @@
 - Also supports GET for convenience
 - See: `pb_hooks/logout.pb.js`
 
-### ✅ 2.6.6 — Auth guard (requireAuth)
-**Status**: IMPLEMENTED (using PocketPages configuration)
+### ⚠️ 2.6.6 — Auth guard (requireAuth)
+**Status**: PARTIALLY IMPLEMENTED (PocketPages bundling limitation)
 
-Solution implemented:
+Attempted solution:
 - Created `pb_hooks/pages/+config.js` with inline auth plugin
-- Plugin runs before page processing and attaches `request.auth` and `request.isAuthenticated`
-- Updated `app+load.js` to check authentication and redirect if needed
-- Follows PocketPages best practices for authentication
+- Updated `app+load.js` to check authentication and redirect
 
-How it works:
-1. PocketPages processes `+config.js` and runs auth plugin before each request
-2. Auth plugin extracts `authRecord` from PocketBase context
-3. Plugin attaches `request.auth` for easy access in +load.js files
-4. `app+load.js` checks `request.isAuthenticated` and redirects to `/login?next=/app` if false
-5. If authenticated, returns user data to template
+Issue discovered:
+- We're using a pre-bundled `pocketpages.pb.js` file (287KB snapshot)
+- The bundled file doesn't dynamically load +config.js plugins at runtime
+- Plugins must be included at bundle-time, not runtime
+- To use +config.js, we'd need to either:
+  1. Set up full PocketPages project with `npm create pocketpages`
+  2. Rebuild pocketpages.pb.js with plugins included
+  3. Deploy node_modules to PocketHost (large, not ideal)
 
-This is the proper PocketPages way to handle authentication, avoiding conflicts with file-based routing.
+Current workaround options:
+1. **Client-side auth check**: Simplest but not secure
+2. **Manual PocketPages setup**: Proper but complex
+3. **Accept unprotected /app for MVP**: Focus on testing login/logout flow
+
+For now, the login and logout functionality IS working - just the server-side guard for /app is missing.
 
 ## Test Plan
 
