@@ -19,47 +19,6 @@ jobs:
       - name: Check
         run: bun run check
 
-      - name: Install dependencies
-        run: bun install
-
-      # Deploy package.json and lockfile
-      - name: Deploy package files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ftp.pockethost.io
-          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
-          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./
-          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/pb_data/**
-            **/pb_hooks/**
-            **/pb_migrations/**
-            **/pb_public/**
-            **/.github/**
-            **/spec/**
-            **/scripts/**
-            **/CHANGELOG.md
-            **/CLAUDE.md
-            **/README.md
-            **/SECURITY.md
-            **/.editorconfig
-
-      # Deploy node_modules
-      - name: Deploy node_modules
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ftp.pockethost.io
-          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
-          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: node_modules/
-          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/node_modules/
-
       # Deploy pb_hooks
       - name: Deploy pb_hooks
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6

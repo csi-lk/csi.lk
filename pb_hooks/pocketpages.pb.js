@@ -4,4 +4,4 @@
  * PocketPages bootstrap
  * Enables file-based routing for EJS templates in pb_hooks/pages/
  */
-require('pocketpages')
+require(`${__hooks}/lib/pocketpages.pb.js`)
