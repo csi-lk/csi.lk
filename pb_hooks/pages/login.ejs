@@ -5,94 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - SilkOS</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Pico.css - Minimal CSS framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 
+  <!-- SilkOS custom overrides -->
+  <link rel="stylesheet" href="/assets/silk.css">
+
+  <style>
+    /* Centered layout for login form */
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      padding: 1rem;
     }
 
-    .login-container {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 100%;
+    article {
       max-width: 400px;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      font-size: 0.875rem;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #0066cc;
-    }
-
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      background: #0066cc;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-
-    button:hover {
-      background: #0052a3;
-    }
-
-    button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
+      margin: 1rem;
     }
 
     .error {
-      background: #fee;
-      color: #c00;
+      background: var(--pico-del-color);
+      color: var(--pico-del-color);
       padding: 0.75rem;
-      border-radius: 4px;
+      border-radius: var(--pico-border-radius);
       margin-bottom: 1rem;
-      font-size: 0.875rem;
       display: none;
     }
 
@@ -104,42 +42,32 @@
       text-align: center;
       margin-top: 1rem;
     }
-
-    .back-link a {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.875rem;
-    }
-
-    .back-link a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
-  <div class="login-container">
+  <article>
     <h1>Login to SilkOS</h1>
 
-    <div class="error" id="error"></div>
+    <div class="error" id="error" role="alert"></div>
 
     <form id="login-form">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required autocomplete="username">
-      </div>
+      <label for="email">
+        Email
+        <input type="email" id="email" name="email" required autocomplete="username" placeholder="you@example.com">
+      </label>
 
-      <div class="form-group">
-        <label for="password">Password</label>
+      <label for="password">
+        Password
         <input type="password" id="password" name="password" required autocomplete="current-password">
-      </div>
+      </label>
 
       <button type="submit" id="submit-btn">Login</button>
     </form>
 
-    <div class="back-link">
+    <footer class="back-link">
       <a href="/">← Back to home</a>
-    </div>
-  </div>
+    </footer>
+  </article>
 
   <script>
     const form = document.getElementById('login-form');

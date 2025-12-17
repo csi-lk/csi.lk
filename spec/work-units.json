@@ -2,7 +2,7 @@
   "version": "0.7.1",
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-17T02:27:15.332Z"
+    "lastUpdated": "2025-12-17T21:05:21.125Z"
   },
   "workUnits": {
     "FOUND-001": {
@@ -525,9 +525,9 @@
       "id": "UI-010",
       "title": "Migrate to PocketPages templates with HTMX",
       "type": "task",
-      "status": "implementing",
+      "status": "done",
       "createdAt": "2025-12-17T02:29:41.708Z",
-      "updatedAt": "2025-12-17T02:30:02.144Z",
+      "updatedAt": "2025-12-17T21:05:21.129Z",
       "description": "Convert existing routes to use PocketPages EJS templates with base.ejs layout, include HTMX where appropriate, replace inline HTML generation",
       "epic": "ui-runtime-foundations",
       "children": [],
@@ -539,6 +539,44 @@
         {
           "state": "implementing",
           "timestamp": "2025-12-17T02:30:02.144Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T21:05:16.872Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T21:05:21.129Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T21:05:21.129Z"
+    },
+    "UI-011": {
+      "id": "UI-011",
+      "title": "Pico.css integration",
+      "type": "task",
+      "status": "implementing",
+      "createdAt": "2025-12-17T21:08:10.316Z",
+      "updatedAt": "2025-12-17T21:08:38.981Z",
+      "description": "Adopt Pico.css as the default styling layer for SilkOS pages with zero build, plus a local silk.css file for overrides/tokens",
+      "epic": "ui-runtime-foundations",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T21:08:24.579Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T21:08:38.981Z"
         }
       ]
     }
@@ -550,10 +588,11 @@
     "specifying": [],
     "testing": [],
     "implementing": [
-      "UI-010"
+      "UI-011"
     ],
     "validating": [],
     "done": [
+      "UI-010",
       "UI-009",
       "UI-008",
       "UI-007",
@@ -571,6 +610,6 @@
   },
   "prefixCounters": {
     "INFRA": 3,
-    "UI": 10
+    "UI": 11
   }
 }

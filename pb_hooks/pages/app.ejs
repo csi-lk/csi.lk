@@ -5,101 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SilkOS</title>
 
+  <!-- Pico.css - Minimal CSS framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+  <!-- SilkOS custom overrides -->
+  <link rel="stylesheet" href="/assets/silk.css">
+
+  <!-- HTMX for progressive enhancement -->
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
+    /* Header styling */
     header {
-      background: #f5f5f5;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem 2rem;
+      background: var(--pico-background-color);
+      border-bottom: 1px solid var(--pico-muted-border-color);
     }
 
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
+    header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 0;
     }
 
-    h1 {
+    header h1 {
       font-size: 1.25rem;
-      font-weight: 600;
+      margin: 0;
     }
 
-    nav a {
-      color: #666;
-      text-decoration: none;
-      margin-left: 1rem;
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    nav a:hover {
-      color: #0066cc;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .status {
-      background: #f9f9f9;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .status h2 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .status-item {
-      margin-bottom: 0.5rem;
-      font-size: 0.875rem;
-    }
-
-    .status-label {
-      color: #666;
-      margin-right: 0.5rem;
+    header nav a {
+      margin: 0;
     }
 
     .logout-form {
       display: inline;
+      margin: 0;
     }
 
     .logout-btn {
       background: none;
       border: none;
-      color: #0066cc;
+      color: var(--pico-color);
       cursor: pointer;
       padding: 0;
       font: inherit;
+      text-decoration: underline;
     }
 
     .logout-btn:hover {
-      text-decoration: underline;
+      color: var(--pico-primary);
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
+  <header class="silk-header">
+    <div class="container">
       <h1>SilkOS</h1>
       <nav>
         <a href="/app">Home</a>
@@ -110,18 +76,14 @@
     </div>
   </header>
 
-  <main>
-    <div class="status">
+  <main class="container">
+    <article class="silk-status">
       <h2>Status</h2>
-      <div class="status-item">
-        <span class="status-label">User:</span>
-        <strong><%= data.userEmail %></strong>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Version:</span>
-        <strong>v3</strong>
-      </div>
-    </div>
+      <p>
+        <strong>User:</strong> <%= data.userEmail %><br>
+        <strong>Version:</strong> v3
+      </p>
+    </article>
 
     <p>Welcome to SilkOS. This is the OS shell placeholder.</p>
   </main>

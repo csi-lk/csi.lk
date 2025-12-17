@@ -1,0 +1,54 @@
+/**
+ * silk.css - SilkOS design tokens and Pico.css overrides
+ *
+ * Minimal custom styling on top of Pico.css defaults.
+ * No build step required - loaded after Pico to override.
+ */
+
+:root {
+  /* Brand colors */
+  --silk-primary: #0066cc;
+  --silk-primary-hover: #0052a3;
+
+  /* Spacing scale refinements */
+  --pico-spacing: 1rem;
+
+  /* Typography */
+  --pico-font-family: system-ui, -apple-system, sans-serif;
+
+  /* Border radius - slightly less rounded */
+  --pico-border-radius: 0.25rem;
+
+  /* Link colors */
+  --pico-color-primary: var(--silk-primary);
+  --pico-color-primary-hover: var(--silk-primary-hover);
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Adjust primary color for dark mode if needed */
+    --silk-primary: #4d94ff;
+  }
+}
+
+/* Custom utilities for SilkOS */
+.silk-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--pico-spacing);
+}
+
+.silk-status {
+  background: var(--pico-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.silk-header {
+  background: var(--pico-background-color);
+  border-bottom: 1px solid var(--pico-muted-border-color);
+  padding: 1rem 0;
+}
