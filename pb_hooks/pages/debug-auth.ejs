@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auth Debug</title>
+</head>
+<body>
+  <h1>Authentication Debug</h1>
+
+  <h2>Request Object</h2>
+  <pre><%= JSON.stringify({
+    hasAuth: !!data.request?.auth,
+    isAuthenticated: data.request?.isAuthenticated,
+    authEmail: data.request?.auth?.email(),
+    eventHasAuth: !!data.request?.event?.get("authRecord"),
+  }, null, 2) %></pre>
+
+  <h2>Context</h2>
+  <pre><%= JSON.stringify({
+    dataKeys: Object.keys(data),
+  }, null, 2) %></pre>
+</body>
+</html>
