@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
 /**
- * Postinstall script to extract official pocketpages-plugin-auth
- * and bundle it into pb_hooks/pages/+config.js
+ * Postinstall script to package PocketPages plugins into +config.js
  *
- * This runs automatically after `bun install` to keep the plugin code
- * in sync with the installed package version.
+ * Extracts official pocketpages plugins from node_modules and bundles them
+ * into pb_hooks/pages/+config.js. This works around PocketHost not deploying
+ * node_modules while keeping plugin code in sync with installed package versions.
+ *
+ * Runs automatically after `bun install`.
  */
 
 const fs = require('fs');
