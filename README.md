@@ -46,7 +46,9 @@ Users are managed through PocketBase's default `users` collection:
 4. On failure: error message displayed
 
 **Auth Guard**:
-- Protected routes use `+load.js` files to check authentication
+- PocketPages `+config.js` defines inline auth plugin
+- Plugin runs before page processing, attaches `request.auth` to all requests
+- Protected routes use `+load.js` files to check `request.isAuthenticated`
 - Unauthenticated requests redirect to `/login?next=<path>`
 - Authenticated requests proceed with user data available to templates
 

@@ -2,16 +2,20 @@
 
 /**
  * Load function for /app page
- *
- * NOTE: This file is not currently used because /app is handled
- * by an explicit route handler in 000-auth-guard.pb.js for authentication.
- * This file is kept for reference and future PocketPages integration.
+ * Requires authentication - redirects to login if not authenticated
  */
-module.exports = function(api) {
-  const authRecord = api.ctx.get("authRecord");
+module.exports = function(request, response) {
+  // Check if user is authenticated (set by auth plugin in +config.js)
+  if (!request.auth || !request.isAuthenticated) {
+    // Redirect to login with next parameter
+    const loginUrl = `/login?next=${encodeURIComponent(request.url.pathname)}`;
+    response.redirect(loginUrl);
+    return;
+  }
 
+  // Return authenticated user data for the template
   return {
-    userEmail: authRecord ? authRecord.email() : "",
-    userId: authRecord ? authRecord.id : ""
+    userEmail: request.auth.email(),
+    userId: request.auth.id
   };
 };

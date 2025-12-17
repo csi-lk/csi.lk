@@ -5,10 +5,18 @@
       "name": "csi.lk",
       "dependencies": {
         "pocketpages": "^0.11.0",
+        "pocketpages-plugin-auth": "^0.2.2",
+        "pocketpages-plugin-js-sdk": "^0.2.0",
       },
     },
   },
   "packages": {
+    "pocketbase-js-sdk-jsvm": ["pocketbase-js-sdk-jsvm@0.25.10004", "", {}, "sha512-/0RkFa6X4LeKMdv4KCXhC5i2cvpG0elvXInRyk8bApjG8jyyPiNDL6o9VBvgxjl6j8/HcQYf3oKYXmZteqAFvQ=="],
+
     "pocketpages": ["pocketpages@0.11.9", "", {}, "sha512-RMcTV1yZa65pV9VuuNFtkf/nRQbZDt/jNHywf3Ni7z3U0a5iRFNfQBzOO4e50gyvyFKEzEQ9RSGDOfRarv4X5Q=="],
+
+    "pocketpages-plugin-auth": ["pocketpages-plugin-auth@0.2.2", "", { "dependencies": { "pocketpages-plugin-js-sdk": ">=0.1.0" } }, "sha512-CQ/3DFJNzf4tV3W7CxeV7n2scbbeTBVLltaQ1MsxtcfeF862Ad5PyAfUUkFdmnUjpPDpQVDAIKL/RVHg9/C3dQ=="],
+
+    "pocketpages-plugin-js-sdk": ["pocketpages-plugin-js-sdk@0.2.0", "", { "dependencies": { "pocketbase-js-sdk-jsvm": "^0.25.10004" } }, "sha512-/uY1nCz7Zt19C/kyoOraH5ekTZa4PLPpHd0qIEoyf1XBPtEpHL4k7jZE0IPEMu1dH/8RfsKb/YzN52GR+9DdzQ=="],
   }
 }

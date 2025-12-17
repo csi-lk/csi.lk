@@ -43,35 +43,23 @@
 - Also supports GET for convenience
 - See: `pb_hooks/logout.pb.js`
 
-### ⚠️ 2.6.6 — Auth guard (requireAuth)
-**Status**: PARTIALLY IMPLEMENTED
+### ✅ 2.6.6 — Auth guard (requireAuth)
+**Status**: IMPLEMENTED (using PocketPages configuration)
 
-Current state:
-- PocketBase automatically validates auth cookies on requests
-- Authenticated users have `authRecord` available via `c.get("authRecord")`
-- `/app` route currently accessible without authentication (PocketPages serves it)
+Solution implemented:
+- Created `pb_hooks/pages/+config.js` with inline auth plugin
+- Plugin runs before page processing and attaches `request.auth` and `request.isAuthenticated`
+- Updated `app+load.js` to check authentication and redirect if needed
+- Follows PocketPages best practices for authentication
 
-Issue encountered:
-- PocketPages file-based routing conflicts with explicit route handlers
-- Attempted solutions:
-  1. Middleware via `routerUse()` - did not intercept PocketPages routes
-  2. Middleware via `onBeforeServe()` - did not intercept PocketPages routes
-  3. Auth check in `app+load.js` with redirect - PocketPages doesn't support redirects from +load
-  4. Explicit route handler with `routerAdd()` - PocketPages takes precedence
-  5. File naming with `000-` prefix - still didn't take precedence
+How it works:
+1. PocketPages processes `+config.js` and runs auth plugin before each request
+2. Auth plugin extracts `authRecord` from PocketBase context
+3. Plugin attaches `request.auth` for easy access in +load.js files
+4. `app+load.js` checks `request.isAuthenticated` and redirects to `/login?next=/app` if false
+5. If authenticated, returns user data to template
 
-Workaround options:
-1. **Client-side auth check**: Add JavaScript to app.ejs that checks localStorage for auth token and redirects to login if missing
-   - Pros: Works immediately, no server-side complexity
-   - Cons: Not secure (user can bypass with devtools), initial page flash
-
-2. **Remove PocketPages for /app**: Handle /app with explicit route handler only, remove app.ejs
-   - Pros: Full control over authentication flow
-   - Cons: Lose PocketPages benefits, need manual EJS rendering
-
-3. **Custom PocketPages middleware**: Modify pocketpages.pb.js to support pre-route middleware
-   - Pros: Proper solution, works with PocketPages
-   - Cons: Complex, need to understand PocketPages internals
+This is the proper PocketPages way to handle authentication, avoiding conflicts with file-based routing.
 
 ## Test Plan
 
