@@ -44,27 +44,45 @@
 - See: `pb_hooks/logout.pb.js`
 
 ### ⚠️ 2.6.6 — Auth guard (requireAuth)
-**Status**: PARTIALLY IMPLEMENTED (PocketPages bundling limitation)
+**Status**: BLOCKED (PocketPages bundling limitation confirmed)
 
-Attempted solution:
-- Created `pb_hooks/pages/+config.js` with inline auth plugin
-- Updated `app+load.js` to check authentication and redirect
+Attempted solutions:
+1. Created `pb_hooks/pages/+config.js` with inline auth plugin
+2. Created `pb_hooks/000-auth-middleware.pb.js` to enrich context before PocketPages
+3. Updated `app+load.js` to check authentication and redirect
 
-Issue discovered:
-- We're using a pre-bundled `pocketpages.pb.js` file (287KB snapshot)
-- The bundled file doesn't dynamically load +config.js plugins at runtime
-- Plugins must be included at bundle-time, not runtime
-- To use +config.js, we'd need to either:
-  1. Set up full PocketPages project with `npm create pocketpages`
-  2. Rebuild pocketpages.pb.js with plugins included
-  3. Deploy node_modules to PocketHost (large, not ideal)
+Issues confirmed via debug page (`/debug-auth`):
+- **+config.js not loading**: The bundled pocketpages.pb.js does NOT load +config.js at runtime
+- **+load.js not working**: Return values from +load.js are not passed to templates
+- **Middleware runs but PocketPages can't access it**: Auth middleware enriches context, but PocketPages doesn't see it
 
-Current workaround options:
-1. **Client-side auth check**: Simplest but not secure
-2. **Manual PocketPages setup**: Proper but complex
-3. **Accept unprotected /app for MVP**: Focus on testing login/logout flow
+Root cause:
+- We're using a pre-bundled `pocketpages.pb.js` file (287KB, version unknown)
+- This bundle is a snapshot that doesn't support:
+  - Dynamic +config.js loading
+  - +load.js file processing
+  - Plugin system
+- These features require the full PocketPages build system
 
-For now, the login and logout functionality IS working - just the server-side guard for /app is missing.
+**Options to complete auth guard:**
+
+1. **Rebuild PocketPages bundle** (recommended):
+   - Use PocketPages source to create custom bundle
+   - Include auth plugin at build time
+   - Proper solution but requires build tooling setup
+
+2. **Client-side auth check** (quick workaround):
+   - Add JavaScript to app.ejs
+   - Check localStorage for auth token
+   - Redirect if missing
+   - Not secure but functional for MVP
+
+3. **Replace PocketPages** (major change):
+   - Use explicit route handlers for all pages
+   - Manual EJS rendering
+   - Loses PocketPages file-based routing
+
+For now, login and logout functionality IS working - just the server-side guard for /app is missing.
 
 ## Test Plan
 
