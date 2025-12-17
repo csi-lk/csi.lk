@@ -1,0 +1,156 @@
+{
+  "version": "0.7.1",
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-17T01:30:44.018Z"
+  },
+  "workUnits": {
+    "FOUND-001": {
+      "id": "FOUND-001",
+      "title": "Conduct Foundation Event Storm for Foundation",
+      "status": "backlog",
+      "createdAt": "2025-12-17T01:25:43.871Z",
+      "updatedAt": "2025-12-17T01:25:43.871Z",
+      "stateHistory": [
+        {
+          "state": "backlog",
+          "timestamp": "2025-12-17T01:25:43.871Z"
+        }
+      ],
+      "description": "Complete the foundation by capturing domain architecture through Foundation Event Storm.\n\nUse these commands to populate foundation.json eventStorm field:\n- fspec add-foundation-bounded-context <name>\n- fspec add-aggregate-to-foundation <context> <aggregate>\n- fspec add-domain-event-to-foundation <context> <event>\n- fspec show-foundation-event-storm\n\nWhy this matters:\n- Establishes bounded contexts for domain-driven design\n- Enables tag ontology generation from domain model\n- Provides foundation for architectural documentation\n- Supports EXMAP-004 tag discovery workflow\n\nSee spec/CLAUDE.md \"Foundation Event Storm\" section for detailed guidance.",
+      "type": "task"
+    },
+    "INFRA-001": {
+      "id": "INFRA-001",
+      "title": "Set up v3 repo structure",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T01:27:12.197Z",
+      "updatedAt": "2025-12-17T01:29:26.207Z",
+      "description": "Create v3 branch with PocketBase directory structure (pb_hooks/, pb_migrations/, pb_public/, .github/workflows/, scripts/) and update README.md with deployment information",
+      "epic": "initial-infrastructure",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T01:28:34.079Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T01:28:51.185Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T01:29:20.956Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T01:29:26.207Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T01:29:26.207Z"
+    },
+    "INFRA-002": {
+      "id": "INFRA-002",
+      "title": "Set up Bun as command runner",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T01:27:17.713Z",
+      "updatedAt": "2025-12-17T01:30:11.746Z",
+      "description": "Create package.json with Bun scripts (lint, test, check) as primary command runner for repo tasks",
+      "epic": "initial-infrastructure",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T01:29:38.095Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T01:29:38.853Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T01:30:10.974Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T01:30:11.746Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T01:30:11.746Z"
+    },
+    "INFRA-003": {
+      "id": "INFRA-003",
+      "title": "Set up CI/CD deploy to PocketHost",
+      "type": "task",
+      "status": "done",
+      "createdAt": "2025-12-17T01:27:22.479Z",
+      "updatedAt": "2025-12-17T01:30:44.022Z",
+      "description": "Create GitHub Actions workflow to deploy pb_hooks/, pb_migrations/, and pb_public/ to PocketHost via FTPS on push to v3 branch",
+      "epic": "initial-infrastructure",
+      "children": [],
+      "stateHistory": [
+        {
+          "state": "specifying",
+          "timestamp": "2025-12-17T01:30:23.415Z"
+        },
+        {
+          "state": "implementing",
+          "timestamp": "2025-12-17T01:30:24.185Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T01:30:43.249Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T01:30:44.022Z"
+        }
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T01:30:44.022Z"
+    }
+  },
+  "states": {
+    "backlog": [
+      "FOUND-001"
+    ],
+    "specifying": [],
+    "testing": [],
+    "implementing": [],
+    "validating": [],
+    "done": [
+      "INFRA-003",
+      "INFRA-002",
+      "INFRA-001"
+    ],
+    "blocked": []
+  },
+  "prefixCounters": {
+    "INFRA": 3
+  }
+}

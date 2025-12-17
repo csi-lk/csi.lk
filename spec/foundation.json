@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "project": {
+    "name": "csi.lk",
+    "vision": "csi.lk is Callum Silcock's personal operating system for thinking, capture, and publishing - a private-first, self-hosted web application for rapidly capturing thoughts, links, voice notes, and ideas, automatically structuring them with AI, and progressively turning raw input into organised knowledge, actionable tasks, and publishable content.",
+    "projectType": "web-app"
+  },
+  "problemSpace": {
+    "primaryProblem": {
+      "title": "Scattered capture and forgotten thinking",
+      "description": "Thoughts, links, voice notes, and ideas are captured across scattered tools (notes apps, daily dumps, browser tabs) with no structure or system. Without intentional triage and organization, important insights get buried, tasks are forgotten, and valuable thinking is lost. There's no way to search past ideas, recall project context, or progressively build knowledge from raw capture.",
+      "impact": "high"
+    }
+  },
+  "solutionSpace": {
+    "overview": "A private-first web application that provides fast capture interfaces (text, voice, links), AI-assisted structuring and summarization, semantic search over personal content, and selective publishing to a public digital garden. The system replaces scattered notes with an intentional workflow that surfaces what matters and supports long-term knowledge building.",
+    "capabilities": [
+      {
+        "name": "Rapid Capture",
+        "description": "Fast, low-friction capture of thoughts, links, voice notes, and ideas before they're forgotten"
+      },
+      {
+        "name": "AI-Assisted Structuring",
+        "description": "Automatic summarization and structuring of raw captures using AI to organize and make sense of unstructured input"
+      },
+      {
+        "name": "Semantic Search",
+        "description": "Local semantic search over personal content to recall past projects, decisions, and ideas conversationally"
+      },
+      {
+        "name": "Progressive Organization",
+        "description": "Transform raw captures into structured knowledge, actionable tasks, and organized notes through intentional workflow"
+      },
+      {
+        "name": "Selective Publishing",
+        "description": "Explicitly publish curated private notes to a public digital garden without maintaining a separate blog or CMS"
+      },
+      {
+        "name": "Private-First Storage",
+        "description": "Markdown-based content storage with self-hosting and local semantic search, ensuring long-term portability and data ownership"
+      }
+    ]
+  },
+  "personas": [
+    {
+      "name": "Primary User",
+      "description": "Callum Silcock - the main user who captures thoughts, links, voice notes, and ideas throughout the day, triages and organizes them with AI assistance, and selectively publishes curated content to the public site",
+      "goals": [
+        "Rapidly capture thoughts before they're forgotten",
+        "Build a searchable personal knowledge base",
+        "Progressively turn raw notes into publishable content"
+      ]
+    },
+    {
+      "name": "Family Member",
+      "description": "Optional additional users (family members) who can capture their own thoughts, links, and notes in a private space within the system",
+      "goals": [
+        "Quick capture of personal thoughts and notes",
+        "Maintain private personal space"
+      ]
+    },
+    {
+      "name": "Public Reader",
+      "description": "Anonymous visitors to the public digital garden who read selectively published content without requiring accounts or authentication",
+      "goals": [
+        "Discover and read curated public content",
+        "Browse published notes and ideas"
+      ]
+    }
+  ]
+}

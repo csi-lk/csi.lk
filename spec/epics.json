@@ -1,0 +1,15 @@
+{
+  "epics": {
+    "initial-infrastructure": {
+      "id": "initial-infrastructure",
+      "title": "Initial Infrastructure Setup",
+      "createdAt": "2025-12-17T01:26:28.574Z",
+      "description": "Set up v3 branch with PocketBase structure, Bun tooling, and CI/CD deployment to PocketHost",
+      "workUnits": [
+        "INFRA-001",
+        "INFRA-002",
+        "INFRA-003"
+      ]
+    }
+  }
+}

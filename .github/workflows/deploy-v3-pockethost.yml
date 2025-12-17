@@ -1,0 +1,53 @@
+name: Deploy v3 to PocketHost
+
+on:
+  push:
+    branches: [v3]
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Check
+        run: bun run check
+
+      # Deploy pb_hooks
+      - name: Deploy pb_hooks
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.pockethost.io
+          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
+          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: pb_hooks/
+          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/pb_hooks/
+
+      # Deploy pb_migrations
+      - name: Deploy pb_migrations
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.pockethost.io
+          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
+          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: pb_migrations/
+          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/pb_migrations/
+
+      # Deploy pb_public
+      - name: Deploy pb_public
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.pockethost.io
+          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
+          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: pb_public/
+          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/pb_public/

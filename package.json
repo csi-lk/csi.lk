@@ -6,5 +6,11 @@
     "silcock",
     "portfolio"
   ],
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "lint": "echo \"(no lint yet)\"",
+    "test": "echo \"(no tests yet)\"",
+    "check": "bun run lint && bun run test"
+  }
 }
