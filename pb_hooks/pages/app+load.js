@@ -2,18 +2,12 @@
 
 /**
  * Load function for /app page
- * Handles authentication and provides user data
+ * Provides user data (auth protection to be added)
  */
 module.exports = function(api) {
-  const { redirect } = api;
   const authRecord = api.ctx.get("authRecord");
 
-  if (!authRecord) {
-    const loginUrl = `/login?next=${encodeURIComponent("/app")}`;
-    return redirect(loginUrl);
-  }
-
   return {
-    userEmail: authRecord.email()
+    userEmail: authRecord ? authRecord.email() : "guest@example.com"
   };
 };
