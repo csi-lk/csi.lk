@@ -5,21 +5,21 @@
  * Defines plugins and processing options
  */
 
-// Simple inline auth plugin that checks PocketBase auth
+// Auth passthrough plugin
+// The 000-auth-middleware.pb.js file runs first and enriches the context
+// This plugin just exposes that auth data on the request object
 const authPlugin = (config, options) => {
   return {
-    name: 'inline-auth',
+    name: 'auth-passthrough',
 
-    // Before hooks run before the page is processed
-    before: (request, response) => {
-      // Get the authenticated record from PocketBase
-      const authRecord = request.context.get("authRecord");
+    // Extract auth from context and attach to request
+    onRequest: ({ request, response }) => {
+      // Get the authRecord that was set by 000-auth-middleware.pb.js
+      const authRecord = request.event.get("authRecord");
 
-      // Attach auth info to request for easy access in pages
+      // Attach to request for easy access in +load.js files
       request.auth = authRecord || null;
       request.isAuthenticated = !!authRecord;
-
-      return { request, response };
     }
   };
 };
@@ -28,5 +28,5 @@ module.exports = {
   plugins: [
     authPlugin
   ],
-  debug: false
+  debug: true  // Enable debug logging to see if this loads
 };
