@@ -19,6 +19,41 @@ This v3 rebuild uses PocketBase as the runtime environment:
 
 PocketHost deployment expects the `pb_*` directories directly (not a Node.js build artifact).
 
+## Authentication
+
+SilkOS v3 uses PocketBase's built-in authentication system.
+
+### Authentication Mechanism
+
+- **Provider**: PocketBase native auth (no custom password storage)
+- **Method**: Email + password authentication
+- **Session Management**: PocketBase auth tokens stored in cookies
+- **Access Control**: All `/app/*` routes require authentication
+
+### User Management
+
+Users are managed through PocketBase's default `users` collection:
+- Admin users can be created via PocketBase admin UI
+- Regular users can be added through the admin interface
+- MVP: Only authenticated users can access the application
+
+### Implementation
+
+**Login Flow**:
+1. User submits email + password at `/login`
+2. Client-side JavaScript calls PocketBase auth API
+3. On success: token stored in localStorage, redirect to `/app` (or `?next` param)
+4. On failure: error message displayed
+
+**Auth Guard**:
+- Protected routes use `+load.js` files to check authentication
+- Unauthenticated requests redirect to `/login?next=<path>`
+- Authenticated requests proceed with user data available to templates
+
+**Logout**:
+- POST to `/logout` clears session and redirects to `/`
+- Also supports GET for convenience
+
 ## Tech Stack
 
 SilkOS v3 uses a minimal, zero-build stack optimized for PocketHost deployment:

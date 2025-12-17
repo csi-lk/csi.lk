@@ -2,12 +2,16 @@
 
 /**
  * Load function for /app page
- * Provides user data (auth protection to be added)
+ * Provides authenticated user data to template
+ *
+ * Note: Auth protection is handled by middleware-auth.pb.js
+ * This function only runs after successful authentication
  */
 module.exports = function(api) {
   const authRecord = api.ctx.get("authRecord");
 
   return {
-    userEmail: authRecord ? authRecord.email() : "guest@example.com"
+    userEmail: authRecord.email(),
+    userId: authRecord.id
   };
 };

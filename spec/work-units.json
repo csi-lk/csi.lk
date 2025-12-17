@@ -2,7 +2,7 @@
   "version": "0.7.1",
   "meta": {
     "version": "1.0.0",
-    "lastUpdated": "2025-12-17T21:05:21.125Z"
+    "lastUpdated": "2025-12-17T21:12:36.356Z"
   },
   "workUnits": {
     "FOUND-001": {
@@ -563,9 +563,9 @@
       "id": "UI-011",
       "title": "Pico.css integration",
       "type": "task",
-      "status": "implementing",
+      "status": "done",
       "createdAt": "2025-12-17T21:08:10.316Z",
-      "updatedAt": "2025-12-17T21:08:38.981Z",
+      "updatedAt": "2025-12-17T21:12:36.360Z",
       "description": "Adopt Pico.css as the default styling layer for SilkOS pages with zero build, plus a local silk.css file for overrides/tokens",
       "epic": "ui-runtime-foundations",
       "children": [],
@@ -577,21 +577,48 @@
         {
           "state": "implementing",
           "timestamp": "2025-12-17T21:08:38.981Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-12-17T21:12:22.361Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-12-17T21:12:36.360Z"
         }
-      ]
+      ],
+      "rules": [],
+      "examples": [],
+      "questions": [],
+      "architectureNotes": [],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextQuestionId": 0,
+      "nextNoteId": 0,
+      "updated": "2025-12-17T21:12:36.360Z"
+    },
+    "AUTH-001": {
+      "id": "AUTH-001",
+      "title": "Authentication MVP",
+      "type": "story",
+      "status": "backlog",
+      "createdAt": "2025-12-17T21:19:09.108Z",
+      "updatedAt": "2025-12-17T21:19:09.108Z",
+      "description": "PocketBase-native authentication with protected /app routes",
+      "children": []
     }
   },
   "states": {
     "backlog": [
-      "FOUND-001"
+      "FOUND-001",
+      "AUTH-001"
     ],
     "specifying": [],
     "testing": [],
-    "implementing": [
-      "UI-011"
-    ],
+    "implementing": [],
     "validating": [],
     "done": [
+      "UI-011",
       "UI-010",
       "UI-009",
       "UI-008",
@@ -610,6 +637,7 @@
   },
   "prefixCounters": {
     "INFRA": 3,
-    "UI": 11
+    "UI": 11,
+    "AUTH": 1
   }
 }
