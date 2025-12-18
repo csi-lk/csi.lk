@@ -5,15 +5,26 @@
  * This replicates what the auth plugin's onRequest hook does
  */
 module.exports = function(request, response) {
+  const debug = {
+    alreadyAuth: !!request.auth,
+    hasEvent: !!request.event,
+    hasCookie: false,
+    cookieValue: null,
+    hasToken: false,
+    foundRecord: false,
+    error: null
+  };
+
   // Skip if already authenticated
   if (request.auth) {
-    return {};
+    return { debug };
   }
 
   // Try to get pb_auth cookie from the HTTP request
   const httpRequest = request.event?.request();
   if (!httpRequest) {
-    return {};
+    debug.error = 'No HTTP request';
+    return { debug };
   }
 
   const cookieHeader = httpRequest.header.get('Cookie') || '';
@@ -26,23 +37,28 @@ module.exports = function(request, response) {
   }, {});
 
   const cookieValue = cookies['pb_auth'];
+  debug.hasCookie = !!cookieValue;
+  debug.cookieValue = cookieValue ? cookieValue.substring(0, 50) + '...' : null;
+
   if (!cookieValue) {
-    return {};
+    return { debug };
   }
 
   try {
     // Parse cookie (it's JSON stringified)
     const authData = JSON.parse(cookieValue);
+    debug.hasToken = !!authData.token;
 
     if (!authData.token) {
-      return {};
+      return { debug };
     }
 
     // Validate the token and get the auth record
     const record = $app.findAuthRecordByToken(authData.token);
+    debug.foundRecord = !!record;
 
     if (!record) {
-      return {};
+      return { debug };
     }
 
     // Set request.auth for downstream pages
@@ -50,8 +66,8 @@ module.exports = function(request, response) {
     request.authToken = authData.token;
 
   } catch (error) {
-    // Invalid cookie format, ignore
+    debug.error = error.message;
   }
 
-  return {};
+  return { debug };
 };

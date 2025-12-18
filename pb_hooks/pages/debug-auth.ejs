@@ -14,6 +14,9 @@
     eventHasAuth: !!data.request?.event?.get("authRecord"),
   }, null, 2) %></pre>
 
+  <h2>Load Script Debug</h2>
+  <pre><%= JSON.stringify(data.debug || {}, null, 2) %></pre>
+
   <h2>Context</h2>
   <pre><%= JSON.stringify({
     dataKeys: Object.keys(data),
