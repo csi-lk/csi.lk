@@ -1,21 +1,12 @@
 <%
-// Test page to figure out authentication
+// Test page to verify plugin execution
 const debug = {
   hasRequest: !!request,
+  pluginRan: !!request._pluginRan,
   hasAuth: !!request.auth,
-  authValue: request.auth,
-  authType: typeof request.auth,
-  authId: request.auth ? request.auth.id : null,
-  authEmail: null
+  requestKeys: Object.keys(request),
+  authValue: request.auth
 };
-
-try {
-  if (request.auth && request.auth.email) {
-    debug.authEmail = request.auth.email();
-  }
-} catch (e) {
-  debug.authEmailError = e.message;
-}
 
 response.json(200, debug);
 %>
