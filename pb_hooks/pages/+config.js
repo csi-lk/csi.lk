@@ -5,14 +5,11 @@
  */
 
 // Simple test plugin to verify plugins execute
-const testPlugin = (config) => {
-  const { globalApi } = config;
-
+const testPlugin = (config, options) => {
   return {
-    name: "test-plugin",
-    onRequest: ({ request, response }) => {
+    onRequest(context) {
       // Set a test flag on request to prove the plugin ran
-      request._pluginRan = true;
+      context.request._pluginRan = true;
     }
   };
 };
