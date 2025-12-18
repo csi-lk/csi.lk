@@ -10,8 +10,22 @@ module.exports = function(request, response) {
     return {};
   }
 
-  // Try to get pb_auth cookie
-  const cookieValue = request.cookie('pb_auth');
+  // Try to get pb_auth cookie from the HTTP request
+  const httpRequest = request.event?.request();
+  if (!httpRequest) {
+    return {};
+  }
+
+  const cookieHeader = httpRequest.header.get('Cookie') || '';
+  const cookies = cookieHeader.split(';').reduce((acc, cookie) => {
+    const [key, value] = cookie.trim().split('=');
+    if (key && value) {
+      acc[key] = decodeURIComponent(value);
+    }
+    return acc;
+  }, {});
+
+  const cookieValue = cookies['pb_auth'];
   if (!cookieValue) {
     return {};
   }
@@ -21,8 +35,6 @@ module.exports = function(request, response) {
     const authData = JSON.parse(cookieValue);
 
     if (!authData.token) {
-      // Invalid cookie, clear it
-      response.cookie('pb_auth', '');
       return {};
     }
 
@@ -30,8 +42,6 @@ module.exports = function(request, response) {
     const record = $app.findAuthRecordByToken(authData.token);
 
     if (!record) {
-      // Invalid token, clear cookie
-      response.cookie('pb_auth', '');
       return {};
     }
 
@@ -40,8 +50,7 @@ module.exports = function(request, response) {
     request.authToken = authData.token;
 
   } catch (error) {
-    // Invalid cookie format, clear it
-    response.cookie('pb_auth', '');
+    // Invalid cookie format, ignore
   }
 
   return {};
