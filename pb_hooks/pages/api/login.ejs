@@ -4,12 +4,8 @@
  * Uses the auth plugin to properly set the pb_auth cookie
  */
 
-// Set JSON content type
-response.header('Content-Type', 'application/json');
-
 if (request.method !== 'POST') {
-  response.status(405);
-  response.write(JSON.stringify({ error: 'Method not allowed' }));
+  response.json(405, { error: 'Method not allowed' });
   return;
 }
 
@@ -19,8 +15,7 @@ try {
   const { email, password } = body;
 
   if (!email || !password) {
-    response.status(400);
-    response.write(JSON.stringify({ error: 'Email and password are required' }));
+    response.json(400, { error: 'Email and password are required' });
     return;
   }
 
@@ -29,18 +24,17 @@ try {
   const authData = api.signInWithPassword(email, password);
 
   // Return success (cookie is already set by the plugin)
-  response.write(JSON.stringify({
+  response.json(200, {
     success: true,
     user: {
       id: authData.record.id,
       email: authData.record.email
     }
-  }));
+  });
 
 } catch (error) {
-  response.status(401);
-  response.write(JSON.stringify({
+  response.json(401, {
     error: error.message || 'Authentication failed'
-  }));
+  });
 }
 %>
