@@ -2,12 +2,14 @@
 
 /**
  * PocketPages configuration
- * References auth plugin from node_modules (deployed via GitHub Actions)
+ * Load auth plugin via require() from deployed node_modules
  */
+
+const authPlugin = require('pocketpages-plugin-auth');
 
 module.exports = {
   plugins: [
-    'pocketpages-plugin-auth'
+    authPlugin
   ],
   debug: false
 };
