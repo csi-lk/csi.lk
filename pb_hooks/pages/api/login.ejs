@@ -34,10 +34,10 @@ try {
     token: token,
     record: {
       id: record.id,
-      email: record.email,
-      username: record.username,
-      name: record.name,
-      avatar: record.avatar
+      email: record.email(),
+      username: record.username(),
+      name: record.name(),
+      avatar: record.avatar()
     }
   }));
 
@@ -46,7 +46,7 @@ try {
     success: true,
     user: {
       id: record.id,
-      email: record.email
+      email: record.email()
     }
   });
 
