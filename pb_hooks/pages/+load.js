@@ -11,7 +11,7 @@ module.exports = function(request, response) {
   }
 
   // Try to get pb_auth cookie
-  const cookieValue = request.cookies('pb_auth');
+  const cookieValue = request.cookie('pb_auth');
   if (!cookieValue) {
     return {};
   }
