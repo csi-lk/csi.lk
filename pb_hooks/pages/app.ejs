@@ -1,41 +1,15 @@
 <%
-// Check authentication by validating pb_auth cookie
-let authRecord = request.auth;
+/**
+ * Authentication check - validate pb_auth cookie
+ * For now, we'll redirect to login and let users authenticate there
+ * TODO: Fix auth validation once we figure out the correct PocketPages API
+ */
 
-if (!authRecord) {
-  // Try to validate from cookie
-  const httpRequest = request.event?.request();
-  if (httpRequest) {
-    const cookieHeader = httpRequest.header.get('Cookie') || '';
-    const cookies = {};
-    cookieHeader.split(';').forEach(cookie => {
-      const [key, value] = cookie.trim().split('=');
-      if (key && value) {
-        cookies[key] = decodeURIComponent(value);
-      }
-    });
-
-    const cookieValue = cookies['pb_auth'];
-    if (cookieValue) {
-      try {
-        const authData = JSON.parse(cookieValue);
-        if (authData.token) {
-          authRecord = $app.findAuthRecordByToken(authData.token);
-        }
-      } catch (e) {
-        // Invalid cookie, clear it
-        response.cookie('pb_auth', '');
-      }
-    }
-  }
-}
-
-// Redirect to login if not authenticated
-if (!authRecord) {
-  const loginUrl = `/login?next=${encodeURIComponent(request.url.pathname)}`;
-  response.redirect(loginUrl);
-  return;
-}
+// Temporary: Just redirect to login for now
+// The proper fix needs the auth plugin to work correctly
+const loginUrl = `/login?next=${encodeURIComponent(request.url.pathname)}`;
+response.redirect(loginUrl);
+return;
 %>
 <!DOCTYPE html>
 <html lang="en">
