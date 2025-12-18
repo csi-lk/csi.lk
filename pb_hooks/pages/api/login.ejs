@@ -4,7 +4,7 @@
  * Uses the auth plugin to properly set the pb_auth cookie
  */
 
-if (request.method !== 'POST') {
+if (request.method !== 'post') {
   response.json(405, { error: 'Method not allowed' });
   return;
 }
