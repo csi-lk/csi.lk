@@ -9,8 +9,8 @@ if (request.method !== 'post') {
   return;
 }
 
-// Use the auth plugin's signOut method
-signOut();
+// Clear the pb_auth cookie
+response.cookie('pb_auth', '');
 
 // Redirect to home
 response.redirect('/');

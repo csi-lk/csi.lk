@@ -1,7 +1,7 @@
 <%
 /**
  * Server-side login endpoint
- * Uses the auth plugin to properly set the pb_auth cookie
+ * Authenticates user and sets pb_auth cookie
  */
 
 if (request.method !== 'post') {
@@ -19,15 +19,34 @@ try {
     return;
   }
 
-  // Use auth plugin's sign in method
-  const authData = signInWithPassword(email, password);
+  // Find and authenticate user
+  const record = $app.findAuthRecordByEmail('users', email);
+  if (!record || !record.validatePassword(password)) {
+    response.json(401, { error: 'Invalid email or password' });
+    return;
+  }
+
+  // Generate auth token
+  const token = record.newAuthToken();
+
+  // Set pb_auth cookie with token and record
+  response.cookie('pb_auth', JSON.stringify({
+    token: token,
+    record: {
+      id: record.id,
+      email: record.email,
+      username: record.username,
+      name: record.name,
+      avatar: record.avatar
+    }
+  }));
 
   // Return success
   response.json(200, {
     success: true,
     user: {
-      id: authData.record.id,
-      email: authData.record.email
+      id: record.id,
+      email: record.email
     }
   });
 
