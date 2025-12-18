@@ -11,19 +11,18 @@ if (request.method !== 'post') {
 
 try {
   // Parse JSON body
-  const body = JSON.parse(request.body);
-  const { email, password } = body;
+  const data = request.body();
+  const { email, password } = data;
 
   if (!email || !password) {
     response.json(400, { error: 'Email and password are required' });
     return;
   }
 
-  // Use the auth plugin's signInWithPassword method
-  // This will set the pb_auth cookie automatically
-  const authData = api.signInWithPassword(email, password);
+  // Use auth plugin's sign in method
+  const authData = signInWithPassword(email, password);
 
-  // Return success (cookie is already set by the plugin)
+  // Return success
   response.json(200, {
     success: true,
     user: {
