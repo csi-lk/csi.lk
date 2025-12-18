@@ -29,16 +29,20 @@ try {
   // Generate auth token
   const token = record.newAuthToken();
 
-  // Set pb_auth cookie with token and record
+  // Set pb_auth cookie with token and record data
+  const recordData = {
+    id: record.id,
+    email: record.email()
+  };
+
+  // Add optional fields if they exist
+  try { recordData.username = record.username(); } catch (e) {}
+  try { recordData.name = record.name(); } catch (e) {}
+  try { recordData.avatar = record.avatar(); } catch (e) {}
+
   response.cookie('pb_auth', JSON.stringify({
     token: token,
-    record: {
-      id: record.id,
-      email: record.email(),
-      username: record.username(),
-      name: record.name(),
-      avatar: record.avatar()
-    }
+    record: recordData
   }));
 
   // Return success
