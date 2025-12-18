@@ -1,0 +1,9 @@
+<%
+// Debug endpoint to see request properties
+response.json(200, {
+  method: request.method,
+  url: request.url,
+  headers: request.headers,
+  body: request.body
+});
+%>
