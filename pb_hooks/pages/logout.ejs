@@ -1,0 +1,17 @@
+<%
+/**
+ * Logout endpoint
+ * Clears the pb_auth cookie and redirects to home
+ */
+
+if (request.method !== 'POST') {
+  response.redirect('/');
+  return;
+}
+
+// Use the auth plugin's signOut method
+api.signOut();
+
+// Redirect to home
+response.redirect('/');
+%>

@@ -86,29 +86,25 @@
       submitBtn.textContent = 'Logging in...';
 
       try {
-        const response = await fetch('/api/collections/users/auth-with-password', {
+        const response = await fetch('/api/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           credentials: 'include', // Include cookies in request/response
           body: JSON.stringify({
-            identity: email,
+            email: email,
             password: password,
           }),
         });
 
-        if (!response.ok) {
-          const error = await response.json();
-          throw new Error(error.message || 'Login failed');
-        }
-
         const data = await response.json();
 
-        // Store the auth token
-        localStorage.setItem('pocketbase_auth', JSON.stringify(data));
+        if (!response.ok) {
+          throw new Error(data.error || 'Login failed');
+        }
 
-        // Redirect to next param or /app
+        // Cookie is set by server, redirect to next param or /app
         const urlParams = new URLSearchParams(window.location.search);
         const next = urlParams.get('next') || '/app';
         window.location.href = next;

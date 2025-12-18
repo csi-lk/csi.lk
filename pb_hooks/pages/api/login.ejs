@@ -1,0 +1,41 @@
+<%
+/**
+ * Server-side login endpoint
+ * Uses the auth plugin to properly set the pb_auth cookie
+ */
+
+if (request.method !== 'POST') {
+  response.status(405);
+  return { error: 'Method not allowed' };
+}
+
+try {
+  // Parse JSON body
+  const body = JSON.parse(request.body);
+  const { email, password } = body;
+
+  if (!email || !password) {
+    response.status(400);
+    return { error: 'Email and password are required' };
+  }
+
+  // Use the auth plugin's signInWithPassword method
+  // This will set the pb_auth cookie automatically
+  const authData = api.signInWithPassword(email, password);
+
+  // Return success (cookie is already set by the plugin)
+  return {
+    success: true,
+    user: {
+      id: authData.record.id,
+      email: authData.record.email
+    }
+  };
+
+} catch (error) {
+  response.status(401);
+  return {
+    error: error.message || 'Authentication failed'
+  };
+}
+%>
