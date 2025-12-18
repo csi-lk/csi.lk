@@ -4,12 +4,13 @@
  * PocketPages configuration with debug test plugin
  */
 
-// Simple test plugin to verify plugins execute
-const testPlugin = (config, options) => {
+// Simple test plugin to verify plugins execute - matches auth plugin structure
+const testPlugin = (config) => {
   return {
-    onRequest(context) {
+    name: "test",
+    onRequest({ request, response }) {
       // Set a test flag on request to prove the plugin ran
-      context.request._pluginRan = true;
+      request._pluginRan = true;
     }
   };
 };
