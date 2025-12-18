@@ -75,3 +75,14 @@ jobs:
             **/CNAME
           # Only include package.json and bun.lock
           dry-run: false
+
+      # Deploy node_modules for PocketPages plugins
+      - name: Deploy node_modules
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.pockethost.io
+          username: ${{ secrets.POCKETHOST_FTP_USERNAME }}
+          password: ${{ secrets.POCKETHOST_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: node_modules/
+          server-dir: ${{ secrets.POCKETHOST_INSTANCE_DIR }}/node_modules/
