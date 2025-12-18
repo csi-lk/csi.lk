@@ -1,6 +1,25 @@
 <%
+// Check authentication by validating pb_auth cookie
+let authRecord = request.auth;
+
+if (!authRecord) {
+  // Try to validate from cookie
+  const cookieValue = request.cookies('pb_auth');
+  if (cookieValue) {
+    try {
+      const authData = JSON.parse(cookieValue);
+      if (authData.token) {
+        authRecord = $app.findAuthRecordByToken(authData.token);
+      }
+    } catch (e) {
+      // Invalid cookie, clear it
+      response.cookie('pb_auth', '');
+    }
+  }
+}
+
 // Redirect to login if not authenticated
-if (!request.auth) {
+if (!authRecord) {
   const loginUrl = `/login?next=${encodeURIComponent(request.url.pathname)}`;
   response.redirect(loginUrl);
   return;
@@ -88,8 +107,8 @@ if (!request.auth) {
     <article class="silk-status">
       <h2>Status</h2>
       <p>
-        <strong>User:</strong> <%= request.auth.email() %><br>
-        <strong>ID:</strong> <%= request.auth.id %><br>
+        <strong>User:</strong> <%= authRecord.email() %><br>
+        <strong>ID:</strong> <%= authRecord.id %><br>
         <strong>Version:</strong> v3
       </p>
     </article>
