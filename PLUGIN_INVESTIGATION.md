@@ -37,30 +37,35 @@ Logs show:
 - (onRender hook NEVER called even when rendering pages)
 ```
 
-## Conclusion
+## Root Cause - SOLVED
 
-Cannot use auth plugin on PocketHost because:
-1. PocketHost doesn't deploy node_modules (can't use plugin packages)
-2. Bundled plugins don't have hooks executed (can't inline plugin code)
+The issue was **architecture mismatch**:
+- We were deploying node_modules built on macOS (darwin) to PocketHost (Linux)
+- Different CPU architectures caused native modules to fail
+- Plugins loaded but hooks never executed due to binary incompatibility
 
-## Working Solution
+## Solution
 
-**Manual authentication validation** using native PocketBase JSVM APIs:
+**Let PocketHost install dependencies with correct architecture:**
+
+1. Deploy package.json (already done via FTP)
+2. Do NOT deploy node_modules folder
+3. PocketHost automatically runs `bun install` on Linux
+4. Plugins install with correct architecture and work properly
+
+**Changes made:**
+- Removed node_modules deployment from GitHub Actions workflow
+- Removed postinstall bundling script from package.json
+- Keep simple +config.js with string plugin names:
 
 ```javascript
-//pb_hooks/pages/app.ejs
-<%
-const cookieValue = /* parse from request somehow */;
-if (cookieValue) {
-  const authData = JSON.parse(cookieValue);
-  const record = $app.findAuthRecordByToken(authData.token);
-  if (!record) {
-    response.redirect('/login');
-    return;
-  }
-  // Use record for user info
-}
-%>
+module.exports = {
+  plugins: [
+    'pocketpages-plugin-js-sdk',
+    'pocketpages-plugin-auth'
+  ],
+  debug: true
+};
 ```
 
-The login API works correctly, we just need to manually validate the cookie in each protected page.
+After deleting node_modules from PocketHost via FTP and restarting, plugins should work correctly.

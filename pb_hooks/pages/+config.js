@@ -2,16 +2,14 @@
 
 /**
  * PocketPages configuration
- * Load auth plugin via require() from deployed node_modules
+ * PocketHost automatically runs `bun install` to install dependencies from package.json
+ * with the correct Linux architecture (not deployed from macOS)
  */
-
-const jsSdkPlugin = require('pocketpages-plugin-js-sdk');
-const authPlugin = require('pocketpages-plugin-auth');
 
 module.exports = {
   plugins: [
-    jsSdkPlugin,
-    authPlugin
+    'pocketpages-plugin-js-sdk',
+    'pocketpages-plugin-auth'
   ],
-  debug: false
+  debug: true
 };
