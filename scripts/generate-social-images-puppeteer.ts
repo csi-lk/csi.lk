@@ -266,20 +266,17 @@ async function main(): Promise<void> {
 
         if (frontmatter.title && frontmatter.permalink) {
           return {
-            data: {
-              title: frontmatter.title,
-              description: frontmatter.description || `Read more on csi.lk`,
-              permalink: frontmatter.permalink.replace('.html', ''),
-              type,
-            },
-            file: null,
-          }
+            title: frontmatter.title,
+            description: frontmatter.description || `Read more on csi.lk`,
+            permalink: frontmatter.permalink.replace('.html', ''),
+            type,
+          } as SocialImageData
         }
         console.log(`⚠️  Skipping ${file}: missing title or permalink`)
         return null
       })
-      .filter((item): item is { data: SocialImageData; file: null } => item !== null)
-      .map(({ data }) => generateSocialImage(data))
+      .filter((item): item is SocialImageData => item !== null)
+      .map(data => generateSocialImage(data))
   })
 
   // Generate all images in parallel
