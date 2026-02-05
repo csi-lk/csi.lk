@@ -51,12 +51,12 @@ A few things I find myself doing:
 - **Quick tasks** — "add a task to check the CI pipeline after lunch" without opening anything
 - **Meeting notes** — voice-summarising what just happened in a call while it's still fresh
 
-It's the kind of thing that sounds gimmicky until you use it for a week and realise you're capturing twice as much stuff because the friction dropped to almost zero.
+It sounds gimmicky until you've used it for a week and realise you're capturing twice as much because the friction is almost zero.
 
 ## Cost
 
-Deepgram gives you $200 in free credit on signup which goes a long way for short voice messages. After that, Nova-2 runs at $0.0043/minute — a 30-second voice message costs a fraction of a cent. I've been using it daily and haven't made a dent in the free tier.
+Deepgram gives you $200 in free credit on signup. Nova-2 runs at $0.0043/minute — a 30-second voice message is a fraction of a cent. I've been using it daily and haven't dented the free tier.
 
 ## The takeaway
 
-The interesting part wasn't the technical setup — that was trivial. It was the workflow shift. Typing a message to an AI assistant is fine when you're at a desk. Being able to just *talk* while doing other things makes it actually useful as a capture tool rather than something you have to sit down and use.
+The setup was trivial. The shift was in how I use the assistant — talking while doing other things instead of stopping to type. Friction went down, capture went up.
