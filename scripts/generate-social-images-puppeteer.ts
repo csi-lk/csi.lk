@@ -157,7 +157,7 @@ async function generateSocialImage(data: SocialImageData): Promise<void> {
   // Try to use Puppeteer if available
   try {
     // Dynamic import to handle optional dependency
-    const puppeteer = await eval(`import('puppeteer')`).catch(() => null)
+    const puppeteer = await import('puppeteer').catch(() => null)
 
     if (puppeteer) {
       const browser = await puppeteer.launch({ headless: true })
@@ -191,10 +191,17 @@ async function generateSocialImage(data: SocialImageData): Promise<void> {
   }
 }
 
+interface Frontmatter {
+  title?: string
+  description?: string
+  permalink?: string
+  [key: string]: string | undefined
+}
+
 /**
  * Extract frontmatter and content from markdown files
  */
-function extractFrontmatter(filePath: string): { frontmatter: any; content: string } {
+function extractFrontmatter(filePath: string): { frontmatter: Frontmatter; content: string } {
   const content = fs.readFileSync(filePath, 'utf8')
   const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/
   const match = content.match(frontmatterRegex)
@@ -203,10 +210,10 @@ function extractFrontmatter(filePath: string): { frontmatter: any; content: stri
     return { frontmatter: {}, content }
   }
 
-  const frontmatter: any = {}
+  const frontmatter: Frontmatter = {}
   const frontmatterLines = match[1].split('\n')
 
-  for (const line of frontmatterLines) {
+  frontmatterLines.forEach((line) => {
     const colonIndex = line.indexOf(':')
     if (colonIndex > 0) {
       const key = line.substring(0, colonIndex).trim()
@@ -220,7 +227,7 @@ function extractFrontmatter(filePath: string): { frontmatter: any; content: stri
 
       frontmatter[key] = value
     }
-  }
+  })
 
   return { frontmatter, content: match[2] }
 }
@@ -236,36 +243,48 @@ async function main(): Promise<void> {
     { dir: 'src/talks', type: 'talk' as const },
   ]
 
-  let generated = 0
-
-  for (const { dir, type } of contentDirs) {
+  // Filter out directories that don't exist and process each
+  const validDirs = contentDirs.filter(({ dir }) => {
     const dirPath = path.join(__dirname, '../', dir)
-
     if (!fs.existsSync(dirPath)) {
       console.log(`⚠️  Directory not found: ${dir}`)
-      continue
+      return false
     }
+    return true
+  })
 
+  // Collect all image generation promises
+  const imagePromises = validDirs.flatMap(({ dir, type }) => {
+    const dirPath = path.join(__dirname, '../', dir)
     const files = fs.readdirSync(dirPath).filter(file => file.endsWith('.md'))
     console.log(`📁 Processing ${files.length} ${type}s from ${dir}`)
 
-    for (const file of files) {
-      const filePath = path.join(dirPath, file)
-      const { frontmatter } = extractFrontmatter(filePath)
+    return files
+      .map(file => {
+        const filePath = path.join(dirPath, file)
+        const { frontmatter } = extractFrontmatter(filePath)
 
-      if (frontmatter.title && frontmatter.permalink) {
-        await generateSocialImage({
-          title: frontmatter.title,
-          description: frontmatter.description || `Read more on csi.lk`,
-          permalink: frontmatter.permalink.replace('.html', ''),
-          type,
-        })
-        generated++
-      } else {
+        if (frontmatter.title && frontmatter.permalink) {
+          return {
+            data: {
+              title: frontmatter.title,
+              description: frontmatter.description || `Read more on csi.lk`,
+              permalink: frontmatter.permalink.replace('.html', ''),
+              type,
+            },
+            file: null,
+          }
+        }
         console.log(`⚠️  Skipping ${file}: missing title or permalink`)
-      }
-    }
-  }
+        return null
+      })
+      .filter((item): item is { data: SocialImageData; file: null } => item !== null)
+      .map(({ data }) => generateSocialImage(data))
+  })
+
+  // Generate all images in parallel
+  await Promise.all(imagePromises)
+  const generated = imagePromises.length
 
   console.log(`\n✨ Social media image generation complete!`)
   console.log(`📊 Generated ${generated} social images`)
