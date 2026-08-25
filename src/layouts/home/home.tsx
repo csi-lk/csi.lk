@@ -7,9 +7,18 @@ export = function Home({
   'site-data': siteData,
   i18n: { locale },
   pkg: { version },
+  permalink,
+  noindex,
 }: Eleventy.Page): string {
   return (
-    <PageContainer {...siteData} locale={locale} style="fixed" version={version}>
+    <PageContainer
+      {...siteData}
+      locale={locale}
+      style="fixed"
+      version={version}
+      permalink={permalink}
+      noindex={noindex}
+    >
       <article id="content">{content}</article>
     </PageContainer>
   )

@@ -7,6 +7,7 @@ interface Header {
   keywords: string
   version: string
   canonical?: string
+  noindex?: boolean
 }
 
 const Header = ({
@@ -16,15 +17,17 @@ const Header = ({
   keywords,
   version,
   canonical = '',
+  noindex = false,
 }: Header): HTMLElement => {
   const fullUrl = `https://csi.lk/${canonical}`
-  const socialImageUrl = `https://csi.lk/social/${canonical.replace(/[^a-zA-Z0-9]/g, '_')}.png`
-  
+  const socialImageUrl = `https://csi.lk/social/${(canonical || 'home').replace(/[^a-zA-Z0-9]/g, '_')}.png`
+
   return (
     <head>
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="description" content={description} />
-      
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={fullUrl} />
@@ -34,7 +37,7 @@ const Header = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="csi.lk" />
-      
+
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={fullUrl} />
@@ -43,8 +46,8 @@ const Header = ({
       <meta name="twitter:image" content={socialImageUrl} />
       <meta name="twitter:creator" content="@csi_lk" />
       <meta name="twitter:site" content="@csi_lk" />
-      
-      {meta.map(tag => <meta {...tag} />).join(' ')}
+
+      {meta.map(tag => (tag.rel ? <link {...tag} /> : <meta {...tag} />)).join(' ')}
       <link rel="canonical" href={fullUrl} />
       <title>{title}</title>
       <link rel="stylesheet" href={`/styles/index.css?v=${version}`} />

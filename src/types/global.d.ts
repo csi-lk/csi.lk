@@ -57,6 +57,7 @@ declare namespace Eleventy {
       inputPath: string
     }
     permalink?: string
+    noindex?: boolean
     pkg: {
       version: string
     }

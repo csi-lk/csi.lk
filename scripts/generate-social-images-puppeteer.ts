@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import puppeteer from 'puppeteer'
 
 interface SocialImageData {
   title: string
@@ -135,7 +136,7 @@ function generateSocialImageHTML(data: SocialImageData): string {
  * Generate social media image using Chrome DevTools Protocol
  * Fallback implementation that creates HTML files for manual conversion
  */
-async function generateSocialImage(data: SocialImageData): Promise<void> {
+async function generateSocialImage(data: SocialImageData, browser: Awaited<ReturnType<typeof puppeteer.launch>>): Promise<void> {
   const outputDir = path.join(__dirname, '../dist/social')
   const tempDir = path.join(__dirname, '../temp/social-html')
 
@@ -154,41 +155,25 @@ async function generateSocialImage(data: SocialImageData): Promise<void> {
   // Write HTML file
   fs.writeFileSync(htmlPath, html)
 
-  // Try to use Puppeteer if available
-  try {
-    // Dynamic import to handle optional dependency
-    const puppeteer = await import('puppeteer').catch(() => null)
+  // Generate PNG (best effort - will throw if browser unavailable)
+  const page = await browser.newPage()
 
-    if (puppeteer) {
-      const browser = await puppeteer.launch({ headless: true })
-      const page = await browser.newPage()
+  // Set viewport to exact social media image dimensions
+  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 2 })
 
-      // Set viewport to exact social media image dimensions
-      await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 2 })
+  // Load the HTML content
+  await page.setContent(html, { waitUntil: 'networkidle0' })
 
-      // Load the HTML content
-      await page.setContent(html, { waitUntil: 'networkidle0' })
+  // Take screenshot
+  const imagePath: `${string}.png` = `${path.join(outputDir, fileName)}.png`
+  await page.screenshot({
+    path: imagePath,
+    fullPage: false,
+    type: 'png',
+  })
 
-      // Take screenshot
-      const imagePath = path.join(outputDir, `${fileName}.png`)
-      await page.screenshot({
-        path: imagePath,
-        fullPage: false,
-        type: 'png',
-      })
-
-      await browser.close()
-      console.log(`✅ Generated social image: ${imagePath}`)
-    } else {
-      console.log(`📝 Generated HTML template: ${htmlPath}`)
-      console.log(`   To convert to PNG, open in browser and screenshot, or install Puppeteer:`)
-      console.log(`   npm install puppeteer`)
-    }
-  } catch (error) {
-    console.log(`📝 Generated HTML template: ${htmlPath}`)
-    console.log(`   Puppeteer not available. To auto-generate PNGs, run:`)
-    console.log(`   npm install puppeteer`)
-  }
+  await page.close()
+  console.log(`✅ Generated social image: ${imagePath}`)
 }
 
 interface Frontmatter {
@@ -243,6 +228,17 @@ async function main(): Promise<void> {
     { dir: 'src/talks', type: 'talk' as const },
   ]
 
+  // Root pages whose social images are referenced by the meta tags
+  const rootPages = [
+    { permalink: 'home', title: 'Callum Silcock', description: 'Principal Engineer (Front End) | I lead front end architectural change', type: 'page' as const },
+    { permalink: 'articles', title: 'Articles', description: 'A collection of articles about emoji, react, macos, functional testing and more', type: 'page' as const },
+    { permalink: 'talks', title: 'Talks', description: 'Talks presented at conferences, meetups and internal sessions', type: 'page' as const },
+    { permalink: 'timeline', title: 'Timeline', description: 'All of the projects, jobs and contracts I have worked over the last decade', type: 'page' as const },
+    { permalink: 'bookshelf', title: 'Bookshelf', description: 'Books I have read, in order of my personal rating', type: 'page' as const },
+    { permalink: 'battery', title: 'Low Battery', description: 'Actionable strategies to preserve your cognitive capacity and mental energy', type: 'page' as const },
+    { permalink: '404', title: 'Uh Oh...', description: 'It looks like you have hit the 404 page', type: 'page' as const },
+  ]
+
   // Filter out directories that don't exist and process each
   const validDirs = contentDirs.filter(({ dir }) => {
     const dirPath = path.join(__dirname, '../', dir)
@@ -254,7 +250,7 @@ async function main(): Promise<void> {
   })
 
   // Collect all image generation promises
-  const imagePromises = validDirs.flatMap(({ dir, type }) => {
+  const images = validDirs.flatMap(({ dir, type }) => {
     const dirPath = path.join(__dirname, '../', dir)
     const files = fs.readdirSync(dirPath).filter(file => file.endsWith('.md'))
     console.log(`📁 Processing ${files.length} ${type}s from ${dir}`)
@@ -276,15 +272,43 @@ async function main(): Promise<void> {
         return null
       })
       .filter((item): item is SocialImageData => item !== null)
-      .map(data => generateSocialImage(data))
   })
 
-  // Generate all images in parallel
-  await Promise.all(imagePromises)
-  const generated = imagePromises.length
+  images.push(...rootPages)
+  console.log(`📄 Processing ${rootPages.length} root pages`)
+
+  // Generate all images
+  let browser: Awaited<ReturnType<typeof puppeteer.launch>>
+  try {
+    browser = await puppeteer.launch({ headless: true })
+  } catch (error) {
+    console.error(`❌ Puppeteer could not launch: ${error instanceof Error ? error.message : error}`)
+    console.error(`   Social images require a headless Chrome. Check the Puppeteer install:`)
+    console.error(`   yarn install puppeteer`)
+    process.exit(1)
+  }
+
+  try {
+    // Process sequentially to avoid launching a browser per image
+    await images.reduce(
+      (chain, data) =>
+        chain.then(async () => {
+          try {
+            await generateSocialImage(data, browser)
+          } catch (error) {
+            console.error(
+              `❌ Failed to generate social image for ${data.permalink}: ${error instanceof Error ? error.message : error}`,
+            )
+          }
+        }),
+      Promise.resolve(),
+    )
+  } finally {
+    await browser.close()
+  }
 
   console.log(`\n✨ Social media image generation complete!`)
-  console.log(`📊 Generated ${generated} social images`)
+  console.log(`📊 Generated ${images.length} social images`)
   console.log(`\n💡 Images are referenced in meta tags as:`)
   console.log(`   https://csi.lk/social/[permalink].png`)
   console.log(`\n🔍 Test your social previews at:`)

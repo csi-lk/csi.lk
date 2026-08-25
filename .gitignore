@@ -2,6 +2,7 @@
 ###########################
 
 .env
+pb_data
 src/_includes
 src/bookshelf.md
 cypress/videos

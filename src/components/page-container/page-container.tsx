@@ -13,6 +13,7 @@ export interface PageContainer {
   style?: 'fluid' | 'fixed'
   locale: string
   permalink?: string
+  noindex?: boolean
 }
 
 const PageContainer = (
@@ -25,6 +26,7 @@ const PageContainer = (
     version,
     locale,
     permalink,
+    noindex = false,
   }: PageContainer,
   children: HTMLElement[],
 ): HTMLElement => {
@@ -41,6 +43,7 @@ const PageContainer = (
           keywords={keywords}
           version={version}
           canonical={permalink?.replace('.html', '')}
+          noindex={noindex}
         />
         <body>
           <div hidden>
